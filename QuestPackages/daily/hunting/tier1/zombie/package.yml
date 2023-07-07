@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-hunting
+
+variables:
+
+  objective_amount: 4
+  reward_amount: 2500
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Kill
+  action_lower: kill
+  action_lower_past: killed
+  
+  target: zombies
+  target_upper: Zombies
+  target_all_caps: ZOMBIE
+  
+  target_drops: rotten flesh
+  target_drops_plural: rotten flesh
+  
+  target_slug: zombie
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: rotten_flesh
+  
+items:
+  rotten_flesh: minecraft:$target_drops_slug$

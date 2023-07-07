@@ -1,112 +1,96 @@
-# menus:
-#   mobkillingQuestsMenu:
-#     height: 4
-#     title: "HuntingQuests"
-#     slots:
-#       0-3: "filler,filler,filler,filler"
-#       4: "reputation"
-#       5-8: "filler,filler,filler,filler"
-#       9: "zombieHuntNotStarted,zombieHuntActive,zombieHuntDone,zombieHuntSecondPart"
-#       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-#       27: "back"
-#     items:
-#     ##################
-#     ## ZOMBIE HUNT  ##
-#     ##################
-#       zombieHuntNotStarted:
-#         item: "zombieHuntIconNotStartedIcon"
-#         conditions: "!zombieHuntTaken"
-#         text:
-#           - "&b[Zombie Hunt]"
-#           - 'Hunt &a&o16&r&o zombies!'
-#           - 'In the &a&ooverworld&r&o world.'
-#           - ""
-#           - "&8&oStatus: &a&oNot Started"
-#           - "&7Left-click to start"
-#         click:
-#           left: "huntingQuestAlreadyActive,zombieHuntStart"
-#       zombieHuntActive:
-#         item: "zombieHuntActiveIcon"
-#         conditions: "zombieHuntActive,!shrineTag1"
-#         text:
-#           - "&b[Zombie Hunt]"
-#           - 'Hunt &a&o16&r&o zombies!'
-#           - 'In the &a&ooverworld&r&o world.'
-#           - ""
-#           - "&8&oStatus: &6&oIn Progress!"
-#           - "%objective.zombieHunt.absoluteAmount%/%objective.zombieHunt.absoluteTotal%"
-#           - "&7Right-click to reset"
-#         click:
-#           right: "resetNotify,zombieHuntReset"
-#       zombieHuntShrine:
-#         item: "zombieHuntActiveIcon"
-#         conditions: "zombieHuntActive"
-#         text:
-#           - "&b[Zombie Hunt]"
-#           - 'Bring 16 rotten flesh'
-#           - 'the Shrine Chest!'
-#           - ""
-#           - "&8&oStatus: &6&oIn Progress!"
-#         click:
-#           left: "huntingQuestAlreadyActive"
-#       zombieHuntDone:
-#         item: "questComplete"
-#         conditions: "zombieHuntComplete"
-#         text:
-#           - 'You killed 16 zombies!'
-#           - ""
-#           - "&8&oStatus: &a&oComplete!"
-#         close: false
-#       zombieHuntSecondPart:
-#         item: "zombieHuntActiveIcon"
-#         conditions: "!zombieHuntComplete,shrineTag1"
-#         text:
-#           - "&b[Zombie Hunt]"
-#           - 'Bring the 16 rotten flesh to the shrine'
-#           - 'at $shrineCoordsText$'
-#           - ""
-#           - "&8&oStatus: &6&oIn Progress!"
-#         close: false
-#     ##################
-#     ## Creepy Story ##
-#     ##################
-#     ################
-#     ## THIN SKELETON ##
-#     ################
-#     ##################
-#     ## PIGGY PIG ##
-#     ##################
-#     ########################
-#     ## SPIDER WEB ##
-#     ########################
-#     #################
-#     ## UI ELEMENTS ##
-#     #################
-#       reputation:
-#         item: "xpBottle" 
-#         amount: 1
-#         text:
-#             - "&2Quest Level: &6&l%point.quest_reputation.amount%"
-#         close: true
-#       filler: 
-#         text: "&a "
-#         item: "filler"
-#       back:
-#         item: "back"
-#         amount: 1
-#         text:
-#             - "&c&lGo Back"
-#         click:
-#           left: "openDailyMenu"
-#         close: true
-# items:
-#   zombieHuntIconNotStartedIcon: "ROTTEN_FLESH"
-#   zombieHuntActiveIcon: "ROTTEN_FLESH enchants:damage_all:1 flags:HIDE_ENCHANTS"
-#   creepyStoryNotStartedIcon: "GUNPOWDER"
-#   creepyStoryActiveIcon: "GUNPOWDER enchants:damage_all:1 flags:HIDE_ENCHANTS"
-#   thinSkeletonNotStartedIcon: "BONE"
-#   thinSkeletonActiveIcon: "BONE enchants:damage_all:1 flags:HIDE_ENCHANTS"
-#   piggyPigNotStartedIcon: "ROTTEN_FLESH"
-#   piggyPigActiveIcon: "ROTTEN_FLESH enchants:damage_all:1 flags:HIDE_ENCHANTS"
-#   spiderWebNotStartedIcon: "SPIDER_EYE"
-#   spiderWebActiveIcon: "SPIDER_EYE enchants:damage_all:1 flags:HIDE_ENCHANTS"
+menus:
+  mobkillingQuestsMenu:
+    height: 4
+    title: "HuntingQuests"
+    slots:
+      0-3: "filler,filler,filler,filler"
+      4: "reputation"
+      5-8: "filler,filler,filler,filler"
+      9: "tier1ZombieNotStarted,tier1ZombieActive,tier1ZombieShrine,tier1ZombieDone"
+      28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
+      27: "back"
+    items:
+    ##################
+    ## ZOMBIE HUNT  ##
+    ##################
+      tier1ZombieNotStarted:
+        item: "tier1ZombieNotStarted"
+        conditions: "!daily-hunting-tier1-zombie.collectTaken"
+        text:
+          - '$daily-hunting-tier1-zombie.title$'
+          - '$daily-hunting-tier1-zombie.description_line_1$'
+          - '$daily-hunting-tier1-zombie.description_line_2$'
+          - ""
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: "daily.huntingCheckActive,daily-hunting-tier1-zombie.collectStartFolder"
+        close: true
+      tier1ZombieActive:
+        item: "tier1ZombieActive"
+        conditions: "daily-hunting-tier1-zombie.collectTaken,!daily-hunting-tier1-zombie.shrineTaken"
+        text:
+          - '$daily-hunting-tier1-zombie.title$'
+          - '$daily-hunting-tier1-zombie.description_line_1$'
+          - '$daily-hunting-tier1-zombie.description_line_2$'
+          - ""
+          - $status.inProgress$
+          - "%daily-hunting-tier1-zombie.objective.collect.absoluteAmount%/%daily-hunting-tier1-zombie.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: "resetNotify,daily-hunting-tier1-zombie.reset"
+      tier1ZombieShrine:
+        item: "tier1ZombieActive"
+        conditions: "daily-hunting-tier1-zombie.shrineTaskActive"
+        text:
+          - '$daily-hunting-tier1-zombie.title$'
+          - '$daily-hunting-tier1-zombie.shrine_line_1$'
+          - '$daily-hunting-tier1-zombie.shrine_line_2$'
+          - ""
+          - $status.inProgress$
+        close: false
+      tier1ZombieDone:
+        item: "questComplete"
+        conditions: "daily-hunting-tier1-zombie.questComplete"
+        text:
+          - '$daily-hunting-tier1-zombie.title$'
+          - '$daily-hunting-tier1-zombie.done_line_1$'
+          - '$daily-hunting-tier1-zombie.done_line_2$'
+          - ""
+          - $status.complete$
+        close: false
+    ##################
+    ## Creepy Story ##
+    ##################
+    ################
+    ## THIN SKELETON ##
+    ################
+    ##################
+    ## PIGGY PIG ##
+    ##################
+    ########################
+    ## SPIDER WEB ##
+    ########################
+    #################
+    ## UI ELEMENTS ##
+    #################
+      reputation:
+        item: "xpBottle" 
+        amount: 1
+        text:
+            - "&2Quest Level: &6&l%point.quest_reputation.amount%"
+        close: true
+      filler: 
+        text: "&a "
+        item: "filler"
+      back:
+        item: "back"
+        amount: 1
+        text:
+            - "&c&lGo Back"
+        click:
+          left: "openDailyMenu"
+        close: true
+items:
+  tier1ZombieNotStarted: "$daily-hunting-tier1-zombie.target_drops_slug$"
+  tier1ZombieActive: "$daily-hunting-tier1-zombie.target_drops_slug$ $enchants$ $flags$"
