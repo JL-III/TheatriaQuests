@@ -266,12 +266,6 @@ menus:
     #################
     ## UI ELEMENTS ##
     #################
-      reputation:
-        item: "xpBottle" 
-        amount: 1
-        text:
-            - "&2Quest Level: &6&l%point.quest_reputation.amount%"
-        close: true
       filler: 
         text: "&a "
         item: "filler"
