@@ -1,9 +1,44 @@
+tier1BeetrootsDone:
+    item: tier1BeetrootsStarted
+    conditions: tier1BeetrootsStarted.begin
+    text:
+        - $daily-farming-tier1-Beetroots.shrine_line_1$
+        - $daily-farming-tier1-Beetroots.shrine_line_2$
+        - ""
+        - $status.inProgress$
+    click:
+        left: ""
+    close: true
 tier1BeetrootsNotStarted:
-    item: questBegin
+    item: tier1BeetrootsNotStarted
     conditions: tier1BeetrootsNotStarted.begin
     text:
         - $daily-farming-tier1-Beetroots.shrine_line_1$
         - $daily-farming-tier1-Beetroots.shrine_line_2$
         - ""
         - $status.inProgress$
+    click:
+        left: test
+    close: true
+tier1BeetrootsShrine:
+    item: tier1BeetrootsStarted
+    conditions: tier1BeetrootsStarted.begin
+    text:
+        - $daily-farming-tier1-Beetroots.shrine_line_1$
+        - $daily-farming-tier1-Beetroots.shrine_line_2$
+        - ""
+        - $status.inProgress$
+    click:
+        left: test
+    close: true
+tier1BeetrootsStarted:
+    item: tier1BeetrootsStarted
+    conditions: tier1BeetrootsStarted.begin
+    text:
+        - $daily-farming-tier1-Beetroots.shrine_line_1$
+        - $daily-farming-tier1-Beetroots.shrine_line_2$
+        - ""
+        - $status.inProgress$
+    click:
+        left: test
     close: true

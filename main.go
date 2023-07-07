@@ -11,7 +11,15 @@ import (
 // Define types to represent your data structure
 type Variables struct {
 	Target string `yaml:"target"`
-	// ... add other variables as needed
+	
+}
+
+type Config struct {
+	Click ClickConfig `yaml:"click"`
+}
+
+type ClickConfig struct {
+	Left string `yaml:"left"`
 }
 
 type OriginalConfig struct {
@@ -19,19 +27,15 @@ type OriginalConfig struct {
 	// ... add other fields as needed
 }
 
-type Text struct {
-	Text []string
-	Close bool
+type Entry struct {
+	Item       string       `yaml:"item"`
+	Conditions string       `yaml:"conditions"`
+	Text       []string     `yaml:"text"`
+	Click      ClickConfig  `yaml:"click"`
+	Close      bool         `yaml:"close"`
 }
 
-type Item struct {
-	Item       string   `yaml:"item"`
-	Conditions string   `yaml:"conditions"`
-	Text       []string `yaml:"text"`
-	Close      bool     `yaml:"close"`
-}
-
-type NewConfig map[string]Item
+type NewConfig map[string]Entry
 
 func main() {
 	// Load original YAML file
@@ -48,13 +52,64 @@ func main() {
 	}
 
 	// Create new key based on original target item
-	target := strings.Title(original.Variables.Target) // Capitalize first letter
-	newKey := "tier1" + target + "NotStarted"
+	target := original.Variables.Target
+	target_upper := original.Variables.target_upper
+	
+	notStartedKey := "tier1" + target + "NotStarted"
+	startedKey := "tier1" + target + "Started"
+	shrineKey := "tier1" + target + "Shrine"
+	doneKey := "tier1" + target + "Done"
+
 
 	// Create new item based on new key
-	item := Item{
-		Item: "questBegin",
-		Conditions: newKey + ".begin",
+	notStarted := Entry{
+		Item: "tier1" + target + "NotStarted",
+		Conditions: notStartedKey + ".begin",
+		Text: []string{
+			"$daily-farming-tier1-" + target + ".shrine_line_1$",
+			"$daily-farming-tier1-" + target + ".shrine_line_2$",
+			"",
+			"$status.inProgress$",
+		},
+		Click: ClickConfig{
+			Left: "test",
+		},
+		Close: true,
+	}
+
+	started := Entry{
+		Item: "tier1" + target + "Started",
+		Conditions: startedKey + ".begin",
+		Text: []string{
+			"$daily-farming-tier1-" + target + ".shrine_line_1$",
+			"$daily-farming-tier1-" + target + ".shrine_line_2$",
+			"",
+			"$status.inProgress$",
+		},
+		Click: ClickConfig{
+			Left: "test",
+		},
+		Close: true,
+	}
+
+	shrine := Entry{
+		Item: "tier1" + target + "Started",
+		Conditions: startedKey + ".begin",
+		Text: []string{
+			"$daily-farming-tier1-" + target + ".shrine_line_1$",
+			"$daily-farming-tier1-" + target + ".shrine_line_2$",
+			"",
+			"$status.inProgress$",
+		},
+		Click: ClickConfig{
+			Left: "test",
+		},
+		Close: true,
+	}
+
+	done := Entry{
+		Item: "tier1" + target + "Started",
+		Conditions: startedKey + ".begin",
 		Text: []string{
 			"$daily-farming-tier1-" + target + ".shrine_line_1$",
 			"$daily-farming-tier1-" + target + ".shrine_line_2$",
@@ -66,8 +121,10 @@ func main() {
 
 	// Generate new YAML data
 	new := NewConfig{
-		newKey: item,
-		// ... add other items as needed
+		notStartedKey: notStarted,
+		startedKey: started,
+		shrineKey: shrine,
+		doneKey: done,
 	}
 
 	// Marshal struct to YAML
