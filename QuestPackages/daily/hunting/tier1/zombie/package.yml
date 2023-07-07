@@ -1,6 +1,6 @@
 package:
   templates:
-    - daily-hunting
+    - daily-mobkill
 
 variables:
 

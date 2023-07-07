@@ -1,7 +1,11 @@
+package:
+  templates:
+    - daily
+
 menus:
   mobkillingQuestsMenu:
     height: 4
-    title: "HuntingQuests"
+    title: "Hunting Quests"
     slots:
       0-3: "filler,filler,filler,filler"
       4: "reputation"

@@ -5,7 +5,7 @@ package:
 menus:
   miningQuestsMenu:
     height: 4
-    title: "MiningQuests"
+    title: "Mining Quests"
     slots:
       0-3: "filler,filler,filler,filler"
       5-8: "filler,filler,filler,filler"

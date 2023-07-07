@@ -1,0 +1,101 @@
+package:
+  templates:
+    - daily
+
+menus:
+  woodcuttingQuestsMenu:
+    height: 4
+    title: "Lumber Quests"
+    slots:
+      0-3: "filler,filler,filler,filler"
+      4: "reputation"
+      5-8: "filler,filler,filler,filler"
+      9: "tier1OakInactive,tier1OakActive,tier1OakShrine,tier1OakDone"
+      28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
+      27: "back"
+    items:
+    #########
+    ## Oak ##
+    #########
+      tier1OakInactive:
+        item: tier1OakInactive
+        conditions: "!daily-lumber-tier1-oak.collectTaken"
+        text:
+          - '$daily-lumber-tier1-oak.title$'
+          - '$daily-lumber-tier1-oak.description_line_1$'
+          - '$daily-lumber-tier1-oak.description_line_2$'
+          - ""
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: "daily-lumber-tier1-oak.startQuest"
+        close: true
+      tier1OakActive:
+        item: tier1OakActive
+        conditions: "daily-lumber-tier1-oak.collectTaskActive"
+        text:
+          - '$daily-lumber-tier1-oak.title$'
+          - '$daily-lumber-tier1-oak.description_line_1$'
+          - '$daily-lumber-tier1-oak.description_line_2$'
+          - ""
+          - $status.inProgress$
+          - "%daily-lumber-tier1-oak.objective.collect.absoluteAmount%/%daily-lumber-tier1-oak.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: "daily-lumber-tier1-oak.resetAndNotify"
+        close: false
+      tier1OakShrine:
+        item: shrine
+        conditions: "daily-lumber-tier1-oak.shrineTaskActive"
+        text:
+          - '$daily-lumber-tier1-oak.title$'
+          - '$daily-lumber-tier1-oak.shrine_line_1$'
+          - '$daily-lumber-tier1-oak.shrine_line_2$'
+          - ""
+          - $status.inProgress$
+        close: true
+      tier1OakDone:
+        item: questComplete
+        conditions: "daily-lumber-tier1-oak.questComplete"
+        text:
+          - '$daily-lumber-tier1-oak.title$'
+          - '$daily-lumber-tier1-oak.done_line_1$'
+          - '$daily-lumber-tier1-oak.done_line_2$'
+          - ""
+          - $status.complete$
+        close: false
+    ###########
+    ## Birch ##
+    ###########
+    ##############
+    ## Dark Oak ##
+    ##############
+    #############
+    ## Crimson ##
+    #############
+    ############
+    ## Spruce ##
+    ############
+    #################
+    ## UI ELEMENTS ##
+    #################
+      reputation:
+        item: "xpBottle" 
+        amount: 1
+        text:
+            - "&2Quest Level: &6&l%point.quest_reputation.amount%"
+        close: true
+      filler: 
+        text: "&a "
+        item: "filler"
+      back:
+        item: "back"
+        amount: 1
+        text:
+            - "&c&lGo Back"
+        click:
+          left: "openDailyMenu"
+        close: true
+items:
+  tier1OakInactive: '$daily-lumber-tier1-oak.target_drops_slug$'
+  tier1OakActive: '$daily-lumber-tier1-oak.target_drops_slug$ $enchants$ $flags$'

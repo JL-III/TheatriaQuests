@@ -62,18 +62,18 @@ events:
   ## FOLDERS ##
   #############
   
-  collectInitFolder: 'folder addCollectTakenTag,daily.addFishingActiveTag,giveCollectObjective,startQuestWhisper'
-  collectStartFolder: 'folder collectInitFolder,collectWhisper,collectStartNotice conditions:!daily.fishingActive period:3'
+  collectInitFolder: 'folder addCollectTakenTag,daily.addMobkillActiveTag,giveCollectObjective,startQuestWhisper'
+  collectStartFolder: 'folder collectInitFolder,collectWhisper,collectStartNotice conditions:!daily.mobkillActive period:3'
   
   shrineInitFolder: 'folder addCollectCompleteTag,addShrineTakenTag,giveShrineObjective,shrineWhisper'
   shrineStartFolder: 'folder shrineInitFolder,shrineStartNotice period:3'
   
-  finishInitFolder: 'folder daily.deleteFishingActiveTag,addShrineCompleteTag,finishWhisper'
+  finishInitFolder: 'folder daily.deleteMobkillActiveTag,addShrineCompleteTag,finishWhisper'
   finishFolder: 'folder finishInitFolder,finishNotice,reward period:3'
-  reset: 'folder resetCollectTags,resetObjectives,resetFishingActive'
+  reset: 'folder resetCollectTags,resetObjectives,resetMobkillActive'
     
   reward: "command eco give %player% $reward_amount$"
   resetCollectTags: tag delete collect_taken,collect_complete,shrine_taken,shrine_complete
   resetObjectives: objective remove collect,shrine
-  resetFishingActive: tag delete daily.fishing_active
+  resetMobkillActive: tag delete daily.mobkill_active
   
