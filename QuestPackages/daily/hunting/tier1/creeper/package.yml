@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-hunting
+
+variables:
+
+  objective_amount: 4
+  reward_amount: 2500
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Kill
+  action_lower: kill
+  action_lower_past: killed
+  
+  target: creeper
+  target_upper: Creeper
+  target_all_caps: CREEPER
+  
+  target_drops: gunpowder
+  target_drops_plural: gunpowder
+  
+  target_slug: creeper
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: gunpowder
+  
+items:
+  gunpowder: minecraft:$target_drops_slug$

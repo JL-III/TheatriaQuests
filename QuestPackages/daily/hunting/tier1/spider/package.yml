@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-hunting
+
+variables:
+
+  objective_amount: 4
+  reward_amount: 2500
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Kill
+  action_lower: kill
+  action_lower_past: killed
+  
+  target: spiders
+  target_upper: Spiders
+  target_all_caps: SPIDER
+  
+  target_drops: spider eye
+  target_drops_plural: spider eyes
+  
+  target_slug: spider
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: spider_eye
+  
+items:
+  spider_eye: minecraft:$target_drops_slug$

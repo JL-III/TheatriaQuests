@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-hunting
+
+variables:
+
+  objective_amount: 4
+  reward_amount: 2500
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Kill
+  action_lower: kill
+  action_lower_past: killed
+  
+  target: pigs
+  target_upper: Pig
+  target_all_caps: PIG
+  
+  target_drops: porkchop
+  target_drops_plural: porkchops
+  
+  target_slug: pig
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: pork_chop
+  
+items:
+  pork_chop: minecraft:$target_drops_slug$

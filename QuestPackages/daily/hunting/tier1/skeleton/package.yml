@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-hunting
+
+variables:
+
+  objective_amount: 4
+  reward_amount: 2500
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Kill
+  action_lower: kill
+  action_lower_past: killed
+  
+  target: skeletons
+  target_upper: Skeletons
+  target_all_caps: SKELETON
+  
+  target_drops: bone
+  target_drops_plural: bones
+  
+  target_slug: skeleton
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: bone
+  
+items:
+  bone: minecraft:$target_drops_slug$
