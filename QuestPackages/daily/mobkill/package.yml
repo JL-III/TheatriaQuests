@@ -288,6 +288,8 @@ items:
   tier1ZombieActive: "$daily-mobkill-tier1-zombie.target_drops_slug$ $enchants$ $flags$"
   tier1CreeperNotStarted: "$daily-mobkill-tier1-creeper.target_drops_slug$"
   tier1CreeperActive: "$daily-mobkill-tier1-creeper.target_drops_slug$ $enchants$ $flags$"
+  tier1PigNotStarted: "$daily-mobkill-tier1-pig.target_drops_slug$"
+  tier1PigActive: "$daily-mobkill-tier1-pig.target_drops_slug$ $enchants$ $flags$"
   tier1SkeletonNotStarted: "$daily-mobkill-tier1-skeleton.target_drops_slug$"
   tier1SkeletonActive: "$daily-mobkill-tier1-skeleton.target_drops_slug$ $enchants$ $flags$"
   tier1SpiderNotStarted: "$daily-mobkill-tier1-spider.target_drops_slug$"

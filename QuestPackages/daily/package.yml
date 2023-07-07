@@ -12,7 +12,7 @@ menus:
       '38': fishingQuestsMenu
       '22': mobkillingQuestsMenu
       '42': farmingQuestsMenu
-      '25': lumberQuestsMenu
+      # '25': lumberQuestsMenu
     items:
       miningQuestsMenu:
         item: miningQuestsMenu
