@@ -1,0 +1,9 @@
+tier1BeetrootsNotStarted:
+    item: questBegin
+    conditions: tier1BeetrootsNotStarted.begin
+    text:
+        - $daily-farming-tier1-Beetroots.shrine_line_1$
+        - $daily-farming-tier1-Beetroots.shrine_line_2$
+        - ""
+        - $status.inProgress$
+    close: true

@@ -14,3 +14,9 @@ This repository incorporates a range of components designed to enrich the gamepl
 ## Goals
 
 This repository's primary function is to utilize version control for these quest configurations. This system facilitates streamlined updates and routine maintenance, as well as providing a transparent history of all adjustments and improvements to the game mechanics.
+
+## Generators
+
+Current generators:
+
+- daily quest menu gui item generator - see the README.md in the generator directory.

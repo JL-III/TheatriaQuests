@@ -1,0 +1,33 @@
+## TODO The values should be programatically created based on the base template type.
+## more work will have to be done to see how we can do this.
+
+package:
+  templates:
+    - daily-farming
+    
+variables:
+
+  objective_amount: 16
+  reward_amount: 2500
+
+  world: Mining
+  world_display: Mining
+  
+  action_upper: Harvest
+  action_lower: harvest
+  action_lower_past: harvested
+  
+  target: beetroots
+  target_upper: Beetroots
+  
+  target_drops: beetroot
+  target_drops_plural: beetroots
+  
+  target_slug: beetroots
+  
+  age: '[age=3]'
+  
+  target_drops_slug: beetroot
+    
+items:
+  beetroots: minecraft:$target_drops_slug$
