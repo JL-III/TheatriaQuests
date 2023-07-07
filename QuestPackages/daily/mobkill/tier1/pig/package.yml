@@ -24,7 +24,7 @@ variables:
   target_slug: pig
   
   ## Due to limitations, slug value must match item key
-  target_drops_slug: pork_chop
+  target_drops_slug: porkchop
   
 items:
-  pork_chop: minecraft:$target_drops_slug$
+  porkchop: minecraft:$target_drops_slug$

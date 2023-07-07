@@ -67,25 +67,25 @@ menus:
           left: openFarmingQuestsMenu
           right: openFarmingQuestsMenu
         close: true
-      lumberQuestsMenu:
-        item: lumberQuestsMenu
-        amount: 1
-        text:
-        - '&5[&dCategory&5]'
-        - '&f&lLumber Quests'
-        - ''
-        - '&d&oGrow a beard!'
-        - '&d&oChop some wood!'
-        click:
-          left: openLumberQuestsMenu
-          right: openLumberQuestsMenu
-        close: true
-      reputation:
-        item: xpBottle
-        amount: 1
-        text:
-        - '&2Quest Level: &6&l%point.quest_reputation.amount%'
-        close: false
+      # lumberQuestsMenu:
+      #   item: lumberQuestsMenu
+      #   amount: 1
+      #   text:
+      #   - '&5[&dCategory&5]'
+      #   - '&f&lLumber Quests'
+      #   - ''
+      #   - '&d&oGrow a beard!'
+      #   - '&d&oChop some wood!'
+      #   click:
+      #     left: openLumberQuestsMenu
+      #     right: openLumberQuestsMenu
+      #   close: true
+      # reputation:
+      #   item: xpBottle
+      #   amount: 1
+      #   text:
+      #   - '&2Quest Level: &6&l%point.quest_reputation.amount%'
+      #   close: false
 conditions:
 
   farmingActive: tag farming_active
@@ -130,7 +130,7 @@ events:
   openFishingQuestsMenu: menu open daily-fishing.fishingQuestsMenu
   openMobkillingQuestsMenu: menu open daily-mobkill.mobkillingQuestsMenu
   openFarmingQuestsMenu: menu open daily-farming.farmingQuestsMenu
-  openLumberQuestsMenu: menu open daily-lumber.lumberQuestsMenu
+  # openLumberQuestsMenu: menu open daily-lumber.lumberQuestsMenu
   menuOpenSound: notify &aOpening Quest Menu! sound:block.amethyst_block.chime
   menuCloseSound: notify &aClosing Quest Menu! sound:block.azalea.step
   openDailyMenu: menu open dailyMenu        
