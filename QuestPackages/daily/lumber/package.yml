@@ -3,7 +3,7 @@ package:
     - daily
 
 menus:
-  woodcuttingQuestsMenu:
+  lumberQuestsMenu:
     height: 4
     title: "Lumber Quests"
     slots:

@@ -13,7 +13,7 @@ menus:
       '38': fishingQuestsMenu
 #       '22': mobkillingQuestsMenu
       '42': farmingQuestsMenu
-#       '25': woodcuttingQuestsMenu
+#       '25': lumberQuestsMenu
     items:
       miningQuestsMenu:
         item: miningQuestsMenu
@@ -68,8 +68,8 @@ menus:
           left: openFarmingQuestsMenu
           right: openFarmingQuestsMenu
         close: true
-#       woodcuttingQuestsMenu:
-#         item: woodcuttingQuestsMenu
+#       lumberQuestsMenu:
+#         item: lumberQuestsMenu
 #         amount: 1
 #         text:
 #         - '&5[&dCategory&5]'
@@ -78,8 +78,8 @@ menus:
 #         - '&d&oGrow a beard!'
 #         - '&d&oChop some wood!'
 #         click:
-#           left: openWoodcuttingQuestsMenu
-#           right: openWoodcuttingQuestsMenu
+#           left: openLumberQuestsMenu
+#           right: openLumberQuestsMenu
 #         close: true
       reputation:
         item: xpBottle
@@ -131,7 +131,7 @@ events:
   openFishingQuestsMenu: menu open daily-fishing.fishingQuestsMenu
 #   openMobkillingQuestsMenu: menu open daily-mobkill.mobkillingQuestsMenu
   openFarmingQuestsMenu: menu open daily-farming.farmingQuestsMenu
-#   openWoodcuttingQuestsMenu: menu open daily-woodcutting.woodcuttingQuestsMenu
+#   openLumberQuestsMenu: menu open daily-lumber.lumberQuestsMenu
   menuOpenSound: notify &aOpening Quest Menu! sound:block.amethyst_block.chime
   menuCloseSound: notify &aClosing Quest Menu! sound:block.azalea.step
   openDailyMenu: menu open dailyMenu        
@@ -146,6 +146,6 @@ items:
   # # Type Submenus
   miningQuestsMenu: IRON_PICKAXE $flags$
   fishingQuestsMenu: FISHING_ROD $flags$
-  woodcuttingQuestsMenu: IRON_AXE $flags$
+  lumberQuestsMenu: IRON_AXE $flags$
   mobkillingQuestsMenu: IRON_SWORD $flags$
   farmingQuestsMenu: IRON_HOE $flags$
