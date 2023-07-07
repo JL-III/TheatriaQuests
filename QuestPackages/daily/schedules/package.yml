@@ -3,12 +3,12 @@ schedules:
     type: realtime-daily
     time: '03:05'
     events: announceResetDaily
-    #,resetMining,resetHunting,resetWoodcutting,resetFishing,resetFarming
+    #,resetMining,resetMobkill,resetWoodcutting,resetFishing,resetFarming
   
 events:
   announceResetDaily: "notifyall &eDaily Quests reset!"
 #   resetMining: folder dailyQuests-mining.diamondRushReset,dailyQuests-mining.goldDiggerReset,dailyQuests-mining.ironMinerReset,dailyQuests-mining.netherMinerReset,dailyQuests-mining.obsidianCollectorReset
-#   resetHunting: folder dailyQuests-hunting.zombieHuntReset,dailyQuests-hunting.creepyStoryReset,dailyQuests-hunting.thinSkeletonReset,dailyQuests-hunting.piggyPigReset,dailyQuests-hunting.spiderWebReset
-#   resetWoodcutting: folder dailyQuests-hunting.zombieHuntReset,dailyQuests-hunting.creepyStoryReset,dailyQuests-hunting.thinSkeletonReset,dailyQuests-hunting.piggyPigReset,dailyQuests-hunting.spiderWebReset
+#   resetMobkill: folder dailyQuests-mobkill.zombieHuntReset,dailyQuests-mobkill.creepyStoryReset,dailyQuests-mobkill.thinSkeletonReset,dailyQuests-mobkill.piggyPigReset,dailyQuests-mobkill.spiderWebReset
+#   resetWoodcutting: folder dailyQuests-mobkill.zombieHuntReset,dailyQuests-mobkill.creepyStoryReset,dailyQuests-mobkill.thinSkeletonReset,dailyQuests-mobkill.piggyPigReset,dailyQuests-mobkill.spiderWebReset
 #   resetFishing: folder dailyQuests-fishing.codReset,dailyQuests-fishing.salmonReset,dailyQuests-fishing.pufferfishReset,dailyQuests-fishing.tropicalReset,dailyQuests-fishing.nautilusReset
 #   resetFarming: folder dailyQuests-farming.wheatReset,dailyQuests-farming.carrotReset,dailyQuests-farming.potatoReset,dailyQuests-farming.netherwartReset,dailyQuests-farming.beetrootReset
