@@ -1,0 +1,29 @@
+package:
+  templates:
+    - daily-mining
+
+variables:
+
+  objective_amount: 16
+  reward_amount: 2500
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Mine
+  action_lower: mine
+  action_lower_past: mined
+  
+  target: diamond ore
+  target_upper: DiamondOre
+  
+  target_drops: diamond
+  target_drops_plural: diamonds
+  
+  target_slug: diamond_ore
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: diamond
+  
+items:
+  diamond: minecraft:$target_drops_slug$

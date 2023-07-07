@@ -1,0 +1,151 @@
+package:
+  templates:
+    - daily
+
+menus:
+  dailyMenu:
+    height: 6
+    title: '&f󏿽'
+#     bind: openMenuItem
+    command: /daily
+    slots:
+      '19': miningQuestsMenu
+      '38': fishingQuestsMenu
+#       '22': mobkillingQuestsMenu
+      '42': farmingQuestsMenu
+#       '25': woodcuttingQuestsMenu
+    items:
+      miningQuestsMenu:
+        item: miningQuestsMenu
+        amount: 1
+        text:
+        - '&5[&dCategory&5]'
+        - '&f&lMining Quests'
+        - ''
+        - '&d&oMiner?'
+        - '&d&oI hardly know her!'
+        click:
+          left: openMiningQuestsMenu
+          right: openMiningQuestsMenu
+        close: true
+      fishingQuestsMenu:
+        item: fishingQuestsMenu
+        amount: 1
+        text:
+        - '&5[&dCategory&5]'
+        - '&f&lFishing Quests'
+        - ''
+        - '&d&oP. Sherman'
+        - '&d&o42 Wallaby Way'
+        click:
+          left: openFishingQuestsMenu
+          right: openFishingQuestsMenu
+        close: true
+#       mobkillingQuestsMenu:
+#         item: mobkillingQuestsMenu
+#         amount: 1
+#         text:
+#         - '&5[&dCategory&5]'
+#         - '&f&lMob Quests'
+#         - ''
+#         - '&d&oMake the world'
+#         - '&d&oa better place,'
+#         - '&d&okill some mobs!'
+#         click:
+#           left: openMobkillingQuestsMenu
+#           right: openMobkillingQuestsMenu
+#         close: true
+      farmingQuestsMenu:
+        item: farmingQuestsMenu
+        amount: 1
+        text:
+        - '&5[&dCategory&5]'
+        - '&f&lFarming Quests'
+        - ''
+        - '&d&oGrab a hoe!'
+        - '&d&oPlow a field!'
+        click:
+          left: openFarmingQuestsMenu
+          right: openFarmingQuestsMenu
+        close: true
+#       woodcuttingQuestsMenu:
+#         item: woodcuttingQuestsMenu
+#         amount: 1
+#         text:
+#         - '&5[&dCategory&5]'
+#         - '&f&lLumber Quests'
+#         - ''
+#         - '&d&oGrow a beard!'
+#         - '&d&oChop some wood!'
+#         click:
+#           left: openWoodcuttingQuestsMenu
+#           right: openWoodcuttingQuestsMenu
+#         close: true
+      reputation:
+        item: xpBottle
+        amount: 1
+        text:
+        - '&2Quest Level: &6&l%point.quest_reputation.amount%'
+        close: false
+conditions:
+
+  farmingActive: tag farming_active
+  miningActive: tag mining_active
+  fishingActive: tag fishing_active
+  mobkillActive: tag mobkill_active
+  lumberActive: tag lumber_active
+
+variables:
+  activeQuestNotice: notify &4You already have an active quest in this category! category:daily_task
+  enchants: 'enchants:damage_all:1'  
+  flags: 'flags:HIDE_ENCHANTS'
+
+events:
+  ##########
+  ## Tags ##
+  ##########
+
+  addFarmingActiveTag: tag add farming_active
+  deleteFarmingActiveTag: tag delete farming_active
+  
+  addMiningActiveTag: tag add mining_active
+  deleteMiningActiveTag: tag delete mining_active
+  
+  addFishingActiveTag: tag add fishing_active
+  deleteFishingActiveTag: tag delete fishing_active
+  
+  addMobkillActiveTag: tag add mobkill_active
+  deleteMobkillActiveTag: tag delete mobkill_active
+  
+  addLumberActiveTag: tag add lumber_active
+  deleteLumberActiveTag: tag delete lumber_active
+  
+  farmingCheckActive: $activeQuestNotice$ conditions:farmingActive
+  miningCheckActive: $activeQuestNotice$ conditions:miningActive
+  fishingCheckActive: $activeQuestNotice$ conditions:fishingActive
+  mobkillCheckActive: $activeQuestNotice$ conditions:mobkillActive
+  lumberCheckActive: $activeQuestNotice$ conditions:lumberActive
+
+  resetCategoryTags: tag delete farming_active,mining_active,fishing_active,mobkill_active,lumber_active
+  openMiningQuestsMenu: menu open daily-mining.miningQuestsMenu
+  openFishingQuestsMenu: menu open daily-fishing.fishingQuestsMenu
+#   openMobkillingQuestsMenu: menu open daily-hunting.mobkillingQuestsMenu
+  openFarmingQuestsMenu: menu open daily-farming.farmingQuestsMenu
+#   openWoodcuttingQuestsMenu: menu open daily-woodcutting.woodcuttingQuestsMenu
+  menuOpenSound: notify &aOpening Quest Menu! sound:block.amethyst_block.chime
+  menuCloseSound: notify &aClosing Quest Menu! sound:block.azalea.step
+  openDailyMenu: menu open dailyMenu        
+
+items:
+  openMenuItem: BOOK title:Quests
+  xpBottle: EXPERIENCE_BOTTLE
+  filler: GRAY_STAINED_GLASS_PANE
+  back: RED_STAINED_GLASS_PANE
+  questComplete: LIME_CONCRETE
+  
+  # # Type Submenus
+  miningQuestsMenu: IRON_PICKAXE $flags$
+  fishingQuestsMenu: FISHING_ROD $flags$
+  woodcuttingQuestsMenu: IRON_AXE $flags$
+  mobkillingQuestsMenu: IRON_SWORD $flags$
+  farmingQuestsMenu: IRON_HOE $flags$

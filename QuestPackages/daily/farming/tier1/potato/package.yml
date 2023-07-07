@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-farming
+    
+variables:
+
+  objective_amount: 16
+  reward_amount: 2500
+
+  world: Mining
+  world_display: Mining
+  
+  action_upper: Harvest
+  action_lower: harvest
+  action_lower_past: harvested
+
+  target: potato
+  target_upper: Potato
+  
+  target_drops: potato
+  target_drops_plural: potatoes
+  
+  target_slug: potato
+  
+  age: '[age=7]'
+  
+  target_drops_slug: potato
+  
+items:
+  potato: minecraft:$target_drops_slug$

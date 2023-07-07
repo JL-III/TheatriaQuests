@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-fishing
+
+variables:
+
+  objective_amount: 16
+  reward_amount: 2500
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Fish
+  action_lower: fish
+  action_lower_past: caught
+  
+  target: cod
+  target_upper: Cod
+  target_all_caps: COD
+  
+  target_drops: cod
+  target_drops_plural: cod
+  
+  target_slug: cod
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: cod
+  
+items:
+  cod: minecraft:$target_drops_slug$

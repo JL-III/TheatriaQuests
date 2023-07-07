@@ -1,0 +1,289 @@
+package:
+  templates:
+    - daily
+
+menus:
+  fishingQuestsMenu:
+    height: 4
+    title: "Fishing Quests"
+    slots:
+      0-3: "filler,filler,filler,filler"
+      5-8: "filler,filler,filler,filler"
+      9: "tier1CodNotStarted,tier1CodActive,tier1CodShrine,tier1CodDone"
+      10: "tier1SalmonNotStarted,tier1SalmonActive,tier1SalmonShrine,tier1SalmonDone"
+      11: "tier1PufferNotStarted,tier1PufferActive,tier1PufferShrine,tier1PufferDone"
+      12: "tier1TropicalNotStarted,tier1TropicalActive,tier1TropicalShrine,tier1TropicalDone"
+      13: "tier1ShellNotStarted,tier1ShellActive,tier1ShellShrine,tier1ShellDone"
+      28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
+      27: "back"
+    items:
+    ##############
+    ## FISH COD ##
+    ##############
+      tier1CodNotStarted:
+        item: "tier1CodNotStarted"
+        conditions: "!daily-fishing-tier1-cod.collectTaken"
+        text:
+          - '$daily-fishing-tier1-cod.title$'
+          - '$daily-fishing-tier1-cod.description_line_1$'
+          - '$daily-fishing-tier1-cod.description_line_2$'
+          - ""
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: "daily.fishingCheckActive,daily-fishing-tier1-cod.collectStartFolder"
+        close: true
+      tier1CodActive:
+        item: "tier1CodActive"
+        conditions: "daily-fishing-tier1-cod.collectTaken,!daily-fishing-tier1-cod.shrineTaken"
+        text:
+          - '$daily-fishing-tier1-cod.title$'
+          - '$daily-fishing-tier1-cod.description_line_1$'
+          - '$daily-fishing-tier1-cod.description_line_2$'
+          - ""
+          - $status.inProgress$
+          - "%daily-fishing-tier1-cod.objective.collect.absoluteAmount%/%daily-fishing-tier1-cod.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: "resetNotify,daily-fishing-tier1-cod.reset"
+      tier1CodShrine:
+        item: "tier1CodActive"
+        conditions: "daily-fishing-tier1-cod.shrineTaskActive"
+        text:
+          - '$daily-fishing-tier1-cod.title$'
+          - '$daily-fishing-tier1-cod.shrine_line_1$'
+          - '$daily-fishing-tier1-cod.shrine_line_2$'
+          - ""
+          - $status.inProgress$
+        close: false
+      tier1CodDone:
+        item: "questComplete"
+        conditions: "daily-fishing-tier1-cod.questComplete"
+        text:
+          - '$daily-fishing-tier1-cod.title$'
+          - '$daily-fishing-tier1-cod.done_line_1$'
+          - '$daily-fishing-tier1-cod.done_line_2$'
+          - ""
+          - $status.complete$
+        close: false
+    ##################
+    ## Fish Salmon ##
+    ##################
+      tier1SalmonNotStarted:
+        item: "tier1SalmonNotStarted"
+        conditions: "!daily-fishing-tier1-salmon.collectTaken"
+        text:
+          - '$daily-fishing-tier1-salmon.title$'
+          - '$daily-fishing-tier1-salmon.description_line_1$'
+          - '$daily-fishing-tier1-salmon.description_line_2$'
+          - ""
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: "daily.fishingCheckActive,daily-fishing-tier1-salmon.collectStartFolder"
+        close: true
+      tier1SalmonActive:
+        item: "tier1SalmonActive"
+        conditions: "daily-fishing-tier1-salmon.collectTaken,!daily-fishing-tier1-salmon.shrineTaken"
+        text:
+          - '$daily-fishing-tier1-salmon.title$'
+          - '$daily-fishing-tier1-salmon.description_line_1$'
+          - '$daily-fishing-tier1-salmon.description_line_2$'
+          - ""
+          - $status.inProgress$
+          - "%daily-fishing-tier1-salmon.objective.collect.absoluteAmount%/%daily-fishing-tier1-salmon.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: "resetNotify,daily-fishing-tier1-salmon.reset"
+      tier1SalmonShrine:
+        item: "tier1SalmonActive"
+        conditions: "daily-fishing-tier1-salmon.shrineTaskActive"
+        text:
+          - '$daily-fishing-tier1-salmon.title$'
+          - '$daily-fishing-tier1-salmon.shrine_line_1$'
+          - '$daily-fishing-tier1-salmon.shrine_line_2$'
+          - ""
+          - $status.inProgress$
+        close: false
+      tier1SalmonDone:
+        item: "questComplete"
+        conditions: "daily-fishing-tier1-salmon.questComplete"
+        text:
+          - '$daily-fishing-tier1-salmon.title$'
+          - '$daily-fishing-tier1-salmon.done_line_1$'
+          - '$daily-fishing-tier1-salmon.done_line_2$'
+          - ""
+          - $status.complete$
+        close: false
+    #####################
+    ## FISH PUFFERFISH ##
+    #####################
+      tier1PufferNotStarted:
+        item: "tier1PufferNotStarted"
+        conditions: "!daily-fishing-tier1-puffer.collectTaken"
+        text:
+          - '$daily-fishing-tier1-puffer.title$'
+          - '$daily-fishing-tier1-puffer.description_line_1$'
+          - '$daily-fishing-tier1-puffer.description_line_2$'
+          - ""
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: "daily.fishingCheckActive,daily-fishing-tier1-puffer.collectStartFolder"
+        close: true
+      tier1PufferActive:
+        item: "tier1PufferActive"
+        conditions: "daily-fishing-tier1-puffer.collectTaken,!daily-fishing-tier1-puffer.shrineTaken"
+        text:
+          - '$daily-fishing-tier1-puffer.title$'
+          - '$daily-fishing-tier1-puffer.description_line_1$'
+          - '$daily-fishing-tier1-puffer.description_line_2$'
+          - ""
+          - $status.inProgress$
+          - "%daily-fishing-tier1-puffer.objective.collect.absoluteAmount%/%daily-fishing-tier1-puffer.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: "resetNotify,daily-fishing-tier1-puffer.reset"
+      tier1PufferShrine:
+        item: "tier1PufferActive"
+        conditions: "daily-fishing-tier1-puffer.shrineTaskActive"
+        text:
+          - '$daily-fishing-tier1-puffer.title$'
+          - '$daily-fishing-tier1-puffer.shrine_line_1$'
+          - '$daily-fishing-tier1-puffer.shrine_line_2$'
+          - ""
+          - $status.inProgress$
+        close: false
+      tier1PufferDone:
+        item: "questComplete"
+        conditions: "daily-fishing-tier1-puffer.questComplete"
+        text:
+          - '$daily-fishing-tier1-puffer.title$'
+          - '$daily-fishing-tier1-puffer.done_line_1$'
+          - '$daily-fishing-tier1-puffer.done_line_2$'
+          - ""
+          - $status.complete$
+        close: false
+    ########################
+    ## FISH TROPICAL FISH ##
+    ########################
+      tier1TropicalNotStarted:
+        item: "tier1TropicalNotStarted"
+        conditions: "!daily-fishing-tier1-tropical.collectTaken"
+        text:
+          - '$daily-fishing-tier1-tropical.title$'
+          - '$daily-fishing-tier1-tropical.description_line_1$'
+          - '$daily-fishing-tier1-tropical.description_line_2$'
+          - ""
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: "daily.fishingCheckActive,daily-fishing-tier1-tropical.collectStartFolder"
+        close: true
+      tier1TropicalActive:
+        item: "tier1TropicalActive"
+        conditions: "daily-fishing-tier1-tropical.collectTaken,!daily-fishing-tier1-tropical.shrineTaken"
+        text:
+          - '$daily-fishing-tier1-tropical.title$'
+          - '$daily-fishing-tier1-tropical.description_line_1$'
+          - '$daily-fishing-tier1-tropical.description_line_2$'
+          - ""
+          - $status.inProgress$
+          - "%daily-fishing-tier1-tropical.objective.collect.absoluteAmount%/%daily-fishing-tier1-tropical.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: "resetNotify,daily-fishing-tier1-tropical.reset"
+      tier1TropicalShrine:
+        item: "tier1TropicalActive"
+        conditions: "daily-fishing-tier1-tropical.shrineTaskActive"
+        text:
+          - '$daily-fishing-tier1-tropical.title$'
+          - '$daily-fishing-tier1-tropical.shrine_line_1$'
+          - '$daily-fishing-tier1-tropical.shrine_line_2$'
+          - ""
+          - $status.inProgress$
+        close: false
+      tier1TropicalDone:
+        item: "questComplete"
+        conditions: "daily-fishing-tier1-tropical.questComplete"
+        text:
+          - '$daily-fishing-tier1-tropical.title$'
+          - '$daily-fishing-tier1-tropical.done_line_1$'
+          - '$daily-fishing-tier1-tropical.done_line_2$'
+          - ""
+          - $status.complete$
+        close: false
+    #########################
+    ## FISH NAUTILUS SHELL ##
+    #########################
+      tier1ShellNotStarted:
+        item: "tier1ShellNotStarted"
+        conditions: "!daily-fishing-tier1-shell.collectTaken"
+        text:
+          - '$daily-fishing-tier1-shell.title$'
+          - '$daily-fishing-tier1-shell.description_line_1$'
+          - '$daily-fishing-tier1-shell.description_line_2$'
+          - ""
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: "daily.fishingCheckActive,daily-fishing-tier1-shell.collectStartFolder"
+        close: true
+      tier1ShellActive:
+        item: "tier1ShellActive"
+        conditions: "daily-fishing-tier1-shell.collectTaken,!daily-fishing-tier1-shell.shrineTaken"
+        text:
+          - '$daily-fishing-tier1-shell.title$'
+          - '$daily-fishing-tier1-shell.description_line_1$'
+          - '$daily-fishing-tier1-shell.description_line_2$'
+          - ""
+          - $status.inProgress$
+          - "%daily-fishing-tier1-shell.objective.collect.absoluteAmount%/%daily-fishing-tier1-shell.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: "resetNotify,daily-fishing-tier1-shell.reset"
+      tier1ShellShrine:
+        item: "tier1ShellActive"
+        conditions: "daily-fishing-tier1-shell.shrineTaskActive"
+        text:
+          - '$daily-fishing-tier1-shell.title$'
+          - '$daily-fishing-tier1-shell.shrine_line_1$'
+          - '$daily-fishing-tier1-shell.shrine_line_2$'
+          - ""
+          - $status.inProgress$
+        close: false
+      tier1ShellDone:
+        item: "questComplete"
+        conditions: "daily-fishing-tier1-shell.questComplete"
+        text:
+          - '$daily-fishing-tier1-shell.title$'
+          - '$daily-fishing-tier1-shell.done_line_1$'
+          - '$daily-fishing-tier1-shell.done_line_2$'
+          - ""
+          - $status.complete$
+        close: false
+    #################
+    ## UI ELEMENTS ##
+    #################
+      filler: 
+        text: "&a "
+        item: "filler"
+      back:
+        item: "back"
+        amount: 1
+        text:
+            - "&c&lGo Back"
+        click:
+          left: "daily.openDailyMenu"
+        close: true
+items:
+  tier1CodNotStarted: "$daily-fishing-tier1-cod.target_drops_slug$"
+  tier1CodActive: "$daily-fishing-tier1-cod.target_drops_slug$ $enchants$ $flags$"
+  tier1SalmonNotStarted: "$daily-fishing-tier1-salmon.target_drops_slug$"
+  tier1SalmonActive: "$daily-fishing-tier1-salmon.target_drops_slug$ $enchants$ $flags$"
+  tier1PufferNotStarted: "$daily-fishing-tier1-puffer.target_drops_slug$"
+  tier1PufferActive: "$daily-fishing-tier1-puffer.target_drops_slug$ $enchants$ $flags$"
+  tier1TropicalNotStarted: "$daily-fishing-tier1-tropical.target_drops_slug$"
+  tier1TropicalActive: "$daily-fishing-tier1-tropical.target_drops_slug$ $enchants$ $flags$"
+  tier1ShellNotStarted: "$daily-fishing-tier1-shell.target_drops_slug$"
+  tier1ShellActive: "$daily-fishing-tier1-shell.target_drops_slug$ $enchants$ $flags$"

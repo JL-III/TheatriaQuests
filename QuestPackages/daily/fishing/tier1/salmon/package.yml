@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-fishing
+
+variables:
+
+  objective_amount: 10
+  reward_amount: 2500
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Fish
+  action_lower: fish
+  action_lower_past: caught
+  
+  target: salmon
+  target_upper: Salmon
+  target_all_caps: SALMON
+  
+  target_drops: salmon
+  target_drops_plural: salmon
+  
+  target_slug: salmon
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: salmon
+  
+items:
+  salmon: minecraft:$target_drops_slug$

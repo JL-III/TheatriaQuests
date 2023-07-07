@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-farming
+    
+variables:
+
+  objective_amount: 16
+  reward_amount: 2500
+
+  world: Mining
+  world_display: Mining
+  
+  action_upper: Harvest
+  action_lower: harvest
+  action_lower_past: harvested
+
+  target: carrot
+  target_upper: Carrot
+  
+  target_drops: carrot
+  target_drops_plural: carrots
+  
+  target_slug: carrot
+  
+  age: '[age=7]'
+  
+  target_drops_slug: carrot
+    
+items:
+  carrot: minecraft:$target_drops_slug$

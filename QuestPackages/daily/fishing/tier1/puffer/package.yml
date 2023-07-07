@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-fishing
+
+variables:
+
+  objective_amount: 4
+  reward_amount: 2500
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Fish
+  action_lower: fish
+  action_lower_past: caught
+  
+  target: pufferfish
+  target_upper: PufferFish
+  target_all_caps: PUFFERFISH
+  
+  target_drops: pufferfish
+  target_drops_plural: pufferfish
+  
+  target_slug: pufferfish
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: pufferfish
+  
+items:
+  pufferfish: minecraft:$target_drops_slug$

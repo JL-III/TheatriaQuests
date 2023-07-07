@@ -1,0 +1,127 @@
+menus:
+  dailyMenu:
+    height: 5
+    title: '&2Bank Bal: &8$%point.bank.denarii.amount%'
+    command: /bank
+    slots:
+      '0-8': filler,filler,filler,filler,filler,filler,filler,filler,filler
+      '19': withdraw1000
+      '21': withdraw5000
+      '23': withdraw10000
+      '25': withdraw50000
+      '36-44': filler,filler,filler,filler,filler,filler,filler,filler,filler
+    items:
+      withdraw1000:
+        item: withdraw1000
+        amount: 1
+        text:
+        - '&5[&dWithdraw&5]'
+        - '&f&lWithdraw 1000'
+        click:
+          left: folder1000
+          right: folder1000
+        close: true
+      withdraw5000:
+        item: withdraw5000
+        amount: 1
+        text:
+        - '&5[&dWithdraw&5]'
+        - '&f&lWithdraw 5000'
+        click:
+          left: folder5000
+          right: folder5000
+        close: true
+      withdraw10000:
+        item: withdraw10000
+        amount: 1
+        text:
+        - '&5[&dWithdraw&5]'
+        - '&f&lWithdraw 10000'
+        click:
+          left: folder10000
+          right: folder10000
+        close: true
+      withdraw50000:
+        item: withdraw50000
+        amount: 1
+        text:
+        - '&5[&dWithdraw&5]'
+        - '&f&lWithdraw 50000'
+        click:
+          left: folder50000
+          right: folder50000
+        close: true
+      filler:
+        item: filler
+        amount: 1
+        close: false
+events:
+  
+  folder1000: 'folder notifyCooldown,insufficientFunds1000,withdraw1000,handleCooldown,addCooldownTag'
+  folder5000: 'folder notifyCooldown,insufficientFunds5000,withdraw5000,handleCooldown,addCooldownTag'
+  folder10000: 'folder notifyCooldown,insufficientFunds10000,withdraw10000,handleCooldown,addCooldownTag'
+  folder50000: 'folder notifyCooldown,insufficientFunds50000,withdraw50000,handleCooldown,addCooldownTag'
+  
+  withdraw1000: "folder pointWithdraw1000,notifyWithdraw1000,ecoGive1000 conditions:canWithdraw1000"
+  withdraw5000: "folder pointWithdraw5000,notifyWithdraw5000,ecoGive5000 conditions:canWithdraw5000"
+  withdraw10000: "folder pointWithdraw10000,notifyWithdraw10000,ecoGive10000 conditions:canWithdraw10000"
+  withdraw50000: "folder pointWithdraw50000,notifyWithdraw50000,ecoGive50000 conditions:canWithdraw50000"
+  
+  pointWithdraw1000: point denarii 1000 action:subtract
+  pointWithdraw5000: point denarii 5000 action:subtract
+  pointWithdraw10000: point denarii 10000 action:subtract
+  pointWithdraw50000: point denarii 50000 action:subtract
+  
+  notifyWithdraw1000: notify &aYou withdrew &e$1000&a!
+  notifyWithdraw5000: notify &aYou withdrew &e$5000&a!
+  notifyWithdraw10000: notify &aYou withdrew &e$10000&a!
+  notifyWithdraw50000: notify &aYou withdrew &e$50000&a!
+  
+  ecoGive1000: 'command eco give %player% 1000'
+  ecoGive5000: 'command eco give %player% 5000'
+  ecoGive10000: 'command eco give %player% 10000'
+  ecoGive50000: 'command eco give %player% 50000'
+  
+  handleCooldown: objective add cooldown conditions:!hasCooldownTag
+  
+  addCooldownTag: 'tag add cooldown'
+  deleteCooldownTag: 'tag delete cooldown'
+  
+  notifyCooldown: 'notify &cYou must wait &e3 seconds &cbetween bank transactions. conditions:hasCooldownTag'
+  
+  insufficientFunds1000: notify &4You dont have enough money in the bank to withdraw $1000! conditions:!canWithdraw1000,!hasCooldownTag
+  insufficientFunds5000: notify &4You dont have enough money in the bank to withdraw $5000! conditions:!canWithdraw5000,!hasCooldownTag
+  insufficientFunds10000: notify &4You dont have enough money in the bank to withdraw $10000! conditions:!canWithdraw10000,!hasCooldownTag
+  insufficientFunds50000: notify &4You dont have enough money in the bank to withdraw $50000! conditions:!canWithdraw50000,!hasCooldownTag
+  
+objectives:
+  cooldown: "delay 3 seconds interval:100 events:deleteCooldownTag"
+  
+conditions:
+
+  hasCooldownTag: tag cooldown
+
+  canWithdraw1000: "and bankBal1000,!hasCooldownTag"
+  canWithdraw5000: "and bankBal5000,!hasCooldownTag"
+  canWithdraw10000: "and bankBal10000,!hasCooldownTag"
+  canWithdraw50000: "and bankBal50000,!hasCooldownTag"
+  
+  bankBal1000: point bank.denarii 1000
+  bankBal5000: point bank.denarii 5000
+  bankBal10000: point bank.denarii 10000
+  bankBal50000: point bank.denarii 50000
+  
+variables:
+  enchants: 'enchants:damage_all:1'  
+  flags: 'flags:HIDE_ENCHANTS'
+
+items:
+  openMenuItem: BOOK title:Quests
+  xpBottle: EXPERIENCE_BOTTLE
+  filler: GRAY_STAINED_GLASS_PANE
+  back: RED_STAINED_GLASS_PANE
+  questComplete: LIME_CONCRETE
+  withdraw1000: 'emerald custom-model-data:6000000 $enchants$ $flags$'
+  withdraw5000: 'emerald custom-model-data:6000000 $enchants$ $flags$'
+  withdraw10000: 'emerald custom-model-data:6000000 $enchants$ $flags$'
+  withdraw50000: 'emerald custom-model-data:6000000 $enchants$ $flags$'

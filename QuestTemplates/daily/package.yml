@@ -1,0 +1,45 @@
+events:
+  startQuestWhisper: 'notify &e&oThe Oracle whispers to you... io:subtitle'
+  resetNotify: "notify &4You've reset the quest! category:daily_task"
+  
+variables:
+
+  ###################
+  ## Context Based ##
+  ###############################################################################
+  ## This section's variables must be called from a consuming package          ##
+  ## It is housed here in order to create a global format for all daily quests ##
+  ###############################################################################
+  title: '&b[$action_upper$ $target_upper$]'
+  description_line_1: $action_upper$ &a&o$objective_amount$ &r&o$target$!
+  description_line_2: In the &a&o$world_display$ &r&oworld.
+  
+  shrine_line_1: Bring &a&o$objective_amount$ &5&o$target_drops_plural$ to
+  shrine_line_2: the &d&oshrine &5&oat spawn
+  
+  done_line_1: You $action_lower_past$ $objective_amount$ $target$!
+  done_line_2: Do this quest again tomorrow!
+      
+  ###############################################################################
+
+  status:
+    notStarted: '&8&oStatus: &a&oNot Started'
+    inProgress: '&8&oStatus: &6&oIn Progress!'
+    complete: '&8&oStatus: &a&oComplete!'
+  action:
+    reset: '&7Right-click to reset'
+    start: '&7Left-click to start'
+
+  shrineLocation: 0;65;-2;Mining
+  
+  enchants: 'enchants:damage_all:1'  
+  flags: 'flags:HIDE_ENCHANTS'
+  
+notifications:
+  daily_task:
+   io: chat
+   
+items:
+  questComplete: 'lime_concrete'
+  filler: 'gray_stained_glass_pane'
+  back: 'red_stained_glass_pane'

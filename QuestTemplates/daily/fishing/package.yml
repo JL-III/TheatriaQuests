@@ -1,0 +1,79 @@
+package:
+  templates:
+    - daily
+
+objectives:
+  collect: 'fish $target_all_caps$ $objective_amount$ conditions:worldCheck events:shrineStartFolder notify'
+  shrine: 'chestput $shrineLocation$ $target_drops_slug$:$objective_amount$ events:finishFolder notify'
+  
+conditions:
+  
+  ################
+  ## Tag checks ##
+  ################
+  collectTaken: tag collect_taken
+  collectComplete: tag collect_complete
+  shrineTaken: tag shrine_taken
+  shrineComplete: tag shrine_complete
+  
+  worldCheck: world $world$
+  
+  ########################
+  ## Quest State checks ##
+  ########################
+  
+  collectTaskActive: and collectTaken,!collectComplete
+  shrineTaskActive: and collectComplete,!shrineComplete
+  questComplete: and collectComplete,shrineComplete
+
+events:
+
+  ##########
+  ## Tags ##
+  ##########
+  
+  addShrineTakenTag: tag add shrine_taken
+  addShrineCompleteTag: tag add shrine_complete
+  
+  addCollectTakenTag: tag add collect_taken
+  addCollectCompleteTag: tag add collect_complete
+  
+  ###############
+  ## Objective ##
+  ###############
+  
+  giveCollectObjective: objective add collect
+  giveShrineObjective: objective add shrine
+    
+  ########
+  ## IO ##
+  ########
+    
+  collectWhisper: 'notify &e&o$action_upper$ &a&o$objective_amount$ &e&o$target$ from the &a&oMining &e&oworld... io:subtitle'
+  collectStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&o$action_lower$ &a&o$objective_amount$ &e&o$target$ from the &a&oMining &e&oworld. category:daily_task'
+  
+  shrineWhisper: 'notify &e&oPlace &a&o$objective_amount$ &e&o$target$ in the &d&oshrine &e&oat spawn... io:subtitle'
+  shrineStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&oplace &a&o$objective_amount$ &e&o$target$ in the &d&oshrine &e&oat spawn. category:daily_task'
+  
+  finishWhisper: 'notify &e&oThe Oracle acknowledges your dedication... io:subtitle'
+  finishNotice: 'notify &2Your daily quests reward\:\n+ $$reward_amount$ category:daily_task'
+
+  #############
+  ## FOLDERS ##
+  #############
+  
+  collectInitFolder: 'folder addCollectTakenTag,daily.addFishingActiveTag,giveCollectObjective,startQuestWhisper'
+  collectStartFolder: 'folder collectInitFolder,collectWhisper,collectStartNotice conditions:!daily.fishingActive period:3'
+  
+  shrineInitFolder: 'folder addCollectCompleteTag,addShrineTakenTag,giveShrineObjective,shrineWhisper'
+  shrineStartFolder: 'folder shrineInitFolder,shrineStartNotice period:3'
+  
+  finishInitFolder: 'folder daily.deleteFishingActiveTag,addShrineCompleteTag,finishWhisper'
+  finishFolder: 'folder finishInitFolder,finishNotice,reward period:3'
+  reset: 'folder resetCollectTags,resetObjectives,resetFishingActive'
+    
+  reward: "command eco give %player% $reward_amount$"
+  resetCollectTags: tag delete collect_taken,collect_complete,shrine_taken,shrine_complete
+  resetObjectives: objective remove collect,shrine
+  resetFishingActive: tag delete daily.fishing_active
+  
