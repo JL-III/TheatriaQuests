@@ -7,6 +7,10 @@ menus:
       4: "reputation"
       5-8: "filler,filler,filler,filler"
       9: "tier1ZombieNotStarted,tier1ZombieActive,tier1ZombieShrine,tier1ZombieDone"
+      10: "tier1CreeperNotStarted,tier1CreeperActive,tier1CreeperShrine,tier1CreeperDone"
+      11: "tier1SkeletonNotStarted,tier1SkeletonActive,tier1SkeletonShrine,tier1SkeletonDone"
+      12: "tier1PigNotStarted,tier1PigActive,tier1PigShrine,tier1PigDone"
+      13: "tier1SpiderNotStarted,tier1SpiderActive,tier1SpiderShrine,tier1SpiderDone"
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
@@ -62,15 +66,199 @@ menus:
     ##################
     ## Creepy Story ##
     ##################
-    ################
-    ## THIN SKELETON ##
-    ################
-    ##################
-    ## PIGGY PIG ##
-    ##################
-    ########################
-    ## SPIDER WEB ##
-    ########################
+      tier1CreeperNotStarted:
+        item: "tier1CreeperNotStarted"
+        conditions: "!daily-hunting-tier1-creeper.collectTaken"
+        text:
+          - '$daily-hunting-tier1-creeper.title$'
+          - '$daily-hunting-tier1-creeper.description_line_1$'
+          - '$daily-hunting-tier1-creeper.description_line_2$'
+          - ""
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: "daily.huntingCheckActive,daily-hunting-tier1-creeper.collectStartFolder"
+        close: true
+      tier1CreeperActive:
+        item: "tier1CreeperActive"
+        conditions: "daily-hunting-tier1-creeper.collectTaken,!daily-hunting-tier1-creeper.shrineTaken"
+        text:
+          - '$daily-hunting-tier1-creeper.title$'
+          - '$daily-hunting-tier1-creeper.description_line_1$'
+          - '$daily-hunting-tier1-creeper.description_line_2$'
+          - ""
+          - $status.inProgress$
+          - "%daily-hunting-tier1-creeper.objective.collect.absoluteAmount%/%daily-hunting-tier1-creeper.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: "resetNotify,daily-hunting-tier1-creeper.reset"
+      tier1CreeperShrine:
+        item: "tier1CreeperActive"
+        conditions: "daily-hunting-tier1-creeper.shrineTaskActive"
+        text:
+          - '$daily-hunting-tier1-creeper.title$'
+          - '$daily-hunting-tier1-creeper.shrine_line_1$'
+          - '$daily-hunting-tier1-creeper.shrine_line_2$'
+          - ""
+          - $status.inProgress$
+        close: false
+      tier1CreeperDone:
+        item: "questComplete"
+        conditions: "daily-hunting-tier1-creeper.questComplete"
+        text:
+          - '$daily-hunting-tier1-creeper.title$'
+          - '$daily-hunting-tier1-creeper.done_line_1$'
+          - '$daily-hunting-tier1-creeper.done_line_2$'
+          - ""
+          - $status.complete$
+        close: false
+    ##############
+    ## SKELETON ##
+    ##############
+      tier1SkeletonNotStarted:
+        item: "tier1SkeletonNotStarted"
+        conditions: "!daily-hunting-tier1-skeleton.collectTaken"
+        text:
+          - '$daily-hunting-tier1-skeleton.title$'
+          - '$daily-hunting-tier1-skeleton.description_line_1$'
+          - '$daily-hunting-tier1-skeleton.description_line_2$'
+          - ""
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: "daily.huntingCheckActive,daily-hunting-tier1-skeleton.collectStartFolder"
+        close: true
+      tier1SkeletonActive:
+        item: "tier1SkeletonActive"
+        conditions: "daily-hunting-tier1-skeleton.collectTaken,!daily-hunting-tier1-skeleton.shrineTaken"
+        text:
+          - '$daily-hunting-tier1-skeleton.title$'
+          - '$daily-hunting-tier1-skeleton.description_line_1$'
+          - '$daily-hunting-tier1-skeleton.description_line_2$'
+          - ""
+          - $status.inProgress$
+          - "%daily-hunting-tier1-skeleton.objective.collect.absoluteAmount%/%daily-hunting-tier1-skeleton.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: "resetNotify,daily-hunting-tier1-skeleton.reset"
+      tier1SkeletonShrine:
+        item: "tier1SkeletonActive"
+        conditions: "daily-hunting-tier1-skeleton.shrineTaskActive"
+        text:
+          - '$daily-hunting-tier1-skeleton.title$'
+          - '$daily-hunting-tier1-skeleton.shrine_line_1$'
+          - '$daily-hunting-tier1-skeleton.shrine_line_2$'
+          - ""
+          - $status.inProgress$
+        close: false
+      tier1SkeletonDone:
+        item: "questComplete"
+        conditions: "daily-hunting-tier1-skeleton.questComplete"
+        text:
+          - '$daily-hunting-tier1-skeleton.title$'
+          - '$daily-hunting-tier1-skeleton.done_line_1$'
+          - '$daily-hunting-tier1-skeleton.done_line_2$'
+          - ""
+          - $status.complete$
+        close: false
+    #########
+    ## PIG ##
+    #########
+      tier1PigNotStarted:
+        item: "tier1PigNotStarted"
+        conditions: "!daily-hunting-tier1-pig.collectTaken"
+        text:
+          - '$daily-hunting-tier1-pig.title$'
+          - '$daily-hunting-tier1-pig.description_line_1$'
+          - '$daily-hunting-tier1-pig.description_line_2$'
+          - ""
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: "daily.huntingCheckActive,daily-hunting-tier1-pig.collectStartFolder"
+        close: true
+      tier1PigActive:
+        item: "tier1PigActive"
+        conditions: "daily-hunting-tier1-pig.collectTaken,!daily-hunting-tier1-pig.shrineTaken"
+        text:
+          - '$daily-hunting-tier1-pig.title$'
+          - '$daily-hunting-tier1-pig.description_line_1$'
+          - '$daily-hunting-tier1-pig.description_line_2$'
+          - ""
+          - $status.inProgress$
+          - "%daily-hunting-tier1-pig.objective.collect.absoluteAmount%/%daily-hunting-tier1-pig.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: "resetNotify,daily-hunting-tier1-pig.reset"
+      tier1PigShrine:
+        item: "tier1PigActive"
+        conditions: "daily-hunting-tier1-pig.shrineTaskActive"
+        text:
+          - '$daily-hunting-tier1-pig.title$'
+          - '$daily-hunting-tier1-pig.shrine_line_1$'
+          - '$daily-hunting-tier1-pig.shrine_line_2$'
+          - ""
+          - $status.inProgress$
+        close: false
+      tier1PigDone:
+        item: "questComplete"
+        conditions: "daily-hunting-tier1-pig.questComplete"
+        text:
+          - '$daily-hunting-tier1-pig.title$'
+          - '$daily-hunting-tier1-pig.done_line_1$'
+          - '$daily-hunting-tier1-pig.done_line_2$'
+          - ""
+          - $status.complete$
+        close: false
+    ############
+    ## SPIDER ##
+    ############
+      tier1SpiderNotStarted:
+        item: "tier1SpiderNotStarted"
+        conditions: "!daily-hunting-tier1-spider.collectTaken"
+        text:
+          - '$daily-hunting-tier1-spider.title$'
+          - '$daily-hunting-tier1-spider.description_line_1$'
+          - '$daily-hunting-tier1-spider.description_line_2$'
+          - ""
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: "daily.huntingCheckActive,daily-hunting-tier1-spider.collectStartFolder"
+        close: true
+      tier1SpiderActive:
+        item: "tier1SpiderActive"
+        conditions: "daily-hunting-tier1-spider.collectTaken,!daily-hunting-tier1-spider.shrineTaken"
+        text:
+          - '$daily-hunting-tier1-spider.title$'
+          - '$daily-hunting-tier1-spider.description_line_1$'
+          - '$daily-hunting-tier1-spider.description_line_2$'
+          - ""
+          - $status.inProgress$
+          - "%daily-hunting-tier1-spider.objective.collect.absoluteAmount%/%daily-hunting-tier1-spider.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: "resetNotify,daily-hunting-tier1-spider.reset"
+      tier1SpiderShrine:
+        item: "tier1SpiderActive"
+        conditions: "daily-hunting-tier1-spider.shrineTaskActive"
+        text:
+          - '$daily-hunting-tier1-spider.title$'
+          - '$daily-hunting-tier1-spider.shrine_line_1$'
+          - '$daily-hunting-tier1-spider.shrine_line_2$'
+          - ""
+          - $status.inProgress$
+        close: false
+      tier1SpiderDone:
+        item: "questComplete"
+        conditions: "daily-hunting-tier1-spider.questComplete"
+        text:
+          - '$daily-hunting-tier1-spider.title$'
+          - '$daily-hunting-tier1-spider.done_line_1$'
+          - '$daily-hunting-tier1-spider.done_line_2$'
+          - ""
+          - $status.complete$
+        close: false
     #################
     ## UI ELEMENTS ##
     #################
@@ -94,3 +282,9 @@ menus:
 items:
   tier1ZombieNotStarted: "$daily-hunting-tier1-zombie.target_drops_slug$"
   tier1ZombieActive: "$daily-hunting-tier1-zombie.target_drops_slug$ $enchants$ $flags$"
+  tier1CreeperNotStarted: "$daily-hunting-tier1-creeper.target_drops_slug$"
+  tier1CreeperActive: "$daily-hunting-tier1-creeper.target_drops_slug$ $enchants$ $flags$"
+  tier1SkeletonNotStarted: "$daily-hunting-tier1-skeleton.target_drops_slug$"
+  tier1SkeletonActive: "$daily-hunting-tier1-skeleton.target_drops_slug$ $enchants$ $flags$"
+  tier1SpiderNotStarted: "$daily-hunting-tier1-spider.target_drops_slug$"
+  tier1SpiderActive: "$daily-hunting-tier1-spider.target_drops_slug$ $enchants$ $flags$"
