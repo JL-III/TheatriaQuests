@@ -8,7 +8,6 @@ menus:
     title: "Mobkill Quests"
     slots:
       0-3: "filler,filler,filler,filler"
-      4: "reputation"
       5-8: "filler,filler,filler,filler"
       9: "tier1ZombieNotStarted,tier1ZombieActive,tier1ZombieShrine,tier1ZombieDone"
       10: "tier1CreeperNotStarted,tier1CreeperActive,tier1CreeperShrine,tier1CreeperDone"
