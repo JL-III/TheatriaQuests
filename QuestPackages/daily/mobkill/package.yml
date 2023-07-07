@@ -275,7 +275,7 @@ menus:
         text:
             - "&c&lGo Back"
         click:
-          left: "openDailyMenu"
+          left: "daily.openDailyMenu"
         close: true
 items:
   tier1ZombieNotStarted: "$daily-mobkill-tier1-zombie.target_drops_slug$"
