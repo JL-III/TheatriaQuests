@@ -57,8 +57,8 @@ menus:
         conditions: daily-fishing-tier1-cod.questComplete
         text:
           - $daily-fishing-tier1-cod.title$
-          - $daily-fishing-tier1-cod.shrine_line_1$
-          - $daily-fishing-tier1-cod.shrine_line_2$
+          - $daily-fishing-tier1-cod.done_line_1$
+          - $daily-fishing-tier1-cod.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -104,8 +104,8 @@ menus:
         conditions: daily-fishing-tier1-puffer.questComplete
         text:
           - $daily-fishing-tier1-puffer.title$
-          - $daily-fishing-tier1-puffer.shrine_line_1$
-          - $daily-fishing-tier1-puffer.shrine_line_2$
+          - $daily-fishing-tier1-puffer.done_line_1$
+          - $daily-fishing-tier1-puffer.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -151,8 +151,8 @@ menus:
         conditions: daily-fishing-tier1-salmon.questComplete
         text:
           - $daily-fishing-tier1-salmon.title$
-          - $daily-fishing-tier1-salmon.shrine_line_1$
-          - $daily-fishing-tier1-salmon.shrine_line_2$
+          - $daily-fishing-tier1-salmon.done_line_1$
+          - $daily-fishing-tier1-salmon.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -198,8 +198,8 @@ menus:
         conditions: daily-fishing-tier1-shell.questComplete
         text:
           - $daily-fishing-tier1-shell.title$
-          - $daily-fishing-tier1-shell.shrine_line_1$
-          - $daily-fishing-tier1-shell.shrine_line_2$
+          - $daily-fishing-tier1-shell.done_line_1$
+          - $daily-fishing-tier1-shell.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -245,8 +245,8 @@ menus:
         conditions: daily-fishing-tier1-tropical.questComplete
         text:
           - $daily-fishing-tier1-tropical.title$
-          - $daily-fishing-tier1-tropical.shrine_line_1$
-          - $daily-fishing-tier1-tropical.shrine_line_2$
+          - $daily-fishing-tier1-tropical.done_line_1$
+          - $daily-fishing-tier1-tropical.done_line_2$
           - 
           - $status.inProgress$
         close: false

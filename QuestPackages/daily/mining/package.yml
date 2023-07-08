@@ -57,8 +57,8 @@ menus:
         conditions: daily-mining-tier1-diamondOre.questComplete
         text:
           - $daily-mining-tier1-diamondOre.title$
-          - $daily-mining-tier1-diamondOre.shrine_line_1$
-          - $daily-mining-tier1-diamondOre.shrine_line_2$
+          - $daily-mining-tier1-diamondOre.done_line_1$
+          - $daily-mining-tier1-diamondOre.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -104,8 +104,8 @@ menus:
         conditions: daily-mining-tier1-goldOre.questComplete
         text:
           - $daily-mining-tier1-goldOre.title$
-          - $daily-mining-tier1-goldOre.shrine_line_1$
-          - $daily-mining-tier1-goldOre.shrine_line_2$
+          - $daily-mining-tier1-goldOre.done_line_1$
+          - $daily-mining-tier1-goldOre.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -151,8 +151,8 @@ menus:
         conditions: daily-mining-tier1-ironOre.questComplete
         text:
           - $daily-mining-tier1-ironOre.title$
-          - $daily-mining-tier1-ironOre.shrine_line_1$
-          - $daily-mining-tier1-ironOre.shrine_line_2$
+          - $daily-mining-tier1-ironOre.done_line_1$
+          - $daily-mining-tier1-ironOre.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -198,8 +198,8 @@ menus:
         conditions: daily-mining-tier1-obsidian.questComplete
         text:
           - $daily-mining-tier1-obsidian.title$
-          - $daily-mining-tier1-obsidian.shrine_line_1$
-          - $daily-mining-tier1-obsidian.shrine_line_2$
+          - $daily-mining-tier1-obsidian.done_line_1$
+          - $daily-mining-tier1-obsidian.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -245,8 +245,8 @@ menus:
         conditions: daily-mining-tier1-quartzOre.questComplete
         text:
           - $daily-mining-tier1-quartzOre.title$
-          - $daily-mining-tier1-quartzOre.shrine_line_1$
-          - $daily-mining-tier1-quartzOre.shrine_line_2$
+          - $daily-mining-tier1-quartzOre.done_line_1$
+          - $daily-mining-tier1-quartzOre.done_line_2$
           - 
           - $status.inProgress$
         close: false

@@ -57,8 +57,8 @@ menus:
         conditions: daily-mobkill-tier1-creeper.questComplete
         text:
           - $daily-mobkill-tier1-creeper.title$
-          - $daily-mobkill-tier1-creeper.shrine_line_1$
-          - $daily-mobkill-tier1-creeper.shrine_line_2$
+          - $daily-mobkill-tier1-creeper.done_line_1$
+          - $daily-mobkill-tier1-creeper.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -104,8 +104,8 @@ menus:
         conditions: daily-mobkill-tier1-pig.questComplete
         text:
           - $daily-mobkill-tier1-pig.title$
-          - $daily-mobkill-tier1-pig.shrine_line_1$
-          - $daily-mobkill-tier1-pig.shrine_line_2$
+          - $daily-mobkill-tier1-pig.done_line_1$
+          - $daily-mobkill-tier1-pig.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -151,8 +151,8 @@ menus:
         conditions: daily-mobkill-tier1-skeleton.questComplete
         text:
           - $daily-mobkill-tier1-skeleton.title$
-          - $daily-mobkill-tier1-skeleton.shrine_line_1$
-          - $daily-mobkill-tier1-skeleton.shrine_line_2$
+          - $daily-mobkill-tier1-skeleton.done_line_1$
+          - $daily-mobkill-tier1-skeleton.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -198,8 +198,8 @@ menus:
         conditions: daily-mobkill-tier1-spider.questComplete
         text:
           - $daily-mobkill-tier1-spider.title$
-          - $daily-mobkill-tier1-spider.shrine_line_1$
-          - $daily-mobkill-tier1-spider.shrine_line_2$
+          - $daily-mobkill-tier1-spider.done_line_1$
+          - $daily-mobkill-tier1-spider.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -245,8 +245,8 @@ menus:
         conditions: daily-mobkill-tier1-zombie.questComplete
         text:
           - $daily-mobkill-tier1-zombie.title$
-          - $daily-mobkill-tier1-zombie.shrine_line_1$
-          - $daily-mobkill-tier1-zombie.shrine_line_2$
+          - $daily-mobkill-tier1-zombie.done_line_1$
+          - $daily-mobkill-tier1-zombie.done_line_2$
           - 
           - $status.inProgress$
         close: false

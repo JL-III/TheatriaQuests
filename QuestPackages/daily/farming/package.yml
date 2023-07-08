@@ -57,8 +57,8 @@ menus:
         conditions: daily-farming-tier1-beetroot.questComplete
         text:
           - $daily-farming-tier1-beetroot.title$
-          - $daily-farming-tier1-beetroot.shrine_line_1$
-          - $daily-farming-tier1-beetroot.shrine_line_2$
+          - $daily-farming-tier1-beetroot.done_line_1$
+          - $daily-farming-tier1-beetroot.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -104,8 +104,8 @@ menus:
         conditions: daily-farming-tier1-carrot.questComplete
         text:
           - $daily-farming-tier1-carrot.title$
-          - $daily-farming-tier1-carrot.shrine_line_1$
-          - $daily-farming-tier1-carrot.shrine_line_2$
+          - $daily-farming-tier1-carrot.done_line_1$
+          - $daily-farming-tier1-carrot.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -151,8 +151,8 @@ menus:
         conditions: daily-farming-tier1-netherwart.questComplete
         text:
           - $daily-farming-tier1-netherwart.title$
-          - $daily-farming-tier1-netherwart.shrine_line_1$
-          - $daily-farming-tier1-netherwart.shrine_line_2$
+          - $daily-farming-tier1-netherwart.done_line_1$
+          - $daily-farming-tier1-netherwart.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -198,8 +198,8 @@ menus:
         conditions: daily-farming-tier1-potato.questComplete
         text:
           - $daily-farming-tier1-potato.title$
-          - $daily-farming-tier1-potato.shrine_line_1$
-          - $daily-farming-tier1-potato.shrine_line_2$
+          - $daily-farming-tier1-potato.done_line_1$
+          - $daily-farming-tier1-potato.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -245,8 +245,8 @@ menus:
         conditions: daily-farming-tier1-wheat.questComplete
         text:
           - $daily-farming-tier1-wheat.title$
-          - $daily-farming-tier1-wheat.shrine_line_1$
-          - $daily-farming-tier1-wheat.shrine_line_2$
+          - $daily-farming-tier1-wheat.done_line_1$
+          - $daily-farming-tier1-wheat.done_line_2$
           - 
           - $status.inProgress$
         close: false

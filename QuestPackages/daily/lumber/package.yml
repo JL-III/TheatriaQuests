@@ -57,8 +57,8 @@ menus:
         conditions: daily-lumber-tier1-birch.questComplete
         text:
           - $daily-lumber-tier1-birch.title$
-          - $daily-lumber-tier1-birch.shrine_line_1$
-          - $daily-lumber-tier1-birch.shrine_line_2$
+          - $daily-lumber-tier1-birch.done_line_1$
+          - $daily-lumber-tier1-birch.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -104,8 +104,8 @@ menus:
         conditions: daily-lumber-tier1-crimson.questComplete
         text:
           - $daily-lumber-tier1-crimson.title$
-          - $daily-lumber-tier1-crimson.shrine_line_1$
-          - $daily-lumber-tier1-crimson.shrine_line_2$
+          - $daily-lumber-tier1-crimson.done_line_1$
+          - $daily-lumber-tier1-crimson.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -151,8 +151,8 @@ menus:
         conditions: daily-lumber-tier1-darkoak.questComplete
         text:
           - $daily-lumber-tier1-darkoak.title$
-          - $daily-lumber-tier1-darkoak.shrine_line_1$
-          - $daily-lumber-tier1-darkoak.shrine_line_2$
+          - $daily-lumber-tier1-darkoak.done_line_1$
+          - $daily-lumber-tier1-darkoak.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -198,8 +198,8 @@ menus:
         conditions: daily-lumber-tier1-oak.questComplete
         text:
           - $daily-lumber-tier1-oak.title$
-          - $daily-lumber-tier1-oak.shrine_line_1$
-          - $daily-lumber-tier1-oak.shrine_line_2$
+          - $daily-lumber-tier1-oak.done_line_1$
+          - $daily-lumber-tier1-oak.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -245,8 +245,8 @@ menus:
         conditions: daily-lumber-tier1-spruce.questComplete
         text:
           - $daily-lumber-tier1-spruce.title$
-          - $daily-lumber-tier1-spruce.shrine_line_1$
-          - $daily-lumber-tier1-spruce.shrine_line_2$
+          - $daily-lumber-tier1-spruce.done_line_1$
+          - $daily-lumber-tier1-spruce.done_line_2$
           - 
           - $status.inProgress$
         close: false

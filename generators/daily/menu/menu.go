@@ -80,6 +80,8 @@ func main() {
 		finalConfig.Entries = append(finalConfig.Entries, CreateEntries(template_type, tier, filename, Keys))
 		finalConfig.ItemRow = append(finalConfig.ItemRow, addItemLines(template_type, tier, filename, Keys))
 	}
+	// print(len(finalConfig.ItemGUIlist))
+	// return 
 
 	yamlString := ""
 
@@ -87,6 +89,10 @@ func main() {
 		for _, entry := range guiSection {
 			yamlString += EntryToYamlString(entry)
 		}
+	}
+
+	for i := range finalConfig.ItemGUIlist {
+		finalConfig.ItemGUIlist[i] = strings.Replace(finalConfig.ItemGUIlist[i], "0", strconv.Itoa(i+9), 1)
 	}
 
 	deleteFileIfExists(generated_file_path)
@@ -244,8 +250,8 @@ func CreateEntries(template_type, tier, file_name string, Keys Keys) []Entry {
 		Conditions: filePath + file_name + ".questComplete",
 		Text: []string{
 			"$" + filePath + file_name + ".title$",
-			"$" + filePath + file_name + ".shrine_line_1$",
-			"$" + filePath + file_name + ".shrine_line_2$",
+			"$" + filePath + file_name + ".done_line_1$",
+			"$" + filePath + file_name + ".done_line_2$",
 			"",
 			"$status.inProgress$",
 		},
