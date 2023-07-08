@@ -15,7 +15,7 @@ variables:
   action_lower_past: killed
   
   target: pigs
-  target_upper: Pig
+  target_upper: Pigs
   target_all_caps: PIG
   
   target_drops: porkchop

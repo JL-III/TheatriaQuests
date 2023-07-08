@@ -1,10 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
-	"fmt"
 	"strings"
 
 	yaml "gopkg.in/yaml.v3"
@@ -16,16 +16,17 @@ type Variables struct {
 	Tier         string `yaml:"tier"`
 }
 
-type Config struct {
-	Click ClickConfig `yaml:"click"`
-}
-
 type ItemRow struct {
 	Value []string
 }
 
+type Config struct {
+	Click ClickConfig `yaml:"click"`
+}
+
 type ClickConfig struct {
-	Left string `yaml:"left"`
+	Left  string `yaml:"left"`
+	Right string `yaml:"right"`
 }
 
 type OriginalConfig struct {
@@ -146,7 +147,8 @@ func main() {
 			"$action.start$",
 		},
 		Click: ClickConfig{
-			Left: "daily." + template_type + "CheckActive," + filePath + file_name + ".collectStartFolder",
+			Left:  "daily." + template_type + "CheckActive," + filePath + file_name + ".collectStartFolder",
+			Right: "",
 		},
 		Close: true,
 	}
@@ -164,7 +166,8 @@ func main() {
 			"$action.reset$",
 		},
 		Click: ClickConfig{
-			Left: "resetNotify," + filePath + file_name + ".reset",
+			Left:  "",
+			Right: "resetNotify," + filePath + file_name + ".reset",
 		},
 		Close: true,
 	}
@@ -180,7 +183,8 @@ func main() {
 			"$status.inProgress$",
 		},
 		Click: ClickConfig{
-			Left: "",
+			Left:  "",
+			Right: "",
 		},
 		Close: true,
 	}
@@ -196,7 +200,8 @@ func main() {
 			"$status.inProgress$",
 		},
 		Click: ClickConfig{
-			Left: "",
+			Left:  "",
+			Right: "",
 		},
 		Close: false,
 	}
@@ -204,7 +209,6 @@ func main() {
 	line_1 := notStartedKey + "," + activeKey + "," + shrineKey + "," + doneKey + "\n"
 	line_2 := notStartedKey + ": $" + filePath + file_name + ".target_drops_slug$" + "\n"
 	line_3 := activeKey + ": $" + filePath + file_name + ".target_drops_slug$ $enchants$ $flags$"
-
 
 	// Generate new YAML data
 	new := NewConfig{

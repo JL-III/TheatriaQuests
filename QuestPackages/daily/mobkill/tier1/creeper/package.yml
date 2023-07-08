@@ -14,8 +14,8 @@ variables:
   action_lower: kill
   action_lower_past: killed
   
-  target: creeper
-  target_upper: Creeper
+  target: creepers
+  target_upper: Creepers
   target_all_caps: CREEPER
   
   target_drops: gunpowder
