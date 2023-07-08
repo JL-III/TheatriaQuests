@@ -1,334 +1,273 @@
 package:
   templates:
-    - daily
-
+  - daily
 menus:
   lumberQuestsMenu:
     height: 4
-    title: "Lumber Quests"
+    title: Lumber Quests
     slots:
-      0-3: "filler,filler,filler,filler"
-      5-8: "filler,filler,filler,filler"
-      9: "tier1BirchActiveFalse,tier1BirchActiveTrue,tier1BirchShrine,tier1BirchShrineFinished"
-      10: "tier1OakActiveFalse,tier1OakActiveTrue,tier1OakShrine,tier1OakShrineFinished"
-      11: "tier1DarkoakActiveFalse,tier1DarkoakActiveTrue,tier1DarkoakShrine,tier1DarkoakShrineFinished"
-      12: "tier1CrimsonActiveFalse,tier1CrimsonActiveTrue,tier1CrimsonShrine,tier1CrimsonShrineFinished"
-      13: "tier1SpruceActiveFalse,tier1SpruceActiveTrue,tier1SpruceShrine,tier1SpruceShrineFinished"
+      0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
+      9: tier1BirchActiveFalse,tier1BirchActiveTrue,tier1BirchShrine,tier1BirchShrineFinished
+      10: tier1CrimsonActiveFalse,tier1CrimsonActiveTrue,tier1CrimsonShrine,tier1CrimsonShrineFinished
+      11: tier1DarkoakActiveFalse,tier1DarkoakActiveTrue,tier1DarkoakShrine,tier1DarkoakShrineFinished
+      12: tier1OakActiveFalse,tier1OakActiveTrue,tier1OakShrine,tier1OakShrineFinished
+      13: tier1SpruceActiveFalse,tier1SpruceActiveTrue,tier1SpruceShrine,tier1SpruceShrineFinished
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
-    #########
-    ## Oak ##
-    #########
-      tier1OakActiveFalse:
-        item: tier1OakActiveFalse
-        conditions: '!daily-lumber-tier1-oak.collectTaken'
-        text:
-            - $daily-lumber-tier1-oak.title$
-            - $daily-lumber-tier1-oak.description_line_1$
-            - $daily-lumber-tier1-oak.description_line_2$
-            - ""
-            - $status.notStarted$
-            - $action.start$
-        click:
-            left: daily.lumberCheckActive,daily-lumber-tier1-oak.collectStartFolder
-            right: ""
-        close: true
-      tier1OakActiveTrue:
-        item: tier1OakActiveTrue
-        conditions: daily-lumber-tier1-oak.collectTaken,!daily-lumber-tier1-oak.shrineTaken
-        text:
-            - $daily-lumber-tier1-oak.title$
-            - $daily-lumber-tier1-oak.description_line_1$
-            - $daily-lumber-tier1-oak.description_line_2$
-            - ""
-            - $status.inProgress$
-            - '%daily-lumber-tier1-oak.objective.collect.absoluteAmount%/%daily-lumber-tier1-oak.objective.collect.absoluteTotal%'
-            - $action.reset$
-        click:
-            left: ""
-            right: resetNotify,daily-lumber-tier1-oak.reset
-        close: true
-      tier1OakShrine:
-        item: tier1OakActiveTrue
-        conditions: daily-lumber-tier1-oak.shrineTaskActive
-        text:
-            - $daily-lumber-tier1-oak.title$
-            - $daily-lumber-tier1-oak.shrine_line_1$
-            - $daily-lumber-tier1-oak.shrine_line_2$
-            - ""
-            - $status.inProgress$
-        click:
-            left: ""
-            right: ""
-        close: true
-      tier1OakShrineFinished:
-        item: questComplete
-        conditions: daily-lumber-tier1-oak.questComplete
-        text:
-            - $daily-lumber-tier1-oak.title$
-            - $daily-lumber-tier1-oak.shrine_line_1$
-            - $daily-lumber-tier1-oak.shrine_line_2$
-            - ""
-            - $status.inProgress$
-        click:
-            left: ""
-            right: ""
-        close: false
-    ###########
-    ## Birch ##
-    ###########
-      tier1BirchActiveFalse:
-        item: tier1BirchActiveFalse
-        conditions: '!daily-lumber-tier1-birch.collectTaken'
-        text:
-            - $daily-lumber-tier1-birch.title$
-            - $daily-lumber-tier1-birch.description_line_1$
-            - $daily-lumber-tier1-birch.description_line_2$
-            - ""
-            - $status.notStarted$
-            - $action.start$
-        click:
-            left: daily.lumberCheckActive,daily-lumber-tier1-birch.collectStartFolder
-            right: ""
-        close: true
       tier1BirchActiveTrue:
         item: tier1BirchActiveTrue
         conditions: daily-lumber-tier1-birch.collectTaken,!daily-lumber-tier1-birch.shrineTaken
         text:
-            - $daily-lumber-tier1-birch.title$
-            - $daily-lumber-tier1-birch.description_line_1$
-            - $daily-lumber-tier1-birch.description_line_2$
-            - ""
-            - $status.inProgress$
-            - '%daily-lumber-tier1-birch.objective.collect.absoluteAmount%/%daily-lumber-tier1-birch.objective.collect.absoluteTotal%'
-            - $action.reset$
+          - $daily-lumber-tier1-birch.title$
+          - $daily-lumber-tier1-birch.description_line_1$
+          - $daily-lumber-tier1-birch.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber-tier1-birch.objective.collect.absoluteAmount%/%daily-lumber-tier1-birch.objective.collect.absoluteTotal%"
+          - $action.reset$
         click:
-            left: ""
-            right: resetNotify,daily-lumber-tier1-birch.reset
+          right: resetNotify,daily-lumber-tier1-birch.reset
         close: true
       tier1BirchShrine:
         item: tier1BirchActiveTrue
         conditions: daily-lumber-tier1-birch.shrineTaskActive
         text:
-            - $daily-lumber-tier1-birch.title$
-            - $daily-lumber-tier1-birch.shrine_line_1$
-            - $daily-lumber-tier1-birch.shrine_line_2$
-            - ""
-            - $status.inProgress$
-        click:
-            left: ""
-            right: ""
+          - $daily-lumber-tier1-birch.title$
+          - $daily-lumber-tier1-birch.shrine_line_1$
+          - $daily-lumber-tier1-birch.shrine_line_2$
+          - 
+          - $status.inProgress$
         close: true
       tier1BirchShrineFinished:
         item: questComplete
         conditions: daily-lumber-tier1-birch.questComplete
         text:
-            - $daily-lumber-tier1-birch.title$
-            - $daily-lumber-tier1-birch.shrine_line_1$
-            - $daily-lumber-tier1-birch.shrine_line_2$
-            - ""
-            - $status.inProgress$
-        click:
-            left: ""
-            right: ""
+          - $daily-lumber-tier1-birch.title$
+          - $daily-lumber-tier1-birch.shrine_line_1$
+          - $daily-lumber-tier1-birch.shrine_line_2$
+          - 
+          - $status.inProgress$
         close: false
-    ##############
-    ## Dark Oak ##
-    ##############
-      tier1DarkoakActiveFalse:
-        item: tier1DarkoakActiveFalse
-        conditions: '!daily-lumber-tier1-darkoak.collectTaken'
+      tier1BirchActiveFalse:
+        item: tier1BirchActiveFalse
+        conditions: "!daily-lumber-tier1-birch.collectTaken"
         text:
-            - $daily-lumber-tier1-darkoak.title$
-            - $daily-lumber-tier1-darkoak.description_line_1$
-            - $daily-lumber-tier1-darkoak.description_line_2$
-            - ""
-            - $status.notStarted$
-            - $action.start$
+          - $daily-lumber-tier1-birch.title$
+          - $daily-lumber-tier1-birch.description_line_1$
+          - $daily-lumber-tier1-birch.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
         click:
-            left: daily.lumberCheckActive,daily-lumber-tier1-darkoak.collectStartFolder
-            right: ""
-        close: true
-      tier1DarkoakActiveTrue:
-        item: tier1DarkoakActiveTrue
-        conditions: daily-lumber-tier1-darkoak.collectTaken,!daily-lumber-tier1-darkoak.shrineTaken
-        text:
-            - $daily-lumber-tier1-darkoak.title$
-            - $daily-lumber-tier1-darkoak.description_line_1$
-            - $daily-lumber-tier1-darkoak.description_line_2$
-            - ""
-            - $status.inProgress$
-            - '%daily-lumber-tier1-darkoak.objective.collect.absoluteAmount%/%daily-lumber-tier1-darkoak.objective.collect.absoluteTotal%'
-            - $action.reset$
-        click:
-            left: ""
-            right: resetNotify,daily-lumber-tier1-darkoak.reset
-        close: true
-      tier1DarkoakShrine:
-        item: tier1DarkoakActiveTrue
-        conditions: daily-lumber-tier1-darkoak.shrineTaskActive
-        text:
-            - $daily-lumber-tier1-darkoak.title$
-            - $daily-lumber-tier1-darkoak.shrine_line_1$
-            - $daily-lumber-tier1-darkoak.shrine_line_2$
-            - ""
-            - $status.inProgress$
-        click:
-            left: ""
-            right: ""
-        close: true
-      tier1DarkoakShrineFinished:
-        item: questComplete
-        conditions: daily-lumber-tier1-darkoak.questComplete
-        text:
-            - $daily-lumber-tier1-darkoak.title$
-            - $daily-lumber-tier1-darkoak.shrine_line_1$
-            - $daily-lumber-tier1-darkoak.shrine_line_2$
-            - ""
-            - $status.inProgress$
-        click:
-            left: ""
-            right: ""
-        close: false
-    #############
-    ## Crimson ##
-    #############
-      tier1CrimsonActiveFalse:
-        item: tier1CrimsonActiveFalse
-        conditions: '!daily-lumber-tier1-crimson.collectTaken'
-        text:
-            - $daily-lumber-tier1-crimson.title$
-            - $daily-lumber-tier1-crimson.description_line_1$
-            - $daily-lumber-tier1-crimson.description_line_2$
-            - ""
-            - $status.notStarted$
-            - $action.start$
-        click:
-            left: daily.lumberCheckActive,daily-lumber-tier1-crimson.collectStartFolder
-            right: ""
-        close: true
-      tier1CrimsonActiveTrue:
-        item: tier1CrimsonActiveTrue
-        conditions: daily-lumber-tier1-crimson.collectTaken,!daily-lumber-tier1-crimson.shrineTaken
-        text:
-            - $daily-lumber-tier1-crimson.title$
-            - $daily-lumber-tier1-crimson.description_line_1$
-            - $daily-lumber-tier1-crimson.description_line_2$
-            - ""
-            - $status.inProgress$
-            - '%daily-lumber-tier1-crimson.objective.collect.absoluteAmount%/%daily-lumber-tier1-crimson.objective.collect.absoluteTotal%'
-            - $action.reset$
-        click:
-            left: ""
-            right: resetNotify,daily-lumber-tier1-crimson.reset
-        close: true
-      tier1CrimsonShrine:
-        item: tier1CrimsonActiveTrue
-        conditions: daily-lumber-tier1-crimson.shrineTaskActive
-        text:
-            - $daily-lumber-tier1-crimson.title$
-            - $daily-lumber-tier1-crimson.shrine_line_1$
-            - $daily-lumber-tier1-crimson.shrine_line_2$
-            - ""
-            - $status.inProgress$
-        click:
-            left: ""
-            right: ""
+          left: daily.lumberCheckActive,daily-lumber-tier1-birch.collectStartFolder
         close: true
       tier1CrimsonShrineFinished:
         item: questComplete
         conditions: daily-lumber-tier1-crimson.questComplete
         text:
-            - $daily-lumber-tier1-crimson.title$
-            - $daily-lumber-tier1-crimson.shrine_line_1$
-            - $daily-lumber-tier1-crimson.shrine_line_2$
-            - ""
-            - $status.inProgress$
-        click:
-            left: ""
-            right: ""
+          - $daily-lumber-tier1-crimson.title$
+          - $daily-lumber-tier1-crimson.shrine_line_1$
+          - $daily-lumber-tier1-crimson.shrine_line_2$
+          - 
+          - $status.inProgress$
         close: false
-    ############
-    ## Spruce ##
-    ############
+      tier1CrimsonActiveFalse:
+        item: tier1CrimsonActiveFalse
+        conditions: "!daily-lumber-tier1-crimson.collectTaken"
+        text:
+          - $daily-lumber-tier1-crimson.title$
+          - $daily-lumber-tier1-crimson.description_line_1$
+          - $daily-lumber-tier1-crimson.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.lumberCheckActive,daily-lumber-tier1-crimson.collectStartFolder
+        close: true
+      tier1CrimsonActiveTrue:
+        item: tier1CrimsonActiveTrue
+        conditions: daily-lumber-tier1-crimson.collectTaken,!daily-lumber-tier1-crimson.shrineTaken
+        text:
+          - $daily-lumber-tier1-crimson.title$
+          - $daily-lumber-tier1-crimson.description_line_1$
+          - $daily-lumber-tier1-crimson.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber-tier1-crimson.objective.collect.absoluteAmount%/%daily-lumber-tier1-crimson.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-lumber-tier1-crimson.reset
+        close: true
+      tier1CrimsonShrine:
+        item: tier1CrimsonActiveTrue
+        conditions: daily-lumber-tier1-crimson.shrineTaskActive
+        text:
+          - $daily-lumber-tier1-crimson.title$
+          - $daily-lumber-tier1-crimson.shrine_line_1$
+          - $daily-lumber-tier1-crimson.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      tier1DarkoakActiveFalse:
+        item: tier1DarkoakActiveFalse
+        conditions: "!daily-lumber-tier1-darkoak.collectTaken"
+        text:
+          - $daily-lumber-tier1-darkoak.title$
+          - $daily-lumber-tier1-darkoak.description_line_1$
+          - $daily-lumber-tier1-darkoak.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.lumberCheckActive,daily-lumber-tier1-darkoak.collectStartFolder
+        close: true
+      tier1DarkoakActiveTrue:
+        item: tier1DarkoakActiveTrue
+        conditions: daily-lumber-tier1-darkoak.collectTaken,!daily-lumber-tier1-darkoak.shrineTaken
+        text:
+          - $daily-lumber-tier1-darkoak.title$
+          - $daily-lumber-tier1-darkoak.description_line_1$
+          - $daily-lumber-tier1-darkoak.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber-tier1-darkoak.objective.collect.absoluteAmount%/%daily-lumber-tier1-darkoak.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-lumber-tier1-darkoak.reset
+        close: true
+      tier1DarkoakShrine:
+        item: tier1DarkoakActiveTrue
+        conditions: daily-lumber-tier1-darkoak.shrineTaskActive
+        text:
+          - $daily-lumber-tier1-darkoak.title$
+          - $daily-lumber-tier1-darkoak.shrine_line_1$
+          - $daily-lumber-tier1-darkoak.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      tier1DarkoakShrineFinished:
+        item: questComplete
+        conditions: daily-lumber-tier1-darkoak.questComplete
+        text:
+          - $daily-lumber-tier1-darkoak.title$
+          - $daily-lumber-tier1-darkoak.shrine_line_1$
+          - $daily-lumber-tier1-darkoak.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      tier1OakActiveFalse:
+        item: tier1OakActiveFalse
+        conditions: "!daily-lumber-tier1-oak.collectTaken"
+        text:
+          - $daily-lumber-tier1-oak.title$
+          - $daily-lumber-tier1-oak.description_line_1$
+          - $daily-lumber-tier1-oak.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.lumberCheckActive,daily-lumber-tier1-oak.collectStartFolder
+        close: true
+      tier1OakActiveTrue:
+        item: tier1OakActiveTrue
+        conditions: daily-lumber-tier1-oak.collectTaken,!daily-lumber-tier1-oak.shrineTaken
+        text:
+          - $daily-lumber-tier1-oak.title$
+          - $daily-lumber-tier1-oak.description_line_1$
+          - $daily-lumber-tier1-oak.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber-tier1-oak.objective.collect.absoluteAmount%/%daily-lumber-tier1-oak.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-lumber-tier1-oak.reset
+        close: true
+      tier1OakShrine:
+        item: tier1OakActiveTrue
+        conditions: daily-lumber-tier1-oak.shrineTaskActive
+        text:
+          - $daily-lumber-tier1-oak.title$
+          - $daily-lumber-tier1-oak.shrine_line_1$
+          - $daily-lumber-tier1-oak.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      tier1OakShrineFinished:
+        item: questComplete
+        conditions: daily-lumber-tier1-oak.questComplete
+        text:
+          - $daily-lumber-tier1-oak.title$
+          - $daily-lumber-tier1-oak.shrine_line_1$
+          - $daily-lumber-tier1-oak.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       tier1SpruceActiveFalse:
         item: tier1SpruceActiveFalse
-        conditions: '!daily-lumber-tier1-spruce.collectTaken'
+        conditions: "!daily-lumber-tier1-spruce.collectTaken"
         text:
-            - $daily-lumber-tier1-spruce.title$
-            - $daily-lumber-tier1-spruce.description_line_1$
-            - $daily-lumber-tier1-spruce.description_line_2$
-            - ""
-            - $status.notStarted$
-            - $action.start$
+          - $daily-lumber-tier1-spruce.title$
+          - $daily-lumber-tier1-spruce.description_line_1$
+          - $daily-lumber-tier1-spruce.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
         click:
-            left: daily.lumberCheckActive,daily-lumber-tier1-spruce.collectStartFolder
-            right: ""
+          left: daily.lumberCheckActive,daily-lumber-tier1-spruce.collectStartFolder
         close: true
       tier1SpruceActiveTrue:
         item: tier1SpruceActiveTrue
         conditions: daily-lumber-tier1-spruce.collectTaken,!daily-lumber-tier1-spruce.shrineTaken
         text:
-            - $daily-lumber-tier1-spruce.title$
-            - $daily-lumber-tier1-spruce.description_line_1$
-            - $daily-lumber-tier1-spruce.description_line_2$
-            - ""
-            - $status.inProgress$
-            - '%daily-lumber-tier1-spruce.objective.collect.absoluteAmount%/%daily-lumber-tier1-spruce.objective.collect.absoluteTotal%'
-            - $action.reset$
+          - $daily-lumber-tier1-spruce.title$
+          - $daily-lumber-tier1-spruce.description_line_1$
+          - $daily-lumber-tier1-spruce.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber-tier1-spruce.objective.collect.absoluteAmount%/%daily-lumber-tier1-spruce.objective.collect.absoluteTotal%"
+          - $action.reset$
         click:
-            left: ""
-            right: resetNotify,daily-lumber-tier1-spruce.reset
+          right: resetNotify,daily-lumber-tier1-spruce.reset
         close: true
       tier1SpruceShrine:
         item: tier1SpruceActiveTrue
         conditions: daily-lumber-tier1-spruce.shrineTaskActive
         text:
-            - $daily-lumber-tier1-spruce.title$
-            - $daily-lumber-tier1-spruce.shrine_line_1$
-            - $daily-lumber-tier1-spruce.shrine_line_2$
-            - ""
-            - $status.inProgress$
-        click:
-            left: ""
-            right: ""
+          - $daily-lumber-tier1-spruce.title$
+          - $daily-lumber-tier1-spruce.shrine_line_1$
+          - $daily-lumber-tier1-spruce.shrine_line_2$
+          - 
+          - $status.inProgress$
         close: true
       tier1SpruceShrineFinished:
         item: questComplete
         conditions: daily-lumber-tier1-spruce.questComplete
         text:
-            - $daily-lumber-tier1-spruce.title$
-            - $daily-lumber-tier1-spruce.shrine_line_1$
-            - $daily-lumber-tier1-spruce.shrine_line_2$
-            - ""
-            - $status.inProgress$
-        click:
-            left: ""
-            right: ""
+          - $daily-lumber-tier1-spruce.title$
+          - $daily-lumber-tier1-spruce.shrine_line_1$
+          - $daily-lumber-tier1-spruce.shrine_line_2$
+          - 
+          - $status.inProgress$
         close: false
-    #################
-    ## UI ELEMENTS ##
-    #################
-      filler: 
+      filler:
         text: "&a "
         item: "filler"
       back:
         item: "back"
-        amount: 1
         text:
             - "&c&lGo Back"
         click:
           left: "daily.openDailyMenu"
         close: true
 items:
-  tier1OakActiveFalse: $daily-lumber-tier1-oak.target_drops_slug$
-  tier1OakActiveTrue: $daily-lumber-tier1-oak.target_drops_slug$ $enchants$ $flags$
   tier1BirchActiveFalse: $daily-lumber-tier1-birch.target_drops_slug$
   tier1BirchActiveTrue: $daily-lumber-tier1-birch.target_drops_slug$ $enchants$ $flags$
-  tier1DarkoakActiveFalse: $daily-lumber-tier1-darkoak.target_drops_slug$
-  tier1DarkoakActiveTrue: $daily-lumber-tier1-darkoak.target_drops_slug$ $enchants$ $flags$
   tier1CrimsonActiveFalse: $daily-lumber-tier1-crimson.target_drops_slug$
   tier1CrimsonActiveTrue: $daily-lumber-tier1-crimson.target_drops_slug$ $enchants$ $flags$
+  tier1DarkoakActiveFalse: $daily-lumber-tier1-darkoak.target_drops_slug$
+  tier1DarkoakActiveTrue: $daily-lumber-tier1-darkoak.target_drops_slug$ $enchants$ $flags$
+  tier1OakActiveFalse: $daily-lumber-tier1-oak.target_drops_slug$
+  tier1OakActiveTrue: $daily-lumber-tier1-oak.target_drops_slug$ $enchants$ $flags$
   tier1SpruceActiveFalse: $daily-lumber-tier1-spruce.target_drops_slug$
   tier1SpruceActiveTrue: $daily-lumber-tier1-spruce.target_drops_slug$ $enchants$ $flags$

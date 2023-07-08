@@ -122,7 +122,7 @@ events:
   resetCategoryTags: tag delete farming_active,mining_active,fishing_active,mobkill_active,lumber_active
   openMiningQuestsMenu: menu open daily-mining.miningQuestsMenu
   openFishingQuestsMenu: menu open daily-fishing.fishingQuestsMenu
-  openMobkillingQuestsMenu: menu open daily-mobkill.mobkillingQuestsMenu
+  openMobkillingQuestsMenu: menu open daily-mobkill.mobkillQuestsMenu
   openFarmingQuestsMenu: menu open daily-farming.farmingQuestsMenu
   openLumberQuestsMenu: menu open daily-lumber.lumberQuestsMenu
   menuOpenSound: notify &aOpening Quest Menu! sound:block.amethyst_block.chime
