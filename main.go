@@ -50,7 +50,7 @@ type NewConfig map[string]Entry
 
 type FinalConfig struct {
 	NewConfig NewConfig
-	ItemRow   ItemRow
+	ItemRow   ItemRow   `yaml:"item_row"`
 }
 
 func adjustYAMLIndentation(yamlString string) string {
@@ -69,6 +69,17 @@ func readjustYAMLIndentation(yamlData string) string {
 		indentedYAML.WriteString(strings.Repeat(" ", 6) + line + "\n")
 	}
 	return indentedYAML.String()
+}
+
+func removeYAMLKey(yamlString, key string) string {
+	lines := strings.Split(yamlString, "\n")
+	var result []string
+	for _, line := range lines {
+		if !strings.Contains(line, key) {
+			result = append(result, line)
+		}
+	}
+	return strings.Join(result, "\n")
 }
 
 func main() {
@@ -195,6 +206,8 @@ func main() {
 	adjustedData := adjustYAMLIndentation(string(data))
 
 	adjustedData = readjustYAMLIndentation(adjustedData)
+
+	adjustedData = removeYAMLKey(adjustedData, "newconfig")
 
 	// Write to a new YAML file
 	err = ioutil.WriteFile("generators/generated/generated.yaml", []byte(adjustedData), 0644)
