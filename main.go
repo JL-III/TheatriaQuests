@@ -8,10 +8,10 @@ import (
 	yaml "gopkg.in/yaml.v3"
 )
 
-// Define types to represent your data structure
 type Variables struct {
-	Target string `yaml:"target"`
-	
+	FileName string `yaml:"file_name"`
+	TemplateType string `yaml:"template_type"`
+	Tier string `yaml:"tier"`
 }
 
 type Config struct {
@@ -35,7 +35,32 @@ type Entry struct {
 	Close      bool         `yaml:"close"`
 }
 
+type EntryNoAction struct {
+	Item       string       `yaml:"item"`
+	Conditions string       `yaml:"conditions"`
+	Text       []string     `yaml:"text"`
+	Close      bool         `yaml:"close"`
+}
+
 type NewConfig map[string]Entry
+
+func adjustYAMLIndentation(yamlString string) string {
+	lines := strings.Split(yamlString, "\n")
+	for i, line := range lines {
+		if strings.HasPrefix(line, "    ") {
+			lines[i] = strings.Replace(line, "    ", "  ", 1)
+		}
+	}
+	return strings.Join(lines, "\n")
+}
+
+func readjustYAMLIndentation(yamlData string) string {
+	var indentedYAML strings.Builder
+	for _, line := range strings.Split(yamlData, "\n") {
+		indentedYAML.WriteString(strings.Repeat(" ", 6) + line + "\n")
+	}
+	return indentedYAML.String()
+}
 
 func main() {
 	// Load original YAML file
@@ -52,77 +77,89 @@ func main() {
 	}
 
 	// Create new key based on original target item
-	target := original.Variables.Target
-	target_upper := original.Variables.target_upper
+	file_name := original.Variables.FileName
+	file_name_upper := strings.Title(file_name)
+	template_type := original.Variables.TemplateType
+	tier := original.Variables.Tier
 	
-	notStartedKey := "tier1" + target + "NotStarted"
-	startedKey := "tier1" + target + "Started"
-	shrineKey := "tier1" + target + "Shrine"
-	doneKey := "tier1" + target + "Done"
+	notStartedKey := tier + file_name_upper + "NotStarted"
+	activeKey := tier + file_name_upper + "Active"
+	shrineKey := tier + file_name_upper + "Shrine"
+	doneKey := tier + file_name_upper + "Done"
 
+	filePath := "daily-" + template_type + "-" + tier + "-"
 
-	// Create new item based on new key
 	notStarted := Entry{
-		Item: "tier1" + target + "NotStarted",
-		Conditions: notStartedKey + ".begin",
+		Item: notStartedKey,
+		Conditions: "!" + filePath + file_name + ".collectTaken",
 		Text: []string{
-			"$daily-farming-tier1-" + target + ".shrine_line_1$",
-			"$daily-farming-tier1-" + target + ".shrine_line_2$",
+			"$" + filePath + file_name + ".title$",
+			"$" + filePath + file_name + ".description_line_1$",
+			"$" + filePath + file_name + ".description_line_2$",
 			"",
-			"$status.inProgress$",
+			"$status.notStarted$",
+			"$action.start$",
 		},
 		Click: ClickConfig{
-			Left: "test",
+			Left: "daily." + template_type + "CheckActive," + filePath + file_name + ".collectStartFolder",
 		},
 		Close: true,
 	}
 
-	started := Entry{
-		Item: "tier1" + target + "Started",
-		Conditions: startedKey + ".begin",
+	active := Entry{
+		Item: activeKey,
+		Conditions: filePath + file_name + ".collectTaken,!" + filePath + file_name + ".shrineTaken",
 		Text: []string{
-			"$daily-farming-tier1-" + target + ".shrine_line_1$",
-			"$daily-farming-tier1-" + target + ".shrine_line_2$",
+			"$" + filePath + file_name + ".title$",
+			"$" + filePath + file_name + ".description_line_1$",
+			"$" + filePath + file_name + ".description_line_2$",
 			"",
 			"$status.inProgress$",
+			"%" + filePath + file_name + ".objective.collect.absoluteAmount%/%" + filePath + file_name + ".objective.collect.absoluteTotal%",
+			"$action.reset$",
 		},
 		Click: ClickConfig{
-			Left: "test",
+			Left: "resetNotify," + filePath + file_name + ".reset",
 		},
 		Close: true,
 	}
 
 	shrine := Entry{
-		Item: "tier1" + target + "Started",
-		Conditions: startedKey + ".begin",
+		Item: activeKey,
+		Conditions: filePath + file_name + ".shrineTaskActive",
 		Text: []string{
-			"$daily-farming-tier1-" + target + ".shrine_line_1$",
-			"$daily-farming-tier1-" + target + ".shrine_line_2$",
+			"$" + filePath + file_name + ".title$",
+			"$" + filePath + file_name + ".shrine_line_1$",
+			"$" + filePath + file_name + ".shrine_line_2$",
 			"",
 			"$status.inProgress$",
 		},
 		Click: ClickConfig{
-			Left: "test",
+			Left: "",
 		},
 		Close: true,
 	}
 
 	done := Entry{
-		Item: "tier1" + target + "Started",
-		Conditions: startedKey + ".begin",
+		Item: "questComplete",
+		Conditions: filePath + file_name + ".questComplete",
 		Text: []string{
-			"$daily-farming-tier1-" + target + ".shrine_line_1$",
-			"$daily-farming-tier1-" + target + ".shrine_line_2$",
+			"$" + filePath + file_name + ".title$",
+			"$" + filePath + file_name + ".shrine_line_1$",
+			"$" + filePath + file_name + ".shrine_line_2$",
 			"",
 			"$status.inProgress$",
 		},
-		Close: true,
+		Click: ClickConfig{
+			Left: "",
+		},
+		Close: false,
 	}
 
 	// Generate new YAML data
 	new := NewConfig{
 		notStartedKey: notStarted,
-		startedKey: started,
+		activeKey: active,
 		shrineKey: shrine,
 		doneKey: done,
 	}
@@ -133,8 +170,12 @@ func main() {
 		log.Fatalf("error: %v", err)
 	}
 
+	adjustedData := adjustYAMLIndentation(string(data))
+
+	adjustedData = readjustYAMLIndentation(adjustedData)
+
 	// Write to a new YAML file
-	err = ioutil.WriteFile("generators/daily/menuItem/generated.yaml", data, 0644)
+	err = ioutil.WriteFile("generators/daily/menuItem/generated.yaml", []byte(adjustedData), 0644)
 	if err != nil {
 		log.Fatal(err)
 	}

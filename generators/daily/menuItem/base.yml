@@ -7,6 +7,10 @@ package:
     
 variables:
 
+  template_type: farming
+  tier: tier1
+  file_name: beetroot
+
   objective_amount: 16
   reward_amount: 2500
 

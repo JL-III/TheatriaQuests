@@ -1,44 +1,52 @@
-tier1BeetrootsDone:
-    item: tier1BeetrootsStarted
-    conditions: tier1BeetrootsStarted.begin
-    text:
-        - $daily-farming-tier1-Beetroots.shrine_line_1$
-        - $daily-farming-tier1-Beetroots.shrine_line_2$
-        - ""
-        - $status.inProgress$
-    click:
-        left: ""
-    close: true
-tier1BeetrootsNotStarted:
-    item: tier1BeetrootsNotStarted
-    conditions: tier1BeetrootsNotStarted.begin
-    text:
-        - $daily-farming-tier1-Beetroots.shrine_line_1$
-        - $daily-farming-tier1-Beetroots.shrine_line_2$
-        - ""
-        - $status.inProgress$
-    click:
-        left: test
-    close: true
-tier1BeetrootsShrine:
-    item: tier1BeetrootsStarted
-    conditions: tier1BeetrootsStarted.begin
-    text:
-        - $daily-farming-tier1-Beetroots.shrine_line_1$
-        - $daily-farming-tier1-Beetroots.shrine_line_2$
-        - ""
-        - $status.inProgress$
-    click:
-        left: test
-    close: true
-tier1BeetrootsStarted:
-    item: tier1BeetrootsStarted
-    conditions: tier1BeetrootsStarted.begin
-    text:
-        - $daily-farming-tier1-Beetroots.shrine_line_1$
-        - $daily-farming-tier1-Beetroots.shrine_line_2$
-        - ""
-        - $status.inProgress$
-    click:
-        left: test
-    close: true
+      tier1BeetrootActive:
+        item: tier1BeetrootActive
+        conditions: daily-farming-tier1-beetroot.collectTaken,!daily-farming-tier1-beetroot.shrineTaken
+        text:
+            - $daily-farming-tier1-beetroot.title$
+            - $daily-farming-tier1-beetroot.description_line_1$
+            - $daily-farming-tier1-beetroot.description_line_2$
+            - ""
+            - $status.inProgress$
+            - '%daily-farming-tier1-beetroot.objective.collect.absoluteAmount%/%daily-farming-tier1-beetroot.objective.collect.absoluteTotal%'
+            - $action.reset$
+        click:
+            left: resetNotify,daily-farming-tier1-beetroot.reset
+        close: true
+      tier1BeetrootDone:
+        item: questComplete
+        conditions: daily-farming-tier1-beetroot.questComplete
+        text:
+            - $daily-farming-tier1-beetroot.title$
+            - $daily-farming-tier1-beetroot.shrine_line_1$
+            - $daily-farming-tier1-beetroot.shrine_line_2$
+            - ""
+            - $status.inProgress$
+        click:
+            left: ""
+        close: false
+      tier1BeetrootNotStarted:
+        item: tier1BeetrootNotStarted
+        conditions: '!daily-farming-tier1-beetroot.collectTaken'
+        text:
+            - $daily-farming-tier1-beetroot.title$
+            - $daily-farming-tier1-beetroot.description_line_1$
+            - $daily-farming-tier1-beetroot.description_line_2$
+            - ""
+            - $status.notStarted$
+            - $action.start$
+        click:
+            left: daily.farmingCheckActive,daily-farming-tier1-beetroot.collectStartFolder
+        close: true
+      tier1BeetrootShrine:
+        item: tier1BeetrootActive
+        conditions: daily-farming-tier1-beetroot.shrineTaskActive
+        text:
+            - $daily-farming-tier1-beetroot.title$
+            - $daily-farming-tier1-beetroot.shrine_line_1$
+            - $daily-farming-tier1-beetroot.shrine_line_2$
+            - ""
+            - $status.inProgress$
+        click:
+            left: ""
+        close: true
+      
