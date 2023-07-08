@@ -49,11 +49,11 @@ events:
   ## IO ##
   ########
     
-  collectWhisper: 'notify &e&o$action_upper$ &a&o$objective_amount$ &e&o$target$ from the &a&oMining &e&oworld... io:subtitle'
-  collectStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&o$action_lower$ &a&o$objective_amount$ &e&o$target$ from the &a&oMining &e&oworld. category:daily_task'
+  collectWhisper: 'notify &e&o$action_upper$ &a&o$objective_amount$ &e&o$target$ from the &a&o$world_display$ &e&oworld... io:subtitle'
+  collectStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&o$action_lower$ &a&o$objective_amount$ &e&o$target$ from the &a&o$world_display$ &e&oworld. category:daily_task'
   
-  shrineWhisper: 'notify &e&oPlace &a&o$objective_amount$ &e&o$target$ in the &d&oshrine &e&oat spawn... io:subtitle'
-  shrineStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&oplace &a&o$objective_amount$ &e&o$target$ in the &d&oshrine &e&oat spawn. category:daily_task'
+  shrineWhisper: 'notify &e&oPlace &a&o$objective_amount$ &e&o$target_drops_plural$ in the &d&oshrine &e&oat spawn... io:subtitle'
+  shrineStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&oplace &a&o$objective_amount$ &e&o$target_drops_plural$ in the &d&oshrine &e&oat spawn. category:daily_task'
   
   finishWhisper: 'notify &e&oThe Oracle acknowledges your dedication... io:subtitle'
   finishNotice: 'notify &2Your daily quests reward\:\n+ $$reward_amount$ category:daily_task'
