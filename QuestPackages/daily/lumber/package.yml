@@ -32,6 +32,7 @@ menus:
             - $action.start$
         click:
             left: daily.lumberCheckActive,daily-lumber-tier1-oak.collectStartFolder
+            right: ""
         close: true
       tier1OakActiveTrue:
         item: tier1OakActiveTrue
@@ -45,7 +46,8 @@ menus:
             - '%daily-lumber-tier1-oak.objective.collect.absoluteAmount%/%daily-lumber-tier1-oak.objective.collect.absoluteTotal%'
             - $action.reset$
         click:
-            left: resetNotify,daily-lumber-tier1-oak.reset
+            left: ""
+            right: resetNotify,daily-lumber-tier1-oak.reset
         close: true
       tier1OakShrine:
         item: tier1OakActiveTrue
@@ -58,6 +60,7 @@ menus:
             - $status.inProgress$
         click:
             left: ""
+            right: ""
         close: true
       tier1OakShrineFinished:
         item: questComplete
@@ -70,8 +73,8 @@ menus:
             - $status.inProgress$
         click:
             left: ""
+            right: ""
         close: false
-
     ###########
     ## Birch ##
     ###########
@@ -87,6 +90,7 @@ menus:
             - $action.start$
         click:
             left: daily.lumberCheckActive,daily-lumber-tier1-birch.collectStartFolder
+            right: ""
         close: true
       tier1BirchActiveTrue:
         item: tier1BirchActiveTrue
@@ -100,7 +104,8 @@ menus:
             - '%daily-lumber-tier1-birch.objective.collect.absoluteAmount%/%daily-lumber-tier1-birch.objective.collect.absoluteTotal%'
             - $action.reset$
         click:
-            left: resetNotify,daily-lumber-tier1-birch.reset
+            left: ""
+            right: resetNotify,daily-lumber-tier1-birch.reset
         close: true
       tier1BirchShrine:
         item: tier1BirchActiveTrue
@@ -113,6 +118,7 @@ menus:
             - $status.inProgress$
         click:
             left: ""
+            right: ""
         close: true
       tier1BirchShrineFinished:
         item: questComplete
@@ -125,6 +131,7 @@ menus:
             - $status.inProgress$
         click:
             left: ""
+            right: ""
         close: false
     ##############
     ## Dark Oak ##
@@ -141,6 +148,7 @@ menus:
             - $action.start$
         click:
             left: daily.lumberCheckActive,daily-lumber-tier1-darkoak.collectStartFolder
+            right: ""
         close: true
       tier1DarkoakActiveTrue:
         item: tier1DarkoakActiveTrue
@@ -154,7 +162,8 @@ menus:
             - '%daily-lumber-tier1-darkoak.objective.collect.absoluteAmount%/%daily-lumber-tier1-darkoak.objective.collect.absoluteTotal%'
             - $action.reset$
         click:
-            left: resetNotify,daily-lumber-tier1-darkoak.reset
+            left: ""
+            right: resetNotify,daily-lumber-tier1-darkoak.reset
         close: true
       tier1DarkoakShrine:
         item: tier1DarkoakActiveTrue
@@ -167,6 +176,7 @@ menus:
             - $status.inProgress$
         click:
             left: ""
+            right: ""
         close: true
       tier1DarkoakShrineFinished:
         item: questComplete
@@ -179,8 +189,8 @@ menus:
             - $status.inProgress$
         click:
             left: ""
+            right: ""
         close: false
-
     #############
     ## Crimson ##
     #############
@@ -196,6 +206,7 @@ menus:
             - $action.start$
         click:
             left: daily.lumberCheckActive,daily-lumber-tier1-crimson.collectStartFolder
+            right: ""
         close: true
       tier1CrimsonActiveTrue:
         item: tier1CrimsonActiveTrue
@@ -209,7 +220,8 @@ menus:
             - '%daily-lumber-tier1-crimson.objective.collect.absoluteAmount%/%daily-lumber-tier1-crimson.objective.collect.absoluteTotal%'
             - $action.reset$
         click:
-            left: resetNotify,daily-lumber-tier1-crimson.reset
+            left: ""
+            right: resetNotify,daily-lumber-tier1-crimson.reset
         close: true
       tier1CrimsonShrine:
         item: tier1CrimsonActiveTrue
@@ -222,6 +234,7 @@ menus:
             - $status.inProgress$
         click:
             left: ""
+            right: ""
         close: true
       tier1CrimsonShrineFinished:
         item: questComplete
@@ -234,8 +247,8 @@ menus:
             - $status.inProgress$
         click:
             left: ""
+            right: ""
         close: false
-
     ############
     ## Spruce ##
     ############
@@ -251,6 +264,7 @@ menus:
             - $action.start$
         click:
             left: daily.lumberCheckActive,daily-lumber-tier1-spruce.collectStartFolder
+            right: ""
         close: true
       tier1SpruceActiveTrue:
         item: tier1SpruceActiveTrue
@@ -264,7 +278,8 @@ menus:
             - '%daily-lumber-tier1-spruce.objective.collect.absoluteAmount%/%daily-lumber-tier1-spruce.objective.collect.absoluteTotal%'
             - $action.reset$
         click:
-            left: resetNotify,daily-lumber-tier1-spruce.reset
+            left: ""
+            right: resetNotify,daily-lumber-tier1-spruce.reset
         close: true
       tier1SpruceShrine:
         item: tier1SpruceActiveTrue
@@ -277,6 +292,7 @@ menus:
             - $status.inProgress$
         click:
             left: ""
+            right: ""
         close: true
       tier1SpruceShrineFinished:
         item: questComplete
@@ -289,8 +305,8 @@ menus:
             - $status.inProgress$
         click:
             left: ""
+            right: ""
         close: false
-
     #################
     ## UI ELEMENTS ##
     #################
