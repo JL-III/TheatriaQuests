@@ -19,4 +19,4 @@ This repository's primary function is to utilize version control for these quest
 
 Current generators:
 
-- daily quest menu gui item generator - see the README.md in the generators directory.
+- daily quest menu gui generator - see the README.md in the generators directory.
