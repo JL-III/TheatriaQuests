@@ -101,10 +101,10 @@ func main() {
 
 	file_name_upper := strings.Title(file_name)
 
-	notStartedKey := tier + file_name_upper + "NotStarted"
-	activeKey := tier + file_name_upper + "Active"
+	notStartedKey := tier + file_name_upper + "ActiveFalse"
+	activeKey := tier + file_name_upper + "ActiveTrue"
 	shrineKey := tier + file_name_upper + "Shrine"
-	doneKey := tier + file_name_upper + "Done"
+	doneKey := tier + file_name_upper + "ShrineFinished"
 
 	filePath := "daily-" + template_type + "-" + tier + "-"
 
