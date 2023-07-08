@@ -3,6 +3,7 @@ package main
 import (
 	"io/ioutil"
 	"log"
+	"fmt"
 	"strings"
 
 	yaml "gopkg.in/yaml.v3"
@@ -28,7 +29,6 @@ type ClickConfig struct {
 
 type OriginalConfig struct {
 	Variables Variables `yaml:"variables"`
-	// ... add other fields as needed
 }
 
 type Entry struct {
@@ -50,7 +50,7 @@ type NewConfig map[string]Entry
 
 type FinalConfig struct {
 	NewConfig NewConfig
-	ItemRow   ItemRow   `yaml:"item_row"`
+	ItemRow   ItemRow `yaml:"item_row"`
 }
 
 func adjustYAMLIndentation(yamlString string) string {
@@ -83,24 +83,18 @@ func removeYAMLKey(yamlString, key string) string {
 }
 
 func main() {
-	// Load original YAML file
-	source, err := ioutil.ReadFile("generators/daily/menuItem/base.yml")
-	if err != nil {
-		log.Fatal(err)
-	}
 
-	// Unmarshal YAML to struct
-	var original OriginalConfig
-	err = yaml.Unmarshal(source, &original)
-	if err != nil {
-		log.Fatalf("error: %v", err)
-	}
+	fmt.Print("Template type: ")
+	var template_type string
+	fmt.Scanln(&template_type)
+	fmt.Print("Tier: ")
+	var tier string
+	fmt.Scanln(&tier)
+	fmt.Print("Filename: ")
+	var file_name string
+	fmt.Scanln(&file_name)
 
-	// Create new key based on original target item
-	file_name := original.Variables.FileName
 	file_name_upper := strings.Title(file_name)
-	template_type := original.Variables.TemplateType
-	tier := original.Variables.Tier
 
 	notStartedKey := tier + file_name_upper + "NotStarted"
 	activeKey := tier + file_name_upper + "Active"
@@ -213,5 +207,7 @@ func main() {
 	err = ioutil.WriteFile("generators/generated/generated.yaml", []byte(adjustedData), 0644)
 	if err != nil {
 		log.Fatal(err)
+	} else {
+		print("Finished generating menu item!")
 	}
 }
