@@ -204,7 +204,7 @@ func main() {
 	adjustedData = removeYAMLKey(adjustedData, "newconfig")
 
 	// Write to a new YAML file
-	err = ioutil.WriteFile("generators/generated/generated.yaml", []byte(adjustedData), 0644)
+	err = ioutil.WriteFile("../../generated/generated.yaml", []byte(adjustedData), 0644)
 	if err != nil {
 		log.Fatal(err)
 	} else {
