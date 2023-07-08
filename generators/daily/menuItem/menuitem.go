@@ -45,7 +45,7 @@ type Keys struct {
 	Done       string
 }
 
-type GUISection map[string]Entry
+type GUISection []Entry
 
 type Item struct {
 	Sections map[string]GUISection `yaml:"items"`
@@ -53,20 +53,23 @@ type Item struct {
 
 func main() {
 
-	generated_file_path := "../../generated/generated.yaml"
 	yellow := "\033[33m"
 	blue := "\033[34m"
+	reset := "\033[0m"
 
 	fmt.Print(blue + "Template type: " + yellow)
 	var template_type string
 	fmt.Scanln(&template_type)
 	fmt.Print(blue + "Tier: " + yellow)
+	fmt.Print(reset)
 	var tier string
 	fmt.Scanln(&tier)
 
+	generated_file_path := "../../../QuestPackages/daily/" + template_type + "/" + tier + "/"
+
 	finalConfig := FinalConfig{}
 
-	filenames, err := getLastDirectories("../../../QuestPackages/daily/" + template_type + "/" + tier + "/")
+	filenames, err := getLastDirectories(generated_file_path)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -174,7 +177,7 @@ func GetKeys(tier, file_name string) Keys {
 	}
 }
 
-func CreateEntries(template_type, tier, file_name string, Keys Keys) map[string]Entry {
+func CreateEntries(template_type, tier, file_name string, Keys Keys) []Entry {
 
 	filePath := "daily-" + template_type + "-" + tier + "-"
 	// Creating each entry
@@ -253,14 +256,7 @@ func CreateEntries(template_type, tier, file_name string, Keys Keys) map[string]
 		Close: false,
 	}
 
-	// Creating a map for the entries and returning it
-	entries := make(map[string]Entry)
-	entries[Keys.NotStarted] = notStarted
-	entries[Keys.Started] = started
-	entries[Keys.Shrine] = shrine
-	entries[Keys.Done] = done
-
-	return entries
+	return []Entry{notStarted, started, shrine, done}
 }
 
 func deleteFileIfExists(filename string) error {
