@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	err := archiver.Archive([]string{"./QuestPackages", "./QuestTemplates"}, "quests.zip" )
+	err := archiver.Archive([]string{"../QuestPackages", "../QuestTemplates"}, "quests.zip" )
 	if err != nil {
 		fmt.Println(err)
 	} else {
