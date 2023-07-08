@@ -84,13 +84,18 @@ func removeYAMLKey(yamlString, key string) string {
 
 func main() {
 
-	fmt.Print("Template type: ")
+	green := "\033[32m"
+	yellow := "\033[33m"
+	blue := "\033[34m"
+	reset := "\033[0m"
+
+	fmt.Print(blue + "Template type: " + yellow)
 	var template_type string
 	fmt.Scanln(&template_type)
-	fmt.Print("Tier: ")
+	fmt.Print(blue + "Tier: " + yellow)
 	var tier string
 	fmt.Scanln(&tier)
-	fmt.Print("Filename: ")
+	fmt.Print(blue + "Filename: " + yellow)
 	var file_name string
 	fmt.Scanln(&file_name)
 
@@ -208,6 +213,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	} else {
-		print("Finished generating menu item!")
+		print(green + "Finished generating menu item!" + reset)
 	}
 }
