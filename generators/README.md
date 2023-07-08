@@ -22,7 +22,7 @@ Enter the following three values:
 
 These three types are the file directly tied to the file structure.
 
-QuestPackages/daily/<template_type>/<tier>/<filename>
+```QuestPackages/daily/<template_type>/<tier>/<filename>```
 
 This generator is to be used *after* the actual files are created.
 
