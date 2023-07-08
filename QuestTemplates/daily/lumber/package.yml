@@ -3,8 +3,8 @@ package:
     - daily
 
 objectives:
-  collect: 'block $target_slug$ -$objective_amount$ conditions:worldCheck events:shrineStartFolder notify'
-  shrine: 'chestput $shrineLocation$ $target$:$objective_amount$ events:finishFolder notify'
+  collect: 'fish $target_all_caps$ $objective_amount$ conditions:worldCheck events:shrineStartFolder notify'
+  shrine: 'chestput $shrineLocation$ $target_drops_slug$:$objective_amount$ events:finishFolder notify'
   
 conditions:
   
@@ -15,6 +15,7 @@ conditions:
   collectComplete: tag collect_complete
   shrineTaken: tag shrine_taken
   shrineComplete: tag shrine_complete
+  
   worldCheck: world $world$
   
   ########################
@@ -48,8 +49,8 @@ events:
   ## IO ##
   ########
     
-  collectWhisper: 'notify &e&o$action_upper$ &a&o$objective_amount$ &e&o$target$ from the &a&o$world_display$ &e&oworld... io:subtitle'
-  collectStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&o$action_lower$ &a&o$objective_amount$ &e&o$target$ from the &a&o$world_display$ &e&oworld. category:daily_task'
+  collectWhisper: 'notify &e&o$action_upper$ &a&o$objective_amount$ &e&o$target$ from the &a&oMining &e&oworld... io:subtitle'
+  collectStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&o$action_lower$ &a&o$objective_amount$ &e&o$target$ from the &a&oMining &e&oworld. category:daily_task'
   
   shrineWhisper: 'notify &e&oPlace &a&o$objective_amount$ &e&o$target$ in the &d&oshrine &e&oat spawn... io:subtitle'
   shrineStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&oplace &a&o$objective_amount$ &e&o$target$ in the &d&oshrine &e&oat spawn. category:daily_task'
@@ -61,18 +62,18 @@ events:
   ## FOLDERS ##
   #############
   
-  collectInitFolder: 'folder addCollectTakenTag,daily.addLumberActiveTag,giveCollectObjective,startQuestWhisper'
-  collectStartFolder: 'folder collectInitFolder,collectWhisper,collectStartNotice conditions:!daily.lumberActive period:3'
+  collectInitFolder: 'folder addCollectTakenTag,daily.addFishingActiveTag,giveCollectObjective,startQuestWhisper'
+  collectStartFolder: 'folder collectInitFolder,collectWhisper,collectStartNotice conditions:!daily.fishingActive period:3'
   
   shrineInitFolder: 'folder addCollectCompleteTag,addShrineTakenTag,giveShrineObjective,shrineWhisper'
   shrineStartFolder: 'folder shrineInitFolder,shrineStartNotice period:3'
   
-  finishInitFolder: 'folder daily.deleteLumberActiveTag,addShrineCompleteTag,finishWhisper'
+  finishInitFolder: 'folder daily.deleteFishingActiveTag,addShrineCompleteTag,finishWhisper'
   finishFolder: 'folder finishInitFolder,finishNotice,reward period:3'
-  reset: 'folder resetCollectTags,resetObjectives,resetLumberActive'
+  reset: 'folder resetCollectTags,resetObjectives,resetFishingActive'
     
-  reward: "point bank.denarii $reward_amount$ action:add"
+  reward: "command eco give %player% $reward_amount$"
   resetCollectTags: tag delete collect_taken,collect_complete,shrine_taken,shrine_complete
   resetObjectives: objective remove collect,shrine
-  resetLumberActive: tag delete daily.lumber_active
+  resetFishingActive: tag delete daily.fishing_active
   

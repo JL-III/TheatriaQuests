@@ -3,6 +3,7 @@ package main
 import (
 	"io/ioutil"
 	"log"
+	"os"
 	"fmt"
 	"strings"
 
@@ -53,6 +54,29 @@ type FinalConfig struct {
 	ItemRow   ItemRow `yaml:"item_row"`
 }
 
+func addItemLines(file_path, line_1, line_2, line_3 string) {
+	file, err := os.OpenFile(file_path, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	_, err = file.WriteString(line_1)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	_, err = file.WriteString(line_2)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	_, err = file.WriteString(line_3)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
 func adjustYAMLIndentation(yamlString string) string {
 	lines := strings.Split(yamlString, "\n")
 	for i, line := range lines {
@@ -83,6 +107,8 @@ func removeYAMLKey(yamlString, key string) string {
 }
 
 func main() {
+
+	generated_file_path := "../../generated/generated.yaml"
 
 	green := "\033[32m"
 	yellow := "\033[33m"
@@ -175,13 +201,10 @@ func main() {
 		Close: false,
 	}
 
-	itemRow := ItemRow{
-		[]string{
-			notStartedKey + "," + activeKey + "," + shrineKey + "," + doneKey,
-			notStartedKey + ": $" + filePath + file_name + ".target_drops_slug$",
-			activeKey + ": $" + filePath + file_name + ".target_drops_slug$ $enchants$ $flags$",
-		},
-	}
+	line_1 := notStartedKey + "," + activeKey + "," + shrineKey + "," + doneKey + "\n"
+	line_2 := notStartedKey + ": $" + filePath + file_name + ".target_drops_slug$" + "\n"
+	line_3 := activeKey + ": $" + filePath + file_name + ".target_drops_slug$ $enchants$ $flags$"
+
 
 	// Generate new YAML data
 	new := NewConfig{
@@ -191,13 +214,8 @@ func main() {
 		doneKey:       done,
 	}
 
-	finalConfig := FinalConfig{
-		new,
-		itemRow,
-	}
-
 	// Marshal struct to YAML
-	data, err := yaml.Marshal(&finalConfig)
+	data, err := yaml.Marshal(&new)
 	if err != nil {
 		log.Fatalf("error: %v", err)
 	}
@@ -209,10 +227,13 @@ func main() {
 	adjustedData = removeYAMLKey(adjustedData, "newconfig")
 
 	// Write to a new YAML file
-	err = ioutil.WriteFile("../../generated/generated.yaml", []byte(adjustedData), 0644)
+	err = ioutil.WriteFile(generated_file_path, []byte(adjustedData), 0644)
 	if err != nil {
 		log.Fatal(err)
 	} else {
 		print(green + "Finished generating menu item!" + reset)
 	}
+
+	addItemLines(generated_file_path, line_1, line_2, line_3)
+
 }
