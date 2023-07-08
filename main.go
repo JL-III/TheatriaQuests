@@ -9,13 +9,17 @@ import (
 )
 
 type Variables struct {
-	FileName string `yaml:"file_name"`
+	FileName     string `yaml:"file_name"`
 	TemplateType string `yaml:"template_type"`
-	Tier string `yaml:"tier"`
+	Tier         string `yaml:"tier"`
 }
 
 type Config struct {
 	Click ClickConfig `yaml:"click"`
+}
+
+type ItemRow struct {
+	Value string
 }
 
 type ClickConfig struct {
@@ -28,21 +32,26 @@ type OriginalConfig struct {
 }
 
 type Entry struct {
-	Item       string       `yaml:"item"`
-	Conditions string       `yaml:"conditions"`
-	Text       []string     `yaml:"text"`
-	Click      ClickConfig  `yaml:"click"`
-	Close      bool         `yaml:"close"`
+	Item       string      `yaml:"item"`
+	Conditions string      `yaml:"conditions"`
+	Text       []string    `yaml:"text"`
+	Click      ClickConfig `yaml:"click"`
+	Close      bool        `yaml:"close"`
 }
 
 type EntryNoAction struct {
-	Item       string       `yaml:"item"`
-	Conditions string       `yaml:"conditions"`
-	Text       []string     `yaml:"text"`
-	Close      bool         `yaml:"close"`
+	Item       string   `yaml:"item"`
+	Conditions string   `yaml:"conditions"`
+	Text       []string `yaml:"text"`
+	Close      bool     `yaml:"close"`
 }
 
 type NewConfig map[string]Entry
+
+type FinalConfig struct {
+	NewConfig NewConfig
+	ItemRow   ItemRow
+}
 
 func adjustYAMLIndentation(yamlString string) string {
 	lines := strings.Split(yamlString, "\n")
@@ -81,7 +90,7 @@ func main() {
 	file_name_upper := strings.Title(file_name)
 	template_type := original.Variables.TemplateType
 	tier := original.Variables.Tier
-	
+
 	notStartedKey := tier + file_name_upper + "NotStarted"
 	activeKey := tier + file_name_upper + "Active"
 	shrineKey := tier + file_name_upper + "Shrine"
@@ -90,7 +99,7 @@ func main() {
 	filePath := "daily-" + template_type + "-" + tier + "-"
 
 	notStarted := Entry{
-		Item: notStartedKey,
+		Item:       notStartedKey,
 		Conditions: "!" + filePath + file_name + ".collectTaken",
 		Text: []string{
 			"$" + filePath + file_name + ".title$",
@@ -107,7 +116,7 @@ func main() {
 	}
 
 	active := Entry{
-		Item: activeKey,
+		Item:       activeKey,
 		Conditions: filePath + file_name + ".collectTaken,!" + filePath + file_name + ".shrineTaken",
 		Text: []string{
 			"$" + filePath + file_name + ".title$",
@@ -125,7 +134,7 @@ func main() {
 	}
 
 	shrine := Entry{
-		Item: activeKey,
+		Item:       activeKey,
 		Conditions: filePath + file_name + ".shrineTaskActive",
 		Text: []string{
 			"$" + filePath + file_name + ".title$",
@@ -141,7 +150,7 @@ func main() {
 	}
 
 	done := Entry{
-		Item: "questComplete",
+		Item:       "questComplete",
 		Conditions: filePath + file_name + ".questComplete",
 		Text: []string{
 			"$" + filePath + file_name + ".title$",
@@ -156,16 +165,25 @@ func main() {
 		Close: false,
 	}
 
+	itemRow := ItemRow{
+		notStartedKey + "," + activeKey + "," + shrineKey + "," + doneKey,
+	}
+
 	// Generate new YAML data
 	new := NewConfig{
 		notStartedKey: notStarted,
-		activeKey: active,
-		shrineKey: shrine,
-		doneKey: done,
+		activeKey:     active,
+		shrineKey:     shrine,
+		doneKey:       done,
+	}
+
+	finalConfig := FinalConfig{
+		new,
+		itemRow,
 	}
 
 	// Marshal struct to YAML
-	data, err := yaml.Marshal(&new)
+	data, err := yaml.Marshal(&finalConfig)
 	if err != nil {
 		log.Fatalf("error: %v", err)
 	}
@@ -175,7 +193,7 @@ func main() {
 	adjustedData = readjustYAMLIndentation(adjustedData)
 
 	// Write to a new YAML file
-	err = ioutil.WriteFile("generators/daily/menuItem/generated.yaml", []byte(adjustedData), 0644)
+	err = ioutil.WriteFile("generators/generated/generated.yaml", []byte(adjustedData), 0644)
 	if err != nil {
 		log.Fatal(err)
 	}

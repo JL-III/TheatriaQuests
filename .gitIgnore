@@ -8,6 +8,10 @@
 # Zip files
 *.zip
 
+# Generated Yaml
+
+/generators/generated
+
 # Test binary, built with `go test -c`
 *.test
 

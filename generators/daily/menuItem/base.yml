@@ -1,6 +1,3 @@
-## TODO The values should be programatically created based on the base template type.
-## more work will have to be done to see how we can do this.
-
 package:
   templates:
     - daily-farming
