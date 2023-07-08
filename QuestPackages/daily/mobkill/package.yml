@@ -203,6 +203,19 @@ menus:
           - 
           - $status.inProgress$
         close: false
+      tier1ZombieActiveFalse:
+        item: tier1ZombieActiveFalse
+        conditions: "!daily-mobkill-tier1-zombie.collectTaken"
+        text:
+          - $daily-mobkill-tier1-zombie.title$
+          - $daily-mobkill-tier1-zombie.description_line_1$
+          - $daily-mobkill-tier1-zombie.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.mobkillCheckActive,daily-mobkill-tier1-zombie.collectStartFolder
+        close: true
       tier1ZombieActiveTrue:
         item: tier1ZombieActiveTrue
         conditions: daily-mobkill-tier1-zombie.collectTaken,!daily-mobkill-tier1-zombie.shrineTaken
@@ -237,19 +250,6 @@ menus:
           - 
           - $status.inProgress$
         close: false
-      tier1ZombieActiveFalse:
-        item: tier1ZombieActiveFalse
-        conditions: "!daily-mobkill-tier1-zombie.collectTaken"
-        text:
-          - $daily-mobkill-tier1-zombie.title$
-          - $daily-mobkill-tier1-zombie.description_line_1$
-          - $daily-mobkill-tier1-zombie.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.mobkillCheckActive,daily-mobkill-tier1-zombie.collectStartFolder
-        close: true
       filler:
         text: "&a "
         item: "filler"

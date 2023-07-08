@@ -15,26 +15,6 @@ menus:
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
-      tier1DiamondOreShrine:
-        item: tier1DiamondOreActiveTrue
-        conditions: daily-mining-tier1-diamondOre.shrineTaskActive
-        text:
-          - $daily-mining-tier1-diamondOre.title$
-          - $daily-mining-tier1-diamondOre.shrine_line_1$
-          - $daily-mining-tier1-diamondOre.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1DiamondOreShrineFinished:
-        item: questComplete
-        conditions: daily-mining-tier1-diamondOre.questComplete
-        text:
-          - $daily-mining-tier1-diamondOre.title$
-          - $daily-mining-tier1-diamondOre.shrine_line_1$
-          - $daily-mining-tier1-diamondOre.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: false
       tier1DiamondOreActiveFalse:
         item: tier1DiamondOreActiveFalse
         conditions: "!daily-mining-tier1-diamondOre.collectTaken"
@@ -62,23 +42,23 @@ menus:
         click:
           right: resetNotify,daily-mining-tier1-diamondOre.reset
         close: true
-      tier1GoldOreShrine:
-        item: tier1GoldOreActiveTrue
-        conditions: daily-mining-tier1-goldOre.shrineTaskActive
+      tier1DiamondOreShrine:
+        item: tier1DiamondOreActiveTrue
+        conditions: daily-mining-tier1-diamondOre.shrineTaskActive
         text:
-          - $daily-mining-tier1-goldOre.title$
-          - $daily-mining-tier1-goldOre.shrine_line_1$
-          - $daily-mining-tier1-goldOre.shrine_line_2$
+          - $daily-mining-tier1-diamondOre.title$
+          - $daily-mining-tier1-diamondOre.shrine_line_1$
+          - $daily-mining-tier1-diamondOre.shrine_line_2$
           - 
           - $status.inProgress$
         close: true
-      tier1GoldOreShrineFinished:
+      tier1DiamondOreShrineFinished:
         item: questComplete
-        conditions: daily-mining-tier1-goldOre.questComplete
+        conditions: daily-mining-tier1-diamondOre.questComplete
         text:
-          - $daily-mining-tier1-goldOre.title$
-          - $daily-mining-tier1-goldOre.shrine_line_1$
-          - $daily-mining-tier1-goldOre.shrine_line_2$
+          - $daily-mining-tier1-diamondOre.title$
+          - $daily-mining-tier1-diamondOre.shrine_line_1$
+          - $daily-mining-tier1-diamondOre.shrine_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -109,6 +89,26 @@ menus:
         click:
           right: resetNotify,daily-mining-tier1-goldOre.reset
         close: true
+      tier1GoldOreShrine:
+        item: tier1GoldOreActiveTrue
+        conditions: daily-mining-tier1-goldOre.shrineTaskActive
+        text:
+          - $daily-mining-tier1-goldOre.title$
+          - $daily-mining-tier1-goldOre.shrine_line_1$
+          - $daily-mining-tier1-goldOre.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      tier1GoldOreShrineFinished:
+        item: questComplete
+        conditions: daily-mining-tier1-goldOre.questComplete
+        text:
+          - $daily-mining-tier1-goldOre.title$
+          - $daily-mining-tier1-goldOre.shrine_line_1$
+          - $daily-mining-tier1-goldOre.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       tier1IronOreActiveFalse:
         item: tier1IronOreActiveFalse
         conditions: "!daily-mining-tier1-ironOre.collectTaken"
@@ -203,6 +203,19 @@ menus:
           - 
           - $status.inProgress$
         close: false
+      tier1QuartzOreActiveFalse:
+        item: tier1QuartzOreActiveFalse
+        conditions: "!daily-mining-tier1-quartzOre.collectTaken"
+        text:
+          - $daily-mining-tier1-quartzOre.title$
+          - $daily-mining-tier1-quartzOre.description_line_1$
+          - $daily-mining-tier1-quartzOre.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.miningCheckActive,daily-mining-tier1-quartzOre.collectStartFolder
+        close: true
       tier1QuartzOreActiveTrue:
         item: tier1QuartzOreActiveTrue
         conditions: daily-mining-tier1-quartzOre.collectTaken,!daily-mining-tier1-quartzOre.shrineTaken
@@ -237,19 +250,6 @@ menus:
           - 
           - $status.inProgress$
         close: false
-      tier1QuartzOreActiveFalse:
-        item: tier1QuartzOreActiveFalse
-        conditions: "!daily-mining-tier1-quartzOre.collectTaken"
-        text:
-          - $daily-mining-tier1-quartzOre.title$
-          - $daily-mining-tier1-quartzOre.description_line_1$
-          - $daily-mining-tier1-quartzOre.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.miningCheckActive,daily-mining-tier1-quartzOre.collectStartFolder
-        close: true
       filler:
         text: "&a "
         item: "filler"

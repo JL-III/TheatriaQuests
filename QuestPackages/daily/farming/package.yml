@@ -15,6 +15,19 @@ menus:
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
+      tier1BeetrootActiveFalse:
+        item: tier1BeetrootActiveFalse
+        conditions: "!daily-farming-tier1-beetroot.collectTaken"
+        text:
+          - $daily-farming-tier1-beetroot.title$
+          - $daily-farming-tier1-beetroot.description_line_1$
+          - $daily-farming-tier1-beetroot.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.farmingCheckActive,daily-farming-tier1-beetroot.collectStartFolder
+        close: true
       tier1BeetrootActiveTrue:
         item: tier1BeetrootActiveTrue
         conditions: daily-farming-tier1-beetroot.collectTaken,!daily-farming-tier1-beetroot.shrineTaken
@@ -49,19 +62,6 @@ menus:
           - 
           - $status.inProgress$
         close: false
-      tier1BeetrootActiveFalse:
-        item: tier1BeetrootActiveFalse
-        conditions: "!daily-farming-tier1-beetroot.collectTaken"
-        text:
-          - $daily-farming-tier1-beetroot.title$
-          - $daily-farming-tier1-beetroot.description_line_1$
-          - $daily-farming-tier1-beetroot.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.farmingCheckActive,daily-farming-tier1-beetroot.collectStartFolder
-        close: true
       tier1CarrotActiveFalse:
         item: tier1CarrotActiveFalse
         conditions: "!daily-farming-tier1-carrot.collectTaken"
@@ -109,26 +109,6 @@ menus:
           - 
           - $status.inProgress$
         close: false
-      tier1NetherwartShrine:
-        item: tier1NetherwartActiveTrue
-        conditions: daily-farming-tier1-netherwart.shrineTaskActive
-        text:
-          - $daily-farming-tier1-netherwart.title$
-          - $daily-farming-tier1-netherwart.shrine_line_1$
-          - $daily-farming-tier1-netherwart.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1NetherwartShrineFinished:
-        item: questComplete
-        conditions: daily-farming-tier1-netherwart.questComplete
-        text:
-          - $daily-farming-tier1-netherwart.title$
-          - $daily-farming-tier1-netherwart.shrine_line_1$
-          - $daily-farming-tier1-netherwart.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: false
       tier1NetherwartActiveFalse:
         item: tier1NetherwartActiveFalse
         conditions: "!daily-farming-tier1-netherwart.collectTaken"
@@ -156,13 +136,23 @@ menus:
         click:
           right: resetNotify,daily-farming-tier1-netherwart.reset
         close: true
-      tier1PotatoShrineFinished:
-        item: questComplete
-        conditions: daily-farming-tier1-potato.questComplete
+      tier1NetherwartShrine:
+        item: tier1NetherwartActiveTrue
+        conditions: daily-farming-tier1-netherwart.shrineTaskActive
         text:
-          - $daily-farming-tier1-potato.title$
-          - $daily-farming-tier1-potato.shrine_line_1$
-          - $daily-farming-tier1-potato.shrine_line_2$
+          - $daily-farming-tier1-netherwart.title$
+          - $daily-farming-tier1-netherwart.shrine_line_1$
+          - $daily-farming-tier1-netherwart.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      tier1NetherwartShrineFinished:
+        item: questComplete
+        conditions: daily-farming-tier1-netherwart.questComplete
+        text:
+          - $daily-farming-tier1-netherwart.title$
+          - $daily-farming-tier1-netherwart.shrine_line_1$
+          - $daily-farming-tier1-netherwart.shrine_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -203,13 +193,13 @@ menus:
           - 
           - $status.inProgress$
         close: true
-      tier1WheatShrineFinished:
+      tier1PotatoShrineFinished:
         item: questComplete
-        conditions: daily-farming-tier1-wheat.questComplete
+        conditions: daily-farming-tier1-potato.questComplete
         text:
-          - $daily-farming-tier1-wheat.title$
-          - $daily-farming-tier1-wheat.shrine_line_1$
-          - $daily-farming-tier1-wheat.shrine_line_2$
+          - $daily-farming-tier1-potato.title$
+          - $daily-farming-tier1-potato.shrine_line_1$
+          - $daily-farming-tier1-potato.shrine_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -250,6 +240,16 @@ menus:
           - 
           - $status.inProgress$
         close: true
+      tier1WheatShrineFinished:
+        item: questComplete
+        conditions: daily-farming-tier1-wheat.questComplete
+        text:
+          - $daily-farming-tier1-wheat.title$
+          - $daily-farming-tier1-wheat.shrine_line_1$
+          - $daily-farming-tier1-wheat.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       filler:
         text: "&a "
         item: "filler"

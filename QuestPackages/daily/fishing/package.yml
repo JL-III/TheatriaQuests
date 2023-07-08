@@ -15,16 +15,6 @@ menus:
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
-      tier1CodShrineFinished:
-        item: questComplete
-        conditions: daily-fishing-tier1-cod.questComplete
-        text:
-          - $daily-fishing-tier1-cod.title$
-          - $daily-fishing-tier1-cod.shrine_line_1$
-          - $daily-fishing-tier1-cod.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: false
       tier1CodActiveFalse:
         item: tier1CodActiveFalse
         conditions: "!daily-fishing-tier1-cod.collectTaken"
@@ -62,6 +52,16 @@ menus:
           - 
           - $status.inProgress$
         close: true
+      tier1CodShrineFinished:
+        item: questComplete
+        conditions: daily-fishing-tier1-cod.questComplete
+        text:
+          - $daily-fishing-tier1-cod.title$
+          - $daily-fishing-tier1-cod.shrine_line_1$
+          - $daily-fishing-tier1-cod.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       tier1PufferActiveFalse:
         item: tier1PufferActiveFalse
         conditions: "!daily-fishing-tier1-puffer.collectTaken"
@@ -109,16 +109,6 @@ menus:
           - 
           - $status.inProgress$
         close: false
-      tier1SalmonShrineFinished:
-        item: questComplete
-        conditions: daily-fishing-tier1-salmon.questComplete
-        text:
-          - $daily-fishing-tier1-salmon.title$
-          - $daily-fishing-tier1-salmon.shrine_line_1$
-          - $daily-fishing-tier1-salmon.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: false
       tier1SalmonActiveFalse:
         item: tier1SalmonActiveFalse
         conditions: "!daily-fishing-tier1-salmon.collectTaken"
@@ -156,6 +146,16 @@ menus:
           - 
           - $status.inProgress$
         close: true
+      tier1SalmonShrineFinished:
+        item: questComplete
+        conditions: daily-fishing-tier1-salmon.questComplete
+        text:
+          - $daily-fishing-tier1-salmon.title$
+          - $daily-fishing-tier1-salmon.shrine_line_1$
+          - $daily-fishing-tier1-salmon.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       tier1ShellActiveFalse:
         item: tier1ShellActiveFalse
         conditions: "!daily-fishing-tier1-shell.collectTaken"
@@ -203,6 +203,19 @@ menus:
           - 
           - $status.inProgress$
         close: false
+      tier1TropicalActiveFalse:
+        item: tier1TropicalActiveFalse
+        conditions: "!daily-fishing-tier1-tropical.collectTaken"
+        text:
+          - $daily-fishing-tier1-tropical.title$
+          - $daily-fishing-tier1-tropical.description_line_1$
+          - $daily-fishing-tier1-tropical.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.fishingCheckActive,daily-fishing-tier1-tropical.collectStartFolder
+        close: true
       tier1TropicalActiveTrue:
         item: tier1TropicalActiveTrue
         conditions: daily-fishing-tier1-tropical.collectTaken,!daily-fishing-tier1-tropical.shrineTaken
@@ -237,19 +250,6 @@ menus:
           - 
           - $status.inProgress$
         close: false
-      tier1TropicalActiveFalse:
-        item: tier1TropicalActiveFalse
-        conditions: "!daily-fishing-tier1-tropical.collectTaken"
-        text:
-          - $daily-fishing-tier1-tropical.title$
-          - $daily-fishing-tier1-tropical.description_line_1$
-          - $daily-fishing-tier1-tropical.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.fishingCheckActive,daily-fishing-tier1-tropical.collectStartFolder
-        close: true
       filler:
         text: "&a "
         item: "filler"

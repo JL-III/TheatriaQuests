@@ -64,12 +64,12 @@ func main() {
 	fmt.Print(reset)
 	var tier string
 	fmt.Scanln(&tier)
-
-	generated_file_path := "../../../QuestPackages/daily/" + template_type + "/" + tier + "/"
+	template_path := "../../../QuestPackages/daily/" + template_type
+	generated_file_path := template_path + "/" + "/package.yml"
 
 	finalConfig := FinalConfig{}
 
-	filenames, err := getLastDirectories(generated_file_path)
+	filenames, err := getLastDirectories(template_path + "/" + tier + "/")
 	if err != nil {
 		log.Fatal(err)
 	}

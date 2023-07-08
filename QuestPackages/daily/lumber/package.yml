@@ -15,6 +15,19 @@ menus:
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
+      tier1BirchActiveFalse:
+        item: tier1BirchActiveFalse
+        conditions: "!daily-lumber-tier1-birch.collectTaken"
+        text:
+          - $daily-lumber-tier1-birch.title$
+          - $daily-lumber-tier1-birch.description_line_1$
+          - $daily-lumber-tier1-birch.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.lumberCheckActive,daily-lumber-tier1-birch.collectStartFolder
+        close: true
       tier1BirchActiveTrue:
         item: tier1BirchActiveTrue
         conditions: daily-lumber-tier1-birch.collectTaken,!daily-lumber-tier1-birch.shrineTaken
@@ -46,29 +59,6 @@ menus:
           - $daily-lumber-tier1-birch.title$
           - $daily-lumber-tier1-birch.shrine_line_1$
           - $daily-lumber-tier1-birch.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: false
-      tier1BirchActiveFalse:
-        item: tier1BirchActiveFalse
-        conditions: "!daily-lumber-tier1-birch.collectTaken"
-        text:
-          - $daily-lumber-tier1-birch.title$
-          - $daily-lumber-tier1-birch.description_line_1$
-          - $daily-lumber-tier1-birch.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.lumberCheckActive,daily-lumber-tier1-birch.collectStartFolder
-        close: true
-      tier1CrimsonShrineFinished:
-        item: questComplete
-        conditions: daily-lumber-tier1-crimson.questComplete
-        text:
-          - $daily-lumber-tier1-crimson.title$
-          - $daily-lumber-tier1-crimson.shrine_line_1$
-          - $daily-lumber-tier1-crimson.shrine_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -109,6 +99,16 @@ menus:
           - 
           - $status.inProgress$
         close: true
+      tier1CrimsonShrineFinished:
+        item: questComplete
+        conditions: daily-lumber-tier1-crimson.questComplete
+        text:
+          - $daily-lumber-tier1-crimson.title$
+          - $daily-lumber-tier1-crimson.shrine_line_1$
+          - $daily-lumber-tier1-crimson.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       tier1DarkoakActiveFalse:
         item: tier1DarkoakActiveFalse
         conditions: "!daily-lumber-tier1-darkoak.collectTaken"
