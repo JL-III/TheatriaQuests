@@ -19,7 +19,7 @@ type Config struct {
 }
 
 type ItemRow struct {
-	Value string
+	Value []string
 }
 
 type ClickConfig struct {
@@ -166,7 +166,11 @@ func main() {
 	}
 
 	itemRow := ItemRow{
-		notStartedKey + "," + activeKey + "," + shrineKey + "," + doneKey,
+		[]string{
+			notStartedKey + "," + activeKey + "," + shrineKey + "," + doneKey,
+			notStartedKey + ": $" + filePath + file_name + ".target_drops_slug$",
+			activeKey + ": $" + filePath + file_name + ".target_drops_slug$ $enchants$ $flags$",
+		},
 	}
 
 	// Generate new YAML data
