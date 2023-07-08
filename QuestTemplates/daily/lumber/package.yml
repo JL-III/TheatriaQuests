@@ -3,7 +3,7 @@ package:
     - daily
 
 objectives:
-  collect: 'fish $target_all_caps$ $objective_amount$ conditions:worldCheck events:shrineStartFolder notify'
+  collect: 'block $target_slug$ -$objective_amount$ conditions:worldCheck events:shrineStartFolder notify'
   shrine: 'chestput $shrineLocation$ $target_drops_slug$:$objective_amount$ events:finishFolder notify'
   
 conditions:
@@ -63,7 +63,7 @@ events:
   #############
   
   collectInitFolder: 'folder addCollectTakenTag,daily.addFishingActiveTag,giveCollectObjective,startQuestWhisper'
-  collectStartFolder: 'folder collectInitFolder,collectWhisper,collectStartNotice conditions:!daily.fishingActive period:3'
+  collectStartFolder: 'folder collectInitFolder,collectWhisper,collectStartNotice conditions:!daily.lumberActive period:3'
   
   shrineInitFolder: 'folder addCollectCompleteTag,addShrineTakenTag,giveShrineObjective,shrineWhisper'
   shrineStartFolder: 'folder shrineInitFolder,shrineStartNotice period:3'
@@ -75,5 +75,5 @@ events:
   reward: "command eco give %player% $reward_amount$"
   resetCollectTags: tag delete collect_taken,collect_complete,shrine_taken,shrine_complete
   resetObjectives: objective remove collect,shrine
-  resetFishingActive: tag delete daily.fishing_active
+  resetFishingActive: tag delete daily.lumber_active
   

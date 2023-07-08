@@ -8,7 +8,6 @@ menus:
     title: "Lumber Quests"
     slots:
       0-3: "filler,filler,filler,filler"
-      4: "reputation"
       5-8: "filler,filler,filler,filler"
       9: "tier1BirchActiveFalse,tier1BirchActiveTrue,tier1BirchShrine,tier1BirchShrineFinished"
       10: "tier1OakActiveFalse,tier1OakActiveTrue,tier1OakShrine,tier1OakShrineFinished"
@@ -295,12 +294,6 @@ menus:
     #################
     ## UI ELEMENTS ##
     #################
-      reputation:
-        item: "xpBottle" 
-        amount: 1
-        text:
-            - "&2Quest Level: &6&l%point.quest_reputation.amount%"
-        close: true
       filler: 
         text: "&a "
         item: "filler"
@@ -310,7 +303,7 @@ menus:
         text:
             - "&c&lGo Back"
         click:
-          left: "openDailyMenu"
+          left: "daily.openDailyMenu"
         close: true
 items:
   tier1OakActiveFalse: $daily-lumber-tier1-oak.target_drops_slug$
