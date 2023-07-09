@@ -24,9 +24,8 @@ menus:
         - '&d&oMiner?'
         - '&d&oI hardly know her!'
         click:
-          left: openMiningQuestsMenu
-          right: openMiningQuestsMenu
-        close: true
+          left: openMiningLevelMenu
+        close: false
       fishingQuestsMenu:
         item: fishingQuestsMenu
         amount: 1
@@ -37,9 +36,8 @@ menus:
         - '&d&oP. Sherman'
         - '&d&o42 Wallaby Way'
         click:
-          left: openFishingQuestsMenu
-          right: openFishingQuestsMenu
-        close: true
+          left: openFishingLevelMenu
+        close: false
       mobkillingQuestsMenu:
         item: mobkillingQuestsMenu
         amount: 1
@@ -51,9 +49,8 @@ menus:
         - '&d&oa better place,'
         - '&d&okill some mobs!'
         click:
-          left: openMobkillingQuestsMenu
-          right: openMobkillingQuestsMenu
-        close: true
+          left: openMobkillLevelMenu
+        close: false
       farmingQuestsMenu:
         item: farmingQuestsMenu
         amount: 1
@@ -64,9 +61,8 @@ menus:
         - '&d&oGrab a hoe!'
         - '&d&oPlow a field!'
         click:
-          left: openFarmingQuestsMenu
-          right: openFarmingQuestsMenu
-        close: true
+          left: openFarmingLevelMenu
+        close: false
       lumberQuestsMenu:
         item: lumberQuestsMenu
         amount: 1
@@ -77,9 +73,8 @@ menus:
         - '&d&oGrow a beard!'
         - '&d&oChop some wood!'
         click:
-          left: openLumberQuestsMenu
-          right: openLumberQuestsMenu
-        close: true
+          left: openLumberLevelMenu
+        close: false
 conditions:
 
   farmingActive: tag farming_active
@@ -120,11 +115,11 @@ events:
   lumberCheckActive: $activeQuestNotice$ conditions:lumberActive
 
   resetCategoryTags: tag delete farming_active,mining_active,fishing_active,mobkill_active,lumber_active
-  openMiningQuestsMenu: menu open daily-mining.miningQuestsMenu
-  openFishingQuestsMenu: menu open daily-fishing.fishingQuestsMenu
-  openMobkillingQuestsMenu: menu open daily-mobkill.mobkillQuestsMenu
-  openFarmingQuestsMenu: menu open daily-farming.farmingQuestsMenu
-  openLumberQuestsMenu: menu open daily-lumber.lumberQuestsMenu
+  openMiningLevelMenu: menu open daily-mining.levelMenu
+  openFishingLevelMenu: menu open daily-fishing.levelMenu
+  openMobkillLevelMenu: menu open daily-mobkill.levelMenu
+  openFarmingLevelMenu: menu open daily-farming.levelMenu
+  openLumberLevelMenu: menu open daily-lumber.levelMenu
   menuOpenSound: notify &aOpening Quest Menu! sound:block.amethyst_block.chime
   menuCloseSound: notify &aClosing Quest Menu! sound:block.azalea.step
   openDailyMenu: menu open dailyMenu        

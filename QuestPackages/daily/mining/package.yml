@@ -1,255 +1,35 @@
 package:
   templates:
-  - daily
+    - daily
+
 menus:
-  miningQuestsMenu:
+  levelMenu:
     height: 4
-    title: Mining Quests
+    title: Level Menu
+    command: /levelmining
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-      9: tier1DiamondOreActiveFalse,tier1DiamondOreActiveTrue,tier1DiamondOreShrine,tier1DiamondOreShrineFinished
-      10: tier1GoldOreActiveFalse,tier1GoldOreActiveTrue,tier1GoldOreShrine,tier1GoldOreShrineFinished
-      11: tier1IronOreActiveFalse,tier1IronOreActiveTrue,tier1IronOreShrine,tier1IronOreShrineFinished
-      12: tier1ObsidianActiveFalse,tier1ObsidianActiveTrue,tier1ObsidianShrine,tier1ObsidianShrineFinished
-      13: tier1QuartzOreActiveFalse,tier1QuartzOreActiveTrue,tier1QuartzOreShrine,tier1QuartzOreShrineFinished
+      "9": level1MiningQuestsMenu
+      "10": level2MiningQuestsMenu
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
-      tier1DiamondOreActiveFalse:
-        item: tier1DiamondOreActiveFalse
-        conditions: "!daily-mining-tier1-diamondOre.collectTaken"
+      level1MiningQuestsMenu:
+        item: level1MiningQuestsMenu
         text:
-          - $daily-mining-tier1-diamondOre.title$
-          - $daily-mining-tier1-diamondOre.description_line_1$
-          - $daily-mining-tier1-diamondOre.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
+        - "&b[Level 1]"
+        - "Mining Quests"
         click:
-          left: daily.miningCheckActive,daily-mining-tier1-diamondOre.collectStartFolder
+          left: openLevel1MiningQuestsMenu
         close: true
-      tier1DiamondOreActiveTrue:
-        item: tier1DiamondOreActiveTrue
-        conditions: daily-mining-tier1-diamondOre.collectTaken,!daily-mining-tier1-diamondOre.shrineTaken
+      level2MiningQuestsMenu:
+        item: level1MiningQuestsMenu
         text:
-          - $daily-mining-tier1-diamondOre.title$
-          - $daily-mining-tier1-diamondOre.description_line_1$
-          - $daily-mining-tier1-diamondOre.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-mining-tier1-diamondOre.objective.collect.absoluteAmount%/%daily-mining-tier1-diamondOre.objective.collect.absoluteTotal%"
-          - $action.reset$
+        - "&b[Level 2]"
+        - "Mining Quests"
         click:
-          right: resetNotify,daily-mining-tier1-diamondOre.reset
+          left: openLevel2MiningQuestsMenu
         close: true
-      tier1DiamondOreShrine:
-        item: tier1DiamondOreActiveTrue
-        conditions: daily-mining-tier1-diamondOre.shrineTaskActive
-        text:
-          - $daily-mining-tier1-diamondOre.title$
-          - $daily-mining-tier1-diamondOre.shrine_line_1$
-          - $daily-mining-tier1-diamondOre.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1DiamondOreShrineFinished:
-        item: questComplete
-        conditions: daily-mining-tier1-diamondOre.questComplete
-        text:
-          - $daily-mining-tier1-diamondOre.title$
-          - $daily-mining-tier1-diamondOre.done_line_1$
-          - $daily-mining-tier1-diamondOre.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
-      tier1GoldOreActiveFalse:
-        item: tier1GoldOreActiveFalse
-        conditions: "!daily-mining-tier1-goldOre.collectTaken"
-        text:
-          - $daily-mining-tier1-goldOre.title$
-          - $daily-mining-tier1-goldOre.description_line_1$
-          - $daily-mining-tier1-goldOre.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.miningCheckActive,daily-mining-tier1-goldOre.collectStartFolder
-        close: true
-      tier1GoldOreActiveTrue:
-        item: tier1GoldOreActiveTrue
-        conditions: daily-mining-tier1-goldOre.collectTaken,!daily-mining-tier1-goldOre.shrineTaken
-        text:
-          - $daily-mining-tier1-goldOre.title$
-          - $daily-mining-tier1-goldOre.description_line_1$
-          - $daily-mining-tier1-goldOre.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-mining-tier1-goldOre.objective.collect.absoluteAmount%/%daily-mining-tier1-goldOre.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mining-tier1-goldOre.reset
-        close: true
-      tier1GoldOreShrine:
-        item: tier1GoldOreActiveTrue
-        conditions: daily-mining-tier1-goldOre.shrineTaskActive
-        text:
-          - $daily-mining-tier1-goldOre.title$
-          - $daily-mining-tier1-goldOre.shrine_line_1$
-          - $daily-mining-tier1-goldOre.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1GoldOreShrineFinished:
-        item: questComplete
-        conditions: daily-mining-tier1-goldOre.questComplete
-        text:
-          - $daily-mining-tier1-goldOre.title$
-          - $daily-mining-tier1-goldOre.done_line_1$
-          - $daily-mining-tier1-goldOre.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
-      tier1IronOreActiveFalse:
-        item: tier1IronOreActiveFalse
-        conditions: "!daily-mining-tier1-ironOre.collectTaken"
-        text:
-          - $daily-mining-tier1-ironOre.title$
-          - $daily-mining-tier1-ironOre.description_line_1$
-          - $daily-mining-tier1-ironOre.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.miningCheckActive,daily-mining-tier1-ironOre.collectStartFolder
-        close: true
-      tier1IronOreActiveTrue:
-        item: tier1IronOreActiveTrue
-        conditions: daily-mining-tier1-ironOre.collectTaken,!daily-mining-tier1-ironOre.shrineTaken
-        text:
-          - $daily-mining-tier1-ironOre.title$
-          - $daily-mining-tier1-ironOre.description_line_1$
-          - $daily-mining-tier1-ironOre.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-mining-tier1-ironOre.objective.collect.absoluteAmount%/%daily-mining-tier1-ironOre.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mining-tier1-ironOre.reset
-        close: true
-      tier1IronOreShrine:
-        item: tier1IronOreActiveTrue
-        conditions: daily-mining-tier1-ironOre.shrineTaskActive
-        text:
-          - $daily-mining-tier1-ironOre.title$
-          - $daily-mining-tier1-ironOre.shrine_line_1$
-          - $daily-mining-tier1-ironOre.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1IronOreShrineFinished:
-        item: questComplete
-        conditions: daily-mining-tier1-ironOre.questComplete
-        text:
-          - $daily-mining-tier1-ironOre.title$
-          - $daily-mining-tier1-ironOre.done_line_1$
-          - $daily-mining-tier1-ironOre.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
-      tier1ObsidianActiveFalse:
-        item: tier1ObsidianActiveFalse
-        conditions: "!daily-mining-tier1-obsidian.collectTaken"
-        text:
-          - $daily-mining-tier1-obsidian.title$
-          - $daily-mining-tier1-obsidian.description_line_1$
-          - $daily-mining-tier1-obsidian.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.miningCheckActive,daily-mining-tier1-obsidian.collectStartFolder
-        close: true
-      tier1ObsidianActiveTrue:
-        item: tier1ObsidianActiveTrue
-        conditions: daily-mining-tier1-obsidian.collectTaken,!daily-mining-tier1-obsidian.shrineTaken
-        text:
-          - $daily-mining-tier1-obsidian.title$
-          - $daily-mining-tier1-obsidian.description_line_1$
-          - $daily-mining-tier1-obsidian.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-mining-tier1-obsidian.objective.collect.absoluteAmount%/%daily-mining-tier1-obsidian.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mining-tier1-obsidian.reset
-        close: true
-      tier1ObsidianShrine:
-        item: tier1ObsidianActiveTrue
-        conditions: daily-mining-tier1-obsidian.shrineTaskActive
-        text:
-          - $daily-mining-tier1-obsidian.title$
-          - $daily-mining-tier1-obsidian.shrine_line_1$
-          - $daily-mining-tier1-obsidian.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1ObsidianShrineFinished:
-        item: questComplete
-        conditions: daily-mining-tier1-obsidian.questComplete
-        text:
-          - $daily-mining-tier1-obsidian.title$
-          - $daily-mining-tier1-obsidian.done_line_1$
-          - $daily-mining-tier1-obsidian.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
-      tier1QuartzOreActiveFalse:
-        item: tier1QuartzOreActiveFalse
-        conditions: "!daily-mining-tier1-quartzOre.collectTaken"
-        text:
-          - $daily-mining-tier1-quartzOre.title$
-          - $daily-mining-tier1-quartzOre.description_line_1$
-          - $daily-mining-tier1-quartzOre.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.miningCheckActive,daily-mining-tier1-quartzOre.collectStartFolder
-        close: true
-      tier1QuartzOreActiveTrue:
-        item: tier1QuartzOreActiveTrue
-        conditions: daily-mining-tier1-quartzOre.collectTaken,!daily-mining-tier1-quartzOre.shrineTaken
-        text:
-          - $daily-mining-tier1-quartzOre.title$
-          - $daily-mining-tier1-quartzOre.description_line_1$
-          - $daily-mining-tier1-quartzOre.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-mining-tier1-quartzOre.objective.collect.absoluteAmount%/%daily-mining-tier1-quartzOre.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mining-tier1-quartzOre.reset
-        close: true
-      tier1QuartzOreShrine:
-        item: tier1QuartzOreActiveTrue
-        conditions: daily-mining-tier1-quartzOre.shrineTaskActive
-        text:
-          - $daily-mining-tier1-quartzOre.title$
-          - $daily-mining-tier1-quartzOre.shrine_line_1$
-          - $daily-mining-tier1-quartzOre.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1QuartzOreShrineFinished:
-        item: questComplete
-        conditions: daily-mining-tier1-quartzOre.questComplete
-        text:
-          - $daily-mining-tier1-quartzOre.title$
-          - $daily-mining-tier1-quartzOre.done_line_1$
-          - $daily-mining-tier1-quartzOre.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
       filler:
         text: "&a "
         item: "filler"
@@ -260,14 +40,10 @@ menus:
         click:
           left: "daily.openDailyMenu"
         close: true
+events:
+  openLevel1MiningQuestsMenu: menu open daily-mining-level1.miningQuestsMenu
+  openLevel2MiningQuestsMenu: menu open daily-mining-level2.miningQuestsMenu
+
 items:
-  tier1DiamondOreActiveFalse: $daily-mining-tier1-diamondOre.target_drops_slug$
-  tier1DiamondOreActiveTrue: $daily-mining-tier1-diamondOre.target_drops_slug$ $enchants$ $flags$
-  tier1GoldOreActiveFalse: $daily-mining-tier1-goldOre.target_drops_slug$
-  tier1GoldOreActiveTrue: $daily-mining-tier1-goldOre.target_drops_slug$ $enchants$ $flags$
-  tier1IronOreActiveFalse: $daily-mining-tier1-ironOre.target_drops_slug$
-  tier1IronOreActiveTrue: $daily-mining-tier1-ironOre.target_drops_slug$ $enchants$ $flags$
-  tier1ObsidianActiveFalse: $daily-mining-tier1-obsidian.target_drops_slug$
-  tier1ObsidianActiveTrue: $daily-mining-tier1-obsidian.target_drops_slug$ $enchants$ $flags$
-  tier1QuartzOreActiveFalse: $daily-mining-tier1-quartzOre.target_drops_slug$
-  tier1QuartzOreActiveTrue: $daily-mining-tier1-quartzOre.target_drops_slug$ $enchants$ $flags$
+  level1MiningQuestsMenu: "IRON_PICKAXE"
+  level2MiningQuestsMenu: "IRON_PICKAXE"

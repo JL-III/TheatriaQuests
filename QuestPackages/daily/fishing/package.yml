@@ -1,255 +1,35 @@
 package:
   templates:
-  - daily
+    - daily
+
 menus:
-  fishingQuestsMenu:
+  levelMenu:
     height: 4
-    title: Fishing Quests
+    title: Level Menu
+    command: /levelfishing
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-      9: tier1CodActiveFalse,tier1CodActiveTrue,tier1CodShrine,tier1CodShrineFinished
-      10: tier1PufferActiveFalse,tier1PufferActiveTrue,tier1PufferShrine,tier1PufferShrineFinished
-      11: tier1SalmonActiveFalse,tier1SalmonActiveTrue,tier1SalmonShrine,tier1SalmonShrineFinished
-      12: tier1ShellActiveFalse,tier1ShellActiveTrue,tier1ShellShrine,tier1ShellShrineFinished
-      13: tier1TropicalActiveFalse,tier1TropicalActiveTrue,tier1TropicalShrine,tier1TropicalShrineFinished
+      "9": level1FishingQuestsMenu
+      "10": level2FishingQuestsMenu
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
-      tier1CodActiveFalse:
-        item: tier1CodActiveFalse
-        conditions: "!daily-fishing-tier1-cod.collectTaken"
+      level1FishingQuestsMenu:
+        item: level1FishingQuestsMenu
         text:
-          - $daily-fishing-tier1-cod.title$
-          - $daily-fishing-tier1-cod.description_line_1$
-          - $daily-fishing-tier1-cod.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
+        - "&b[Level 1]"
+        - "Fishing Quests"
         click:
-          left: daily.fishingCheckActive,daily-fishing-tier1-cod.collectStartFolder
+          left: openLevel1FishingQuestsMenu
         close: true
-      tier1CodActiveTrue:
-        item: tier1CodActiveTrue
-        conditions: daily-fishing-tier1-cod.collectTaken,!daily-fishing-tier1-cod.shrineTaken
+      level2FishingQuestsMenu:
+        item: level1FishingQuestsMenu
         text:
-          - $daily-fishing-tier1-cod.title$
-          - $daily-fishing-tier1-cod.description_line_1$
-          - $daily-fishing-tier1-cod.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-fishing-tier1-cod.objective.collect.absoluteAmount%/%daily-fishing-tier1-cod.objective.collect.absoluteTotal%"
-          - $action.reset$
+        - "&b[Level 2]"
+        - "Fishing Quests"
         click:
-          right: resetNotify,daily-fishing-tier1-cod.reset
+          left: openLevel2FishingQuestsMenu
         close: true
-      tier1CodShrine:
-        item: tier1CodActiveTrue
-        conditions: daily-fishing-tier1-cod.shrineTaskActive
-        text:
-          - $daily-fishing-tier1-cod.title$
-          - $daily-fishing-tier1-cod.shrine_line_1$
-          - $daily-fishing-tier1-cod.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1CodShrineFinished:
-        item: questComplete
-        conditions: daily-fishing-tier1-cod.questComplete
-        text:
-          - $daily-fishing-tier1-cod.title$
-          - $daily-fishing-tier1-cod.done_line_1$
-          - $daily-fishing-tier1-cod.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
-      tier1PufferActiveFalse:
-        item: tier1PufferActiveFalse
-        conditions: "!daily-fishing-tier1-puffer.collectTaken"
-        text:
-          - $daily-fishing-tier1-puffer.title$
-          - $daily-fishing-tier1-puffer.description_line_1$
-          - $daily-fishing-tier1-puffer.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.fishingCheckActive,daily-fishing-tier1-puffer.collectStartFolder
-        close: true
-      tier1PufferActiveTrue:
-        item: tier1PufferActiveTrue
-        conditions: daily-fishing-tier1-puffer.collectTaken,!daily-fishing-tier1-puffer.shrineTaken
-        text:
-          - $daily-fishing-tier1-puffer.title$
-          - $daily-fishing-tier1-puffer.description_line_1$
-          - $daily-fishing-tier1-puffer.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-fishing-tier1-puffer.objective.collect.absoluteAmount%/%daily-fishing-tier1-puffer.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-fishing-tier1-puffer.reset
-        close: true
-      tier1PufferShrine:
-        item: tier1PufferActiveTrue
-        conditions: daily-fishing-tier1-puffer.shrineTaskActive
-        text:
-          - $daily-fishing-tier1-puffer.title$
-          - $daily-fishing-tier1-puffer.shrine_line_1$
-          - $daily-fishing-tier1-puffer.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1PufferShrineFinished:
-        item: questComplete
-        conditions: daily-fishing-tier1-puffer.questComplete
-        text:
-          - $daily-fishing-tier1-puffer.title$
-          - $daily-fishing-tier1-puffer.done_line_1$
-          - $daily-fishing-tier1-puffer.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
-      tier1SalmonActiveFalse:
-        item: tier1SalmonActiveFalse
-        conditions: "!daily-fishing-tier1-salmon.collectTaken"
-        text:
-          - $daily-fishing-tier1-salmon.title$
-          - $daily-fishing-tier1-salmon.description_line_1$
-          - $daily-fishing-tier1-salmon.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.fishingCheckActive,daily-fishing-tier1-salmon.collectStartFolder
-        close: true
-      tier1SalmonActiveTrue:
-        item: tier1SalmonActiveTrue
-        conditions: daily-fishing-tier1-salmon.collectTaken,!daily-fishing-tier1-salmon.shrineTaken
-        text:
-          - $daily-fishing-tier1-salmon.title$
-          - $daily-fishing-tier1-salmon.description_line_1$
-          - $daily-fishing-tier1-salmon.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-fishing-tier1-salmon.objective.collect.absoluteAmount%/%daily-fishing-tier1-salmon.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-fishing-tier1-salmon.reset
-        close: true
-      tier1SalmonShrine:
-        item: tier1SalmonActiveTrue
-        conditions: daily-fishing-tier1-salmon.shrineTaskActive
-        text:
-          - $daily-fishing-tier1-salmon.title$
-          - $daily-fishing-tier1-salmon.shrine_line_1$
-          - $daily-fishing-tier1-salmon.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1SalmonShrineFinished:
-        item: questComplete
-        conditions: daily-fishing-tier1-salmon.questComplete
-        text:
-          - $daily-fishing-tier1-salmon.title$
-          - $daily-fishing-tier1-salmon.done_line_1$
-          - $daily-fishing-tier1-salmon.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
-      tier1ShellActiveFalse:
-        item: tier1ShellActiveFalse
-        conditions: "!daily-fishing-tier1-shell.collectTaken"
-        text:
-          - $daily-fishing-tier1-shell.title$
-          - $daily-fishing-tier1-shell.description_line_1$
-          - $daily-fishing-tier1-shell.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.fishingCheckActive,daily-fishing-tier1-shell.collectStartFolder
-        close: true
-      tier1ShellActiveTrue:
-        item: tier1ShellActiveTrue
-        conditions: daily-fishing-tier1-shell.collectTaken,!daily-fishing-tier1-shell.shrineTaken
-        text:
-          - $daily-fishing-tier1-shell.title$
-          - $daily-fishing-tier1-shell.description_line_1$
-          - $daily-fishing-tier1-shell.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-fishing-tier1-shell.objective.collect.absoluteAmount%/%daily-fishing-tier1-shell.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-fishing-tier1-shell.reset
-        close: true
-      tier1ShellShrine:
-        item: tier1ShellActiveTrue
-        conditions: daily-fishing-tier1-shell.shrineTaskActive
-        text:
-          - $daily-fishing-tier1-shell.title$
-          - $daily-fishing-tier1-shell.shrine_line_1$
-          - $daily-fishing-tier1-shell.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1ShellShrineFinished:
-        item: questComplete
-        conditions: daily-fishing-tier1-shell.questComplete
-        text:
-          - $daily-fishing-tier1-shell.title$
-          - $daily-fishing-tier1-shell.done_line_1$
-          - $daily-fishing-tier1-shell.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
-      tier1TropicalActiveFalse:
-        item: tier1TropicalActiveFalse
-        conditions: "!daily-fishing-tier1-tropical.collectTaken"
-        text:
-          - $daily-fishing-tier1-tropical.title$
-          - $daily-fishing-tier1-tropical.description_line_1$
-          - $daily-fishing-tier1-tropical.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.fishingCheckActive,daily-fishing-tier1-tropical.collectStartFolder
-        close: true
-      tier1TropicalActiveTrue:
-        item: tier1TropicalActiveTrue
-        conditions: daily-fishing-tier1-tropical.collectTaken,!daily-fishing-tier1-tropical.shrineTaken
-        text:
-          - $daily-fishing-tier1-tropical.title$
-          - $daily-fishing-tier1-tropical.description_line_1$
-          - $daily-fishing-tier1-tropical.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-fishing-tier1-tropical.objective.collect.absoluteAmount%/%daily-fishing-tier1-tropical.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-fishing-tier1-tropical.reset
-        close: true
-      tier1TropicalShrine:
-        item: tier1TropicalActiveTrue
-        conditions: daily-fishing-tier1-tropical.shrineTaskActive
-        text:
-          - $daily-fishing-tier1-tropical.title$
-          - $daily-fishing-tier1-tropical.shrine_line_1$
-          - $daily-fishing-tier1-tropical.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1TropicalShrineFinished:
-        item: questComplete
-        conditions: daily-fishing-tier1-tropical.questComplete
-        text:
-          - $daily-fishing-tier1-tropical.title$
-          - $daily-fishing-tier1-tropical.done_line_1$
-          - $daily-fishing-tier1-tropical.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
       filler:
         text: "&a "
         item: "filler"
@@ -260,14 +40,10 @@ menus:
         click:
           left: "daily.openDailyMenu"
         close: true
+events:
+  openLevel1FishingQuestsMenu: menu open daily-fishing-level1.fishingQuestsMenu
+  openLevel2FishingQuestsMenu: menu open daily-fishing-level2.fishingQuestsMenu
+
 items:
-  tier1CodActiveFalse: $daily-fishing-tier1-cod.target_drops_slug$
-  tier1CodActiveTrue: $daily-fishing-tier1-cod.target_drops_slug$ $enchants$ $flags$
-  tier1PufferActiveFalse: $daily-fishing-tier1-puffer.target_drops_slug$
-  tier1PufferActiveTrue: $daily-fishing-tier1-puffer.target_drops_slug$ $enchants$ $flags$
-  tier1SalmonActiveFalse: $daily-fishing-tier1-salmon.target_drops_slug$
-  tier1SalmonActiveTrue: $daily-fishing-tier1-salmon.target_drops_slug$ $enchants$ $flags$
-  tier1ShellActiveFalse: $daily-fishing-tier1-shell.target_drops_slug$
-  tier1ShellActiveTrue: $daily-fishing-tier1-shell.target_drops_slug$ $enchants$ $flags$
-  tier1TropicalActiveFalse: $daily-fishing-tier1-tropical.target_drops_slug$
-  tier1TropicalActiveTrue: $daily-fishing-tier1-tropical.target_drops_slug$ $enchants$ $flags$
+  level1FishingQuestsMenu: "FISHING_ROD"
+  level2FishingQuestsMenu: "FISHING_ROD"

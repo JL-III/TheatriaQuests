@@ -1,255 +1,35 @@
 package:
   templates:
   - daily
+
 menus:
-  farmingQuestsMenu:
+  levelMenu:
     height: 4
-    title: Farming Quests
+    title: Level Menu
+    command: /levelfarming
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-      9: tier1BeetrootActiveFalse,tier1BeetrootActiveTrue,tier1BeetrootShrine,tier1BeetrootShrineFinished
-      10: tier1CarrotActiveFalse,tier1CarrotActiveTrue,tier1CarrotShrine,tier1CarrotShrineFinished
-      11: tier1NetherwartActiveFalse,tier1NetherwartActiveTrue,tier1NetherwartShrine,tier1NetherwartShrineFinished
-      12: tier1PotatoActiveFalse,tier1PotatoActiveTrue,tier1PotatoShrine,tier1PotatoShrineFinished
-      13: tier1WheatActiveFalse,tier1WheatActiveTrue,tier1WheatShrine,tier1WheatShrineFinished
+      "9": level1FarmingQuestsMenu
+      "10": level2FarmingQuestsMenu
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
-      tier1BeetrootActiveFalse:
-        item: tier1BeetrootActiveFalse
-        conditions: "!daily-farming-tier1-beetroot.collectTaken"
+      level1FarmingQuestsMenu:
+        item: level1FarmingQuestsMenu
         text:
-          - $daily-farming-tier1-beetroot.title$
-          - $daily-farming-tier1-beetroot.description_line_1$
-          - $daily-farming-tier1-beetroot.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
+        - "&b[Level 1]"
+        - "Farming Quests"
         click:
-          left: daily.farmingCheckActive,daily-farming-tier1-beetroot.collectStartFolder
+          left: openLevel1FarmingQuestsMenu
         close: true
-      tier1BeetrootActiveTrue:
-        item: tier1BeetrootActiveTrue
-        conditions: daily-farming-tier1-beetroot.collectTaken,!daily-farming-tier1-beetroot.shrineTaken
+      level2FarmingQuestsMenu:
+        item: level1FarmingQuestsMenu
         text:
-          - $daily-farming-tier1-beetroot.title$
-          - $daily-farming-tier1-beetroot.description_line_1$
-          - $daily-farming-tier1-beetroot.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-farming-tier1-beetroot.objective.collect.absoluteAmount%/%daily-farming-tier1-beetroot.objective.collect.absoluteTotal%"
-          - $action.reset$
+        - "&b[Level 2]"
+        - "Farming Quests"
         click:
-          right: resetNotify,daily-farming-tier1-beetroot.reset
+          left: openLevel2FarmingQuestsMenu
         close: true
-      tier1BeetrootShrine:
-        item: tier1BeetrootActiveTrue
-        conditions: daily-farming-tier1-beetroot.shrineTaskActive
-        text:
-          - $daily-farming-tier1-beetroot.title$
-          - $daily-farming-tier1-beetroot.shrine_line_1$
-          - $daily-farming-tier1-beetroot.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1BeetrootShrineFinished:
-        item: questComplete
-        conditions: daily-farming-tier1-beetroot.questComplete
-        text:
-          - $daily-farming-tier1-beetroot.title$
-          - $daily-farming-tier1-beetroot.done_line_1$
-          - $daily-farming-tier1-beetroot.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
-      tier1CarrotActiveFalse:
-        item: tier1CarrotActiveFalse
-        conditions: "!daily-farming-tier1-carrot.collectTaken"
-        text:
-          - $daily-farming-tier1-carrot.title$
-          - $daily-farming-tier1-carrot.description_line_1$
-          - $daily-farming-tier1-carrot.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.farmingCheckActive,daily-farming-tier1-carrot.collectStartFolder
-        close: true
-      tier1CarrotActiveTrue:
-        item: tier1CarrotActiveTrue
-        conditions: daily-farming-tier1-carrot.collectTaken,!daily-farming-tier1-carrot.shrineTaken
-        text:
-          - $daily-farming-tier1-carrot.title$
-          - $daily-farming-tier1-carrot.description_line_1$
-          - $daily-farming-tier1-carrot.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-farming-tier1-carrot.objective.collect.absoluteAmount%/%daily-farming-tier1-carrot.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-tier1-carrot.reset
-        close: true
-      tier1CarrotShrine:
-        item: tier1CarrotActiveTrue
-        conditions: daily-farming-tier1-carrot.shrineTaskActive
-        text:
-          - $daily-farming-tier1-carrot.title$
-          - $daily-farming-tier1-carrot.shrine_line_1$
-          - $daily-farming-tier1-carrot.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1CarrotShrineFinished:
-        item: questComplete
-        conditions: daily-farming-tier1-carrot.questComplete
-        text:
-          - $daily-farming-tier1-carrot.title$
-          - $daily-farming-tier1-carrot.done_line_1$
-          - $daily-farming-tier1-carrot.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
-      tier1NetherwartActiveFalse:
-        item: tier1NetherwartActiveFalse
-        conditions: "!daily-farming-tier1-netherwart.collectTaken"
-        text:
-          - $daily-farming-tier1-netherwart.title$
-          - $daily-farming-tier1-netherwart.description_line_1$
-          - $daily-farming-tier1-netherwart.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.farmingCheckActive,daily-farming-tier1-netherwart.collectStartFolder
-        close: true
-      tier1NetherwartActiveTrue:
-        item: tier1NetherwartActiveTrue
-        conditions: daily-farming-tier1-netherwart.collectTaken,!daily-farming-tier1-netherwart.shrineTaken
-        text:
-          - $daily-farming-tier1-netherwart.title$
-          - $daily-farming-tier1-netherwart.description_line_1$
-          - $daily-farming-tier1-netherwart.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-farming-tier1-netherwart.objective.collect.absoluteAmount%/%daily-farming-tier1-netherwart.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-tier1-netherwart.reset
-        close: true
-      tier1NetherwartShrine:
-        item: tier1NetherwartActiveTrue
-        conditions: daily-farming-tier1-netherwart.shrineTaskActive
-        text:
-          - $daily-farming-tier1-netherwart.title$
-          - $daily-farming-tier1-netherwart.shrine_line_1$
-          - $daily-farming-tier1-netherwart.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1NetherwartShrineFinished:
-        item: questComplete
-        conditions: daily-farming-tier1-netherwart.questComplete
-        text:
-          - $daily-farming-tier1-netherwart.title$
-          - $daily-farming-tier1-netherwart.done_line_1$
-          - $daily-farming-tier1-netherwart.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
-      tier1PotatoActiveFalse:
-        item: tier1PotatoActiveFalse
-        conditions: "!daily-farming-tier1-potato.collectTaken"
-        text:
-          - $daily-farming-tier1-potato.title$
-          - $daily-farming-tier1-potato.description_line_1$
-          - $daily-farming-tier1-potato.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.farmingCheckActive,daily-farming-tier1-potato.collectStartFolder
-        close: true
-      tier1PotatoActiveTrue:
-        item: tier1PotatoActiveTrue
-        conditions: daily-farming-tier1-potato.collectTaken,!daily-farming-tier1-potato.shrineTaken
-        text:
-          - $daily-farming-tier1-potato.title$
-          - $daily-farming-tier1-potato.description_line_1$
-          - $daily-farming-tier1-potato.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-farming-tier1-potato.objective.collect.absoluteAmount%/%daily-farming-tier1-potato.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-tier1-potato.reset
-        close: true
-      tier1PotatoShrine:
-        item: tier1PotatoActiveTrue
-        conditions: daily-farming-tier1-potato.shrineTaskActive
-        text:
-          - $daily-farming-tier1-potato.title$
-          - $daily-farming-tier1-potato.shrine_line_1$
-          - $daily-farming-tier1-potato.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1PotatoShrineFinished:
-        item: questComplete
-        conditions: daily-farming-tier1-potato.questComplete
-        text:
-          - $daily-farming-tier1-potato.title$
-          - $daily-farming-tier1-potato.done_line_1$
-          - $daily-farming-tier1-potato.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
-      tier1WheatActiveFalse:
-        item: tier1WheatActiveFalse
-        conditions: "!daily-farming-tier1-wheat.collectTaken"
-        text:
-          - $daily-farming-tier1-wheat.title$
-          - $daily-farming-tier1-wheat.description_line_1$
-          - $daily-farming-tier1-wheat.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.farmingCheckActive,daily-farming-tier1-wheat.collectStartFolder
-        close: true
-      tier1WheatActiveTrue:
-        item: tier1WheatActiveTrue
-        conditions: daily-farming-tier1-wheat.collectTaken,!daily-farming-tier1-wheat.shrineTaken
-        text:
-          - $daily-farming-tier1-wheat.title$
-          - $daily-farming-tier1-wheat.description_line_1$
-          - $daily-farming-tier1-wheat.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-farming-tier1-wheat.objective.collect.absoluteAmount%/%daily-farming-tier1-wheat.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-tier1-wheat.reset
-        close: true
-      tier1WheatShrine:
-        item: tier1WheatActiveTrue
-        conditions: daily-farming-tier1-wheat.shrineTaskActive
-        text:
-          - $daily-farming-tier1-wheat.title$
-          - $daily-farming-tier1-wheat.shrine_line_1$
-          - $daily-farming-tier1-wheat.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      tier1WheatShrineFinished:
-        item: questComplete
-        conditions: daily-farming-tier1-wheat.questComplete
-        text:
-          - $daily-farming-tier1-wheat.title$
-          - $daily-farming-tier1-wheat.done_line_1$
-          - $daily-farming-tier1-wheat.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
       filler:
         text: "&a "
         item: "filler"
@@ -260,14 +40,10 @@ menus:
         click:
           left: "daily.openDailyMenu"
         close: true
+events:
+  openLevel1FarmingQuestsMenu: menu open daily-farming-level1.farmingQuestsMenu
+  openLevel2FarmingQuestsMenu: menu open daily-farming-level2.farmingQuestsMenu
+
 items:
-  tier1BeetrootActiveFalse: $daily-farming-tier1-beetroot.target_drops_slug$
-  tier1BeetrootActiveTrue: $daily-farming-tier1-beetroot.target_drops_slug$ $enchants$ $flags$
-  tier1CarrotActiveFalse: $daily-farming-tier1-carrot.target_drops_slug$
-  tier1CarrotActiveTrue: $daily-farming-tier1-carrot.target_drops_slug$ $enchants$ $flags$
-  tier1NetherwartActiveFalse: $daily-farming-tier1-netherwart.target_drops_slug$
-  tier1NetherwartActiveTrue: $daily-farming-tier1-netherwart.target_drops_slug$ $enchants$ $flags$
-  tier1PotatoActiveFalse: $daily-farming-tier1-potato.target_drops_slug$
-  tier1PotatoActiveTrue: $daily-farming-tier1-potato.target_drops_slug$ $enchants$ $flags$
-  tier1WheatActiveFalse: $daily-farming-tier1-wheat.target_drops_slug$
-  tier1WheatActiveTrue: $daily-farming-tier1-wheat.target_drops_slug$ $enchants$ $flags$
+  level1FarmingQuestsMenu: "IRON_HOE"
+  level2FarmingQuestsMenu: "IRON_HOE"

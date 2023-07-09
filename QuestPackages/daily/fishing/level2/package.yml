@@ -1,0 +1,73 @@
+package:
+  templates:
+  - daily
+menus:
+  fishingQuestsMenu:
+    height: 4
+    title: Fishing Quests
+    slots:
+      0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
+      9: level2CodActiveFalse,level2CodActiveTrue,level2CodShrine,level2CodShrineFinished
+      28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
+      27: "back"
+    items:
+      level2CodActiveFalse:
+        item: level2CodActiveFalse
+        conditions: "!daily-fishing-level2-cod.collectTaken"
+        text:
+          - $daily-fishing-level2-cod.title$
+          - $daily-fishing-level2-cod.description_line_1$
+          - $daily-fishing-level2-cod.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.fishingCheckActive,daily-fishing-level2-cod.collectStartFolder
+        close: true
+      level2CodActiveTrue:
+        item: level2CodActiveTrue
+        conditions: daily-fishing-level2-cod.collectTaken,!daily-fishing-level2-cod.shrineTaken
+        text:
+          - $daily-fishing-level2-cod.title$
+          - $daily-fishing-level2-cod.description_line_1$
+          - $daily-fishing-level2-cod.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-fishing-level2-cod.objective.collect.absoluteAmount%/%daily-fishing-level2-cod.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-fishing-level2-cod.reset
+        close: true
+      level2CodShrine:
+        item: level2CodActiveTrue
+        conditions: daily-fishing-level2-cod.shrineTaskActive
+        text:
+          - $daily-fishing-level2-cod.title$
+          - $daily-fishing-level2-cod.shrine_line_1$
+          - $daily-fishing-level2-cod.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      level2CodShrineFinished:
+        item: questComplete
+        conditions: daily-fishing-level2-cod.questComplete
+        text:
+          - $daily-fishing-level2-cod.title$
+          - $daily-fishing-level2-cod.done_line_1$
+          - $daily-fishing-level2-cod.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      filler:
+        text: "&a "
+        item: "filler"
+      back:
+        item: "back"
+        text:
+            - "&c&lGo Back"
+        click:
+          left: "daily.openFishingLevelMenu"
+        close: true
+items:
+  level2CodActiveFalse: $daily-fishing-level2-cod.target_drops_slug$
+  level2CodActiveTrue: $daily-fishing-level2-cod.target_drops_slug$ $enchants$ $flags$

@@ -1,0 +1,73 @@
+package:
+  templates:
+  - daily
+menus:
+  mobkillQuestsMenu:
+    height: 4
+    title: Mobkill Quests
+    slots:
+      0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
+      9: level2CreeperActiveFalse,level2CreeperActiveTrue,level2CreeperShrine,level2CreeperShrineFinished
+      28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
+      27: "back"
+    items:
+      level2CreeperActiveFalse:
+        item: level2CreeperActiveFalse
+        conditions: "!daily-mobkill-level2-creeper.collectTaken"
+        text:
+          - $daily-mobkill-level2-creeper.title$
+          - $daily-mobkill-level2-creeper.description_line_1$
+          - $daily-mobkill-level2-creeper.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.mobkillCheckActive,daily-mobkill-level2-creeper.collectStartFolder
+        close: true
+      level2CreeperActiveTrue:
+        item: level2CreeperActiveTrue
+        conditions: daily-mobkill-level2-creeper.collectTaken,!daily-mobkill-level2-creeper.shrineTaken
+        text:
+          - $daily-mobkill-level2-creeper.title$
+          - $daily-mobkill-level2-creeper.description_line_1$
+          - $daily-mobkill-level2-creeper.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mobkill-level2-creeper.objective.collect.absoluteAmount%/%daily-mobkill-level2-creeper.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mobkill-level2-creeper.reset
+        close: true
+      level2CreeperShrine:
+        item: level2CreeperActiveTrue
+        conditions: daily-mobkill-level2-creeper.shrineTaskActive
+        text:
+          - $daily-mobkill-level2-creeper.title$
+          - $daily-mobkill-level2-creeper.shrine_line_1$
+          - $daily-mobkill-level2-creeper.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      level2CreeperShrineFinished:
+        item: questComplete
+        conditions: daily-mobkill-level2-creeper.questComplete
+        text:
+          - $daily-mobkill-level2-creeper.title$
+          - $daily-mobkill-level2-creeper.done_line_1$
+          - $daily-mobkill-level2-creeper.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      filler:
+        text: "&a "
+        item: "filler"
+      back:
+        item: "back"
+        text:
+            - "&c&lGo Back"
+        click:
+          left: "daily.openMobkillLevelMenu"
+        close: true
+items:
+  level2CreeperActiveFalse: $daily-mobkill-level2-creeper.target_drops_slug$
+  level2CreeperActiveTrue: $daily-mobkill-level2-creeper.target_drops_slug$ $enchants$ $flags$

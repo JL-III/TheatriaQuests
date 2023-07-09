@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path/filepath"
 	"strconv"
 	"strings"
-	"path/filepath"
 	"unicode/utf8"
 )
 
@@ -60,28 +60,32 @@ func main() {
 	fmt.Print(blue + "Template type: " + yellow)
 	var template_type string
 	fmt.Scanln(&template_type)
-	fmt.Print(blue + "Tier: " + yellow)
+
+	template_path := "../../QuestPackages/daily/" + template_type
+	fmt.Print(blue + "Level: " + yellow)
 	fmt.Print(reset)
-	var tier string
-	fmt.Scanln(&tier)
-	template_path := "../../../QuestPackages/daily/" + template_type
-	generated_file_path := template_path + "/" + "/package.yml"
+	var level string
+	fmt.Scanln(&level)
+	createMenu(template_path, level, template_type)
+
+}
+
+func createMenu(template_path, level, template_type string) {
+	generated_file_path := template_path + "/" + level + "/package.yml"
 
 	finalConfig := FinalConfig{}
 
-	filenames, err := getLastDirectories(template_path + "/" + tier + "/")
+	filenames, err := getLastDirectories(template_path + "/" + level + "/")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	for _, filename := range filenames {
-		Keys := GetKeys(tier, filename)
+		Keys := GetKeys(level, filename)
 		finalConfig.ItemGUIlist = append(finalConfig.ItemGUIlist, addGuiItemList(Keys))
-		finalConfig.Entries = append(finalConfig.Entries, CreateEntries(template_type, tier, filename, Keys))
-		finalConfig.ItemRow = append(finalConfig.ItemRow, addItemLines(template_type, tier, filename, Keys))
+		finalConfig.Entries = append(finalConfig.Entries, CreateEntries(template_type, level, filename, Keys))
+		finalConfig.ItemRow = append(finalConfig.ItemRow, addItemLines(template_type, level, filename, Keys))
 	}
-	// print(len(finalConfig.ItemGUIlist))
-	// return 
 
 	yamlString := ""
 
@@ -98,9 +102,9 @@ func main() {
 	deleteFileIfExists(generated_file_path)
 	write(generated_file_path, "package:\n  templates:\n  - daily\n")
 	write(generated_file_path, "menus:\n")
-	write(generated_file_path, "  " + template_type + "QuestsMenu:\n")
+	write(generated_file_path, "  "+template_type+"QuestsMenu:\n")
 	write(generated_file_path, "    height: 4\n")
-	write(generated_file_path, "    title: " + strings.Title(template_type) + " Quests\n")
+	write(generated_file_path, "    title: "+strings.Title(template_type)+" "+level+" Quests\n")
 	write(generated_file_path, "    slots:\n")
 	write(generated_file_path, "      0-8: \"filler,filler,filler,filler,filler,filler,filler,filler,filler\"\n")
 	write(generated_file_path, strings.Join(finalConfig.ItemGUIlist, ""))
@@ -116,11 +120,12 @@ func main() {
 	write(generated_file_path, "        text:\n")
 	write(generated_file_path, "            - \"&c&lGo Back\"\n")
 	write(generated_file_path, "        click:\n")
-	write(generated_file_path, "          left: \"daily.openDailyMenu\"\n")
+	write(generated_file_path, "          left: \"daily.open"+strings.Title(template_type)+"LevelMenu\"\n")
 	write(generated_file_path, "        close: true\n")
 	write(generated_file_path, "items:\n")
 	write(generated_file_path, strings.Join(finalConfig.ItemRow, ""))
 
+	print("Finished creating daily menu!")
 }
 
 func write(file_path, data string) {
@@ -140,9 +145,9 @@ func addGuiItemList(Keys Keys) string {
 	return "      0: " + Keys.NotStarted + "," + Keys.Started + "," + Keys.Shrine + "," + Keys.Done + "\n"
 }
 
-func addItemLines(template_type, tier, file_name string, Keys Keys) string {
+func addItemLines(template_type, level, file_name string, Keys Keys) string {
 
-	filePath := "daily-" + template_type + "-" + tier + "-"
+	filePath := "daily-" + template_type + "-" + level + "-"
 
 	return ("  " + Keys.NotStarted + ": $" + filePath + file_name + ".target_drops_slug$" + "\n" +
 		"  " + Keys.Started + ": $" + filePath + file_name + ".target_drops_slug$ $enchants$ $flags$" + "\n")
@@ -173,19 +178,19 @@ func EntryToYamlString(e Entry) string {
 	return builder.String()
 }
 
-func GetKeys(tier, file_name string) Keys {
+func GetKeys(level, file_name string) Keys {
 	file_name_upper := strings.Title(file_name)
 	return Keys{
-		NotStarted: tier + file_name_upper + "ActiveFalse",
-		Started:    tier + file_name_upper + "ActiveTrue",
-		Shrine:     tier + file_name_upper + "Shrine",
-		Done:       tier + file_name_upper + "ShrineFinished",
+		NotStarted: level + file_name_upper + "ActiveFalse",
+		Started:    level + file_name_upper + "ActiveTrue",
+		Shrine:     level + file_name_upper + "Shrine",
+		Done:       level + file_name_upper + "ShrineFinished",
 	}
 }
 
-func CreateEntries(template_type, tier, file_name string, Keys Keys) []Entry {
+func CreateEntries(template_type, level, file_name string, Keys Keys) []Entry {
 
-	filePath := "daily-" + template_type + "-" + tier + "-"
+	filePath := "daily-" + template_type + "-" + level + "-"
 	// Creating each entry
 	notStarted := Entry{
 		Key:        Keys.NotStarted,
@@ -311,4 +316,24 @@ func getLastDirectories(path string) ([]string, error) {
 	}
 
 	return lastDirs, nil
+}
+
+func getLevelDirectories(path string) ([]string, error) {
+	var dirs []string
+
+	err := filepath.Walk(path, func(currentPath string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		if info.IsDir() && strings.Contains(info.Name(), "level") {
+			dirs = append(dirs, info.Name())
+		}
+		return nil
+	})
+
+	if err != nil {
+		return nil, err
+	}
+
+	return dirs, nil
 }

@@ -16,7 +16,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	err = archiver.Archive([]string{"../QuestPackages", "../QuestTemplates"}, zipName)
+	err = archiver.Archive([]string{"../../QuestPackages", "../../QuestTemplates"}, zipName)
 	if err != nil {
 		fmt.Println(err)
 	} else {

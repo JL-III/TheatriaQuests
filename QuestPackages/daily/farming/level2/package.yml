@@ -1,0 +1,73 @@
+package:
+  templates:
+  - daily
+menus:
+  farmingQuestsMenu:
+    height: 4
+    title: Farming Quests
+    slots:
+      0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
+      9: level2BeetrootActiveFalse,level2BeetrootActiveTrue,level2BeetrootShrine,level2BeetrootShrineFinished
+      28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
+      27: "back"
+    items:
+      level2BeetrootActiveFalse:
+        item: level2BeetrootActiveFalse
+        conditions: "!daily-farming-level2-beetroot.collectTaken"
+        text:
+          - $daily-farming-level2-beetroot.title$
+          - $daily-farming-level2-beetroot.description_line_1$
+          - $daily-farming-level2-beetroot.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.farmingCheckActive,daily-farming-level2-beetroot.collectStartFolder
+        close: true
+      level2BeetrootActiveTrue:
+        item: level2BeetrootActiveTrue
+        conditions: daily-farming-level2-beetroot.collectTaken,!daily-farming-level2-beetroot.shrineTaken
+        text:
+          - $daily-farming-level2-beetroot.title$
+          - $daily-farming-level2-beetroot.description_line_1$
+          - $daily-farming-level2-beetroot.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-farming-level2-beetroot.objective.collect.absoluteAmount%/%daily-farming-level2-beetroot.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-farming-level2-beetroot.reset
+        close: true
+      level2BeetrootShrine:
+        item: level2BeetrootActiveTrue
+        conditions: daily-farming-level2-beetroot.shrineTaskActive
+        text:
+          - $daily-farming-level2-beetroot.title$
+          - $daily-farming-level2-beetroot.shrine_line_1$
+          - $daily-farming-level2-beetroot.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      level2BeetrootShrineFinished:
+        item: questComplete
+        conditions: daily-farming-level2-beetroot.questComplete
+        text:
+          - $daily-farming-level2-beetroot.title$
+          - $daily-farming-level2-beetroot.done_line_1$
+          - $daily-farming-level2-beetroot.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      filler:
+        text: "&a "
+        item: "filler"
+      back:
+        item: "back"
+        text:
+            - "&c&lGo Back"
+        click:
+          left: "daily.openFarmingLevelMenu"
+        close: true
+items:
+  level2BeetrootActiveFalse: $daily-farming-level2-beetroot.target_drops_slug$
+  level2BeetrootActiveTrue: $daily-farming-level2-beetroot.target_drops_slug$ $enchants$ $flags$
