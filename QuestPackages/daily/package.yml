@@ -85,8 +85,6 @@ conditions:
 
 variables:
   activeQuestNotice: notify &4You already have an active quest in this category! category:daily_task
-  enchants: 'enchants:damage_all:1'  
-  flags: 'flags:HIDE_ENCHANTS'
 
 events:
   ##########

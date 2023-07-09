@@ -1,0 +1,72 @@
+package:
+  templates:
+    - daily
+
+conditions:
+  
+  ################
+  ## Tag checks ##
+  ################
+  collectTaken: '$collectTaken$'
+  collectComplete: '$collectComplete$'
+  shrineTaken: '$shrineTaken$'
+  shrineComplete: '$shrineComplete$'
+  worldCheck: '$worldCheck$'
+  
+  ########################
+  ## Quest State checks ##
+  ########################
+  
+  collectTaskActive: '$collectTaskActive$'
+  shrineTaskActive: '$shrineTaskActive$'
+  questComplete: '$questComplete$'
+
+events:
+
+  ##########
+  ## Tags ##
+  ##########
+  
+  addShrineTakenTag: '$addShrineTakenTag$'
+  addShrineCompleteTag: '$addShrineCompleteTag$'
+  addCollectTakenTag: '$addCollectTakenTag$'
+  addCollectCompleteTag: '$addCollectCompleteTag$'
+  
+  ###############
+  ## Objective ##
+  ###############
+  
+  giveCollectObjective: '$giveCollectObjective$'
+  giveShrineObjective: '$giveShrineObjective$'
+    
+  ########
+  ## IO ##
+  ########
+    
+  collectWhisper: '$collectWhisper$'
+  collectStartNotice: $collectStartNotice$
+  
+  shrineWhisper: '$shrineWhisper$'
+  shrineStartNotice: '$shrineStartNotice$'
+  
+  finishWhisper: '$finishWhisper$'
+  finishNotice: '$finishNotice$'
+
+  #############
+  ## FOLDERS ##
+  #############
+
+  collectInitFolder: '$collectInitFolder$'
+  collectStartFolder: '$collectStartFolder$'
+  
+  shrineInitFolder: '$shrineInitFolder$'
+  shrineStartFolder: '$shrineStartFolder$'
+  
+  finishInitFolder: '$finishInitFolder$'
+  finishFolder: '$finishFolder$'
+  reset: '$reset$'
+    
+  reward: '$reward$'
+  resetCollectTags: '$resetCollectTags$'
+  resetObjectives: '$resetObjectives$'
+  resetActive: '$resetActive$'

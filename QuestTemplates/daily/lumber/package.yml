@@ -1,77 +1,11 @@
 package:
   templates:
-    - daily
+    - daily-base
 
 objectives:
   collect: 'block $target_slug$ -$objective_amount$ conditions:worldCheck events:shrineStartFolder notify'
   shrine: 'chestput $shrineLocation$ $target_drops_slug$:$objective_amount$ events:finishFolder notify'
-  
-conditions:
-  
-  ################
-  ## Tag checks ##
-  ################
-  collectTaken: '$collectTaken$'
-  collectComplete: '$collectComplete$'
-  shrineTaken: '$shrineTaken$'
-  shrineComplete: '$shrineComplete$'
-  worldCheck: '$worldCheck$'
-  
-  ########################
-  ## Quest State checks ##
-  ########################
-  
-  collectTaskActive: '$collectTaskActive$'
-  shrineTaskActive: '$shrineTaskActive$'
-  questComplete: '$questComplete$'
 
-events:
-
-  ##########
-  ## Tags ##
-  ##########
-  
-  addShrineTakenTag: '$addShrineTakenTag$'
-  addShrineCompleteTag: '$addShrineCompleteTag$'
-  addCollectTakenTag: '$addCollectTakenTag$'
-  addCollectCompleteTag: '$addCollectCompleteTag$'
-  
-  ###############
-  ## Objective ##
-  ###############
-  
-  giveCollectObjective: '$giveCollectObjective$'
-  giveShrineObjective: '$giveShrineObjective$'
-    
-  ########
-  ## IO ##
-  ########
-    
-  collectWhisper: '$collectWhisper$'
-  collectStartNotice: $collectStartNotice$
-  
-  shrineWhisper: '$shrineWhisper$'
-  shrineStartNotice: '$shrineStartNotice$'
-  
-  finishWhisper: '$finishWhisper$'
-  finishNotice: '$finishNotice$'
-
-  #############
-  ## FOLDERS ##
-  #############
-  
-  collectInitFolder: 'folder addCollectTakenTag,daily.addFishingActiveTag,giveCollectObjective,startQuestWhisper'
-  collectStartFolder: 'folder collectInitFolder,collectWhisper,collectStartNotice conditions:!daily.lumberActive period:3'
-  
-  shrineInitFolder: 'folder addCollectCompleteTag,addShrineTakenTag,giveShrineObjective,shrineWhisper'
-  shrineStartFolder: 'folder shrineInitFolder,shrineStartNotice period:3'
-  
-  finishInitFolder: 'folder daily.deleteFishingActiveTag,addShrineCompleteTag,finishWhisper'
-  finishFolder: 'folder finishInitFolder,finishNotice,reward period:3'
-  reset: 'folder resetCollectTags,resetObjectives,resetFishingActive'
-    
-  reward: "command eco give %player% $reward_amount$"
-  resetCollectTags: tag delete collect_taken,collect_complete,shrine_taken,shrine_complete
-  resetObjectives: objective remove collect,shrine
-  resetFishingActive: tag delete daily.lumber_active
-  
+variables:
+  type_upper: Lumber
+  type_lower: lumber

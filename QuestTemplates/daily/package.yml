@@ -67,6 +67,25 @@ variables:
   finishWhisper: 'notify &e&oThe Oracle acknowledges your dedication... io:subtitle'
   finishNotice: 'notify &2Your daily quests reward\:\n+ $$reward_amount$ category:daily_task'
 
+  #############
+  ## FOLDERS ##
+  #############
+
+  collectInitFolder: 'folder addCollectTakenTag,daily.add$type_upper$ActiveTag,giveCollectObjective,startQuestWhisper'
+  collectStartFolder: 'folder collectInitFolder,collectWhisper,collectStartNotice conditions:!daily.$type_lower$Active period:3'
+  
+  shrineInitFolder: 'folder addCollectCompleteTag,addShrineTakenTag,giveShrineObjective,shrineWhisper'
+  shrineStartFolder: 'folder shrineInitFolder,shrineStartNotice period:3'
+  
+  finishInitFolder: 'folder daily.delete$type_upper$ActiveTag,addShrineCompleteTag,finishWhisper'
+  finishFolder: 'folder finishInitFolder,finishNotice,reward period:3'
+  reset: 'folder resetCollectTags,resetObjectives,resetActive'
+    
+  reward: "point bank.denarii $reward_amount$ action:add"
+  resetCollectTags: tag delete collect_taken,collect_complete,shrine_taken,shrine_complete
+  resetObjectives: objective remove collect,shrine
+  resetActive: tag delete daily.$type_lower$_active
+
   #######################
   ## End Context Based ##
   ###############################################################################
@@ -84,7 +103,7 @@ variables:
   level1GUIItem: 'COPPER_INGOT'
   level2GUIItem: 'IRON_INGOT'
   enchants: 'enchants:damage_all:1'  
-  flags: 'flags:HIDE_ENCHANTS'
+  flags: 'flags:HIDE_ENCHANTS,HIDE_ATTRIBUTES'
   
 notifications:
   daily_task:
