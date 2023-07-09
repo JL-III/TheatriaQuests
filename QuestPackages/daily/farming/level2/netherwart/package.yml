@@ -5,7 +5,7 @@ package:
 variables:
 
   objective_amount: 16
-  reward_amount: 2500
+  reward_amount: 2750
 
   world: Mining
   world_display: Mining

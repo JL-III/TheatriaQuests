@@ -4,7 +4,7 @@ package:
 menus:
   farmingQuestsMenu:
     height: 4
-    title: Farming Quests
+    title: Farming level1 Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       9: level1BeetrootActiveFalse,level1BeetrootActiveTrue,level1BeetrootShrine,level1BeetrootShrineFinished

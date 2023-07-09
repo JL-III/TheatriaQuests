@@ -14,16 +14,16 @@ variables:
   action_lower: chop
   action_lower_past: chopped
   
-  target: birch logs
-  target_upper: Birch logs
+  target: dark oak logs
+  target_upper: Dark oak logs
   
-  target_drops: birch log
-  target_drops_plural: birch logs
+  target_drops: dark oak log
+  target_drops_plural: dark oak logs
   
-  target_slug: birch_log
+  target_slug: dark_oak_log
   
   ## Due to limitations, slug value must match item key
-  target_drops_slug: birch_log
+  target_drops_slug: dark_oak_log
   
 items:
-  birch_log: minecraft:$target_drops_slug$
+  dark_oak_log: minecraft:$target_drops_slug$

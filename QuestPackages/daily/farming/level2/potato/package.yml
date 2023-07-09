@@ -13,18 +13,18 @@ variables:
   action_upper: Harvest
   action_lower: harvest
   action_lower_past: harvested
+
+  target: potato
+  target_upper: Potato
   
-  target: beetroots
-  target_upper: Beetroots
+  target_drops: potato
+  target_drops_plural: potatoes
   
-  target_drops: beetroot
-  target_drops_plural: beetroots
+  target_slug: potato
   
-  target_slug: beetroots
+  age: '[age=7]'
   
-  age: '[age=3]'
+  target_drops_slug: potato
   
-  target_drops_slug: beetroot
-    
 items:
-  beetroots: minecraft:$target_drops_slug$
+  potato: minecraft:$target_drops_slug$

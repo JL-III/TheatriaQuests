@@ -1,0 +1,29 @@
+package:
+  templates:
+    - daily-mining
+
+variables:
+
+  objective_amount: 16
+  reward_amount: 2750
+
+  world: Mining
+  world_display: Mining
+
+  action_upper: Mine
+  action_lower: mine
+  action_lower_past: mined
+  
+  target: iron ore
+  target_upper: IronOre
+  
+  target_drops: raw iron
+  target_drops_plural: raw iron
+  
+  target_slug: iron_ore
+
+## Due to limitations, slug value must match item key
+  target_drops_slug: raw_iron
+
+items:
+  raw_iron: minecraft:$target_drops_slug$
