@@ -6,10 +6,10 @@ variables:
 
   ###################
   ## Context Based ##
-  ###############################################################################
-  ## This section's variables must be called from a consuming package          ##
-  ## It is housed here in order to create a global format for all daily quests ##
-  ###############################################################################
+  #################################################################################
+  ## This section's variables must be called from a package consuming a template ##
+  ## It is housed here in order to create a global format for all daily quests   ##
+  #################################################################################
   title: '&b[$action_upper$ $target_upper$]'
   description_line_1: $action_upper$ &a&o$objective_amount$ &r&o$target$!
   description_line_2: In the &a&o$world_display$ &r&oworld.
@@ -19,7 +19,56 @@ variables:
   
   done_line_1: You $action_lower_past$ $objective_amount$ $target$!
   done_line_2: Do this quest again tomorrow!
-      
+
+  ################
+  ## Tag checks ##
+  ################
+  collectTaken: tag collect_taken
+  collectComplete: tag collect_complete
+  shrineTaken: tag shrine_taken
+  shrineComplete: tag shrine_complete
+  worldCheck: world $world$
+  
+  ########################
+  ## Quest State checks ##
+  ########################
+  
+  collectTaskActive: and collectTaken,!collectComplete
+  shrineTaskActive: and collectComplete,!shrineComplete
+  questComplete: and collectComplete,shrineComplete
+
+  ##########
+  ## Tags ##
+  ##########
+  
+  addShrineTakenTag: tag add shrine_taken
+  addShrineCompleteTag: tag add shrine_complete
+  
+  addCollectTakenTag: tag add collect_taken
+  addCollectCompleteTag: tag add collect_complete
+
+  ###############
+  ## Objective ##
+  ###############
+
+  giveCollectObjective: objective add collect
+  giveShrineObjective: objective add shrine
+
+  ########
+  ## IO ##
+  ########
+
+  collectWhisper: 'notify &e&o$action_upper$ &a&o$objective_amount$ &e&o$target$ from the &a&o$world_display$ &e&oworld... io:subtitle'
+  collectStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&o$action_lower$ &a&o$objective_amount$ &e&o$target$ from the &a&o$world_display$ &e&oworld. category:daily_task'
+  
+  shrineWhisper: 'notify &e&oPlace &a&o$objective_amount$ &e&o$target$ in the &d&oshrine &e&oat spawn... io:subtitle'
+  shrineStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&oplace &a&o$objective_amount$ &e&o$target$ in the &d&oshrine &e&oat spawn. category:daily_task'
+  
+  finishWhisper: 'notify &e&oThe Oracle acknowledges your dedication... io:subtitle'
+  finishNotice: 'notify &2Your daily quests reward\:\n+ $$reward_amount$ category:daily_task'
+
+  #######################
+  ## End Context Based ##
   ###############################################################################
 
   status:

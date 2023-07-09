@@ -7,7 +7,7 @@ schedules:
   
 events:
   announceResetDaily: "notifyall &eDaily Quests reset!"
-#   resetMining: folder dailyQuests-mining.diamondRushReset,dailyQuests-mining.goldDiggerReset,dailyQuests-mining.ironMinerReset,dailyQuests-mining.netherMinerReset,dailyQuests-mining.obsidianCollectorReset
+#   resetMining: folder dailyQuests-mining.diamondOre.reset
 #   resetMobkill: folder dailyQuests-mobkill.zombieHuntReset,dailyQuests-mobkill.creepyStoryReset,dailyQuests-mobkill.thinSkeletonReset,dailyQuests-mobkill.piggyPigReset,dailyQuests-mobkill.spiderWebReset
 #   resetLumber: folder dailyQuests-mobkill.zombieHuntReset,dailyQuests-mobkill.creepyStoryReset,dailyQuests-mobkill.thinSkeletonReset,dailyQuests-mobkill.piggyPigReset,dailyQuests-mobkill.spiderWebReset
 #   resetFishing: folder dailyQuests-fishing.codReset,dailyQuests-fishing.salmonReset,dailyQuests-fishing.pufferfishReset,dailyQuests-fishing.tropicalReset,dailyQuests-fishing.nautilusReset

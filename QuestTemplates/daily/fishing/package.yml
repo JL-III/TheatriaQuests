@@ -11,19 +11,19 @@ conditions:
   ################
   ## Tag checks ##
   ################
-  collectTaken: tag collect_taken
-  collectComplete: tag collect_complete
-  shrineTaken: tag shrine_taken
-  shrineComplete: tag shrine_complete
-  worldCheck: world $world$
+  collectTaken: '$collectTaken$'
+  collectComplete: '$collectComplete$'
+  shrineTaken: '$shrineTaken$'
+  shrineComplete: '$shrineComplete$'
+  worldCheck: '$worldCheck$'
   
   ########################
   ## Quest State checks ##
   ########################
   
-  collectTaskActive: and collectTaken,!collectComplete
-  shrineTaskActive: and collectComplete,!shrineComplete
-  questComplete: and collectComplete,shrineComplete
+  collectTaskActive: '$collectTaskActive$'
+  shrineTaskActive: '$shrineTaskActive$'
+  questComplete: '$questComplete$'
 
 events:
 
@@ -31,48 +31,47 @@ events:
   ## Tags ##
   ##########
   
-  addShrineTakenTag: tag add shrine_taken
-  addShrineCompleteTag: tag add shrine_complete
-  
-  addCollectTakenTag: tag add collect_taken
-  addCollectCompleteTag: tag add collect_complete
+  addShrineTakenTag: '$addShrineTakenTag$'
+  addShrineCompleteTag: '$addShrineCompleteTag$'
+  addCollectTakenTag: '$addCollectTakenTag$'
+  addCollectCompleteTag: '$addCollectCompleteTag$'
   
   ###############
   ## Objective ##
   ###############
   
-  giveCollectObjective: objective add collect
-  giveShrineObjective: objective add shrine
+  giveCollectObjective: '$giveCollectObjective$'
+  giveShrineObjective: '$giveShrineObjective$'
     
   ########
   ## IO ##
   ########
     
-  collectWhisper: 'notify &e&o$action_upper$ &a&o$objective_amount$ &e&o$target$ from the &a&o$world_display$ &e&oworld... io:subtitle'
-  collectStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&o$action_lower$ &a&o$objective_amount$ &e&o$target$ from the &a&o$world_display$ &e&oworld. category:daily_task'
+  collectWhisper: '$collectWhisper$'
+  collectStartNotice: $collectStartNotice$
   
-  shrineWhisper: 'notify &e&oPlace &a&o$objective_amount$ &e&o$target$ in the &d&oshrine &e&oat spawn... io:subtitle'
-  shrineStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&oplace &a&o$objective_amount$ &e&o$target$ in the &d&oshrine &e&oat spawn. category:daily_task'
+  shrineWhisper: '$shrineWhisper$'
+  shrineStartNotice: '$shrineStartNotice$'
   
-  finishWhisper: 'notify &e&oThe Oracle acknowledges your dedication... io:subtitle'
-  finishNotice: 'notify &2Your daily quests reward\:\n+ $$reward_amount$ category:daily_task'
+  finishWhisper: '$finishWhisper$'
+  finishNotice: '$finishNotice$'
 
   #############
   ## FOLDERS ##
   #############
   
-  collectInitFolder: 'folder addCollectTakenTag,daily.addLumberActiveTag,giveCollectObjective,startQuestWhisper'
-  collectStartFolder: 'folder collectInitFolder,collectWhisper,collectStartNotice conditions:!daily.lumberActive period:3'
+  collectInitFolder: 'folder addCollectTakenTag,daily.addFishingActiveTag,giveCollectObjective,startQuestWhisper'
+  collectStartFolder: 'folder collectInitFolder,collectWhisper,collectStartNotice conditions:!daily.fishingActive period:3'
   
   shrineInitFolder: 'folder addCollectCompleteTag,addShrineTakenTag,giveShrineObjective,shrineWhisper'
   shrineStartFolder: 'folder shrineInitFolder,shrineStartNotice period:3'
   
-  finishInitFolder: 'folder daily.deleteLumberActiveTag,addShrineCompleteTag,finishWhisper'
+  finishInitFolder: 'folder daily.deleteFishingActiveTag,addShrineCompleteTag,finishWhisper'
   finishFolder: 'folder finishInitFolder,finishNotice,reward period:3'
-  reset: 'folder resetCollectTags,resetObjectives,resetLumberActive'
+  reset: 'folder resetCollectTags,resetObjectives,resetFishingActive'
     
   reward: "point bank.denarii $reward_amount$ action:add"
   resetCollectTags: tag delete collect_taken,collect_complete,shrine_taken,shrine_complete
   resetObjectives: objective remove collect,shrine
-  resetLumberActive: tag delete daily.lumber_active
+  resetFishingActive: tag delete daily.fishing_active
   
