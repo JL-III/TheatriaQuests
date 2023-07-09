@@ -23,7 +23,7 @@ menus:
           left: openLevel1FishingQuestsMenu
         close: true
       level2FishingQuestsMenu:
-        item: level1FishingQuestsMenu
+        item: level2FishingQuestsMenu
         text:
         - "&b[Level 2]"
         - "Fishing Quests"
@@ -45,5 +45,5 @@ events:
   openLevel2FishingQuestsMenu: menu open daily-fishing-level2.fishingQuestsMenu
 
 items:
-  level1FishingQuestsMenu: "FISHING_ROD"
-  level2FishingQuestsMenu: "FISHING_ROD"
+  level1FishingQuestsMenu: $level1GUIItem$
+  level2FishingQuestsMenu: $level2GUIItem$

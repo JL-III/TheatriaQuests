@@ -23,7 +23,7 @@ menus:
           left: openLevel1MobkillQuestsMenu
         close: true
       level2MobkillQuestsMenu:
-        item: level1MobkillQuestsMenu
+        item: level2MobkillQuestsMenu
         text:
         - "&b[Level 2]"
         - "Mobkill Quests"
@@ -45,5 +45,5 @@ events:
   openLevel2MobkillQuestsMenu: menu open daily-mobkill-level2.mobkillQuestsMenu
 
 items:
-  level1MobkillQuestsMenu: "IRON_SWORD"
-  level2MobkillQuestsMenu: "IRON_SWORD"
+  level1MobkillQuestsMenu: $level1GUIItem$
+  level2MobkillQuestsMenu: $level2GUIItem$

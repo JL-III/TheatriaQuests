@@ -23,7 +23,7 @@ menus:
           left: openLevel1FarmingQuestsMenu
         close: true
       level2FarmingQuestsMenu:
-        item: level1FarmingQuestsMenu
+        item: level2FarmingQuestsMenu
         text:
         - "&b[Level 2]"
         - "Farming Quests"
@@ -45,5 +45,5 @@ events:
   openLevel2FarmingQuestsMenu: menu open daily-farming-level2.farmingQuestsMenu
 
 items:
-  level1FarmingQuestsMenu: "IRON_HOE"
-  level2FarmingQuestsMenu: "IRON_HOE"
+  level1FarmingQuestsMenu: $level1GUIItem$
+  level2FarmingQuestsMenu: $level2GUIItem$

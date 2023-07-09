@@ -32,6 +32,8 @@ variables:
 
   shrineLocation: 0;65;-2;Mining
   
+  level1GUIItem: 'COPPER_INGOT'
+  level2GUIItem: 'IRON_INGOT'
   enchants: 'enchants:damage_all:1'  
   flags: 'flags:HIDE_ENCHANTS'
   

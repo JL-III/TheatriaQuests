@@ -23,7 +23,7 @@ menus:
           left: openLevel1LumberQuestsMenu
         close: true
       level2LumberQuestsMenu:
-        item: level1LumberQuestsMenu
+        item: level2LumberQuestsMenu
         text:
         - "&b[Level 2]"
         - "Lumber Quests"
@@ -45,5 +45,5 @@ events:
   openLevel2LumberQuestsMenu: menu open daily-lumber-level2.lumberQuestsMenu
 
 items:
-  level1LumberQuestsMenu: "IRON_AXE"
-  level2LumberQuestsMenu: "IRON_AXE"
+  level1LumberQuestsMenu: $level1GUIItem$
+  level2LumberQuestsMenu: $level2GUIItem$

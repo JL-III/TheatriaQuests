@@ -23,7 +23,7 @@ menus:
           left: openLevel1MiningQuestsMenu
         close: true
       level2MiningQuestsMenu:
-        item: level1MiningQuestsMenu
+        item: level2MiningQuestsMenu
         text:
         - "&b[Level 2]"
         - "Mining Quests"
@@ -45,5 +45,5 @@ events:
   openLevel2MiningQuestsMenu: menu open daily-mining-level2.miningQuestsMenu
 
 items:
-  level1MiningQuestsMenu: "IRON_PICKAXE"
-  level2MiningQuestsMenu: "IRON_PICKAXE"
+  level1MiningQuestsMenu: $level1GUIItem$
+  level2MiningQuestsMenu: $level2GUIItem$
