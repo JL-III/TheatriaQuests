@@ -1,0 +1,75 @@
+
+objectives: 
+  join: login events:welcome global
+
+events:
+  welcome: 'menu open help_menu delay:5 seconds period:3'
+  folder_welcome: 'folder welcome delay:5 seconds period:3'
+  folder_tutorial: 'notify You clicked the tutorial option!'
+  folder_activities: 'notify You clicked the activities option!'
+  folder_start: 'notify You clicked the start option!'
+  folder_more_options: 'notify You clicked the more options option!'
+
+menus:
+  help_menu:
+    height: 5
+    title: '&2Help'
+    command: /questhelp
+    slots:
+      '0-8': filler,filler,filler,filler,filler,filler,filler,filler,filler
+      19: tutorial
+      21: activities
+      23: start
+      25: more_options
+      '36-44': filler,filler,filler,filler,filler,filler,filler,filler,filler
+    items:
+      tutorial:
+        item: tutorial
+        amount: 1
+        text:
+        - '&5[&dTutorial&5]'
+        - '&f&oLearn about the'
+        - '&f&oserver!'
+        click:
+          left: folder_tutorial
+        close: true
+      activities:
+        item: activities
+        text:
+        - '&5[&dActivities&5]'
+        - '&f&oSee what you'
+        - '&f&ocan do here!'
+        click:
+          left: folder_activities
+        close: true
+      start:
+        item: start
+        text: 
+        - '&5[&dGet Started&5]'
+        - '&f&oGo to the RTP portal'
+        - '&f&oand find a place'
+        - '&f&ofor a base!'
+        click:
+          left: folder_start
+        close: true
+      more_options:
+        item: more_options
+        text:
+        - '&5[&dMore Options&5]'
+        - '&f&oFind more info'
+        - '&f&ohere'
+        click:
+          left: folder_more_options
+        close: true
+      filler:
+        item: filler
+        amount: 1
+        close: false
+      
+  
+items:
+  filler: GRAY_STAINED_GLASS_PANE
+  tutorial: WRITABLE_BOOK
+  activities: TARGET
+  start: GRASS_BLOCK
+  more_options: COMPARATOR

@@ -1,5 +1,5 @@
 menus:
-  dailyMenu:
+  bankMenu:
     height: 5
     title: '&2Bank Bal: &8$%point.bank.denarii.amount%'
     command: /bank
