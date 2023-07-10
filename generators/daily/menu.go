@@ -100,7 +100,7 @@ func createMenu(template_path, level, template_type string) {
 	}
 
 	deleteFileIfExists(generated_file_path)
-	write(generated_file_path, "package:\n  templates:\n  - daily\n")
+	write(generated_file_path, "package:\n  templates:\n  - daily-template\nmenus:\n  "+template_type+"QuestsMenu:\n    height: 4\n")
 	write(generated_file_path, "menus:\n")
 	write(generated_file_path, "  "+template_type+"QuestsMenu:\n")
 	write(generated_file_path, "    height: 4\n")

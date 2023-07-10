@@ -1,6 +1,6 @@
 package:
   templates:
-    - daily-fishing
+    - daily-template-fishing
 
 variables:
 

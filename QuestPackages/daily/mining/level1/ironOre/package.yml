@@ -1,6 +1,6 @@
 package:
   templates:
-    - daily-mining
+    - daily-template-mining
 
 variables:
 

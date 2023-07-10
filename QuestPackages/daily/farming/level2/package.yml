@@ -1,6 +1,9 @@
 package:
   templates:
-  - daily
+  - daily-template
+menus:
+  farmingQuestsMenu:
+    height: 4
 menus:
   farmingQuestsMenu:
     height: 4

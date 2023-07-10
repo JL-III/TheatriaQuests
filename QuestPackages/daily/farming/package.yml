@@ -1,6 +1,6 @@
 package:
   templates:
-  - daily
+  - daily-template
 
 menus:
   levelMenu:

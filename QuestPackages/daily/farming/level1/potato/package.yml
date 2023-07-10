@@ -1,6 +1,6 @@
 package:
   templates:
-    - daily-farming
+    - daily-template-farming
     
 variables:
 

@@ -1,6 +1,6 @@
 package:
   templates:
-    - daily-base
+    - daily-template-base
 
 objectives:
   collect: 'block $target_slug$ -$objective_amount$ conditions:worldCheck events:shrineStartFolder notify'
