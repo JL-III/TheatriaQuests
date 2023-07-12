@@ -1,9 +1,9 @@
 package schedules
 
 import (
-	"quests/utils"
-	"log"
 	"fmt"
+	"log"
+	"quests/utils"
 )
 
 func CreateScheduleEntries(base_path string) {
@@ -13,7 +13,13 @@ func CreateScheduleEntries(base_path string) {
 		log.Fatal(err)
 	}
 
-	for _, filename := range filenames {
+	fmt.Println(base_path)
+
+	for i, filename := range filenames {
+		if filenames[i] == "0" {
+		}
+		fmt.Print(filename + "\n")
+		utils.Write(base_path+"schedules/package.yml", "\n"+filename+"Reset: ")
 		dirs, err := utils.GetLevelDirectories(base_path + "/" + filename)
 		if err != nil {
 			log.Printf("Error getting directories from path %s: %v\n", base_path, err)
@@ -30,7 +36,7 @@ func CreateScheduleEntries(base_path string) {
 					log.Printf("Error getting directories from path %s: %v\n", base_path, err)
 					continue
 				}
-				fmt.Print("daily-" + filename + "-" + dir + "-" + lastDir + ".reset,")
+				utils.Write(base_path+"schedules/package.yml", "daily-"+filename+"-"+dir+"-"+lastDir+".reset,")
 			}
 		}
 	}
