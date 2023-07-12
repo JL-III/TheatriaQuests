@@ -83,6 +83,29 @@ func GetLevelDirectories(path string) ([]string, error) {
 	return dirs, nil
 }
 
+func GetChildDirectories(path string) ([]string, error) {
+	var dirs []string
+
+	f, err := os.Open(path)
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+
+	files, err := f.Readdir(-1)
+	if err != nil {
+		return nil, err
+	}
+
+	for _, file := range files {
+		if file.IsDir() && file.Name() != "schedules" {
+			dirs = append(dirs, file.Name())
+		}
+	}
+
+	return dirs, nil
+}
+
 func Write(file_path, data string) {
 	file, err := os.OpenFile(file_path, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
