@@ -1,3 +1,5 @@
+package:
+  enabled: false
 
 objectives: 
   join: login events:welcome global

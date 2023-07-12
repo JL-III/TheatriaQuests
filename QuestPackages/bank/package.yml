@@ -1,3 +1,6 @@
+package:
+  enabled: false
+
 menus:
   bankMenu:
     height: 5

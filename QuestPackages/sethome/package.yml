@@ -1,17 +1,26 @@
+package:
+  enabled: false
+
 objectives:
-  sethome_check: 'login events:folder_sethome global persistent conditions:has_no_home'
-  sethome_command: 'command /sethome base events:folder_sethome_done'
+  check: 'login events:folder_sethome global persistent conditions:has_no_home'
+  command: 'command $command$ events:folder_sethome_done'
+
+variables:
+  command: '/sethome base'
+  prefix: '&b[Tip]'
+  objective_started: '&2*****************************\n** &aObjective Started &2**\n*****************************\n'
+  objective_complete: '&2******************************\n** &aObjective Complete &2**\n******************************\n'
   
 events:
   folder_sethome: 'folder sethome_notify_started,sethome delay:15'
-  sethome_notify_started: 'notify &2Objective started\:\n&eFind a safe location and use &a/sethome base'
-  sethome: 'objective add sethome_command'
+  sethome_notify_started: 'notify $objective_started$&eFind a safe location and use &a$command$'
+  sethome: 'objective add command'
 
   folder_sethome_done: 'folder sethome_done_notify,sethome_info_notify,sethome_reset_notify delay:3 period:3'
 
-  sethome_done_notify: 'notify &2Objective complete\:\n&eYour home is now set!'
-  sethome_info_notify: 'notify &b[Tip] &eYou can always return to this home with &a/home base'
-  sethome_reset_notify: 'notify &b[Tip] &eYou can also reset this home with /sethome base\nAt a new location.'
+  sethome_done_notify: 'notify $objective_complete$&eYour home is now set!'
+  sethome_info_notify: 'notify $prefix$ &eYou can always return to this home with &a$command$'
+  sethome_reset_notify: 'notify $prefix$ &eYou can also reset this home with &a$command$\n&eat a new location.'
 
 conditions:
   has_no_home: 'variable %ph.essentials_homes_set% ^0$'
