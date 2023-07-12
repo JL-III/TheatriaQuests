@@ -7,6 +7,9 @@ schedules:
   
 events:
   announceResetDaily: "notifyall &eDaily Quests reset!"
+  resetFarmingLevel1: folder daily-farming-level1-beetroot.reset,daily-farming-level1-carrot.reset,daily-farming-level1-netherwart.daily,daily-farming-level1-potato.reset,daily-farming-level1-wheat.reset
+  resetFarmingLevel2: folder daily-farming-level2-beetroot.reset,daily-farming-level2-carrot.reset,daily-farming-level2-netherwart.daily,daily-farming-level2-potato.reset,daily-farming-level2-wheat.reset
+  
 #   resetMining: folder dailyQuests-mining.diamondOre.reset
 #   resetMobkill: folder dailyQuests-mobkill.zombieHuntReset,dailyQuests-mobkill.creepyStoryReset,dailyQuests-mobkill.thinSkeletonReset,dailyQuests-mobkill.piggyPigReset,dailyQuests-mobkill.spiderWebReset
 #   resetLumber: folder dailyQuests-mobkill.zombieHuntReset,dailyQuests-mobkill.creepyStoryReset,dailyQuests-mobkill.thinSkeletonReset,dailyQuests-mobkill.piggyPigReset,dailyQuests-mobkill.spiderWebReset

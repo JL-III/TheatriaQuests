@@ -1,8 +1,8 @@
-module zip
+module quests
 
 go 1.20
 
-require github.com/mholt/archiver/v3 v3.5.1
+require gopkg.in/yaml.v3 v3.0.1
 
 require (
 	github.com/andybalholm/brotli v1.0.1 // indirect
@@ -10,6 +10,7 @@ require (
 	github.com/golang/snappy v0.0.2 // indirect
 	github.com/klauspost/compress v1.11.4 // indirect
 	github.com/klauspost/pgzip v1.2.5 // indirect
+	github.com/mholt/archiver/v3 v3.5.1 // indirect
 	github.com/nwaples/rardecode v1.1.0 // indirect
 	github.com/pierrec/lz4/v4 v4.1.2 // indirect
 	github.com/ulikunitz/xz v0.5.9 // indirect

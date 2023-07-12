@@ -1,13 +1,11 @@
-package main
+package menu
 
 import (
-	"fmt"
 	"log"
-	"os"
-	"path/filepath"
 	"strconv"
 	"strings"
 	"unicode/utf8"
+	"quests/utils"
 )
 
 type ItemRow struct {
@@ -51,31 +49,12 @@ type Item struct {
 	Sections map[string]GUISection `yaml:"items"`
 }
 
-func main() {
-
-	yellow := "\033[33m"
-	blue := "\033[34m"
-	reset := "\033[0m"
-
-	fmt.Print(blue + "Template type: " + yellow)
-	var template_type string
-	fmt.Scanln(&template_type)
-
-	template_path := "../../QuestPackages/daily/" + template_type
-	fmt.Print(blue + "Level: " + yellow)
-	fmt.Print(reset)
-	var level string
-	fmt.Scanln(&level)
-	createMenu(template_path, level, template_type)
-
-}
-
-func createMenu(template_path, level, template_type string) {
+func CreateMenu(template_path, level, template_type string) {
 	generated_file_path := template_path + "/" + level + "/package.yml"
 
 	finalConfig := FinalConfig{}
 
-	filenames, err := getLastDirectories(template_path + "/" + level + "/")
+	filenames, err := utils.GetLastDirectories(template_path + "/" + level + "/")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -99,46 +78,33 @@ func createMenu(template_path, level, template_type string) {
 		finalConfig.ItemGUIlist[i] = strings.Replace(finalConfig.ItemGUIlist[i], "0", strconv.Itoa(i+9), 1)
 	}
 
-	deleteFileIfExists(generated_file_path)
-	write(generated_file_path, "package:\n  templates:\n  - daily-template\nmenus:\n  "+template_type+"QuestsMenu:\n    height: 4\n")
-	write(generated_file_path, "menus:\n")
-	write(generated_file_path, "  "+template_type+"QuestsMenu:\n")
-	write(generated_file_path, "    height: 4\n")
-	write(generated_file_path, "    title: "+strings.Title(template_type)+" "+level+" Quests\n")
-	write(generated_file_path, "    slots:\n")
-	write(generated_file_path, "      0-8: \"filler,filler,filler,filler,filler,filler,filler,filler,filler\"\n")
-	write(generated_file_path, strings.Join(finalConfig.ItemGUIlist, ""))
-	write(generated_file_path, "      28-35: \"filler,filler,filler,filler,filler,filler,filler,filler,filler\"\n")
-	write(generated_file_path, "      27: \"back\"\n")
-	write(generated_file_path, "    items:\n")
-	write(generated_file_path, yamlString)
-	write(generated_file_path, "      filler:\n")
-	write(generated_file_path, "        text: \"&a \"\n")
-	write(generated_file_path, "        item: \"filler\"\n")
-	write(generated_file_path, "      back:\n")
-	write(generated_file_path, "        item: \"back\"\n")
-	write(generated_file_path, "        text:\n")
-	write(generated_file_path, "            - \"&c&lGo Back\"\n")
-	write(generated_file_path, "        click:\n")
-	write(generated_file_path, "          left: \"daily.open"+strings.Title(template_type)+"LevelMenu\"\n")
-	write(generated_file_path, "        close: true\n")
-	write(generated_file_path, "items:\n")
-	write(generated_file_path, strings.Join(finalConfig.ItemRow, ""))
+	utils.DeleteFileIfExists(generated_file_path)
+	utils.Write(generated_file_path, "package:\n  templates:\n  - daily-template\n")
+	utils.Write(generated_file_path, "menus:\n")
+	utils.Write(generated_file_path, "  "+template_type+"QuestsMenu:\n")
+	utils.Write(generated_file_path, "    height: 4\n")
+	utils.Write(generated_file_path, "    title: "+strings.Title(template_type)+" "+level+" Quests\n")
+	utils.Write(generated_file_path, "    slots:\n")
+	utils.Write(generated_file_path, "      0-8: \"filler,filler,filler,filler,filler,filler,filler,filler,filler\"\n")
+	utils.Write(generated_file_path, strings.Join(finalConfig.ItemGUIlist, ""))
+	utils.Write(generated_file_path, "      28-35: \"filler,filler,filler,filler,filler,filler,filler,filler,filler\"\n")
+	utils.Write(generated_file_path, "      27: \"back\"\n")
+	utils.Write(generated_file_path, "    items:\n")
+	utils.Write(generated_file_path, yamlString)
+	utils.Write(generated_file_path, "      filler:\n")
+	utils.Write(generated_file_path, "        text: \"&a \"\n")
+	utils.Write(generated_file_path, "        item: \"filler\"\n")
+	utils.Write(generated_file_path, "      back:\n")
+	utils.Write(generated_file_path, "        item: \"back\"\n")
+	utils.Write(generated_file_path, "        text:\n")
+	utils.Write(generated_file_path, "            - \"&c&lGo Back\"\n")
+	utils.Write(generated_file_path, "        click:\n")
+	utils.Write(generated_file_path, "          left: \"daily.open"+strings.Title(template_type)+"LevelMenu\"\n")
+	utils.Write(generated_file_path, "        close: true\n")
+	utils.Write(generated_file_path, "items:\n")
+	utils.Write(generated_file_path, strings.Join(finalConfig.ItemRow, ""))
 
 	print("Finished creating daily menu!")
-}
-
-func write(file_path, data string) {
-	file, err := os.OpenFile(file_path, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer file.Close()
-
-	_, err = file.WriteString(data)
-	if err != nil {
-		log.Fatal(err)
-	}
 }
 
 func addGuiItemList(Keys Keys) string {
@@ -268,72 +234,4 @@ func CreateEntries(template_type, level, file_name string, Keys Keys) []Entry {
 	}
 
 	return []Entry{notStarted, started, shrine, done}
-}
-
-func deleteFileIfExists(filename string) error {
-	if _, err := os.Stat(filename); err == nil {
-		fmt.Println("Found existing file... removing.")
-		return os.Remove(filename)
-	} else if os.IsNotExist(err) {
-		return nil
-	} else {
-		return err
-	}
-}
-
-func getLastDirectories(path string) ([]string, error) {
-	var dirs []string
-	var lastDirs []string
-
-	err := filepath.Walk(path, func(currentPath string, info os.FileInfo, err error) error {
-		if err != nil {
-			return err
-		}
-		if info.IsDir() {
-			dirs = append(dirs, currentPath)
-		}
-		return nil
-	})
-
-	if err != nil {
-		return nil, err
-	}
-
-	for _, dir := range dirs {
-		subDir, _ := filepath.Glob(dir + "/*")
-		isEmpty := true
-		for _, path := range subDir {
-			info, _ := os.Stat(path)
-			if info.IsDir() {
-				isEmpty = false
-				break
-			}
-		}
-		if isEmpty {
-			lastDirName := filepath.Base(dir)
-			lastDirs = append(lastDirs, lastDirName)
-		}
-	}
-
-	return lastDirs, nil
-}
-
-func getLevelDirectories(path string) ([]string, error) {
-	var dirs []string
-
-	err := filepath.Walk(path, func(currentPath string, info os.FileInfo, err error) error {
-		if err != nil {
-			return err
-		}
-		if info.IsDir() && strings.Contains(info.Name(), "level") {
-			dirs = append(dirs, info.Name())
-		}
-		return nil
-	})
-
-	if err != nil {
-		return nil, err
-	}
-
-	return dirs, nil
 }
