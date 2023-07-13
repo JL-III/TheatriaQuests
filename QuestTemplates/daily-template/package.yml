@@ -21,8 +21,10 @@ variables:
   done_line_2: Do this quest again tomorrow!
 
   ################
-  ## Tag checks ##
+  ## Conditions ##
   ################
+  hasQuestPoint: 'point daily.questpoints 1'
+  startQuestCheck: 'and !daily.$type_lower$Active,hasQuestPoint'
   collectTaken: tag collect_taken
   collectComplete: tag collect_complete
   shrineTaken: tag shrine_taken
@@ -71,8 +73,12 @@ variables:
   ## FOLDERS ##
   #############
 
+  collectStartFolder: 'if startQuestCheck passStartFolderCheck else failStartFolderCheck'
+
+  passStartFolderCheck: folder collectInitFolder,collectWhisper,collectStartNotice period:3
+  failStartFolderCheck: notify &4You do not have enough quest points to start another quest! conditions:!hasQuestPoint
+
   collectInitFolder: 'folder addCollectTakenTag,daily.add$type_upper$ActiveTag,giveCollectObjective,startQuestWhisper'
-  collectStartFolder: 'folder collectInitFolder,collectWhisper,collectStartNotice conditions:!daily.$type_lower$Active period:3'
   
   shrineInitFolder: 'folder addCollectCompleteTag,addShrineTakenTag,giveShrineObjective,shrineWhisper'
   shrineStartFolder: 'folder shrineInitFolder,shrineStartNotice period:3'
@@ -81,7 +87,7 @@ variables:
   finishFolder: 'folder finishInitFolder,finishNotice,reward period:3'
   reset: 'folder resetCollectTags,resetObjectives,resetActive'
     
-  reward: "point bank.denarii $reward_amount$ action:add"
+  reward: "command eco give %player% $reward_amount$"
   resetCollectTags: tag delete collect_taken,collect_complete,shrine_taken,shrine_complete
   resetObjectives: objective remove collect,shrine
   resetActive: tag delete daily.$type_lower$_active
