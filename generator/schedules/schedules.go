@@ -42,28 +42,28 @@ func CreateScheduleEntries(base_path string) {
 
 	for _, filename := range filenames {
 		
-		dirs, err := utils.GetLevelDirectories(base_path + "/" + filename)
+		levels, err := utils.GetLevelDirectories(base_path + "/" + filename)
 		if err != nil {
 			log.Printf("Error getting directories from path %s: %v\n", base_path, err)
 			continue
 		}
 
 		utils.Write(base_path+"schedules/package.yml", "\n  "+filename+"Reset: ")
-		for _, dir := range dirs {
-			lastDirs, err := utils.GetLastDirectories(base_path + "/" + filename + "/" + dir)
+		for i, level := range levels {
+			lastDirs, err := utils.GetLastDirectories(base_path + "/" + filename + "/" + level)
 			if err != nil {
 				log.Printf("Error getting directories from path %s: %v\n", base_path, err)
 				continue
 			}
-			for i, lastDir := range lastDirs {
+			for j, lastDir := range lastDirs {
 				if err != nil {
 					log.Printf("Error getting directories from path %s: %v\n", base_path, err)
 					continue
 				}
-				if i == len(lastDirs)-1 {
-					utils.Write(base_path+"schedules/package.yml", "daily-"+filename+"-"+dir+"-"+lastDir+".reset")
+				if i == len(levels)-1 && j == len(lastDirs)-1 {
+					utils.Write(base_path+"schedules/package.yml", "daily-"+filename+"-"+level+"-"+lastDir+".reset")
 				} else {
-					utils.Write(base_path+"schedules/package.yml", "daily-"+filename+"-"+dir+"-"+lastDir+".reset,")
+					utils.Write(base_path+"schedules/package.yml", "daily-"+filename+"-"+level+"-"+lastDir+".reset,")
 				}
 			}
 		}
