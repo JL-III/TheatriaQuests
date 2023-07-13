@@ -48,7 +48,7 @@ func CreateScheduleEntries(base_path string) {
 			continue
 		}
 
-		utils.Write(base_path+"schedules/package.yml", "\n  "+filename+"Reset: ")
+		utils.Write(base_path+"schedules/package.yml", "\n  "+filename+"Reset: folder ")
 		for i, level := range levels {
 			lastDirs, err := utils.GetLastDirectories(base_path + "/" + filename + "/" + level)
 			if err != nil {
