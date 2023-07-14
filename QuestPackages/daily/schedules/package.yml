@@ -10,6 +10,6 @@ events:
 
   farmingReset: folder daily-farming-bamboo.reset,daily-farming-beetroot.reset,daily-farming-cactus.reset,daily-farming-carrot.reset,daily-farming-melon.reset,daily-farming-potato.reset,daily-farming-pumpkin.reset,daily-farming-sugarcane.reset,daily-farming-sweetberry.reset,daily-farming-wheat.reset
   fishingReset: folder daily-fishing-cod.reset,daily-fishing-puffer.reset,daily-fishing-salmon.reset,daily-fishing-shell.reset,daily-fishing-tropical.reset
-  lumberReset: folder daily-lumber-birch.reset,daily-lumber-crimson.reset,daily-lumber-darkoak.reset,daily-lumber-oak.reset,daily-lumber-spruce.reset
+  lumberReset: folder daily-lumber-acacia.reset,daily-lumber-birch.reset,daily-lumber-cherry.reset,daily-lumber-crimson.reset,daily-lumber-darkoak.reset,daily-lumber-jungle.reset,daily-lumber-mangrove.reset,daily-lumber-oak.reset,daily-lumber-spruce.reset,daily-lumber-warped.reset
   miningReset: folder daily-mining-diamondOre.reset,daily-mining-goldOre.reset,daily-mining-ironOre.reset,daily-mining-obsidian.reset,daily-mining-quartzOre.reset
   mobkillReset: folder daily-mobkill-creeper.reset,daily-mobkill-pig.reset,daily-mobkill-skeleton.reset,daily-mobkill-spider.reset,daily-mobkill-zombie.reset
