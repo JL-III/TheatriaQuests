@@ -67,7 +67,7 @@ func GetLastDirectories(path string) ([]string, error) {
 func GetLevelDirectories(path string) ([]string, error) {
 	var dirs []string
 
-	err := filepath.Walk(path, func(currentPath string, info os.FileInfo, err error) error {
+	err := filepath.Walk(path, func(_ string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
