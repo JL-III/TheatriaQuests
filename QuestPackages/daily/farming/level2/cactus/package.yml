@@ -14,17 +14,17 @@ variables:
   action_lower: harvest
   action_lower_past: harvested
 
-  target: wheat
-  target_upper: Wheat
+  target: cactus
+  target_upper: Cactus
   
-  target_drops: wheat
-  target_drops_plural: wheat
+  target_drops: cactus
+  target_drops_plural: cactus
   
-  target_slug: wheat
+  target_slug: cactus
   
-  age: '[age=7]'
+  age: ''
 
-  target_drops_slug: wheat
+  target_drops_slug: cactus
 
 items:
-  wheat: minecraft:$target_drops_slug$
+  cactus: minecraft:$target_drops_slug$

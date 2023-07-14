@@ -3,17 +3,17 @@ package:
   - daily-template
 menus:
   farmingQuestsMenu:
-    height: 4
+    height: 3
     title: Farming level1 Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       9: level1BeetrootActiveFalse,level1BeetrootActiveTrue,level1BeetrootShrine,level1BeetrootShrineFinished
       10: level1CarrotActiveFalse,level1CarrotActiveTrue,level1CarrotShrine,level1CarrotShrineFinished
-      11: level1NetherwartActiveFalse,level1NetherwartActiveTrue,level1NetherwartShrine,level1NetherwartShrineFinished
-      12: level1PotatoActiveFalse,level1PotatoActiveTrue,level1PotatoShrine,level1PotatoShrineFinished
+      11: level1PotatoActiveFalse,level1PotatoActiveTrue,level1PotatoShrine,level1PotatoShrineFinished
+      12: level1SugarcaneActiveFalse,level1SugarcaneActiveTrue,level1SugarcaneShrine,level1SugarcaneShrineFinished
       13: level1WheatActiveFalse,level1WheatActiveTrue,level1WheatShrine,level1WheatShrineFinished
-      28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-      27: "back"
+      19-26: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
+      18: "back"
     items:
       level1BeetrootActiveFalse:
         item: level1BeetrootActiveFalse
@@ -109,53 +109,6 @@ menus:
           - 
           - $status.inProgress$
         close: false
-      level1NetherwartActiveFalse:
-        item: level1NetherwartActiveFalse
-        conditions: "!daily-farming-level1-netherwart.collectTaken"
-        text:
-          - $daily-farming-level1-netherwart.title$
-          - $daily-farming-level1-netherwart.description_line_1$
-          - $daily-farming-level1-netherwart.description_line_2$
-          - 
-          - $status.notStarted$
-          - $action.start$
-        click:
-          left: daily.farmingCheckActive,daily-farming-level1-netherwart.collectStartFolder
-        close: true
-      level1NetherwartActiveTrue:
-        item: level1NetherwartActiveTrue
-        conditions: daily-farming-level1-netherwart.collectTaken,!daily-farming-level1-netherwart.shrineTaken
-        text:
-          - $daily-farming-level1-netherwart.title$
-          - $daily-farming-level1-netherwart.description_line_1$
-          - $daily-farming-level1-netherwart.description_line_2$
-          - 
-          - $status.inProgress$
-          - "%daily-farming-level1-netherwart.objective.collect.absoluteAmount%/%daily-farming-level1-netherwart.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-level1-netherwart.reset
-        close: true
-      level1NetherwartShrine:
-        item: level1NetherwartActiveTrue
-        conditions: daily-farming-level1-netherwart.shrineTaskActive
-        text:
-          - $daily-farming-level1-netherwart.title$
-          - $daily-farming-level1-netherwart.shrine_line_1$
-          - $daily-farming-level1-netherwart.shrine_line_2$
-          - 
-          - $status.inProgress$
-        close: true
-      level1NetherwartShrineFinished:
-        item: questComplete
-        conditions: daily-farming-level1-netherwart.questComplete
-        text:
-          - $daily-farming-level1-netherwart.title$
-          - $daily-farming-level1-netherwart.done_line_1$
-          - $daily-farming-level1-netherwart.done_line_2$
-          - 
-          - $status.inProgress$
-        close: false
       level1PotatoActiveFalse:
         item: level1PotatoActiveFalse
         conditions: "!daily-farming-level1-potato.collectTaken"
@@ -200,6 +153,53 @@ menus:
           - $daily-farming-level1-potato.title$
           - $daily-farming-level1-potato.done_line_1$
           - $daily-farming-level1-potato.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      level1SugarcaneActiveFalse:
+        item: level1SugarcaneActiveFalse
+        conditions: "!daily-farming-level1-sugarcane.collectTaken"
+        text:
+          - $daily-farming-level1-sugarcane.title$
+          - $daily-farming-level1-sugarcane.description_line_1$
+          - $daily-farming-level1-sugarcane.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.farmingCheckActive,daily-farming-level1-sugarcane.collectStartFolder
+        close: true
+      level1SugarcaneActiveTrue:
+        item: level1SugarcaneActiveTrue
+        conditions: daily-farming-level1-sugarcane.collectTaken,!daily-farming-level1-sugarcane.shrineTaken
+        text:
+          - $daily-farming-level1-sugarcane.title$
+          - $daily-farming-level1-sugarcane.description_line_1$
+          - $daily-farming-level1-sugarcane.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-farming-level1-sugarcane.objective.collect.absoluteAmount%/%daily-farming-level1-sugarcane.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-farming-level1-sugarcane.reset
+        close: true
+      level1SugarcaneShrine:
+        item: level1SugarcaneActiveTrue
+        conditions: daily-farming-level1-sugarcane.shrineTaskActive
+        text:
+          - $daily-farming-level1-sugarcane.title$
+          - $daily-farming-level1-sugarcane.shrine_line_1$
+          - $daily-farming-level1-sugarcane.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      level1SugarcaneShrineFinished:
+        item: questComplete
+        conditions: daily-farming-level1-sugarcane.questComplete
+        text:
+          - $daily-farming-level1-sugarcane.title$
+          - $daily-farming-level1-sugarcane.done_line_1$
+          - $daily-farming-level1-sugarcane.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -265,9 +265,9 @@ items:
   level1BeetrootActiveTrue: $daily-farming-level1-beetroot.target_drops_slug$ $enchants$ $flags$
   level1CarrotActiveFalse: $daily-farming-level1-carrot.target_drops_slug$
   level1CarrotActiveTrue: $daily-farming-level1-carrot.target_drops_slug$ $enchants$ $flags$
-  level1NetherwartActiveFalse: $daily-farming-level1-netherwart.target_drops_slug$
-  level1NetherwartActiveTrue: $daily-farming-level1-netherwart.target_drops_slug$ $enchants$ $flags$
   level1PotatoActiveFalse: $daily-farming-level1-potato.target_drops_slug$
   level1PotatoActiveTrue: $daily-farming-level1-potato.target_drops_slug$ $enchants$ $flags$
+  level1SugarcaneActiveFalse: $daily-farming-level1-sugarcane.target_drops_slug$
+  level1SugarcaneActiveTrue: $daily-farming-level1-sugarcane.target_drops_slug$ $enchants$ $flags$
   level1WheatActiveFalse: $daily-farming-level1-wheat.target_drops_slug$
   level1WheatActiveTrue: $daily-farming-level1-wheat.target_drops_slug$ $enchants$ $flags$

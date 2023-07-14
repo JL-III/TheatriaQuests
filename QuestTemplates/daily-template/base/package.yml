@@ -7,7 +7,10 @@ conditions:
   ################
   ## Tag checks ##
   ################
-  hasQuestPoint: '$hasQuestPoint$'
+  hasLevel2DailyExp: '$hasLevel2DailyExp$'
+  hasLevel3DailyExp: '$hasLevel3DailyExp$'
+  hasLevel4DailyExp: '$hasLevel4DailyExp$'
+  hasLevel5DailyExp: '$hasLevel5DailyExp$' 
   startQuestCheck: '$startQuestCheck$'
   collectTaken: '$collectTaken$'
   collectComplete: '$collectComplete$'

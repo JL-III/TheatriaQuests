@@ -23,8 +23,11 @@ variables:
   ################
   ## Conditions ##
   ################
-  hasQuestPoint: 'point daily.questpoints 1'
-  startQuestCheck: 'and !daily.$type_lower$Active,hasQuestPoint'
+  hasLevel2DailyExp: 'point daily.questexp 25'
+  hasLevel3DailyExp: 'point daily.questexp 50'
+  hasLevel4DailyExp: 'point daily.questexp 100'
+  hasLevel5DailyExp: 'point daily.questexp 200'
+  startQuestCheck: 'and !daily.$type_lower$Active'
   collectTaken: tag collect_taken
   collectComplete: tag collect_complete
   shrineTaken: tag shrine_taken
@@ -76,7 +79,7 @@ variables:
   collectStartFolder: 'if startQuestCheck passStartFolderCheck else failStartFolderCheck'
 
   passStartFolderCheck: folder collectInitFolder,collectWhisper,collectStartNotice period:3
-  failStartFolderCheck: notify &4You do not have enough quest points to start another quest! conditions:!hasQuestPoint
+  failStartFolderCheck: notify &4You do not have enough quest points to start another quest!
 
   collectInitFolder: 'folder addCollectTakenTag,daily.add$type_upper$ActiveTag,giveCollectObjective,startQuestWhisper'
   

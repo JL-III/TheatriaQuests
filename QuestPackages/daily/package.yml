@@ -4,15 +4,17 @@ package:
 
 menus:
   dailyMenu:
-    height: 6
-    title: '&f󏿽'
+    height: 3
+    title: '&d&oShrine Quests'
     command: /daily
     slots:
-      '19': miningQuestsMenu
-      '38': fishingQuestsMenu
-      '22': mobkillingQuestsMenu
-      '42': farmingQuestsMenu
-      '25': lumberQuestsMenu
+      '0-8': filler,filler,filler,filler,filler,filler,filler,filler,filler
+      '9': miningQuestsMenu
+      '11': fishingQuestsMenu
+      '13': mobkillingQuestsMenu
+      '15': farmingQuestsMenu
+      '17': lumberQuestsMenu
+      '18-26': filler,filler,filler,filler,filler,filler,filler,filler,filler
     items:
       miningQuestsMenu:
         item: miningQuestsMenu
@@ -74,6 +76,11 @@ menus:
         - '&d&oChop some wood!'
         click:
           left: openLumberLevelMenu
+        close: false
+      filler:
+        item: filler
+        text:
+        - '&a '
         close: false
 conditions:
 

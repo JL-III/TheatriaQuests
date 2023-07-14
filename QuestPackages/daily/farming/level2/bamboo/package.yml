@@ -13,18 +13,18 @@ variables:
   action_upper: Harvest
   action_lower: harvest
   action_lower_past: harvested
-
-  target: netherwart
-  target_upper: Netherwart
   
-  target_drops: netherwart
-  target_drops_plural: netherwart
+  target: bamboo
+  target_upper: Bamboo
   
-  target_slug: nether_wart
+  target_drops: bamboo
+  target_drops_plural: bamboo
+  
+  target_slug: bamboo
   
   age: '[age=3]'
   
-  target_drops_slug: nether_wart
-  
+  target_drops_slug: bamboo
+    
 items:
-  netherwart: minecraft:$target_drops_slug$
+  bamboo: minecraft:$target_drops_slug$

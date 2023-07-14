@@ -4,15 +4,15 @@ package:
 
 menus:
   levelMenu:
-    height: 4
+    height: 3
     title: Level Menu
     command: /levelfarming
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       "9": level1FarmingQuestsMenu
-      "10": level2FarmingQuestsMenu
-      28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-      27: "back"
+      "11": level2FarmingQuestsMenu
+      19-26: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
+      18: "back"
     items:
       level1FarmingQuestsMenu:
         item: level1FarmingQuestsMenu

@@ -27,4 +27,4 @@ variables:
   target_drops_slug: beetroot
     
 items:
-  beetroots: minecraft:$target_drops_slug$
+  beetroot: minecraft:$target_drops_slug$

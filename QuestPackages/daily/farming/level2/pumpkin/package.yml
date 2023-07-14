@@ -13,18 +13,18 @@ variables:
   action_upper: Harvest
   action_lower: harvest
   action_lower_past: harvested
+
+  target: pumpkin
+  target_upper: Pumpkin
   
-  target: beetroots
-  target_upper: Beetroots
+  target_drops: pumpkin
+  target_drops_plural: pumpkin
   
-  target_drops: beetroot
-  target_drops_plural: beetroots
+  target_slug: pumpkin
   
-  target_slug: beetroots
+  age: ''
   
-  age: '[age=3]'
+  target_drops_slug: pumpkin
   
-  target_drops_slug: beetroot
-    
 items:
-  beetroots: minecraft:$target_drops_slug$
+  pumpkin: minecraft:$target_drops_slug$

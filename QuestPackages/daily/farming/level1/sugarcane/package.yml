@@ -14,17 +14,17 @@ variables:
   action_lower: harvest
   action_lower_past: harvested
 
-  target: netherwart
-  target_upper: Netherwart
+  target: sugarcane
+  target_upper: Sugarcane
   
-  target_drops: netherwart
-  target_drops_plural: netherwart
+  target_drops: sugarcane
+  target_drops_plural: sugarcane
   
-  target_slug: nether_wart
+  target_slug: sugar_cane
   
-  age: '[age=3]'
+  age: '[age=0]'
   
-  target_drops_slug: nether_wart
+  target_drops_slug: sugar_cane
   
 items:
-  netherwart: minecraft:$target_drops_slug$
+  sugar_cane: minecraft:$target_drops_slug$
