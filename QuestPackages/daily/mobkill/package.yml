@@ -2,7 +2,7 @@ package:
   templates:
   - daily-template
 menus:
-  mobkillQuestsMenu:
+  questsMenu:
     height: 4
     title: Mobkill  Quests
     slots:
@@ -17,236 +17,236 @@ menus:
     items:
       CreeperActiveFalse:
         item: CreeperActiveFalse
-        conditions: "!daily-mobkill--creeper.collectTaken"
+        conditions: "!daily-mobkill-creeper.collectTaken"
         text:
-          - $daily-mobkill--creeper.title$
-          - $daily-mobkill--creeper.description_line_1$
-          - $daily-mobkill--creeper.description_line_2$
+          - $daily-mobkill-creeper.title$
+          - $daily-mobkill-creeper.description_line_1$
+          - $daily-mobkill-creeper.description_line_2$
           - 
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill--creeper.collectStartFolder
+          left: daily.mobkillCheckActive,daily-mobkill-creeper.collectStartFolder
         close: true
       CreeperActiveTrue:
         item: CreeperActiveTrue
-        conditions: daily-mobkill--creeper.collectTaken,!daily-mobkill--creeper.shrineTaken
+        conditions: daily-mobkill-creeper.collectTaken,!daily-mobkill-creeper.shrineTaken
         text:
-          - $daily-mobkill--creeper.title$
-          - $daily-mobkill--creeper.description_line_1$
-          - $daily-mobkill--creeper.description_line_2$
+          - $daily-mobkill-creeper.title$
+          - $daily-mobkill-creeper.description_line_1$
+          - $daily-mobkill-creeper.description_line_2$
           - 
           - $status.inProgress$
-          - "%daily-mobkill--creeper.objective.collect.absoluteAmount%/%daily-mobkill--creeper.objective.collect.absoluteTotal%"
+          - "%daily-mobkill-creeper.objective.collect.absoluteAmount%/%daily-mobkill-creeper.objective.collect.absoluteTotal%"
           - $action.reset$
         click:
-          right: resetNotify,daily-mobkill--creeper.reset
+          right: resetNotify,daily-mobkill-creeper.reset
         close: true
       CreeperShrine:
         item: CreeperActiveTrue
-        conditions: daily-mobkill--creeper.shrineTaskActive
+        conditions: daily-mobkill-creeper.shrineTaskActive
         text:
-          - $daily-mobkill--creeper.title$
-          - $daily-mobkill--creeper.shrine_line_1$
-          - $daily-mobkill--creeper.shrine_line_2$
+          - $daily-mobkill-creeper.title$
+          - $daily-mobkill-creeper.shrine_line_1$
+          - $daily-mobkill-creeper.shrine_line_2$
           - 
           - $status.inProgress$
         close: true
       CreeperShrineFinished:
         item: questComplete
-        conditions: daily-mobkill--creeper.questComplete
+        conditions: daily-mobkill-creeper.questComplete
         text:
-          - $daily-mobkill--creeper.title$
-          - $daily-mobkill--creeper.done_line_1$
-          - $daily-mobkill--creeper.done_line_2$
+          - $daily-mobkill-creeper.title$
+          - $daily-mobkill-creeper.done_line_1$
+          - $daily-mobkill-creeper.done_line_2$
           - 
           - $status.inProgress$
         close: false
       PigActiveFalse:
         item: PigActiveFalse
-        conditions: "!daily-mobkill--pig.collectTaken"
+        conditions: "!daily-mobkill-pig.collectTaken"
         text:
-          - $daily-mobkill--pig.title$
-          - $daily-mobkill--pig.description_line_1$
-          - $daily-mobkill--pig.description_line_2$
+          - $daily-mobkill-pig.title$
+          - $daily-mobkill-pig.description_line_1$
+          - $daily-mobkill-pig.description_line_2$
           - 
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill--pig.collectStartFolder
+          left: daily.mobkillCheckActive,daily-mobkill-pig.collectStartFolder
         close: true
       PigActiveTrue:
         item: PigActiveTrue
-        conditions: daily-mobkill--pig.collectTaken,!daily-mobkill--pig.shrineTaken
+        conditions: daily-mobkill-pig.collectTaken,!daily-mobkill-pig.shrineTaken
         text:
-          - $daily-mobkill--pig.title$
-          - $daily-mobkill--pig.description_line_1$
-          - $daily-mobkill--pig.description_line_2$
+          - $daily-mobkill-pig.title$
+          - $daily-mobkill-pig.description_line_1$
+          - $daily-mobkill-pig.description_line_2$
           - 
           - $status.inProgress$
-          - "%daily-mobkill--pig.objective.collect.absoluteAmount%/%daily-mobkill--pig.objective.collect.absoluteTotal%"
+          - "%daily-mobkill-pig.objective.collect.absoluteAmount%/%daily-mobkill-pig.objective.collect.absoluteTotal%"
           - $action.reset$
         click:
-          right: resetNotify,daily-mobkill--pig.reset
+          right: resetNotify,daily-mobkill-pig.reset
         close: true
       PigShrine:
         item: PigActiveTrue
-        conditions: daily-mobkill--pig.shrineTaskActive
+        conditions: daily-mobkill-pig.shrineTaskActive
         text:
-          - $daily-mobkill--pig.title$
-          - $daily-mobkill--pig.shrine_line_1$
-          - $daily-mobkill--pig.shrine_line_2$
+          - $daily-mobkill-pig.title$
+          - $daily-mobkill-pig.shrine_line_1$
+          - $daily-mobkill-pig.shrine_line_2$
           - 
           - $status.inProgress$
         close: true
       PigShrineFinished:
         item: questComplete
-        conditions: daily-mobkill--pig.questComplete
+        conditions: daily-mobkill-pig.questComplete
         text:
-          - $daily-mobkill--pig.title$
-          - $daily-mobkill--pig.done_line_1$
-          - $daily-mobkill--pig.done_line_2$
+          - $daily-mobkill-pig.title$
+          - $daily-mobkill-pig.done_line_1$
+          - $daily-mobkill-pig.done_line_2$
           - 
           - $status.inProgress$
         close: false
       SkeletonActiveFalse:
         item: SkeletonActiveFalse
-        conditions: "!daily-mobkill--skeleton.collectTaken"
+        conditions: "!daily-mobkill-skeleton.collectTaken"
         text:
-          - $daily-mobkill--skeleton.title$
-          - $daily-mobkill--skeleton.description_line_1$
-          - $daily-mobkill--skeleton.description_line_2$
+          - $daily-mobkill-skeleton.title$
+          - $daily-mobkill-skeleton.description_line_1$
+          - $daily-mobkill-skeleton.description_line_2$
           - 
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill--skeleton.collectStartFolder
+          left: daily.mobkillCheckActive,daily-mobkill-skeleton.collectStartFolder
         close: true
       SkeletonActiveTrue:
         item: SkeletonActiveTrue
-        conditions: daily-mobkill--skeleton.collectTaken,!daily-mobkill--skeleton.shrineTaken
+        conditions: daily-mobkill-skeleton.collectTaken,!daily-mobkill-skeleton.shrineTaken
         text:
-          - $daily-mobkill--skeleton.title$
-          - $daily-mobkill--skeleton.description_line_1$
-          - $daily-mobkill--skeleton.description_line_2$
+          - $daily-mobkill-skeleton.title$
+          - $daily-mobkill-skeleton.description_line_1$
+          - $daily-mobkill-skeleton.description_line_2$
           - 
           - $status.inProgress$
-          - "%daily-mobkill--skeleton.objective.collect.absoluteAmount%/%daily-mobkill--skeleton.objective.collect.absoluteTotal%"
+          - "%daily-mobkill-skeleton.objective.collect.absoluteAmount%/%daily-mobkill-skeleton.objective.collect.absoluteTotal%"
           - $action.reset$
         click:
-          right: resetNotify,daily-mobkill--skeleton.reset
+          right: resetNotify,daily-mobkill-skeleton.reset
         close: true
       SkeletonShrine:
         item: SkeletonActiveTrue
-        conditions: daily-mobkill--skeleton.shrineTaskActive
+        conditions: daily-mobkill-skeleton.shrineTaskActive
         text:
-          - $daily-mobkill--skeleton.title$
-          - $daily-mobkill--skeleton.shrine_line_1$
-          - $daily-mobkill--skeleton.shrine_line_2$
+          - $daily-mobkill-skeleton.title$
+          - $daily-mobkill-skeleton.shrine_line_1$
+          - $daily-mobkill-skeleton.shrine_line_2$
           - 
           - $status.inProgress$
         close: true
       SkeletonShrineFinished:
         item: questComplete
-        conditions: daily-mobkill--skeleton.questComplete
+        conditions: daily-mobkill-skeleton.questComplete
         text:
-          - $daily-mobkill--skeleton.title$
-          - $daily-mobkill--skeleton.done_line_1$
-          - $daily-mobkill--skeleton.done_line_2$
+          - $daily-mobkill-skeleton.title$
+          - $daily-mobkill-skeleton.done_line_1$
+          - $daily-mobkill-skeleton.done_line_2$
           - 
           - $status.inProgress$
         close: false
       SpiderActiveFalse:
         item: SpiderActiveFalse
-        conditions: "!daily-mobkill--spider.collectTaken"
+        conditions: "!daily-mobkill-spider.collectTaken"
         text:
-          - $daily-mobkill--spider.title$
-          - $daily-mobkill--spider.description_line_1$
-          - $daily-mobkill--spider.description_line_2$
+          - $daily-mobkill-spider.title$
+          - $daily-mobkill-spider.description_line_1$
+          - $daily-mobkill-spider.description_line_2$
           - 
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill--spider.collectStartFolder
+          left: daily.mobkillCheckActive,daily-mobkill-spider.collectStartFolder
         close: true
       SpiderActiveTrue:
         item: SpiderActiveTrue
-        conditions: daily-mobkill--spider.collectTaken,!daily-mobkill--spider.shrineTaken
+        conditions: daily-mobkill-spider.collectTaken,!daily-mobkill-spider.shrineTaken
         text:
-          - $daily-mobkill--spider.title$
-          - $daily-mobkill--spider.description_line_1$
-          - $daily-mobkill--spider.description_line_2$
+          - $daily-mobkill-spider.title$
+          - $daily-mobkill-spider.description_line_1$
+          - $daily-mobkill-spider.description_line_2$
           - 
           - $status.inProgress$
-          - "%daily-mobkill--spider.objective.collect.absoluteAmount%/%daily-mobkill--spider.objective.collect.absoluteTotal%"
+          - "%daily-mobkill-spider.objective.collect.absoluteAmount%/%daily-mobkill-spider.objective.collect.absoluteTotal%"
           - $action.reset$
         click:
-          right: resetNotify,daily-mobkill--spider.reset
+          right: resetNotify,daily-mobkill-spider.reset
         close: true
       SpiderShrine:
         item: SpiderActiveTrue
-        conditions: daily-mobkill--spider.shrineTaskActive
+        conditions: daily-mobkill-spider.shrineTaskActive
         text:
-          - $daily-mobkill--spider.title$
-          - $daily-mobkill--spider.shrine_line_1$
-          - $daily-mobkill--spider.shrine_line_2$
+          - $daily-mobkill-spider.title$
+          - $daily-mobkill-spider.shrine_line_1$
+          - $daily-mobkill-spider.shrine_line_2$
           - 
           - $status.inProgress$
         close: true
       SpiderShrineFinished:
         item: questComplete
-        conditions: daily-mobkill--spider.questComplete
+        conditions: daily-mobkill-spider.questComplete
         text:
-          - $daily-mobkill--spider.title$
-          - $daily-mobkill--spider.done_line_1$
-          - $daily-mobkill--spider.done_line_2$
+          - $daily-mobkill-spider.title$
+          - $daily-mobkill-spider.done_line_1$
+          - $daily-mobkill-spider.done_line_2$
           - 
           - $status.inProgress$
         close: false
       ZombieActiveFalse:
         item: ZombieActiveFalse
-        conditions: "!daily-mobkill--zombie.collectTaken"
+        conditions: "!daily-mobkill-zombie.collectTaken"
         text:
-          - $daily-mobkill--zombie.title$
-          - $daily-mobkill--zombie.description_line_1$
-          - $daily-mobkill--zombie.description_line_2$
+          - $daily-mobkill-zombie.title$
+          - $daily-mobkill-zombie.description_line_1$
+          - $daily-mobkill-zombie.description_line_2$
           - 
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill--zombie.collectStartFolder
+          left: daily.mobkillCheckActive,daily-mobkill-zombie.collectStartFolder
         close: true
       ZombieActiveTrue:
         item: ZombieActiveTrue
-        conditions: daily-mobkill--zombie.collectTaken,!daily-mobkill--zombie.shrineTaken
+        conditions: daily-mobkill-zombie.collectTaken,!daily-mobkill-zombie.shrineTaken
         text:
-          - $daily-mobkill--zombie.title$
-          - $daily-mobkill--zombie.description_line_1$
-          - $daily-mobkill--zombie.description_line_2$
+          - $daily-mobkill-zombie.title$
+          - $daily-mobkill-zombie.description_line_1$
+          - $daily-mobkill-zombie.description_line_2$
           - 
           - $status.inProgress$
-          - "%daily-mobkill--zombie.objective.collect.absoluteAmount%/%daily-mobkill--zombie.objective.collect.absoluteTotal%"
+          - "%daily-mobkill-zombie.objective.collect.absoluteAmount%/%daily-mobkill-zombie.objective.collect.absoluteTotal%"
           - $action.reset$
         click:
-          right: resetNotify,daily-mobkill--zombie.reset
+          right: resetNotify,daily-mobkill-zombie.reset
         close: true
       ZombieShrine:
         item: ZombieActiveTrue
-        conditions: daily-mobkill--zombie.shrineTaskActive
+        conditions: daily-mobkill-zombie.shrineTaskActive
         text:
-          - $daily-mobkill--zombie.title$
-          - $daily-mobkill--zombie.shrine_line_1$
-          - $daily-mobkill--zombie.shrine_line_2$
+          - $daily-mobkill-zombie.title$
+          - $daily-mobkill-zombie.shrine_line_1$
+          - $daily-mobkill-zombie.shrine_line_2$
           - 
           - $status.inProgress$
         close: true
       ZombieShrineFinished:
         item: questComplete
-        conditions: daily-mobkill--zombie.questComplete
+        conditions: daily-mobkill-zombie.questComplete
         text:
-          - $daily-mobkill--zombie.title$
-          - $daily-mobkill--zombie.done_line_1$
-          - $daily-mobkill--zombie.done_line_2$
+          - $daily-mobkill-zombie.title$
+          - $daily-mobkill-zombie.done_line_1$
+          - $daily-mobkill-zombie.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -258,7 +258,7 @@ menus:
         text:
             - "&c&lGo Back"
         click:
-          left: "daily.openMobkillLevelMenu"
+          left: "daily.openDailyMenu"
         close: true
 items:
   CreeperActiveFalse: $daily-mobkill-creeper.target_drops_slug$

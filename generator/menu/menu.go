@@ -84,7 +84,7 @@ func CreateMenu(template_path, template_type string) {
 	utils.DeleteFileIfExists(generated_file_path)
 	utils.Write(generated_file_path, "package:\n  templates:\n  - daily-template\n")
 	utils.Write(generated_file_path, "menus:\n")
-	utils.Write(generated_file_path, "  "+template_type+"QuestsMenu:\n")
+	utils.Write(generated_file_path, "  questsMenu:\n")
 	utils.Write(generated_file_path, "    height: 4\n")
 	utils.Write(generated_file_path, "    title: "+cases.Title(language.English).String(template_type)+" "+" Quests\n")
 	utils.Write(generated_file_path, "    slots:\n")
@@ -102,7 +102,7 @@ func CreateMenu(template_path, template_type string) {
 	utils.Write(generated_file_path, "        text:\n")
 	utils.Write(generated_file_path, "            - \"&c&lGo Back\"\n")
 	utils.Write(generated_file_path, "        click:\n")
-	utils.Write(generated_file_path, "          left: \"daily.open"+cases.Title(language.English).String(template_type)+"LevelMenu\"\n")
+	utils.Write(generated_file_path, "          left: \"daily.openDailyMenu\"\n")
 	utils.Write(generated_file_path, "        close: true\n")
 	utils.Write(generated_file_path, "items:\n")
 	utils.Write(generated_file_path, strings.Join(finalConfig.ItemRow, ""))
@@ -159,7 +159,7 @@ func GetKeys(file_name string) Keys {
 
 func CreateEntries(template_type, file_name string, Keys Keys) []Entry {
 
-	filePath := "daily-" + template_type + "-" + "-"
+	filePath := "daily-" + template_type + "-"
 	// Creating each entry
 	notStarted := Entry{
 		Key:        Keys.NotStarted,

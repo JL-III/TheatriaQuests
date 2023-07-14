@@ -26,7 +26,7 @@ menus:
         - '&d&oMiner?'
         - '&d&oI hardly know her!'
         click:
-          left: openMiningLevelMenu
+          left: openMiningQuestsMenu
         close: false
       fishingQuestsMenu:
         item: fishingQuestsMenu
@@ -38,7 +38,7 @@ menus:
         - '&d&oP. Sherman'
         - '&d&o42 Wallaby Way'
         click:
-          left: openFishingLevelMenu
+          left: openFishingQuestsMenu
         close: false
       mobkillingQuestsMenu:
         item: mobkillingQuestsMenu
@@ -51,7 +51,7 @@ menus:
         - '&d&oa better place,'
         - '&d&okill some mobs!'
         click:
-          left: openMobkillLevelMenu
+          left: openMobkillQuestsMenu
         close: false
       farmingQuestsMenu:
         item: farmingQuestsMenu
@@ -63,7 +63,7 @@ menus:
         - '&d&oGrab a hoe!'
         - '&d&oPlow a field!'
         click:
-          left: openFarmingLevelMenu
+          left: openFarmingQuestsMenu
         close: false
       lumberQuestsMenu:
         item: lumberQuestsMenu
@@ -75,7 +75,7 @@ menus:
         - '&d&oGrow a beard!'
         - '&d&oChop some wood!'
         click:
-          left: openLumberLevelMenu
+          left: openLumberQuestsMenu
         close: false
       filler:
         item: filler
@@ -120,11 +120,11 @@ events:
   lumberCheckActive: $activeQuestNotice$ conditions:lumberActive
 
   resetCategoryTags: tag delete farming_active,mining_active,fishing_active,mobkill_active,lumber_active
-  openMiningLevelMenu: menu open daily-mining.levelMenu
-  openFishingLevelMenu: menu open daily-fishing.levelMenu
-  openMobkillLevelMenu: menu open daily-mobkill.levelMenu
-  openFarmingLevelMenu: menu open daily-farming.levelMenu
-  openLumberLevelMenu: menu open daily-lumber.levelMenu
+  openMiningQuestsMenu: menu open daily-mining.questsMenu
+  openFishingQuestsMenu: menu open daily-fishing.questsMenu
+  openMobkillQuestsMenu: menu open daily-mobkill.questsMenu
+  openFarmingQuestsMenu: menu open daily-farming.questsMenu
+  openLumberQuestsMenu: menu open daily-lumber.questsMenu
   menuOpenSound: notify &aOpening Quest Menu! sound:block.amethyst_block.chime
   menuCloseSound: notify &aClosing Quest Menu! sound:block.azalea.step
   openDailyMenu: menu open dailyMenu        
