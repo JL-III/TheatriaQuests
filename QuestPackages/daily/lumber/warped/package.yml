@@ -1,0 +1,29 @@
+package:
+  templates:
+    - daily-template-lumber
+
+variables:
+
+  objective_amount: 16
+  reward_amount: 2500
+  
+  world: The_Ark_nether
+  world_display: Nether
+
+  action_upper: Chop
+  action_lower: chop
+  action_lower_past: chopped
+  
+  target: warped stems
+  target_upper: Warped stems
+  
+  target_drops: warped stem
+  target_drops_plural: warped stems
+  
+  target_slug: warped_stem
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: warped_stem
+  
+items:
+  warped_stem: minecraft:$target_drops_slug$

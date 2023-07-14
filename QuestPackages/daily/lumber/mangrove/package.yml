@@ -1,0 +1,29 @@
+package:
+  templates:
+    - daily-template-lumber
+
+variables:
+
+  objective_amount: 16
+  reward_amount: 2500
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Chop
+  action_lower: chop
+  action_lower_past: chopped
+  
+  target: mangrove logs
+  target_upper: Mangrove logs
+  
+  target_drops: mangrove log
+  target_drops_plural: mangrove logs
+  
+  target_slug: mangrove_log
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: mangrove_log
+  
+items:
+  mangrove_log: minecraft:$target_drops_slug$

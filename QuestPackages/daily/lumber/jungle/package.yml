@@ -1,0 +1,29 @@
+package:
+  templates:
+    - daily-template-lumber
+
+variables:
+
+  objective_amount: 16
+  reward_amount: 2500
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Chop
+  action_lower: chop
+  action_lower_past: chopped
+  
+  target: jungle logs
+  target_upper: Jungle logs
+  
+  target_drops: jungle log
+  target_drops_plural: jungle logs
+  
+  target_slug: jungle_log
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: jungle_log
+  
+items:
+  jungle_log: minecraft:$target_drops_slug$

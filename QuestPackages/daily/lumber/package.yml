@@ -7,14 +7,66 @@ menus:
     title: Lumber  Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-      9: BirchActiveFalse,BirchActiveTrue,BirchShrine,BirchShrineFinished
-      10: CrimsonActiveFalse,CrimsonActiveTrue,CrimsonShrine,CrimsonShrineFinished
-      11: DarkoakActiveFalse,DarkoakActiveTrue,DarkoakShrine,DarkoakShrineFinished
-      12: OakActiveFalse,OakActiveTrue,OakShrine,OakShrineFinished
-      13: SpruceActiveFalse,SpruceActiveTrue,SpruceShrine,SpruceShrineFinished
+      9: AcaciaActiveFalse,AcaciaActiveTrue,AcaciaShrine,AcaciaShrineFinished
+      10: BirchActiveFalse,BirchActiveTrue,BirchShrine,BirchShrineFinished
+      11: CherryActiveFalse,CherryActiveTrue,CherryShrine,CherryShrineFinished
+      12: CrimsonActiveFalse,CrimsonActiveTrue,CrimsonShrine,CrimsonShrineFinished
+      13: DarkoakActiveFalse,DarkoakActiveTrue,DarkoakShrine,DarkoakShrineFinished
+      14: JungleActiveFalse,JungleActiveTrue,JungleShrine,JungleShrineFinished
+      15: MangroveActiveFalse,MangroveActiveTrue,MangroveShrine,MangroveShrineFinished
+      16: OakActiveFalse,OakActiveTrue,OakShrine,OakShrineFinished
+      17: SpruceActiveFalse,SpruceActiveTrue,SpruceShrine,SpruceShrineFinished
+      18: WarpedActiveFalse,WarpedActiveTrue,WarpedShrine,WarpedShrineFinished
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
+      AcaciaActiveFalse:
+        item: AcaciaActiveFalse
+        conditions: "!daily-lumber-acacia.collectTaken"
+        text:
+          - $daily-lumber-acacia.title$
+          - $daily-lumber-acacia.description_line_1$
+          - $daily-lumber-acacia.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.lumberCheckActive,daily-lumber-acacia.collectStartFolder
+        close: true
+      AcaciaActiveTrue:
+        item: AcaciaActiveTrue
+        conditions: daily-lumber-acacia.collectTaken,!daily-lumber-acacia.shrineTaken
+        text:
+          - $daily-lumber-acacia.title$
+          - $daily-lumber-acacia.description_line_1$
+          - $daily-lumber-acacia.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber-acacia.objective.collect.absoluteAmount%/%daily-lumber-acacia.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-lumber-acacia.reset
+        close: true
+      AcaciaShrine:
+        item: AcaciaActiveTrue
+        conditions: daily-lumber-acacia.shrineTaskActive
+        text:
+          - $daily-lumber-acacia.title$
+          - $daily-lumber-acacia.shrine_line_1$
+          - $daily-lumber-acacia.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      AcaciaShrineFinished:
+        item: questComplete
+        conditions: daily-lumber-acacia.questComplete
+        text:
+          - $daily-lumber-acacia.title$
+          - $daily-lumber-acacia.done_line_1$
+          - $daily-lumber-acacia.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       BirchActiveFalse:
         item: BirchActiveFalse
         conditions: "!daily-lumber-birch.collectTaken"
@@ -59,6 +111,53 @@ menus:
           - $daily-lumber-birch.title$
           - $daily-lumber-birch.done_line_1$
           - $daily-lumber-birch.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      CherryActiveFalse:
+        item: CherryActiveFalse
+        conditions: "!daily-lumber-cherry.collectTaken"
+        text:
+          - $daily-lumber-cherry.title$
+          - $daily-lumber-cherry.description_line_1$
+          - $daily-lumber-cherry.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.lumberCheckActive,daily-lumber-cherry.collectStartFolder
+        close: true
+      CherryActiveTrue:
+        item: CherryActiveTrue
+        conditions: daily-lumber-cherry.collectTaken,!daily-lumber-cherry.shrineTaken
+        text:
+          - $daily-lumber-cherry.title$
+          - $daily-lumber-cherry.description_line_1$
+          - $daily-lumber-cherry.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber-cherry.objective.collect.absoluteAmount%/%daily-lumber-cherry.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-lumber-cherry.reset
+        close: true
+      CherryShrine:
+        item: CherryActiveTrue
+        conditions: daily-lumber-cherry.shrineTaskActive
+        text:
+          - $daily-lumber-cherry.title$
+          - $daily-lumber-cherry.shrine_line_1$
+          - $daily-lumber-cherry.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      CherryShrineFinished:
+        item: questComplete
+        conditions: daily-lumber-cherry.questComplete
+        text:
+          - $daily-lumber-cherry.title$
+          - $daily-lumber-cherry.done_line_1$
+          - $daily-lumber-cherry.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -156,6 +255,100 @@ menus:
           - 
           - $status.inProgress$
         close: false
+      JungleActiveFalse:
+        item: JungleActiveFalse
+        conditions: "!daily-lumber-jungle.collectTaken"
+        text:
+          - $daily-lumber-jungle.title$
+          - $daily-lumber-jungle.description_line_1$
+          - $daily-lumber-jungle.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.lumberCheckActive,daily-lumber-jungle.collectStartFolder
+        close: true
+      JungleActiveTrue:
+        item: JungleActiveTrue
+        conditions: daily-lumber-jungle.collectTaken,!daily-lumber-jungle.shrineTaken
+        text:
+          - $daily-lumber-jungle.title$
+          - $daily-lumber-jungle.description_line_1$
+          - $daily-lumber-jungle.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber-jungle.objective.collect.absoluteAmount%/%daily-lumber-jungle.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-lumber-jungle.reset
+        close: true
+      JungleShrine:
+        item: JungleActiveTrue
+        conditions: daily-lumber-jungle.shrineTaskActive
+        text:
+          - $daily-lumber-jungle.title$
+          - $daily-lumber-jungle.shrine_line_1$
+          - $daily-lumber-jungle.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      JungleShrineFinished:
+        item: questComplete
+        conditions: daily-lumber-jungle.questComplete
+        text:
+          - $daily-lumber-jungle.title$
+          - $daily-lumber-jungle.done_line_1$
+          - $daily-lumber-jungle.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      MangroveActiveFalse:
+        item: MangroveActiveFalse
+        conditions: "!daily-lumber-mangrove.collectTaken"
+        text:
+          - $daily-lumber-mangrove.title$
+          - $daily-lumber-mangrove.description_line_1$
+          - $daily-lumber-mangrove.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.lumberCheckActive,daily-lumber-mangrove.collectStartFolder
+        close: true
+      MangroveActiveTrue:
+        item: MangroveActiveTrue
+        conditions: daily-lumber-mangrove.collectTaken,!daily-lumber-mangrove.shrineTaken
+        text:
+          - $daily-lumber-mangrove.title$
+          - $daily-lumber-mangrove.description_line_1$
+          - $daily-lumber-mangrove.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber-mangrove.objective.collect.absoluteAmount%/%daily-lumber-mangrove.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-lumber-mangrove.reset
+        close: true
+      MangroveShrine:
+        item: MangroveActiveTrue
+        conditions: daily-lumber-mangrove.shrineTaskActive
+        text:
+          - $daily-lumber-mangrove.title$
+          - $daily-lumber-mangrove.shrine_line_1$
+          - $daily-lumber-mangrove.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      MangroveShrineFinished:
+        item: questComplete
+        conditions: daily-lumber-mangrove.questComplete
+        text:
+          - $daily-lumber-mangrove.title$
+          - $daily-lumber-mangrove.done_line_1$
+          - $daily-lumber-mangrove.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       OakActiveFalse:
         item: OakActiveFalse
         conditions: "!daily-lumber-oak.collectTaken"
@@ -250,6 +443,53 @@ menus:
           - 
           - $status.inProgress$
         close: false
+      WarpedActiveFalse:
+        item: WarpedActiveFalse
+        conditions: "!daily-lumber-warped.collectTaken"
+        text:
+          - $daily-lumber-warped.title$
+          - $daily-lumber-warped.description_line_1$
+          - $daily-lumber-warped.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.lumberCheckActive,daily-lumber-warped.collectStartFolder
+        close: true
+      WarpedActiveTrue:
+        item: WarpedActiveTrue
+        conditions: daily-lumber-warped.collectTaken,!daily-lumber-warped.shrineTaken
+        text:
+          - $daily-lumber-warped.title$
+          - $daily-lumber-warped.description_line_1$
+          - $daily-lumber-warped.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber-warped.objective.collect.absoluteAmount%/%daily-lumber-warped.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-lumber-warped.reset
+        close: true
+      WarpedShrine:
+        item: WarpedActiveTrue
+        conditions: daily-lumber-warped.shrineTaskActive
+        text:
+          - $daily-lumber-warped.title$
+          - $daily-lumber-warped.shrine_line_1$
+          - $daily-lumber-warped.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      WarpedShrineFinished:
+        item: questComplete
+        conditions: daily-lumber-warped.questComplete
+        text:
+          - $daily-lumber-warped.title$
+          - $daily-lumber-warped.done_line_1$
+          - $daily-lumber-warped.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       filler:
         text: "&a "
         item: "filler"
@@ -261,13 +501,23 @@ menus:
           left: "daily.openDailyMenu"
         close: true
 items:
+  AcaciaActiveFalse: $daily-lumber-acacia.target_drops_slug$
+  AcaciaActiveTrue: $daily-lumber-acacia.target_drops_slug$ $enchants$ $flags$
   BirchActiveFalse: $daily-lumber-birch.target_drops_slug$
   BirchActiveTrue: $daily-lumber-birch.target_drops_slug$ $enchants$ $flags$
+  CherryActiveFalse: $daily-lumber-cherry.target_drops_slug$
+  CherryActiveTrue: $daily-lumber-cherry.target_drops_slug$ $enchants$ $flags$
   CrimsonActiveFalse: $daily-lumber-crimson.target_drops_slug$
   CrimsonActiveTrue: $daily-lumber-crimson.target_drops_slug$ $enchants$ $flags$
   DarkoakActiveFalse: $daily-lumber-darkoak.target_drops_slug$
   DarkoakActiveTrue: $daily-lumber-darkoak.target_drops_slug$ $enchants$ $flags$
+  JungleActiveFalse: $daily-lumber-jungle.target_drops_slug$
+  JungleActiveTrue: $daily-lumber-jungle.target_drops_slug$ $enchants$ $flags$
+  MangroveActiveFalse: $daily-lumber-mangrove.target_drops_slug$
+  MangroveActiveTrue: $daily-lumber-mangrove.target_drops_slug$ $enchants$ $flags$
   OakActiveFalse: $daily-lumber-oak.target_drops_slug$
   OakActiveTrue: $daily-lumber-oak.target_drops_slug$ $enchants$ $flags$
   SpruceActiveFalse: $daily-lumber-spruce.target_drops_slug$
   SpruceActiveTrue: $daily-lumber-spruce.target_drops_slug$ $enchants$ $flags$
+  WarpedActiveFalse: $daily-lumber-warped.target_drops_slug$
+  WarpedActiveTrue: $daily-lumber-warped.target_drops_slug$ $enchants$ $flags$
