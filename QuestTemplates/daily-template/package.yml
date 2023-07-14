@@ -108,6 +108,9 @@ variables:
   
   level1GUIItem: 'COPPER_INGOT'
   level2GUIItem: 'IRON_INGOT'
+  level3GUIItem: 'GOLD_INGOT'
+  level4GUIItem: 'DIAMOND'
+  level5GUIItem: 'NETHERITE_INGOT'
   enchants: 'enchants:damage_all:1'  
   flags: 'flags:HIDE_ENCHANTS,HIDE_ATTRIBUTES'
   

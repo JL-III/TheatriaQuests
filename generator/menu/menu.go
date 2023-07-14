@@ -2,10 +2,13 @@ package menu
 
 import (
 	"log"
+	"quests/utils"
 	"strconv"
 	"strings"
 	"unicode/utf8"
-	"quests/utils"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 type ItemRow struct {
@@ -83,7 +86,7 @@ func CreateMenu(template_path, level, template_type string) {
 	utils.Write(generated_file_path, "menus:\n")
 	utils.Write(generated_file_path, "  "+template_type+"QuestsMenu:\n")
 	utils.Write(generated_file_path, "    height: 4\n")
-	utils.Write(generated_file_path, "    title: "+strings.Title(template_type)+" "+level+" Quests\n")
+	utils.Write(generated_file_path, "    title: "+cases.Title(language.English).String(template_type)+" "+level+" Quests\n")
 	utils.Write(generated_file_path, "    slots:\n")
 	utils.Write(generated_file_path, "      0-8: \"filler,filler,filler,filler,filler,filler,filler,filler,filler\"\n")
 	utils.Write(generated_file_path, strings.Join(finalConfig.ItemGUIlist, ""))
@@ -99,7 +102,7 @@ func CreateMenu(template_path, level, template_type string) {
 	utils.Write(generated_file_path, "        text:\n")
 	utils.Write(generated_file_path, "            - \"&c&lGo Back\"\n")
 	utils.Write(generated_file_path, "        click:\n")
-	utils.Write(generated_file_path, "          left: \"daily.open"+strings.Title(template_type)+"LevelMenu\"\n")
+	utils.Write(generated_file_path, "          left: \"daily.open"+cases.Title(language.English).String(template_type)+"LevelMenu\"\n")
 	utils.Write(generated_file_path, "        close: true\n")
 	utils.Write(generated_file_path, "items:\n")
 	utils.Write(generated_file_path, strings.Join(finalConfig.ItemRow, ""))
@@ -145,7 +148,7 @@ func EntryToYamlString(e Entry) string {
 }
 
 func GetKeys(level, file_name string) Keys {
-	file_name_upper := strings.Title(file_name)
+	file_name_upper := cases.Title(language.English).String(file_name)
 	return Keys{
 		NotStarted: level + file_name_upper + "ActiveFalse",
 		Started:    level + file_name_upper + "ActiveTrue",
