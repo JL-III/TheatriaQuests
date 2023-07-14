@@ -1,6 +1,7 @@
 package menu
 
 import (
+	"fmt"
 	"log"
 	"quests/utils"
 	"strconv"
@@ -107,7 +108,7 @@ func CreateMenu(template_path, template_type string) {
 	utils.Write(generated_file_path, "items:\n")
 	utils.Write(generated_file_path, strings.Join(finalConfig.ItemRow, ""))
 
-	print("Finished creating daily menu!")
+	fmt.Println("Finished creating daily menu!")
 }
 
 func addGuiItemList(Keys Keys) string {

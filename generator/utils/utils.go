@@ -1,11 +1,12 @@
 package utils
 
 import (
-	"os"
-	"log"
 	"fmt"
+	"log"
+	"os"
 	"path/filepath"
 	"strings"
+
 	"github.com/mholt/archiver/v3"
 )
 
@@ -121,7 +122,7 @@ func Write(file_path, data string) {
 
 func DeleteFileIfExists(filename string) error {
 	if _, err := os.Stat(filename); err == nil {
-		fmt.Println("Found existing file... removing.")
+		fmt.Println("Found existing file... " + filename + " removing.")
 		return os.Remove(filename)
 	} else if os.IsNotExist(err) {
 		return nil
