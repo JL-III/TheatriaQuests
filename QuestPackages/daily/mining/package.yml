@@ -1,35 +1,255 @@
 package:
   templates:
-    - daily-template
-
+  - daily-template
 menus:
-  levelMenu:
+  miningQuestsMenu:
     height: 4
-    title: Level Menu
-    command: /levelmining
+    title: Mining  Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-      "9": level1MiningQuestsMenu
-      "10": level2MiningQuestsMenu
+      9: DiamondoreActiveFalse,DiamondoreActiveTrue,DiamondoreShrine,DiamondoreShrineFinished
+      10: GoldoreActiveFalse,GoldoreActiveTrue,GoldoreShrine,GoldoreShrineFinished
+      11: IronoreActiveFalse,IronoreActiveTrue,IronoreShrine,IronoreShrineFinished
+      12: ObsidianActiveFalse,ObsidianActiveTrue,ObsidianShrine,ObsidianShrineFinished
+      13: QuartzoreActiveFalse,QuartzoreActiveTrue,QuartzoreShrine,QuartzoreShrineFinished
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
-      level1MiningQuestsMenu:
-        item: level1MiningQuestsMenu
+      DiamondoreActiveFalse:
+        item: DiamondoreActiveFalse
+        conditions: "!daily-mining--diamondOre.collectTaken"
         text:
-        - "&b[Level 1]"
-        - "Mining Quests"
+          - $daily-mining--diamondOre.title$
+          - $daily-mining--diamondOre.description_line_1$
+          - $daily-mining--diamondOre.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
         click:
-          left: openLevel1MiningQuestsMenu
+          left: daily.miningCheckActive,daily-mining--diamondOre.collectStartFolder
         close: true
-      level2MiningQuestsMenu:
-        item: level2MiningQuestsMenu
+      DiamondoreActiveTrue:
+        item: DiamondoreActiveTrue
+        conditions: daily-mining--diamondOre.collectTaken,!daily-mining--diamondOre.shrineTaken
         text:
-        - "&b[Level 2]"
-        - "Mining Quests"
+          - $daily-mining--diamondOre.title$
+          - $daily-mining--diamondOre.description_line_1$
+          - $daily-mining--diamondOre.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mining--diamondOre.objective.collect.absoluteAmount%/%daily-mining--diamondOre.objective.collect.absoluteTotal%"
+          - $action.reset$
         click:
-          left: openLevel2MiningQuestsMenu
+          right: resetNotify,daily-mining--diamondOre.reset
         close: true
+      DiamondoreShrine:
+        item: DiamondoreActiveTrue
+        conditions: daily-mining--diamondOre.shrineTaskActive
+        text:
+          - $daily-mining--diamondOre.title$
+          - $daily-mining--diamondOre.shrine_line_1$
+          - $daily-mining--diamondOre.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      DiamondoreShrineFinished:
+        item: questComplete
+        conditions: daily-mining--diamondOre.questComplete
+        text:
+          - $daily-mining--diamondOre.title$
+          - $daily-mining--diamondOre.done_line_1$
+          - $daily-mining--diamondOre.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      GoldoreActiveFalse:
+        item: GoldoreActiveFalse
+        conditions: "!daily-mining--goldOre.collectTaken"
+        text:
+          - $daily-mining--goldOre.title$
+          - $daily-mining--goldOre.description_line_1$
+          - $daily-mining--goldOre.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.miningCheckActive,daily-mining--goldOre.collectStartFolder
+        close: true
+      GoldoreActiveTrue:
+        item: GoldoreActiveTrue
+        conditions: daily-mining--goldOre.collectTaken,!daily-mining--goldOre.shrineTaken
+        text:
+          - $daily-mining--goldOre.title$
+          - $daily-mining--goldOre.description_line_1$
+          - $daily-mining--goldOre.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mining--goldOre.objective.collect.absoluteAmount%/%daily-mining--goldOre.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mining--goldOre.reset
+        close: true
+      GoldoreShrine:
+        item: GoldoreActiveTrue
+        conditions: daily-mining--goldOre.shrineTaskActive
+        text:
+          - $daily-mining--goldOre.title$
+          - $daily-mining--goldOre.shrine_line_1$
+          - $daily-mining--goldOre.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      GoldoreShrineFinished:
+        item: questComplete
+        conditions: daily-mining--goldOre.questComplete
+        text:
+          - $daily-mining--goldOre.title$
+          - $daily-mining--goldOre.done_line_1$
+          - $daily-mining--goldOre.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      IronoreActiveFalse:
+        item: IronoreActiveFalse
+        conditions: "!daily-mining--ironOre.collectTaken"
+        text:
+          - $daily-mining--ironOre.title$
+          - $daily-mining--ironOre.description_line_1$
+          - $daily-mining--ironOre.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.miningCheckActive,daily-mining--ironOre.collectStartFolder
+        close: true
+      IronoreActiveTrue:
+        item: IronoreActiveTrue
+        conditions: daily-mining--ironOre.collectTaken,!daily-mining--ironOre.shrineTaken
+        text:
+          - $daily-mining--ironOre.title$
+          - $daily-mining--ironOre.description_line_1$
+          - $daily-mining--ironOre.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mining--ironOre.objective.collect.absoluteAmount%/%daily-mining--ironOre.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mining--ironOre.reset
+        close: true
+      IronoreShrine:
+        item: IronoreActiveTrue
+        conditions: daily-mining--ironOre.shrineTaskActive
+        text:
+          - $daily-mining--ironOre.title$
+          - $daily-mining--ironOre.shrine_line_1$
+          - $daily-mining--ironOre.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      IronoreShrineFinished:
+        item: questComplete
+        conditions: daily-mining--ironOre.questComplete
+        text:
+          - $daily-mining--ironOre.title$
+          - $daily-mining--ironOre.done_line_1$
+          - $daily-mining--ironOre.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      ObsidianActiveFalse:
+        item: ObsidianActiveFalse
+        conditions: "!daily-mining--obsidian.collectTaken"
+        text:
+          - $daily-mining--obsidian.title$
+          - $daily-mining--obsidian.description_line_1$
+          - $daily-mining--obsidian.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.miningCheckActive,daily-mining--obsidian.collectStartFolder
+        close: true
+      ObsidianActiveTrue:
+        item: ObsidianActiveTrue
+        conditions: daily-mining--obsidian.collectTaken,!daily-mining--obsidian.shrineTaken
+        text:
+          - $daily-mining--obsidian.title$
+          - $daily-mining--obsidian.description_line_1$
+          - $daily-mining--obsidian.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mining--obsidian.objective.collect.absoluteAmount%/%daily-mining--obsidian.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mining--obsidian.reset
+        close: true
+      ObsidianShrine:
+        item: ObsidianActiveTrue
+        conditions: daily-mining--obsidian.shrineTaskActive
+        text:
+          - $daily-mining--obsidian.title$
+          - $daily-mining--obsidian.shrine_line_1$
+          - $daily-mining--obsidian.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      ObsidianShrineFinished:
+        item: questComplete
+        conditions: daily-mining--obsidian.questComplete
+        text:
+          - $daily-mining--obsidian.title$
+          - $daily-mining--obsidian.done_line_1$
+          - $daily-mining--obsidian.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      QuartzoreActiveFalse:
+        item: QuartzoreActiveFalse
+        conditions: "!daily-mining--quartzOre.collectTaken"
+        text:
+          - $daily-mining--quartzOre.title$
+          - $daily-mining--quartzOre.description_line_1$
+          - $daily-mining--quartzOre.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.miningCheckActive,daily-mining--quartzOre.collectStartFolder
+        close: true
+      QuartzoreActiveTrue:
+        item: QuartzoreActiveTrue
+        conditions: daily-mining--quartzOre.collectTaken,!daily-mining--quartzOre.shrineTaken
+        text:
+          - $daily-mining--quartzOre.title$
+          - $daily-mining--quartzOre.description_line_1$
+          - $daily-mining--quartzOre.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mining--quartzOre.objective.collect.absoluteAmount%/%daily-mining--quartzOre.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mining--quartzOre.reset
+        close: true
+      QuartzoreShrine:
+        item: QuartzoreActiveTrue
+        conditions: daily-mining--quartzOre.shrineTaskActive
+        text:
+          - $daily-mining--quartzOre.title$
+          - $daily-mining--quartzOre.shrine_line_1$
+          - $daily-mining--quartzOre.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      QuartzoreShrineFinished:
+        item: questComplete
+        conditions: daily-mining--quartzOre.questComplete
+        text:
+          - $daily-mining--quartzOre.title$
+          - $daily-mining--quartzOre.done_line_1$
+          - $daily-mining--quartzOre.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       filler:
         text: "&a "
         item: "filler"
@@ -38,12 +258,16 @@ menus:
         text:
             - "&c&lGo Back"
         click:
-          left: "daily.openDailyMenu"
+          left: "daily.openMiningLevelMenu"
         close: true
-events:
-  openLevel1MiningQuestsMenu: menu open daily-mining-level1.miningQuestsMenu
-  openLevel2MiningQuestsMenu: menu open daily-mining-level2.miningQuestsMenu
-
 items:
-  level1MiningQuestsMenu: $level1GUIItem$
-  level2MiningQuestsMenu: $level2GUIItem$
+  DiamondoreActiveFalse: $daily-mining-diamondOre.target_drops_slug$
+  DiamondoreActiveTrue: $daily-mining-diamondOre.target_drops_slug$ $enchants$ $flags$
+  GoldoreActiveFalse: $daily-mining-goldOre.target_drops_slug$
+  GoldoreActiveTrue: $daily-mining-goldOre.target_drops_slug$ $enchants$ $flags$
+  IronoreActiveFalse: $daily-mining-ironOre.target_drops_slug$
+  IronoreActiveTrue: $daily-mining-ironOre.target_drops_slug$ $enchants$ $flags$
+  ObsidianActiveFalse: $daily-mining-obsidian.target_drops_slug$
+  ObsidianActiveTrue: $daily-mining-obsidian.target_drops_slug$ $enchants$ $flags$
+  QuartzoreActiveFalse: $daily-mining-quartzOre.target_drops_slug$
+  QuartzoreActiveTrue: $daily-mining-quartzOre.target_drops_slug$ $enchants$ $flags$

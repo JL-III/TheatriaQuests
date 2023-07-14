@@ -1,35 +1,495 @@
 package:
   templates:
   - daily-template
-
 menus:
-  levelMenu:
-    height: 3
-    title: Level Menu
-    command: /levelfarming
+  farmingQuestsMenu:
+    height: 4
+    title: Farming  Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-      "9": level1FarmingQuestsMenu
-      "11": level2FarmingQuestsMenu
-      19-26: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-      18: "back"
+      9: BambooActiveFalse,BambooActiveTrue,BambooShrine,BambooShrineFinished
+      10: BeetrootActiveFalse,BeetrootActiveTrue,BeetrootShrine,BeetrootShrineFinished
+      11: CactusActiveFalse,CactusActiveTrue,CactusShrine,CactusShrineFinished
+      12: CarrotActiveFalse,CarrotActiveTrue,CarrotShrine,CarrotShrineFinished
+      13: MelonActiveFalse,MelonActiveTrue,MelonShrine,MelonShrineFinished
+      14: PotatoActiveFalse,PotatoActiveTrue,PotatoShrine,PotatoShrineFinished
+      15: PumpkinActiveFalse,PumpkinActiveTrue,PumpkinShrine,PumpkinShrineFinished
+      16: SugarcaneActiveFalse,SugarcaneActiveTrue,SugarcaneShrine,SugarcaneShrineFinished
+      17: SweetberryActiveFalse,SweetberryActiveTrue,SweetberryShrine,SweetberryShrineFinished
+      18: WheatActiveFalse,WheatActiveTrue,WheatShrine,WheatShrineFinished
+      28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
+      27: "back"
     items:
-      level1FarmingQuestsMenu:
-        item: level1FarmingQuestsMenu
+      BambooActiveFalse:
+        item: BambooActiveFalse
+        conditions: "!daily-farming--bamboo.collectTaken"
         text:
-        - "&b[Level 1]"
-        - "Farming Quests"
+          - $daily-farming--bamboo.title$
+          - $daily-farming--bamboo.description_line_1$
+          - $daily-farming--bamboo.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
         click:
-          left: openLevel1FarmingQuestsMenu
+          left: daily.farmingCheckActive,daily-farming--bamboo.collectStartFolder
         close: true
-      level2FarmingQuestsMenu:
-        item: level2FarmingQuestsMenu
+      BambooActiveTrue:
+        item: BambooActiveTrue
+        conditions: daily-farming--bamboo.collectTaken,!daily-farming--bamboo.shrineTaken
         text:
-        - "&b[Level 2]"
-        - "Farming Quests"
+          - $daily-farming--bamboo.title$
+          - $daily-farming--bamboo.description_line_1$
+          - $daily-farming--bamboo.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-farming--bamboo.objective.collect.absoluteAmount%/%daily-farming--bamboo.objective.collect.absoluteTotal%"
+          - $action.reset$
         click:
-          left: openLevel2FarmingQuestsMenu
+          right: resetNotify,daily-farming--bamboo.reset
         close: true
+      BambooShrine:
+        item: BambooActiveTrue
+        conditions: daily-farming--bamboo.shrineTaskActive
+        text:
+          - $daily-farming--bamboo.title$
+          - $daily-farming--bamboo.shrine_line_1$
+          - $daily-farming--bamboo.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      BambooShrineFinished:
+        item: questComplete
+        conditions: daily-farming--bamboo.questComplete
+        text:
+          - $daily-farming--bamboo.title$
+          - $daily-farming--bamboo.done_line_1$
+          - $daily-farming--bamboo.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      BeetrootActiveFalse:
+        item: BeetrootActiveFalse
+        conditions: "!daily-farming--beetroot.collectTaken"
+        text:
+          - $daily-farming--beetroot.title$
+          - $daily-farming--beetroot.description_line_1$
+          - $daily-farming--beetroot.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.farmingCheckActive,daily-farming--beetroot.collectStartFolder
+        close: true
+      BeetrootActiveTrue:
+        item: BeetrootActiveTrue
+        conditions: daily-farming--beetroot.collectTaken,!daily-farming--beetroot.shrineTaken
+        text:
+          - $daily-farming--beetroot.title$
+          - $daily-farming--beetroot.description_line_1$
+          - $daily-farming--beetroot.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-farming--beetroot.objective.collect.absoluteAmount%/%daily-farming--beetroot.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-farming--beetroot.reset
+        close: true
+      BeetrootShrine:
+        item: BeetrootActiveTrue
+        conditions: daily-farming--beetroot.shrineTaskActive
+        text:
+          - $daily-farming--beetroot.title$
+          - $daily-farming--beetroot.shrine_line_1$
+          - $daily-farming--beetroot.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      BeetrootShrineFinished:
+        item: questComplete
+        conditions: daily-farming--beetroot.questComplete
+        text:
+          - $daily-farming--beetroot.title$
+          - $daily-farming--beetroot.done_line_1$
+          - $daily-farming--beetroot.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      CactusActiveFalse:
+        item: CactusActiveFalse
+        conditions: "!daily-farming--cactus.collectTaken"
+        text:
+          - $daily-farming--cactus.title$
+          - $daily-farming--cactus.description_line_1$
+          - $daily-farming--cactus.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.farmingCheckActive,daily-farming--cactus.collectStartFolder
+        close: true
+      CactusActiveTrue:
+        item: CactusActiveTrue
+        conditions: daily-farming--cactus.collectTaken,!daily-farming--cactus.shrineTaken
+        text:
+          - $daily-farming--cactus.title$
+          - $daily-farming--cactus.description_line_1$
+          - $daily-farming--cactus.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-farming--cactus.objective.collect.absoluteAmount%/%daily-farming--cactus.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-farming--cactus.reset
+        close: true
+      CactusShrine:
+        item: CactusActiveTrue
+        conditions: daily-farming--cactus.shrineTaskActive
+        text:
+          - $daily-farming--cactus.title$
+          - $daily-farming--cactus.shrine_line_1$
+          - $daily-farming--cactus.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      CactusShrineFinished:
+        item: questComplete
+        conditions: daily-farming--cactus.questComplete
+        text:
+          - $daily-farming--cactus.title$
+          - $daily-farming--cactus.done_line_1$
+          - $daily-farming--cactus.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      CarrotActiveFalse:
+        item: CarrotActiveFalse
+        conditions: "!daily-farming--carrot.collectTaken"
+        text:
+          - $daily-farming--carrot.title$
+          - $daily-farming--carrot.description_line_1$
+          - $daily-farming--carrot.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.farmingCheckActive,daily-farming--carrot.collectStartFolder
+        close: true
+      CarrotActiveTrue:
+        item: CarrotActiveTrue
+        conditions: daily-farming--carrot.collectTaken,!daily-farming--carrot.shrineTaken
+        text:
+          - $daily-farming--carrot.title$
+          - $daily-farming--carrot.description_line_1$
+          - $daily-farming--carrot.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-farming--carrot.objective.collect.absoluteAmount%/%daily-farming--carrot.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-farming--carrot.reset
+        close: true
+      CarrotShrine:
+        item: CarrotActiveTrue
+        conditions: daily-farming--carrot.shrineTaskActive
+        text:
+          - $daily-farming--carrot.title$
+          - $daily-farming--carrot.shrine_line_1$
+          - $daily-farming--carrot.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      CarrotShrineFinished:
+        item: questComplete
+        conditions: daily-farming--carrot.questComplete
+        text:
+          - $daily-farming--carrot.title$
+          - $daily-farming--carrot.done_line_1$
+          - $daily-farming--carrot.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      MelonActiveFalse:
+        item: MelonActiveFalse
+        conditions: "!daily-farming--melon.collectTaken"
+        text:
+          - $daily-farming--melon.title$
+          - $daily-farming--melon.description_line_1$
+          - $daily-farming--melon.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.farmingCheckActive,daily-farming--melon.collectStartFolder
+        close: true
+      MelonActiveTrue:
+        item: MelonActiveTrue
+        conditions: daily-farming--melon.collectTaken,!daily-farming--melon.shrineTaken
+        text:
+          - $daily-farming--melon.title$
+          - $daily-farming--melon.description_line_1$
+          - $daily-farming--melon.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-farming--melon.objective.collect.absoluteAmount%/%daily-farming--melon.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-farming--melon.reset
+        close: true
+      MelonShrine:
+        item: MelonActiveTrue
+        conditions: daily-farming--melon.shrineTaskActive
+        text:
+          - $daily-farming--melon.title$
+          - $daily-farming--melon.shrine_line_1$
+          - $daily-farming--melon.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      MelonShrineFinished:
+        item: questComplete
+        conditions: daily-farming--melon.questComplete
+        text:
+          - $daily-farming--melon.title$
+          - $daily-farming--melon.done_line_1$
+          - $daily-farming--melon.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      PotatoActiveFalse:
+        item: PotatoActiveFalse
+        conditions: "!daily-farming--potato.collectTaken"
+        text:
+          - $daily-farming--potato.title$
+          - $daily-farming--potato.description_line_1$
+          - $daily-farming--potato.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.farmingCheckActive,daily-farming--potato.collectStartFolder
+        close: true
+      PotatoActiveTrue:
+        item: PotatoActiveTrue
+        conditions: daily-farming--potato.collectTaken,!daily-farming--potato.shrineTaken
+        text:
+          - $daily-farming--potato.title$
+          - $daily-farming--potato.description_line_1$
+          - $daily-farming--potato.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-farming--potato.objective.collect.absoluteAmount%/%daily-farming--potato.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-farming--potato.reset
+        close: true
+      PotatoShrine:
+        item: PotatoActiveTrue
+        conditions: daily-farming--potato.shrineTaskActive
+        text:
+          - $daily-farming--potato.title$
+          - $daily-farming--potato.shrine_line_1$
+          - $daily-farming--potato.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      PotatoShrineFinished:
+        item: questComplete
+        conditions: daily-farming--potato.questComplete
+        text:
+          - $daily-farming--potato.title$
+          - $daily-farming--potato.done_line_1$
+          - $daily-farming--potato.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      PumpkinActiveFalse:
+        item: PumpkinActiveFalse
+        conditions: "!daily-farming--pumpkin.collectTaken"
+        text:
+          - $daily-farming--pumpkin.title$
+          - $daily-farming--pumpkin.description_line_1$
+          - $daily-farming--pumpkin.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.farmingCheckActive,daily-farming--pumpkin.collectStartFolder
+        close: true
+      PumpkinActiveTrue:
+        item: PumpkinActiveTrue
+        conditions: daily-farming--pumpkin.collectTaken,!daily-farming--pumpkin.shrineTaken
+        text:
+          - $daily-farming--pumpkin.title$
+          - $daily-farming--pumpkin.description_line_1$
+          - $daily-farming--pumpkin.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-farming--pumpkin.objective.collect.absoluteAmount%/%daily-farming--pumpkin.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-farming--pumpkin.reset
+        close: true
+      PumpkinShrine:
+        item: PumpkinActiveTrue
+        conditions: daily-farming--pumpkin.shrineTaskActive
+        text:
+          - $daily-farming--pumpkin.title$
+          - $daily-farming--pumpkin.shrine_line_1$
+          - $daily-farming--pumpkin.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      PumpkinShrineFinished:
+        item: questComplete
+        conditions: daily-farming--pumpkin.questComplete
+        text:
+          - $daily-farming--pumpkin.title$
+          - $daily-farming--pumpkin.done_line_1$
+          - $daily-farming--pumpkin.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      SugarcaneActiveFalse:
+        item: SugarcaneActiveFalse
+        conditions: "!daily-farming--sugarcane.collectTaken"
+        text:
+          - $daily-farming--sugarcane.title$
+          - $daily-farming--sugarcane.description_line_1$
+          - $daily-farming--sugarcane.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.farmingCheckActive,daily-farming--sugarcane.collectStartFolder
+        close: true
+      SugarcaneActiveTrue:
+        item: SugarcaneActiveTrue
+        conditions: daily-farming--sugarcane.collectTaken,!daily-farming--sugarcane.shrineTaken
+        text:
+          - $daily-farming--sugarcane.title$
+          - $daily-farming--sugarcane.description_line_1$
+          - $daily-farming--sugarcane.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-farming--sugarcane.objective.collect.absoluteAmount%/%daily-farming--sugarcane.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-farming--sugarcane.reset
+        close: true
+      SugarcaneShrine:
+        item: SugarcaneActiveTrue
+        conditions: daily-farming--sugarcane.shrineTaskActive
+        text:
+          - $daily-farming--sugarcane.title$
+          - $daily-farming--sugarcane.shrine_line_1$
+          - $daily-farming--sugarcane.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      SugarcaneShrineFinished:
+        item: questComplete
+        conditions: daily-farming--sugarcane.questComplete
+        text:
+          - $daily-farming--sugarcane.title$
+          - $daily-farming--sugarcane.done_line_1$
+          - $daily-farming--sugarcane.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      SweetberryActiveFalse:
+        item: SweetberryActiveFalse
+        conditions: "!daily-farming--sweetberry.collectTaken"
+        text:
+          - $daily-farming--sweetberry.title$
+          - $daily-farming--sweetberry.description_line_1$
+          - $daily-farming--sweetberry.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.farmingCheckActive,daily-farming--sweetberry.collectStartFolder
+        close: true
+      SweetberryActiveTrue:
+        item: SweetberryActiveTrue
+        conditions: daily-farming--sweetberry.collectTaken,!daily-farming--sweetberry.shrineTaken
+        text:
+          - $daily-farming--sweetberry.title$
+          - $daily-farming--sweetberry.description_line_1$
+          - $daily-farming--sweetberry.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-farming--sweetberry.objective.collect.absoluteAmount%/%daily-farming--sweetberry.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-farming--sweetberry.reset
+        close: true
+      SweetberryShrine:
+        item: SweetberryActiveTrue
+        conditions: daily-farming--sweetberry.shrineTaskActive
+        text:
+          - $daily-farming--sweetberry.title$
+          - $daily-farming--sweetberry.shrine_line_1$
+          - $daily-farming--sweetberry.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      SweetberryShrineFinished:
+        item: questComplete
+        conditions: daily-farming--sweetberry.questComplete
+        text:
+          - $daily-farming--sweetberry.title$
+          - $daily-farming--sweetberry.done_line_1$
+          - $daily-farming--sweetberry.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      WheatActiveFalse:
+        item: WheatActiveFalse
+        conditions: "!daily-farming--wheat.collectTaken"
+        text:
+          - $daily-farming--wheat.title$
+          - $daily-farming--wheat.description_line_1$
+          - $daily-farming--wheat.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.farmingCheckActive,daily-farming--wheat.collectStartFolder
+        close: true
+      WheatActiveTrue:
+        item: WheatActiveTrue
+        conditions: daily-farming--wheat.collectTaken,!daily-farming--wheat.shrineTaken
+        text:
+          - $daily-farming--wheat.title$
+          - $daily-farming--wheat.description_line_1$
+          - $daily-farming--wheat.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-farming--wheat.objective.collect.absoluteAmount%/%daily-farming--wheat.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-farming--wheat.reset
+        close: true
+      WheatShrine:
+        item: WheatActiveTrue
+        conditions: daily-farming--wheat.shrineTaskActive
+        text:
+          - $daily-farming--wheat.title$
+          - $daily-farming--wheat.shrine_line_1$
+          - $daily-farming--wheat.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      WheatShrineFinished:
+        item: questComplete
+        conditions: daily-farming--wheat.questComplete
+        text:
+          - $daily-farming--wheat.title$
+          - $daily-farming--wheat.done_line_1$
+          - $daily-farming--wheat.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       filler:
         text: "&a "
         item: "filler"
@@ -38,12 +498,26 @@ menus:
         text:
             - "&c&lGo Back"
         click:
-          left: "daily.openDailyMenu"
+          left: "daily.openFarmingLevelMenu"
         close: true
-events:
-  openLevel1FarmingQuestsMenu: menu open daily-farming-level1.farmingQuestsMenu
-  openLevel2FarmingQuestsMenu: menu open daily-farming-level2.farmingQuestsMenu
-
 items:
-  level1FarmingQuestsMenu: $level1GUIItem$
-  level2FarmingQuestsMenu: $level2GUIItem$
+  BambooActiveFalse: $daily-farming-bamboo.target_drops_slug$
+  BambooActiveTrue: $daily-farming-bamboo.target_drops_slug$ $enchants$ $flags$
+  BeetrootActiveFalse: $daily-farming-beetroot.target_drops_slug$
+  BeetrootActiveTrue: $daily-farming-beetroot.target_drops_slug$ $enchants$ $flags$
+  CactusActiveFalse: $daily-farming-cactus.target_drops_slug$
+  CactusActiveTrue: $daily-farming-cactus.target_drops_slug$ $enchants$ $flags$
+  CarrotActiveFalse: $daily-farming-carrot.target_drops_slug$
+  CarrotActiveTrue: $daily-farming-carrot.target_drops_slug$ $enchants$ $flags$
+  MelonActiveFalse: $daily-farming-melon.target_drops_slug$
+  MelonActiveTrue: $daily-farming-melon.target_drops_slug$ $enchants$ $flags$
+  PotatoActiveFalse: $daily-farming-potato.target_drops_slug$
+  PotatoActiveTrue: $daily-farming-potato.target_drops_slug$ $enchants$ $flags$
+  PumpkinActiveFalse: $daily-farming-pumpkin.target_drops_slug$
+  PumpkinActiveTrue: $daily-farming-pumpkin.target_drops_slug$ $enchants$ $flags$
+  SugarcaneActiveFalse: $daily-farming-sugarcane.target_drops_slug$
+  SugarcaneActiveTrue: $daily-farming-sugarcane.target_drops_slug$ $enchants$ $flags$
+  SweetberryActiveFalse: $daily-farming-sweetberry.target_drops_slug$
+  SweetberryActiveTrue: $daily-farming-sweetberry.target_drops_slug$ $enchants$ $flags$
+  WheatActiveFalse: $daily-farming-wheat.target_drops_slug$
+  WheatActiveTrue: $daily-farming-wheat.target_drops_slug$ $enchants$ $flags$

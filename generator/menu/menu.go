@@ -52,21 +52,21 @@ type Item struct {
 	Sections map[string]GUISection `yaml:"items"`
 }
 
-func CreateMenu(template_path, level, template_type string) {
-	generated_file_path := template_path + "/" + level + "/package.yml"
+func CreateMenu(template_path, template_type string) {
+	generated_file_path := template_path + "/package.yml"
 
 	finalConfig := FinalConfig{}
 
-	filenames, err := utils.GetLastDirectories(template_path + "/" + level + "/")
+	filenames, err := utils.GetLastDirectories(template_path + "/")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	for _, filename := range filenames {
-		Keys := GetKeys(level, filename)
+		Keys := GetKeys(filename)
 		finalConfig.ItemGUIlist = append(finalConfig.ItemGUIlist, addGuiItemList(Keys))
-		finalConfig.Entries = append(finalConfig.Entries, CreateEntries(template_type, level, filename, Keys))
-		finalConfig.ItemRow = append(finalConfig.ItemRow, addItemLines(template_type, level, filename, Keys))
+		finalConfig.Entries = append(finalConfig.Entries, CreateEntries(template_type, filename, Keys))
+		finalConfig.ItemRow = append(finalConfig.ItemRow, addItemLines(template_type, filename, Keys))
 	}
 
 	yamlString := ""
@@ -85,13 +85,13 @@ func CreateMenu(template_path, level, template_type string) {
 	utils.Write(generated_file_path, "package:\n  templates:\n  - daily-template\n")
 	utils.Write(generated_file_path, "menus:\n")
 	utils.Write(generated_file_path, "  "+template_type+"QuestsMenu:\n")
-	utils.Write(generated_file_path, "    height: 3\n")
-	utils.Write(generated_file_path, "    title: "+cases.Title(language.English).String(template_type)+" "+level+" Quests\n")
+	utils.Write(generated_file_path, "    height: 4\n")
+	utils.Write(generated_file_path, "    title: "+cases.Title(language.English).String(template_type)+" "+" Quests\n")
 	utils.Write(generated_file_path, "    slots:\n")
 	utils.Write(generated_file_path, "      0-8: \"filler,filler,filler,filler,filler,filler,filler,filler,filler\"\n")
 	utils.Write(generated_file_path, strings.Join(finalConfig.ItemGUIlist, ""))
-	utils.Write(generated_file_path, "      19-26: \"filler,filler,filler,filler,filler,filler,filler,filler,filler\"\n")
-	utils.Write(generated_file_path, "      18: \"back\"\n")
+	utils.Write(generated_file_path, "      28-35: \"filler,filler,filler,filler,filler,filler,filler,filler,filler\"\n")
+	utils.Write(generated_file_path, "      27: \"back\"\n")
 	utils.Write(generated_file_path, "    items:\n")
 	utils.Write(generated_file_path, yamlString)
 	utils.Write(generated_file_path, "      filler:\n")
@@ -114,9 +114,9 @@ func addGuiItemList(Keys Keys) string {
 	return "      0: " + Keys.NotStarted + "," + Keys.Started + "," + Keys.Shrine + "," + Keys.Done + "\n"
 }
 
-func addItemLines(template_type, level, file_name string, Keys Keys) string {
+func addItemLines(template_type, file_name string, Keys Keys) string {
 
-	filePath := "daily-" + template_type + "-" + level + "-"
+	filePath := "daily-" + template_type + "-"
 
 	return ("  " + Keys.NotStarted + ": $" + filePath + file_name + ".target_drops_slug$" + "\n" +
 		"  " + Keys.Started + ": $" + filePath + file_name + ".target_drops_slug$ $enchants$ $flags$" + "\n")
@@ -147,19 +147,19 @@ func EntryToYamlString(e Entry) string {
 	return builder.String()
 }
 
-func GetKeys(level, file_name string) Keys {
+func GetKeys(file_name string) Keys {
 	file_name_upper := cases.Title(language.English).String(file_name)
 	return Keys{
-		NotStarted: level + file_name_upper + "ActiveFalse",
-		Started:    level + file_name_upper + "ActiveTrue",
-		Shrine:     level + file_name_upper + "Shrine",
-		Done:       level + file_name_upper + "ShrineFinished",
+		NotStarted: file_name_upper + "ActiveFalse",
+		Started:    file_name_upper + "ActiveTrue",
+		Shrine:     file_name_upper + "Shrine",
+		Done:       file_name_upper + "ShrineFinished",
 	}
 }
 
-func CreateEntries(template_type, level, file_name string, Keys Keys) []Entry {
+func CreateEntries(template_type, file_name string, Keys Keys) []Entry {
 
-	filePath := "daily-" + template_type + "-" + level + "-"
+	filePath := "daily-" + template_type + "-" + "-"
 	// Creating each entry
 	notStarted := Entry{
 		Key:        Keys.NotStarted,

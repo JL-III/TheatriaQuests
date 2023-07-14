@@ -1,35 +1,255 @@
 package:
   templates:
-    - daily-template
-
+  - daily-template
 menus:
-  levelMenu:
+  lumberQuestsMenu:
     height: 4
-    title: Level Menu
-    command: /levellumber
+    title: Lumber  Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-      "9": level1LumberQuestsMenu
-      "10": level2LumberQuestsMenu
+      9: BirchActiveFalse,BirchActiveTrue,BirchShrine,BirchShrineFinished
+      10: CrimsonActiveFalse,CrimsonActiveTrue,CrimsonShrine,CrimsonShrineFinished
+      11: DarkoakActiveFalse,DarkoakActiveTrue,DarkoakShrine,DarkoakShrineFinished
+      12: OakActiveFalse,OakActiveTrue,OakShrine,OakShrineFinished
+      13: SpruceActiveFalse,SpruceActiveTrue,SpruceShrine,SpruceShrineFinished
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
-      level1LumberQuestsMenu:
-        item: level1LumberQuestsMenu
+      BirchActiveFalse:
+        item: BirchActiveFalse
+        conditions: "!daily-lumber--birch.collectTaken"
         text:
-        - "&b[Level 1]"
-        - "Lumber Quests"
+          - $daily-lumber--birch.title$
+          - $daily-lumber--birch.description_line_1$
+          - $daily-lumber--birch.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
         click:
-          left: openLevel1LumberQuestsMenu
+          left: daily.lumberCheckActive,daily-lumber--birch.collectStartFolder
         close: true
-      level2LumberQuestsMenu:
-        item: level2LumberQuestsMenu
+      BirchActiveTrue:
+        item: BirchActiveTrue
+        conditions: daily-lumber--birch.collectTaken,!daily-lumber--birch.shrineTaken
         text:
-        - "&b[Level 2]"
-        - "Lumber Quests"
+          - $daily-lumber--birch.title$
+          - $daily-lumber--birch.description_line_1$
+          - $daily-lumber--birch.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber--birch.objective.collect.absoluteAmount%/%daily-lumber--birch.objective.collect.absoluteTotal%"
+          - $action.reset$
         click:
-          left: openLevel2LumberQuestsMenu
+          right: resetNotify,daily-lumber--birch.reset
         close: true
+      BirchShrine:
+        item: BirchActiveTrue
+        conditions: daily-lumber--birch.shrineTaskActive
+        text:
+          - $daily-lumber--birch.title$
+          - $daily-lumber--birch.shrine_line_1$
+          - $daily-lumber--birch.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      BirchShrineFinished:
+        item: questComplete
+        conditions: daily-lumber--birch.questComplete
+        text:
+          - $daily-lumber--birch.title$
+          - $daily-lumber--birch.done_line_1$
+          - $daily-lumber--birch.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      CrimsonActiveFalse:
+        item: CrimsonActiveFalse
+        conditions: "!daily-lumber--crimson.collectTaken"
+        text:
+          - $daily-lumber--crimson.title$
+          - $daily-lumber--crimson.description_line_1$
+          - $daily-lumber--crimson.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.lumberCheckActive,daily-lumber--crimson.collectStartFolder
+        close: true
+      CrimsonActiveTrue:
+        item: CrimsonActiveTrue
+        conditions: daily-lumber--crimson.collectTaken,!daily-lumber--crimson.shrineTaken
+        text:
+          - $daily-lumber--crimson.title$
+          - $daily-lumber--crimson.description_line_1$
+          - $daily-lumber--crimson.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber--crimson.objective.collect.absoluteAmount%/%daily-lumber--crimson.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-lumber--crimson.reset
+        close: true
+      CrimsonShrine:
+        item: CrimsonActiveTrue
+        conditions: daily-lumber--crimson.shrineTaskActive
+        text:
+          - $daily-lumber--crimson.title$
+          - $daily-lumber--crimson.shrine_line_1$
+          - $daily-lumber--crimson.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      CrimsonShrineFinished:
+        item: questComplete
+        conditions: daily-lumber--crimson.questComplete
+        text:
+          - $daily-lumber--crimson.title$
+          - $daily-lumber--crimson.done_line_1$
+          - $daily-lumber--crimson.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      DarkoakActiveFalse:
+        item: DarkoakActiveFalse
+        conditions: "!daily-lumber--darkoak.collectTaken"
+        text:
+          - $daily-lumber--darkoak.title$
+          - $daily-lumber--darkoak.description_line_1$
+          - $daily-lumber--darkoak.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.lumberCheckActive,daily-lumber--darkoak.collectStartFolder
+        close: true
+      DarkoakActiveTrue:
+        item: DarkoakActiveTrue
+        conditions: daily-lumber--darkoak.collectTaken,!daily-lumber--darkoak.shrineTaken
+        text:
+          - $daily-lumber--darkoak.title$
+          - $daily-lumber--darkoak.description_line_1$
+          - $daily-lumber--darkoak.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber--darkoak.objective.collect.absoluteAmount%/%daily-lumber--darkoak.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-lumber--darkoak.reset
+        close: true
+      DarkoakShrine:
+        item: DarkoakActiveTrue
+        conditions: daily-lumber--darkoak.shrineTaskActive
+        text:
+          - $daily-lumber--darkoak.title$
+          - $daily-lumber--darkoak.shrine_line_1$
+          - $daily-lumber--darkoak.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      DarkoakShrineFinished:
+        item: questComplete
+        conditions: daily-lumber--darkoak.questComplete
+        text:
+          - $daily-lumber--darkoak.title$
+          - $daily-lumber--darkoak.done_line_1$
+          - $daily-lumber--darkoak.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      OakActiveFalse:
+        item: OakActiveFalse
+        conditions: "!daily-lumber--oak.collectTaken"
+        text:
+          - $daily-lumber--oak.title$
+          - $daily-lumber--oak.description_line_1$
+          - $daily-lumber--oak.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.lumberCheckActive,daily-lumber--oak.collectStartFolder
+        close: true
+      OakActiveTrue:
+        item: OakActiveTrue
+        conditions: daily-lumber--oak.collectTaken,!daily-lumber--oak.shrineTaken
+        text:
+          - $daily-lumber--oak.title$
+          - $daily-lumber--oak.description_line_1$
+          - $daily-lumber--oak.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber--oak.objective.collect.absoluteAmount%/%daily-lumber--oak.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-lumber--oak.reset
+        close: true
+      OakShrine:
+        item: OakActiveTrue
+        conditions: daily-lumber--oak.shrineTaskActive
+        text:
+          - $daily-lumber--oak.title$
+          - $daily-lumber--oak.shrine_line_1$
+          - $daily-lumber--oak.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      OakShrineFinished:
+        item: questComplete
+        conditions: daily-lumber--oak.questComplete
+        text:
+          - $daily-lumber--oak.title$
+          - $daily-lumber--oak.done_line_1$
+          - $daily-lumber--oak.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      SpruceActiveFalse:
+        item: SpruceActiveFalse
+        conditions: "!daily-lumber--spruce.collectTaken"
+        text:
+          - $daily-lumber--spruce.title$
+          - $daily-lumber--spruce.description_line_1$
+          - $daily-lumber--spruce.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.lumberCheckActive,daily-lumber--spruce.collectStartFolder
+        close: true
+      SpruceActiveTrue:
+        item: SpruceActiveTrue
+        conditions: daily-lumber--spruce.collectTaken,!daily-lumber--spruce.shrineTaken
+        text:
+          - $daily-lumber--spruce.title$
+          - $daily-lumber--spruce.description_line_1$
+          - $daily-lumber--spruce.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-lumber--spruce.objective.collect.absoluteAmount%/%daily-lumber--spruce.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-lumber--spruce.reset
+        close: true
+      SpruceShrine:
+        item: SpruceActiveTrue
+        conditions: daily-lumber--spruce.shrineTaskActive
+        text:
+          - $daily-lumber--spruce.title$
+          - $daily-lumber--spruce.shrine_line_1$
+          - $daily-lumber--spruce.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      SpruceShrineFinished:
+        item: questComplete
+        conditions: daily-lumber--spruce.questComplete
+        text:
+          - $daily-lumber--spruce.title$
+          - $daily-lumber--spruce.done_line_1$
+          - $daily-lumber--spruce.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       filler:
         text: "&a "
         item: "filler"
@@ -38,12 +258,16 @@ menus:
         text:
             - "&c&lGo Back"
         click:
-          left: "daily.openDailyMenu"
+          left: "daily.openLumberLevelMenu"
         close: true
-events:
-  openLevel1LumberQuestsMenu: menu open daily-lumber-level1.lumberQuestsMenu
-  openLevel2LumberQuestsMenu: menu open daily-lumber-level2.lumberQuestsMenu
-
 items:
-  level1LumberQuestsMenu: $level1GUIItem$
-  level2LumberQuestsMenu: $level2GUIItem$
+  BirchActiveFalse: $daily-lumber-birch.target_drops_slug$
+  BirchActiveTrue: $daily-lumber-birch.target_drops_slug$ $enchants$ $flags$
+  CrimsonActiveFalse: $daily-lumber-crimson.target_drops_slug$
+  CrimsonActiveTrue: $daily-lumber-crimson.target_drops_slug$ $enchants$ $flags$
+  DarkoakActiveFalse: $daily-lumber-darkoak.target_drops_slug$
+  DarkoakActiveTrue: $daily-lumber-darkoak.target_drops_slug$ $enchants$ $flags$
+  OakActiveFalse: $daily-lumber-oak.target_drops_slug$
+  OakActiveTrue: $daily-lumber-oak.target_drops_slug$ $enchants$ $flags$
+  SpruceActiveFalse: $daily-lumber-spruce.target_drops_slug$
+  SpruceActiveTrue: $daily-lumber-spruce.target_drops_slug$ $enchants$ $flags$

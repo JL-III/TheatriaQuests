@@ -26,11 +26,7 @@ func main() {
 		var template_type string
 		fmt.Scanln(&template_type)
 		template_path := base_path + template_type
-		fmt.Print(blue + "Level: " + yellow)
-		fmt.Print(reset)
-		var level string
-		fmt.Scanln(&level)
-		menu.CreateMenu(template_path, level, template_type)
+		menu.CreateMenu(template_path, template_type)
 
 	} else if choice == "z" || choice == "zip" {
 		utils.Zip()
