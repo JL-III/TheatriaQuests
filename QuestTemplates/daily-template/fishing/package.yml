@@ -3,7 +3,7 @@ package:
     - daily-template-base
 
 objectives:
-  collect: 'block $target_slug$ -$objective_amount$ conditions:worldCheck events:shrineStartFolder notify'
+  collect: 'fish $target_all_caps$ $objective_amount$ notify conditions:worldCheck events:shrineStartFolder'
   shrine: 'chestput $shrineLocation$ $target_drops_slug$:$objective_amount$ events:finishFolder notify'
 
 variables:

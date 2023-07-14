@@ -18,13 +18,13 @@ variables:
   target_upper: Pigs
   target_all_caps: PIG
   
-  target_drops: porkchop
-  target_drops_plural: porkchops
+  target_drops: cooked porkchop
+  target_drops_plural: cooked porkchop
   
   target_slug: pig
   
   ## Due to limitations, slug value must match item key
-  target_drops_slug: porkchop
+  target_drops_slug: cooked_porkchop
   
 items:
-  porkchop: minecraft:$target_drops_slug$
+  cooked_porkchop: minecraft:$target_drops_slug$
