@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-template-fishing
+
+variables:
+
+  objective_amount: 1
+  reward_amount: 5000
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Fish
+  action_lower: fish
+  action_lower_past: caught
+  
+  target: boots
+  target_upper: Boots
+  target_all_caps: LEATHER_BOOTS
+  
+  target_drops: boots
+  target_drops_plural: boots
+  
+  target_slug: leather_boots
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: leather_boots
+  
+items:
+  leather_boots: minecraft:$target_drops_slug$

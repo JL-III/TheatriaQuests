@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-template-fishing
+
+variables:
+
+  objective_amount: 1
+  reward_amount: 5000
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Fish
+  action_lower: fish
+  action_lower_past: caught
+  
+  target: saddle
+  target_upper: Saddle
+  target_all_caps: SADDLE
+  
+  target_drops: saddle
+  target_drops_plural: saddle
+  
+  target_slug: saddle
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: saddle
+  
+items:
+  saddle: minecraft:$target_drops_slug$

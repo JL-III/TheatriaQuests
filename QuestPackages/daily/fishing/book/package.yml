@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-template-fishing
+
+variables:
+
+  objective_amount: 1
+  reward_amount: 5000
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Fish
+  action_lower: fish
+  action_lower_past: caught
+  
+  target: enchanted book
+  target_upper: Enchanted book
+  target_all_caps: ENCHANTED_BOOK
+  
+  target_drops: echanted book
+  target_drops_plural: enchanted book
+  
+  target_slug: enchanted_book
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: enchanted_book
+  
+items:
+  enchanted_book: minecraft:$target_drops_slug$

@@ -7,14 +7,207 @@ menus:
     title: Fishing  Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-      9: CodActiveFalse,CodActiveTrue,CodShrine,CodShrineFinished
-      10: PufferActiveFalse,PufferActiveTrue,PufferShrine,PufferShrineFinished
-      11: SalmonActiveFalse,SalmonActiveTrue,SalmonShrine,SalmonShrineFinished
-      12: ShellActiveFalse,ShellActiveTrue,ShellShrine,ShellShrineFinished
-      13: TropicalActiveFalse,TropicalActiveTrue,TropicalShrine,TropicalShrineFinished
+      9: BoneActiveFalse,BoneActiveTrue,BoneShrine,BoneShrineFinished
+      10: BookActiveFalse,BookActiveTrue,BookShrine,BookShrineFinished
+      11: BootsActiveFalse,BootsActiveTrue,BootsShrine,BootsShrineFinished
+      12: BottleActiveFalse,BottleActiveTrue,BottleShrine,BottleShrineFinished
+      13: CodActiveFalse,CodActiveTrue,CodShrine,CodShrineFinished
+      14: PufferActiveFalse,PufferActiveTrue,PufferShrine,PufferShrineFinished
+      15: SaddleActiveFalse,SaddleActiveTrue,SaddleShrine,SaddleShrineFinished
+      16: SalmonActiveFalse,SalmonActiveTrue,SalmonShrine,SalmonShrineFinished
+      17: ShellActiveFalse,ShellActiveTrue,ShellShrine,ShellShrineFinished
+      18: TropicalActiveFalse,TropicalActiveTrue,TropicalShrine,TropicalShrineFinished
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
+      BoneActiveFalse:
+        item: BoneActiveFalse
+        conditions: "!daily-fishing-bone.collectTaken"
+        text:
+          - $daily-fishing-bone.title$
+          - $daily-fishing-bone.description_line_1$
+          - $daily-fishing-bone.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.fishingCheckActive,daily-fishing-bone.collectStartFolder
+        close: true
+      BoneActiveTrue:
+        item: BoneActiveTrue
+        conditions: daily-fishing-bone.collectTaken,!daily-fishing-bone.shrineTaken
+        text:
+          - $daily-fishing-bone.title$
+          - $daily-fishing-bone.description_line_1$
+          - $daily-fishing-bone.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-fishing-bone.objective.collect.absoluteAmount%/%daily-fishing-bone.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-fishing-bone.reset
+        close: true
+      BoneShrine:
+        item: BoneActiveTrue
+        conditions: daily-fishing-bone.shrineTaskActive
+        text:
+          - $daily-fishing-bone.title$
+          - $daily-fishing-bone.shrine_line_1$
+          - $daily-fishing-bone.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      BoneShrineFinished:
+        item: questComplete
+        conditions: daily-fishing-bone.questComplete
+        text:
+          - $daily-fishing-bone.title$
+          - $daily-fishing-bone.done_line_1$
+          - $daily-fishing-bone.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      BookActiveFalse:
+        item: BookActiveFalse
+        conditions: "!daily-fishing-book.collectTaken"
+        text:
+          - $daily-fishing-book.title$
+          - $daily-fishing-book.description_line_1$
+          - $daily-fishing-book.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.fishingCheckActive,daily-fishing-book.collectStartFolder
+        close: true
+      BookActiveTrue:
+        item: BookActiveTrue
+        conditions: daily-fishing-book.collectTaken,!daily-fishing-book.shrineTaken
+        text:
+          - $daily-fishing-book.title$
+          - $daily-fishing-book.description_line_1$
+          - $daily-fishing-book.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-fishing-book.objective.collect.absoluteAmount%/%daily-fishing-book.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-fishing-book.reset
+        close: true
+      BookShrine:
+        item: BookActiveTrue
+        conditions: daily-fishing-book.shrineTaskActive
+        text:
+          - $daily-fishing-book.title$
+          - $daily-fishing-book.shrine_line_1$
+          - $daily-fishing-book.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      BookShrineFinished:
+        item: questComplete
+        conditions: daily-fishing-book.questComplete
+        text:
+          - $daily-fishing-book.title$
+          - $daily-fishing-book.done_line_1$
+          - $daily-fishing-book.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      BootsActiveFalse:
+        item: BootsActiveFalse
+        conditions: "!daily-fishing-boots.collectTaken"
+        text:
+          - $daily-fishing-boots.title$
+          - $daily-fishing-boots.description_line_1$
+          - $daily-fishing-boots.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.fishingCheckActive,daily-fishing-boots.collectStartFolder
+        close: true
+      BootsActiveTrue:
+        item: BootsActiveTrue
+        conditions: daily-fishing-boots.collectTaken,!daily-fishing-boots.shrineTaken
+        text:
+          - $daily-fishing-boots.title$
+          - $daily-fishing-boots.description_line_1$
+          - $daily-fishing-boots.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-fishing-boots.objective.collect.absoluteAmount%/%daily-fishing-boots.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-fishing-boots.reset
+        close: true
+      BootsShrine:
+        item: BootsActiveTrue
+        conditions: daily-fishing-boots.shrineTaskActive
+        text:
+          - $daily-fishing-boots.title$
+          - $daily-fishing-boots.shrine_line_1$
+          - $daily-fishing-boots.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      BootsShrineFinished:
+        item: questComplete
+        conditions: daily-fishing-boots.questComplete
+        text:
+          - $daily-fishing-boots.title$
+          - $daily-fishing-boots.done_line_1$
+          - $daily-fishing-boots.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      BottleActiveFalse:
+        item: BottleActiveFalse
+        conditions: "!daily-fishing-bottle.collectTaken"
+        text:
+          - $daily-fishing-bottle.title$
+          - $daily-fishing-bottle.description_line_1$
+          - $daily-fishing-bottle.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.fishingCheckActive,daily-fishing-bottle.collectStartFolder
+        close: true
+      BottleActiveTrue:
+        item: BottleActiveTrue
+        conditions: daily-fishing-bottle.collectTaken,!daily-fishing-bottle.shrineTaken
+        text:
+          - $daily-fishing-bottle.title$
+          - $daily-fishing-bottle.description_line_1$
+          - $daily-fishing-bottle.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-fishing-bottle.objective.collect.absoluteAmount%/%daily-fishing-bottle.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-fishing-bottle.reset
+        close: true
+      BottleShrine:
+        item: BottleActiveTrue
+        conditions: daily-fishing-bottle.shrineTaskActive
+        text:
+          - $daily-fishing-bottle.title$
+          - $daily-fishing-bottle.shrine_line_1$
+          - $daily-fishing-bottle.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      BottleShrineFinished:
+        item: questComplete
+        conditions: daily-fishing-bottle.questComplete
+        text:
+          - $daily-fishing-bottle.title$
+          - $daily-fishing-bottle.done_line_1$
+          - $daily-fishing-bottle.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       CodActiveFalse:
         item: CodActiveFalse
         conditions: "!daily-fishing-cod.collectTaken"
@@ -106,6 +299,53 @@ menus:
           - $daily-fishing-puffer.title$
           - $daily-fishing-puffer.done_line_1$
           - $daily-fishing-puffer.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      SaddleActiveFalse:
+        item: SaddleActiveFalse
+        conditions: "!daily-fishing-saddle.collectTaken"
+        text:
+          - $daily-fishing-saddle.title$
+          - $daily-fishing-saddle.description_line_1$
+          - $daily-fishing-saddle.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.fishingCheckActive,daily-fishing-saddle.collectStartFolder
+        close: true
+      SaddleActiveTrue:
+        item: SaddleActiveTrue
+        conditions: daily-fishing-saddle.collectTaken,!daily-fishing-saddle.shrineTaken
+        text:
+          - $daily-fishing-saddle.title$
+          - $daily-fishing-saddle.description_line_1$
+          - $daily-fishing-saddle.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-fishing-saddle.objective.collect.absoluteAmount%/%daily-fishing-saddle.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-fishing-saddle.reset
+        close: true
+      SaddleShrine:
+        item: SaddleActiveTrue
+        conditions: daily-fishing-saddle.shrineTaskActive
+        text:
+          - $daily-fishing-saddle.title$
+          - $daily-fishing-saddle.shrine_line_1$
+          - $daily-fishing-saddle.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      SaddleShrineFinished:
+        item: questComplete
+        conditions: daily-fishing-saddle.questComplete
+        text:
+          - $daily-fishing-saddle.title$
+          - $daily-fishing-saddle.done_line_1$
+          - $daily-fishing-saddle.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -261,10 +501,20 @@ menus:
           left: "daily.openDailyMenu"
         close: true
 items:
+  BoneActiveFalse: $daily-fishing-bone.target_drops_slug$
+  BoneActiveTrue: $daily-fishing-bone.target_drops_slug$ $enchants$ $flags$
+  BookActiveFalse: $daily-fishing-book.target_drops_slug$
+  BookActiveTrue: $daily-fishing-book.target_drops_slug$ $enchants$ $flags$
+  BootsActiveFalse: $daily-fishing-boots.target_drops_slug$
+  BootsActiveTrue: $daily-fishing-boots.target_drops_slug$ $enchants$ $flags$
+  BottleActiveFalse: $daily-fishing-bottle.target_drops_slug$
+  BottleActiveTrue: $daily-fishing-bottle.target_drops_slug$ $enchants$ $flags$
   CodActiveFalse: $daily-fishing-cod.target_drops_slug$
   CodActiveTrue: $daily-fishing-cod.target_drops_slug$ $enchants$ $flags$
   PufferActiveFalse: $daily-fishing-puffer.target_drops_slug$
   PufferActiveTrue: $daily-fishing-puffer.target_drops_slug$ $enchants$ $flags$
+  SaddleActiveFalse: $daily-fishing-saddle.target_drops_slug$
+  SaddleActiveTrue: $daily-fishing-saddle.target_drops_slug$ $enchants$ $flags$
   SalmonActiveFalse: $daily-fishing-salmon.target_drops_slug$
   SalmonActiveTrue: $daily-fishing-salmon.target_drops_slug$ $enchants$ $flags$
   ShellActiveFalse: $daily-fishing-shell.target_drops_slug$

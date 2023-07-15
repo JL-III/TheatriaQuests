@@ -9,7 +9,7 @@ events:
   resetDaily: folder farmingReset,fishingReset,lumberReset,miningReset,mobkillReset period:5
 
   farmingReset: folder daily-farming-bamboo.reset,daily-farming-beetroot.reset,daily-farming-cactus.reset,daily-farming-carrot.reset,daily-farming-melon.reset,daily-farming-potato.reset,daily-farming-pumpkin.reset,daily-farming-sugarcane.reset,daily-farming-sweetberry.reset,daily-farming-wheat.reset
-  fishingReset: folder daily-fishing-cod.reset,daily-fishing-puffer.reset,daily-fishing-salmon.reset,daily-fishing-shell.reset,daily-fishing-tropical.reset
+  fishingReset: folder daily-fishing-bone.reset,daily-fishing-book.reset,daily-fishing-boots.reset,daily-fishing-bottle.reset,daily-fishing-cod.reset,daily-fishing-puffer.reset,daily-fishing-saddle.reset,daily-fishing-salmon.reset,daily-fishing-shell.reset,daily-fishing-tropical.reset
   lumberReset: folder daily-lumber-acacia.reset,daily-lumber-birch.reset,daily-lumber-cherry.reset,daily-lumber-crimson.reset,daily-lumber-darkoak.reset,daily-lumber-jungle.reset,daily-lumber-mangrove.reset,daily-lumber-oak.reset,daily-lumber-spruce.reset,daily-lumber-warped.reset
   miningReset: folder daily-mining-coal.reset,daily-mining-copper.reset,daily-mining-diamond.reset,daily-mining-emerald.reset,daily-mining-gold.reset,daily-mining-iron.reset,daily-mining-lapis.reset,daily-mining-obsidian.reset,daily-mining-quartz.reset,daily-mining-redstone.reset
   mobkillReset: folder daily-mobkill-chicken.reset,daily-mobkill-cow.reset,daily-mobkill-creeper.reset,daily-mobkill-husk.reset,daily-mobkill-pig.reset,daily-mobkill-sheep.reset,daily-mobkill-skeleton.reset,daily-mobkill-spider.reset,daily-mobkill-squid.reset,daily-mobkill-zombie.reset

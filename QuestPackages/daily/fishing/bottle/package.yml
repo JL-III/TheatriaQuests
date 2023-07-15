@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-template-fishing
+
+variables:
+
+  objective_amount: 1
+  reward_amount: 5000
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Fish
+  action_lower: fish
+  action_lower_past: caught
+  
+  target: water bottle
+  target_upper: Water bottle
+  target_all_caps: POTION
+  
+  target_drops: water bottle
+  target_drops_plural: water bottle
+  
+  target_slug: potion
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: potion
+  
+items:
+  potion: minecraft:$target_drops_slug$
