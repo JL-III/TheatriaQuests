@@ -14,17 +14,17 @@ variables:
   action_lower: kill
   action_lower_past: killed
   
-  target: creepers
-  target_upper: Creepers
-  target_all_caps: CREEPER
+  target: chicken
+  target_upper: Chicken
+  target_all_caps: CHICKEN
   
-  target_drops: gunpowder
-  target_drops_plural: gunpowder
+  target_drops: cooked chicken
+  target_drops_plural: cooked chicken
   
-  target_slug: creeper
+  target_slug: pig
   
   ## Due to limitations, slug value must match item key
-  target_drops_slug: gunpowder
+  target_drops_slug: cooked_chicken
   
 items:
-  gunpowder: minecraft:$target_drops_slug$
+  cooked_chicken: minecraft:$target_drops_slug$

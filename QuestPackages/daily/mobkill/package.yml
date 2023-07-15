@@ -7,14 +7,113 @@ menus:
     title: Mobkill  Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-      9: CreeperActiveFalse,CreeperActiveTrue,CreeperShrine,CreeperShrineFinished
-      10: PigActiveFalse,PigActiveTrue,PigShrine,PigShrineFinished
-      11: SkeletonActiveFalse,SkeletonActiveTrue,SkeletonShrine,SkeletonShrineFinished
-      12: SpiderActiveFalse,SpiderActiveTrue,SpiderShrine,SpiderShrineFinished
-      13: ZombieActiveFalse,ZombieActiveTrue,ZombieShrine,ZombieShrineFinished
+      9: ChickenActiveFalse,ChickenActiveTrue,ChickenShrine,ChickenShrineFinished
+      10: CowActiveFalse,CowActiveTrue,CowShrine,CowShrineFinished
+      11: CreeperActiveFalse,CreeperActiveTrue,CreeperShrine,CreeperShrineFinished
+      12: HuskActiveFalse,HuskActiveTrue,HuskShrine,HuskShrineFinished
+      13: PigActiveFalse,PigActiveTrue,PigShrine,PigShrineFinished
+      14: SheepActiveFalse,SheepActiveTrue,SheepShrine,SheepShrineFinished
+      15: SkeletonActiveFalse,SkeletonActiveTrue,SkeletonShrine,SkeletonShrineFinished
+      16: SpiderActiveFalse,SpiderActiveTrue,SpiderShrine,SpiderShrineFinished
+      17: SquidActiveFalse,SquidActiveTrue,SquidShrine,SquidShrineFinished
+      18: ZombieActiveFalse,ZombieActiveTrue,ZombieShrine,ZombieShrineFinished
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
+      ChickenActiveFalse:
+        item: ChickenActiveFalse
+        conditions: "!daily-mobkill-chicken.collectTaken"
+        text:
+          - $daily-mobkill-chicken.title$
+          - $daily-mobkill-chicken.description_line_1$
+          - $daily-mobkill-chicken.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.mobkillCheckActive,daily-mobkill-chicken.collectStartFolder
+        close: true
+      ChickenActiveTrue:
+        item: ChickenActiveTrue
+        conditions: daily-mobkill-chicken.collectTaken,!daily-mobkill-chicken.shrineTaken
+        text:
+          - $daily-mobkill-chicken.title$
+          - $daily-mobkill-chicken.description_line_1$
+          - $daily-mobkill-chicken.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mobkill-chicken.objective.collect.absoluteAmount%/%daily-mobkill-chicken.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mobkill-chicken.reset
+        close: true
+      ChickenShrine:
+        item: ChickenActiveTrue
+        conditions: daily-mobkill-chicken.shrineTaskActive
+        text:
+          - $daily-mobkill-chicken.title$
+          - $daily-mobkill-chicken.shrine_line_1$
+          - $daily-mobkill-chicken.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      ChickenShrineFinished:
+        item: questComplete
+        conditions: daily-mobkill-chicken.questComplete
+        text:
+          - $daily-mobkill-chicken.title$
+          - $daily-mobkill-chicken.done_line_1$
+          - $daily-mobkill-chicken.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      CowActiveFalse:
+        item: CowActiveFalse
+        conditions: "!daily-mobkill-cow.collectTaken"
+        text:
+          - $daily-mobkill-cow.title$
+          - $daily-mobkill-cow.description_line_1$
+          - $daily-mobkill-cow.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.mobkillCheckActive,daily-mobkill-cow.collectStartFolder
+        close: true
+      CowActiveTrue:
+        item: CowActiveTrue
+        conditions: daily-mobkill-cow.collectTaken,!daily-mobkill-cow.shrineTaken
+        text:
+          - $daily-mobkill-cow.title$
+          - $daily-mobkill-cow.description_line_1$
+          - $daily-mobkill-cow.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mobkill-cow.objective.collect.absoluteAmount%/%daily-mobkill-cow.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mobkill-cow.reset
+        close: true
+      CowShrine:
+        item: CowActiveTrue
+        conditions: daily-mobkill-cow.shrineTaskActive
+        text:
+          - $daily-mobkill-cow.title$
+          - $daily-mobkill-cow.shrine_line_1$
+          - $daily-mobkill-cow.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      CowShrineFinished:
+        item: questComplete
+        conditions: daily-mobkill-cow.questComplete
+        text:
+          - $daily-mobkill-cow.title$
+          - $daily-mobkill-cow.done_line_1$
+          - $daily-mobkill-cow.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       CreeperActiveFalse:
         item: CreeperActiveFalse
         conditions: "!daily-mobkill-creeper.collectTaken"
@@ -62,6 +161,53 @@ menus:
           - 
           - $status.inProgress$
         close: false
+      HuskActiveFalse:
+        item: HuskActiveFalse
+        conditions: "!daily-mobkill-husk.collectTaken"
+        text:
+          - $daily-mobkill-husk.title$
+          - $daily-mobkill-husk.description_line_1$
+          - $daily-mobkill-husk.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.mobkillCheckActive,daily-mobkill-husk.collectStartFolder
+        close: true
+      HuskActiveTrue:
+        item: HuskActiveTrue
+        conditions: daily-mobkill-husk.collectTaken,!daily-mobkill-husk.shrineTaken
+        text:
+          - $daily-mobkill-husk.title$
+          - $daily-mobkill-husk.description_line_1$
+          - $daily-mobkill-husk.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mobkill-husk.objective.collect.absoluteAmount%/%daily-mobkill-husk.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mobkill-husk.reset
+        close: true
+      HuskShrine:
+        item: HuskActiveTrue
+        conditions: daily-mobkill-husk.shrineTaskActive
+        text:
+          - $daily-mobkill-husk.title$
+          - $daily-mobkill-husk.shrine_line_1$
+          - $daily-mobkill-husk.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      HuskShrineFinished:
+        item: questComplete
+        conditions: daily-mobkill-husk.questComplete
+        text:
+          - $daily-mobkill-husk.title$
+          - $daily-mobkill-husk.done_line_1$
+          - $daily-mobkill-husk.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       PigActiveFalse:
         item: PigActiveFalse
         conditions: "!daily-mobkill-pig.collectTaken"
@@ -106,6 +252,53 @@ menus:
           - $daily-mobkill-pig.title$
           - $daily-mobkill-pig.done_line_1$
           - $daily-mobkill-pig.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      SheepActiveFalse:
+        item: SheepActiveFalse
+        conditions: "!daily-mobkill-sheep.collectTaken"
+        text:
+          - $daily-mobkill-sheep.title$
+          - $daily-mobkill-sheep.description_line_1$
+          - $daily-mobkill-sheep.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.mobkillCheckActive,daily-mobkill-sheep.collectStartFolder
+        close: true
+      SheepActiveTrue:
+        item: SheepActiveTrue
+        conditions: daily-mobkill-sheep.collectTaken,!daily-mobkill-sheep.shrineTaken
+        text:
+          - $daily-mobkill-sheep.title$
+          - $daily-mobkill-sheep.description_line_1$
+          - $daily-mobkill-sheep.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mobkill-sheep.objective.collect.absoluteAmount%/%daily-mobkill-sheep.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mobkill-sheep.reset
+        close: true
+      SheepShrine:
+        item: SheepActiveTrue
+        conditions: daily-mobkill-sheep.shrineTaskActive
+        text:
+          - $daily-mobkill-sheep.title$
+          - $daily-mobkill-sheep.shrine_line_1$
+          - $daily-mobkill-sheep.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      SheepShrineFinished:
+        item: questComplete
+        conditions: daily-mobkill-sheep.questComplete
+        text:
+          - $daily-mobkill-sheep.title$
+          - $daily-mobkill-sheep.done_line_1$
+          - $daily-mobkill-sheep.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -203,6 +396,53 @@ menus:
           - 
           - $status.inProgress$
         close: false
+      SquidActiveFalse:
+        item: SquidActiveFalse
+        conditions: "!daily-mobkill-squid.collectTaken"
+        text:
+          - $daily-mobkill-squid.title$
+          - $daily-mobkill-squid.description_line_1$
+          - $daily-mobkill-squid.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.mobkillCheckActive,daily-mobkill-squid.collectStartFolder
+        close: true
+      SquidActiveTrue:
+        item: SquidActiveTrue
+        conditions: daily-mobkill-squid.collectTaken,!daily-mobkill-squid.shrineTaken
+        text:
+          - $daily-mobkill-squid.title$
+          - $daily-mobkill-squid.description_line_1$
+          - $daily-mobkill-squid.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mobkill-squid.objective.collect.absoluteAmount%/%daily-mobkill-squid.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mobkill-squid.reset
+        close: true
+      SquidShrine:
+        item: SquidActiveTrue
+        conditions: daily-mobkill-squid.shrineTaskActive
+        text:
+          - $daily-mobkill-squid.title$
+          - $daily-mobkill-squid.shrine_line_1$
+          - $daily-mobkill-squid.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      SquidShrineFinished:
+        item: questComplete
+        conditions: daily-mobkill-squid.questComplete
+        text:
+          - $daily-mobkill-squid.title$
+          - $daily-mobkill-squid.done_line_1$
+          - $daily-mobkill-squid.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
       ZombieActiveFalse:
         item: ZombieActiveFalse
         conditions: "!daily-mobkill-zombie.collectTaken"
@@ -261,13 +501,23 @@ menus:
           left: "daily.openDailyMenu"
         close: true
 items:
+  ChickenActiveFalse: $daily-mobkill-chicken.target_drops_slug$
+  ChickenActiveTrue: $daily-mobkill-chicken.target_drops_slug$ $enchants$ $flags$
+  CowActiveFalse: $daily-mobkill-cow.target_drops_slug$
+  CowActiveTrue: $daily-mobkill-cow.target_drops_slug$ $enchants$ $flags$
   CreeperActiveFalse: $daily-mobkill-creeper.target_drops_slug$
   CreeperActiveTrue: $daily-mobkill-creeper.target_drops_slug$ $enchants$ $flags$
+  HuskActiveFalse: $daily-mobkill-husk.target_drops_slug$
+  HuskActiveTrue: $daily-mobkill-husk.target_drops_slug$ $enchants$ $flags$
   PigActiveFalse: $daily-mobkill-pig.target_drops_slug$
   PigActiveTrue: $daily-mobkill-pig.target_drops_slug$ $enchants$ $flags$
+  SheepActiveFalse: $daily-mobkill-sheep.target_drops_slug$
+  SheepActiveTrue: $daily-mobkill-sheep.target_drops_slug$ $enchants$ $flags$
   SkeletonActiveFalse: $daily-mobkill-skeleton.target_drops_slug$
   SkeletonActiveTrue: $daily-mobkill-skeleton.target_drops_slug$ $enchants$ $flags$
   SpiderActiveFalse: $daily-mobkill-spider.target_drops_slug$
   SpiderActiveTrue: $daily-mobkill-spider.target_drops_slug$ $enchants$ $flags$
+  SquidActiveFalse: $daily-mobkill-squid.target_drops_slug$
+  SquidActiveTrue: $daily-mobkill-squid.target_drops_slug$ $enchants$ $flags$
   ZombieActiveFalse: $daily-mobkill-zombie.target_drops_slug$
   ZombieActiveTrue: $daily-mobkill-zombie.target_drops_slug$ $enchants$ $flags$

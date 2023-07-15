@@ -5,7 +5,7 @@ package:
 variables:
 
   objective_amount: 16
-  reward_amount: 2500
+  reward_amount: 5000
   
   world: The_Ark_nether
   world_display: Nether
