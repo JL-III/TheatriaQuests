@@ -31,7 +31,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.fishingCheckActive,daily-fishing-bone.collectStartFolder
+          left: daily-fishing-bone.collectStartFolder
         close: true
       BoneActiveTrue:
         item: BoneActiveTrue
@@ -78,7 +78,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.fishingCheckActive,daily-fishing-book.collectStartFolder
+          left: daily-fishing-book.collectStartFolder
         close: true
       BookActiveTrue:
         item: BookActiveTrue
@@ -125,7 +125,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.fishingCheckActive,daily-fishing-boots.collectStartFolder
+          left: daily-fishing-boots.collectStartFolder
         close: true
       BootsActiveTrue:
         item: BootsActiveTrue
@@ -172,7 +172,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.fishingCheckActive,daily-fishing-bottle.collectStartFolder
+          left: daily-fishing-bottle.collectStartFolder
         close: true
       BottleActiveTrue:
         item: BottleActiveTrue
@@ -219,7 +219,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.fishingCheckActive,daily-fishing-cod.collectStartFolder
+          left: daily-fishing-cod.collectStartFolder
         close: true
       CodActiveTrue:
         item: CodActiveTrue
@@ -266,7 +266,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.fishingCheckActive,daily-fishing-puffer.collectStartFolder
+          left: daily-fishing-puffer.collectStartFolder
         close: true
       PufferActiveTrue:
         item: PufferActiveTrue
@@ -313,7 +313,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.fishingCheckActive,daily-fishing-saddle.collectStartFolder
+          left: daily-fishing-saddle.collectStartFolder
         close: true
       SaddleActiveTrue:
         item: SaddleActiveTrue
@@ -360,7 +360,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.fishingCheckActive,daily-fishing-salmon.collectStartFolder
+          left: daily-fishing-salmon.collectStartFolder
         close: true
       SalmonActiveTrue:
         item: SalmonActiveTrue
@@ -407,7 +407,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.fishingCheckActive,daily-fishing-shell.collectStartFolder
+          left: daily-fishing-shell.collectStartFolder
         close: true
       ShellActiveTrue:
         item: ShellActiveTrue
@@ -454,7 +454,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.fishingCheckActive,daily-fishing-tropical.collectStartFolder
+          left: daily-fishing-tropical.collectStartFolder
         close: true
       TropicalActiveTrue:
         item: TropicalActiveTrue

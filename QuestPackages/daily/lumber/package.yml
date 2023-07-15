@@ -31,7 +31,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.lumberCheckActive,daily-lumber-acacia.collectStartFolder
+          left: daily-lumber-acacia.collectStartFolder
         close: true
       AcaciaActiveTrue:
         item: AcaciaActiveTrue
@@ -78,7 +78,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.lumberCheckActive,daily-lumber-birch.collectStartFolder
+          left: daily-lumber-birch.collectStartFolder
         close: true
       BirchActiveTrue:
         item: BirchActiveTrue
@@ -125,7 +125,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.lumberCheckActive,daily-lumber-cherry.collectStartFolder
+          left: daily-lumber-cherry.collectStartFolder
         close: true
       CherryActiveTrue:
         item: CherryActiveTrue
@@ -172,7 +172,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.lumberCheckActive,daily-lumber-crimson.collectStartFolder
+          left: daily-lumber-crimson.collectStartFolder
         close: true
       CrimsonActiveTrue:
         item: CrimsonActiveTrue
@@ -219,7 +219,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.lumberCheckActive,daily-lumber-darkoak.collectStartFolder
+          left: daily-lumber-darkoak.collectStartFolder
         close: true
       DarkoakActiveTrue:
         item: DarkoakActiveTrue
@@ -266,7 +266,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.lumberCheckActive,daily-lumber-jungle.collectStartFolder
+          left: daily-lumber-jungle.collectStartFolder
         close: true
       JungleActiveTrue:
         item: JungleActiveTrue
@@ -313,7 +313,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.lumberCheckActive,daily-lumber-mangrove.collectStartFolder
+          left: daily-lumber-mangrove.collectStartFolder
         close: true
       MangroveActiveTrue:
         item: MangroveActiveTrue
@@ -360,7 +360,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.lumberCheckActive,daily-lumber-oak.collectStartFolder
+          left: daily-lumber-oak.collectStartFolder
         close: true
       OakActiveTrue:
         item: OakActiveTrue
@@ -407,7 +407,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.lumberCheckActive,daily-lumber-spruce.collectStartFolder
+          left: daily-lumber-spruce.collectStartFolder
         close: true
       SpruceActiveTrue:
         item: SpruceActiveTrue
@@ -454,7 +454,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.lumberCheckActive,daily-lumber-warped.collectStartFolder
+          left: daily-lumber-warped.collectStartFolder
         close: true
       WarpedActiveTrue:
         item: WarpedActiveTrue

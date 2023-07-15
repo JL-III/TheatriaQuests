@@ -31,7 +31,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.farmingCheckActive,daily-farming-bamboo.collectStartFolder
+          left: daily-farming-bamboo.collectStartFolder
         close: true
       BambooActiveTrue:
         item: BambooActiveTrue
@@ -78,7 +78,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.farmingCheckActive,daily-farming-beetroot.collectStartFolder
+          left: daily-farming-beetroot.collectStartFolder
         close: true
       BeetrootActiveTrue:
         item: BeetrootActiveTrue
@@ -125,7 +125,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.farmingCheckActive,daily-farming-cactus.collectStartFolder
+          left: daily-farming-cactus.collectStartFolder
         close: true
       CactusActiveTrue:
         item: CactusActiveTrue
@@ -172,7 +172,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.farmingCheckActive,daily-farming-carrot.collectStartFolder
+          left: daily-farming-carrot.collectStartFolder
         close: true
       CarrotActiveTrue:
         item: CarrotActiveTrue
@@ -219,7 +219,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.farmingCheckActive,daily-farming-melon.collectStartFolder
+          left: daily-farming-melon.collectStartFolder
         close: true
       MelonActiveTrue:
         item: MelonActiveTrue
@@ -266,7 +266,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.farmingCheckActive,daily-farming-potato.collectStartFolder
+          left: daily-farming-potato.collectStartFolder
         close: true
       PotatoActiveTrue:
         item: PotatoActiveTrue
@@ -313,7 +313,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.farmingCheckActive,daily-farming-pumpkin.collectStartFolder
+          left: daily-farming-pumpkin.collectStartFolder
         close: true
       PumpkinActiveTrue:
         item: PumpkinActiveTrue
@@ -360,7 +360,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.farmingCheckActive,daily-farming-sugarcane.collectStartFolder
+          left: daily-farming-sugarcane.collectStartFolder
         close: true
       SugarcaneActiveTrue:
         item: SugarcaneActiveTrue
@@ -407,7 +407,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.farmingCheckActive,daily-farming-sweetberry.collectStartFolder
+          left: daily-farming-sweetberry.collectStartFolder
         close: true
       SweetberryActiveTrue:
         item: SweetberryActiveTrue
@@ -454,7 +454,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.farmingCheckActive,daily-farming-wheat.collectStartFolder
+          left: daily-farming-wheat.collectStartFolder
         close: true
       WheatActiveTrue:
         item: WheatActiveTrue

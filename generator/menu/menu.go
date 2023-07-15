@@ -175,7 +175,7 @@ func CreateEntries(template_type, file_name string, Keys Keys) []Entry {
 			"$action.start$",
 		},
 		Click: ClickConfig{
-			Left:  "daily." + template_type + "CheckActive," + filePath + file_name + ".collectStartFolder",
+			Left:  filePath + file_name + ".collectStartFolder",
 			Right: "",
 		},
 		Close: true,

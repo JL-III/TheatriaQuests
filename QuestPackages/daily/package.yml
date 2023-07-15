@@ -90,9 +90,6 @@ conditions:
   mobkillActive: tag mobkill_active
   lumberActive: tag lumber_active
 
-variables:
-  activeQuestNotice: notify &4You already have an active quest in this category! category:daily_task
-
 events:
   ##########
   ## Tags ##

@@ -31,7 +31,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.miningCheckActive,daily-mining-coal.collectStartFolder
+          left: daily-mining-coal.collectStartFolder
         close: true
       CoalActiveTrue:
         item: CoalActiveTrue
@@ -78,7 +78,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.miningCheckActive,daily-mining-copper.collectStartFolder
+          left: daily-mining-copper.collectStartFolder
         close: true
       CopperActiveTrue:
         item: CopperActiveTrue
@@ -125,7 +125,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.miningCheckActive,daily-mining-diamond.collectStartFolder
+          left: daily-mining-diamond.collectStartFolder
         close: true
       DiamondActiveTrue:
         item: DiamondActiveTrue
@@ -172,7 +172,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.miningCheckActive,daily-mining-emerald.collectStartFolder
+          left: daily-mining-emerald.collectStartFolder
         close: true
       EmeraldActiveTrue:
         item: EmeraldActiveTrue
@@ -219,7 +219,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.miningCheckActive,daily-mining-gold.collectStartFolder
+          left: daily-mining-gold.collectStartFolder
         close: true
       GoldActiveTrue:
         item: GoldActiveTrue
@@ -266,7 +266,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.miningCheckActive,daily-mining-iron.collectStartFolder
+          left: daily-mining-iron.collectStartFolder
         close: true
       IronActiveTrue:
         item: IronActiveTrue
@@ -313,7 +313,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.miningCheckActive,daily-mining-lapis.collectStartFolder
+          left: daily-mining-lapis.collectStartFolder
         close: true
       LapisActiveTrue:
         item: LapisActiveTrue
@@ -360,7 +360,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.miningCheckActive,daily-mining-obsidian.collectStartFolder
+          left: daily-mining-obsidian.collectStartFolder
         close: true
       ObsidianActiveTrue:
         item: ObsidianActiveTrue
@@ -407,7 +407,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.miningCheckActive,daily-mining-quartz.collectStartFolder
+          left: daily-mining-quartz.collectStartFolder
         close: true
       QuartzActiveTrue:
         item: QuartzActiveTrue
@@ -454,7 +454,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.miningCheckActive,daily-mining-redstone.collectStartFolder
+          left: daily-mining-redstone.collectStartFolder
         close: true
       RedstoneActiveTrue:
         item: RedstoneActiveTrue

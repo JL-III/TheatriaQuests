@@ -31,7 +31,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill-chicken.collectStartFolder
+          left: daily-mobkill-chicken.collectStartFolder
         close: true
       ChickenActiveTrue:
         item: ChickenActiveTrue
@@ -78,7 +78,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill-cow.collectStartFolder
+          left: daily-mobkill-cow.collectStartFolder
         close: true
       CowActiveTrue:
         item: CowActiveTrue
@@ -125,7 +125,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill-creeper.collectStartFolder
+          left: daily-mobkill-creeper.collectStartFolder
         close: true
       CreeperActiveTrue:
         item: CreeperActiveTrue
@@ -172,7 +172,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill-husk.collectStartFolder
+          left: daily-mobkill-husk.collectStartFolder
         close: true
       HuskActiveTrue:
         item: HuskActiveTrue
@@ -219,7 +219,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill-pig.collectStartFolder
+          left: daily-mobkill-pig.collectStartFolder
         close: true
       PigActiveTrue:
         item: PigActiveTrue
@@ -266,7 +266,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill-sheep.collectStartFolder
+          left: daily-mobkill-sheep.collectStartFolder
         close: true
       SheepActiveTrue:
         item: SheepActiveTrue
@@ -313,7 +313,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill-skeleton.collectStartFolder
+          left: daily-mobkill-skeleton.collectStartFolder
         close: true
       SkeletonActiveTrue:
         item: SkeletonActiveTrue
@@ -360,7 +360,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill-spider.collectStartFolder
+          left: daily-mobkill-spider.collectStartFolder
         close: true
       SpiderActiveTrue:
         item: SpiderActiveTrue
@@ -407,7 +407,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill-squid.collectStartFolder
+          left: daily-mobkill-squid.collectStartFolder
         close: true
       SquidActiveTrue:
         item: SquidActiveTrue
@@ -454,7 +454,7 @@ menus:
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.mobkillCheckActive,daily-mobkill-zombie.collectStartFolder
+          left: daily-mobkill-zombie.collectStartFolder
         close: true
       ZombieActiveTrue:
         item: ZombieActiveTrue
