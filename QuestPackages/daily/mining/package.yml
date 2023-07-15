@@ -7,152 +7,345 @@ menus:
     title: Mining  Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-      9: DiamondoreActiveFalse,DiamondoreActiveTrue,DiamondoreShrine,DiamondoreShrineFinished
-      10: GoldoreActiveFalse,GoldoreActiveTrue,GoldoreShrine,GoldoreShrineFinished
-      11: IronoreActiveFalse,IronoreActiveTrue,IronoreShrine,IronoreShrineFinished
-      12: ObsidianActiveFalse,ObsidianActiveTrue,ObsidianShrine,ObsidianShrineFinished
-      13: QuartzoreActiveFalse,QuartzoreActiveTrue,QuartzoreShrine,QuartzoreShrineFinished
+      9: CoalActiveFalse,CoalActiveTrue,CoalShrine,CoalShrineFinished
+      10: CopperActiveFalse,CopperActiveTrue,CopperShrine,CopperShrineFinished
+      11: DiamondActiveFalse,DiamondActiveTrue,DiamondShrine,DiamondShrineFinished
+      12: EmeraldActiveFalse,EmeraldActiveTrue,EmeraldShrine,EmeraldShrineFinished
+      13: GoldActiveFalse,GoldActiveTrue,GoldShrine,GoldShrineFinished
+      14: IronActiveFalse,IronActiveTrue,IronShrine,IronShrineFinished
+      15: LapisActiveFalse,LapisActiveTrue,LapisShrine,LapisShrineFinished
+      16: ObsidianActiveFalse,ObsidianActiveTrue,ObsidianShrine,ObsidianShrineFinished
+      17: QuartzActiveFalse,QuartzActiveTrue,QuartzShrine,QuartzShrineFinished
+      18: RedstoneActiveFalse,RedstoneActiveTrue,RedstoneShrine,RedstoneShrineFinished
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
-      DiamondoreActiveFalse:
-        item: DiamondoreActiveFalse
-        conditions: "!daily-mining-diamondOre.collectTaken"
+      CoalActiveFalse:
+        item: CoalActiveFalse
+        conditions: "!daily-mining-coal.collectTaken"
         text:
-          - $daily-mining-diamondOre.title$
-          - $daily-mining-diamondOre.description_line_1$
-          - $daily-mining-diamondOre.description_line_2$
+          - $daily-mining-coal.title$
+          - $daily-mining-coal.description_line_1$
+          - $daily-mining-coal.description_line_2$
           - 
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.miningCheckActive,daily-mining-diamondOre.collectStartFolder
+          left: daily.miningCheckActive,daily-mining-coal.collectStartFolder
         close: true
-      DiamondoreActiveTrue:
-        item: DiamondoreActiveTrue
-        conditions: daily-mining-diamondOre.collectTaken,!daily-mining-diamondOre.shrineTaken
+      CoalActiveTrue:
+        item: CoalActiveTrue
+        conditions: daily-mining-coal.collectTaken,!daily-mining-coal.shrineTaken
         text:
-          - $daily-mining-diamondOre.title$
-          - $daily-mining-diamondOre.description_line_1$
-          - $daily-mining-diamondOre.description_line_2$
+          - $daily-mining-coal.title$
+          - $daily-mining-coal.description_line_1$
+          - $daily-mining-coal.description_line_2$
           - 
           - $status.inProgress$
-          - "%daily-mining-diamondOre.objective.collect.absoluteAmount%/%daily-mining-diamondOre.objective.collect.absoluteTotal%"
+          - "%daily-mining-coal.objective.collect.absoluteAmount%/%daily-mining-coal.objective.collect.absoluteTotal%"
           - $action.reset$
         click:
-          right: resetNotify,daily-mining-diamondOre.reset
+          right: resetNotify,daily-mining-coal.reset
         close: true
-      DiamondoreShrine:
-        item: DiamondoreActiveTrue
-        conditions: daily-mining-diamondOre.shrineTaskActive
+      CoalShrine:
+        item: CoalActiveTrue
+        conditions: daily-mining-coal.shrineTaskActive
         text:
-          - $daily-mining-diamondOre.title$
-          - $daily-mining-diamondOre.shrine_line_1$
-          - $daily-mining-diamondOre.shrine_line_2$
+          - $daily-mining-coal.title$
+          - $daily-mining-coal.shrine_line_1$
+          - $daily-mining-coal.shrine_line_2$
           - 
           - $status.inProgress$
         close: true
-      DiamondoreShrineFinished:
+      CoalShrineFinished:
         item: questComplete
-        conditions: daily-mining-diamondOre.questComplete
+        conditions: daily-mining-coal.questComplete
         text:
-          - $daily-mining-diamondOre.title$
-          - $daily-mining-diamondOre.done_line_1$
-          - $daily-mining-diamondOre.done_line_2$
+          - $daily-mining-coal.title$
+          - $daily-mining-coal.done_line_1$
+          - $daily-mining-coal.done_line_2$
           - 
           - $status.inProgress$
         close: false
-      GoldoreActiveFalse:
-        item: GoldoreActiveFalse
-        conditions: "!daily-mining-goldOre.collectTaken"
+      CopperActiveFalse:
+        item: CopperActiveFalse
+        conditions: "!daily-mining-copper.collectTaken"
         text:
-          - $daily-mining-goldOre.title$
-          - $daily-mining-goldOre.description_line_1$
-          - $daily-mining-goldOre.description_line_2$
+          - $daily-mining-copper.title$
+          - $daily-mining-copper.description_line_1$
+          - $daily-mining-copper.description_line_2$
           - 
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.miningCheckActive,daily-mining-goldOre.collectStartFolder
+          left: daily.miningCheckActive,daily-mining-copper.collectStartFolder
         close: true
-      GoldoreActiveTrue:
-        item: GoldoreActiveTrue
-        conditions: daily-mining-goldOre.collectTaken,!daily-mining-goldOre.shrineTaken
+      CopperActiveTrue:
+        item: CopperActiveTrue
+        conditions: daily-mining-copper.collectTaken,!daily-mining-copper.shrineTaken
         text:
-          - $daily-mining-goldOre.title$
-          - $daily-mining-goldOre.description_line_1$
-          - $daily-mining-goldOre.description_line_2$
+          - $daily-mining-copper.title$
+          - $daily-mining-copper.description_line_1$
+          - $daily-mining-copper.description_line_2$
           - 
           - $status.inProgress$
-          - "%daily-mining-goldOre.objective.collect.absoluteAmount%/%daily-mining-goldOre.objective.collect.absoluteTotal%"
+          - "%daily-mining-copper.objective.collect.absoluteAmount%/%daily-mining-copper.objective.collect.absoluteTotal%"
           - $action.reset$
         click:
-          right: resetNotify,daily-mining-goldOre.reset
+          right: resetNotify,daily-mining-copper.reset
         close: true
-      GoldoreShrine:
-        item: GoldoreActiveTrue
-        conditions: daily-mining-goldOre.shrineTaskActive
+      CopperShrine:
+        item: CopperActiveTrue
+        conditions: daily-mining-copper.shrineTaskActive
         text:
-          - $daily-mining-goldOre.title$
-          - $daily-mining-goldOre.shrine_line_1$
-          - $daily-mining-goldOre.shrine_line_2$
+          - $daily-mining-copper.title$
+          - $daily-mining-copper.shrine_line_1$
+          - $daily-mining-copper.shrine_line_2$
           - 
           - $status.inProgress$
         close: true
-      GoldoreShrineFinished:
+      CopperShrineFinished:
         item: questComplete
-        conditions: daily-mining-goldOre.questComplete
+        conditions: daily-mining-copper.questComplete
         text:
-          - $daily-mining-goldOre.title$
-          - $daily-mining-goldOre.done_line_1$
-          - $daily-mining-goldOre.done_line_2$
+          - $daily-mining-copper.title$
+          - $daily-mining-copper.done_line_1$
+          - $daily-mining-copper.done_line_2$
           - 
           - $status.inProgress$
         close: false
-      IronoreActiveFalse:
-        item: IronoreActiveFalse
-        conditions: "!daily-mining-ironOre.collectTaken"
+      DiamondActiveFalse:
+        item: DiamondActiveFalse
+        conditions: "!daily-mining-diamond.collectTaken"
         text:
-          - $daily-mining-ironOre.title$
-          - $daily-mining-ironOre.description_line_1$
-          - $daily-mining-ironOre.description_line_2$
+          - $daily-mining-diamond.title$
+          - $daily-mining-diamond.description_line_1$
+          - $daily-mining-diamond.description_line_2$
           - 
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.miningCheckActive,daily-mining-ironOre.collectStartFolder
+          left: daily.miningCheckActive,daily-mining-diamond.collectStartFolder
         close: true
-      IronoreActiveTrue:
-        item: IronoreActiveTrue
-        conditions: daily-mining-ironOre.collectTaken,!daily-mining-ironOre.shrineTaken
+      DiamondActiveTrue:
+        item: DiamondActiveTrue
+        conditions: daily-mining-diamond.collectTaken,!daily-mining-diamond.shrineTaken
         text:
-          - $daily-mining-ironOre.title$
-          - $daily-mining-ironOre.description_line_1$
-          - $daily-mining-ironOre.description_line_2$
+          - $daily-mining-diamond.title$
+          - $daily-mining-diamond.description_line_1$
+          - $daily-mining-diamond.description_line_2$
           - 
           - $status.inProgress$
-          - "%daily-mining-ironOre.objective.collect.absoluteAmount%/%daily-mining-ironOre.objective.collect.absoluteTotal%"
+          - "%daily-mining-diamond.objective.collect.absoluteAmount%/%daily-mining-diamond.objective.collect.absoluteTotal%"
           - $action.reset$
         click:
-          right: resetNotify,daily-mining-ironOre.reset
+          right: resetNotify,daily-mining-diamond.reset
         close: true
-      IronoreShrine:
-        item: IronoreActiveTrue
-        conditions: daily-mining-ironOre.shrineTaskActive
+      DiamondShrine:
+        item: DiamondActiveTrue
+        conditions: daily-mining-diamond.shrineTaskActive
         text:
-          - $daily-mining-ironOre.title$
-          - $daily-mining-ironOre.shrine_line_1$
-          - $daily-mining-ironOre.shrine_line_2$
+          - $daily-mining-diamond.title$
+          - $daily-mining-diamond.shrine_line_1$
+          - $daily-mining-diamond.shrine_line_2$
           - 
           - $status.inProgress$
         close: true
-      IronoreShrineFinished:
+      DiamondShrineFinished:
         item: questComplete
-        conditions: daily-mining-ironOre.questComplete
+        conditions: daily-mining-diamond.questComplete
         text:
-          - $daily-mining-ironOre.title$
-          - $daily-mining-ironOre.done_line_1$
-          - $daily-mining-ironOre.done_line_2$
+          - $daily-mining-diamond.title$
+          - $daily-mining-diamond.done_line_1$
+          - $daily-mining-diamond.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      EmeraldActiveFalse:
+        item: EmeraldActiveFalse
+        conditions: "!daily-mining-emerald.collectTaken"
+        text:
+          - $daily-mining-emerald.title$
+          - $daily-mining-emerald.description_line_1$
+          - $daily-mining-emerald.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.miningCheckActive,daily-mining-emerald.collectStartFolder
+        close: true
+      EmeraldActiveTrue:
+        item: EmeraldActiveTrue
+        conditions: daily-mining-emerald.collectTaken,!daily-mining-emerald.shrineTaken
+        text:
+          - $daily-mining-emerald.title$
+          - $daily-mining-emerald.description_line_1$
+          - $daily-mining-emerald.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mining-emerald.objective.collect.absoluteAmount%/%daily-mining-emerald.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mining-emerald.reset
+        close: true
+      EmeraldShrine:
+        item: EmeraldActiveTrue
+        conditions: daily-mining-emerald.shrineTaskActive
+        text:
+          - $daily-mining-emerald.title$
+          - $daily-mining-emerald.shrine_line_1$
+          - $daily-mining-emerald.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      EmeraldShrineFinished:
+        item: questComplete
+        conditions: daily-mining-emerald.questComplete
+        text:
+          - $daily-mining-emerald.title$
+          - $daily-mining-emerald.done_line_1$
+          - $daily-mining-emerald.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      GoldActiveFalse:
+        item: GoldActiveFalse
+        conditions: "!daily-mining-gold.collectTaken"
+        text:
+          - $daily-mining-gold.title$
+          - $daily-mining-gold.description_line_1$
+          - $daily-mining-gold.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.miningCheckActive,daily-mining-gold.collectStartFolder
+        close: true
+      GoldActiveTrue:
+        item: GoldActiveTrue
+        conditions: daily-mining-gold.collectTaken,!daily-mining-gold.shrineTaken
+        text:
+          - $daily-mining-gold.title$
+          - $daily-mining-gold.description_line_1$
+          - $daily-mining-gold.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mining-gold.objective.collect.absoluteAmount%/%daily-mining-gold.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mining-gold.reset
+        close: true
+      GoldShrine:
+        item: GoldActiveTrue
+        conditions: daily-mining-gold.shrineTaskActive
+        text:
+          - $daily-mining-gold.title$
+          - $daily-mining-gold.shrine_line_1$
+          - $daily-mining-gold.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      GoldShrineFinished:
+        item: questComplete
+        conditions: daily-mining-gold.questComplete
+        text:
+          - $daily-mining-gold.title$
+          - $daily-mining-gold.done_line_1$
+          - $daily-mining-gold.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      IronActiveFalse:
+        item: IronActiveFalse
+        conditions: "!daily-mining-iron.collectTaken"
+        text:
+          - $daily-mining-iron.title$
+          - $daily-mining-iron.description_line_1$
+          - $daily-mining-iron.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.miningCheckActive,daily-mining-iron.collectStartFolder
+        close: true
+      IronActiveTrue:
+        item: IronActiveTrue
+        conditions: daily-mining-iron.collectTaken,!daily-mining-iron.shrineTaken
+        text:
+          - $daily-mining-iron.title$
+          - $daily-mining-iron.description_line_1$
+          - $daily-mining-iron.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mining-iron.objective.collect.absoluteAmount%/%daily-mining-iron.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mining-iron.reset
+        close: true
+      IronShrine:
+        item: IronActiveTrue
+        conditions: daily-mining-iron.shrineTaskActive
+        text:
+          - $daily-mining-iron.title$
+          - $daily-mining-iron.shrine_line_1$
+          - $daily-mining-iron.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      IronShrineFinished:
+        item: questComplete
+        conditions: daily-mining-iron.questComplete
+        text:
+          - $daily-mining-iron.title$
+          - $daily-mining-iron.done_line_1$
+          - $daily-mining-iron.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      LapisActiveFalse:
+        item: LapisActiveFalse
+        conditions: "!daily-mining-lapis.collectTaken"
+        text:
+          - $daily-mining-lapis.title$
+          - $daily-mining-lapis.description_line_1$
+          - $daily-mining-lapis.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.miningCheckActive,daily-mining-lapis.collectStartFolder
+        close: true
+      LapisActiveTrue:
+        item: LapisActiveTrue
+        conditions: daily-mining-lapis.collectTaken,!daily-mining-lapis.shrineTaken
+        text:
+          - $daily-mining-lapis.title$
+          - $daily-mining-lapis.description_line_1$
+          - $daily-mining-lapis.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mining-lapis.objective.collect.absoluteAmount%/%daily-mining-lapis.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mining-lapis.reset
+        close: true
+      LapisShrine:
+        item: LapisActiveTrue
+        conditions: daily-mining-lapis.shrineTaskActive
+        text:
+          - $daily-mining-lapis.title$
+          - $daily-mining-lapis.shrine_line_1$
+          - $daily-mining-lapis.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      LapisShrineFinished:
+        item: questComplete
+        conditions: daily-mining-lapis.questComplete
+        text:
+          - $daily-mining-lapis.title$
+          - $daily-mining-lapis.done_line_1$
+          - $daily-mining-lapis.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -203,50 +396,97 @@ menus:
           - 
           - $status.inProgress$
         close: false
-      QuartzoreActiveFalse:
-        item: QuartzoreActiveFalse
-        conditions: "!daily-mining-quartzOre.collectTaken"
+      QuartzActiveFalse:
+        item: QuartzActiveFalse
+        conditions: "!daily-mining-quartz.collectTaken"
         text:
-          - $daily-mining-quartzOre.title$
-          - $daily-mining-quartzOre.description_line_1$
-          - $daily-mining-quartzOre.description_line_2$
+          - $daily-mining-quartz.title$
+          - $daily-mining-quartz.description_line_1$
+          - $daily-mining-quartz.description_line_2$
           - 
           - $status.notStarted$
           - $action.start$
         click:
-          left: daily.miningCheckActive,daily-mining-quartzOre.collectStartFolder
+          left: daily.miningCheckActive,daily-mining-quartz.collectStartFolder
         close: true
-      QuartzoreActiveTrue:
-        item: QuartzoreActiveTrue
-        conditions: daily-mining-quartzOre.collectTaken,!daily-mining-quartzOre.shrineTaken
+      QuartzActiveTrue:
+        item: QuartzActiveTrue
+        conditions: daily-mining-quartz.collectTaken,!daily-mining-quartz.shrineTaken
         text:
-          - $daily-mining-quartzOre.title$
-          - $daily-mining-quartzOre.description_line_1$
-          - $daily-mining-quartzOre.description_line_2$
+          - $daily-mining-quartz.title$
+          - $daily-mining-quartz.description_line_1$
+          - $daily-mining-quartz.description_line_2$
           - 
           - $status.inProgress$
-          - "%daily-mining-quartzOre.objective.collect.absoluteAmount%/%daily-mining-quartzOre.objective.collect.absoluteTotal%"
+          - "%daily-mining-quartz.objective.collect.absoluteAmount%/%daily-mining-quartz.objective.collect.absoluteTotal%"
           - $action.reset$
         click:
-          right: resetNotify,daily-mining-quartzOre.reset
+          right: resetNotify,daily-mining-quartz.reset
         close: true
-      QuartzoreShrine:
-        item: QuartzoreActiveTrue
-        conditions: daily-mining-quartzOre.shrineTaskActive
+      QuartzShrine:
+        item: QuartzActiveTrue
+        conditions: daily-mining-quartz.shrineTaskActive
         text:
-          - $daily-mining-quartzOre.title$
-          - $daily-mining-quartzOre.shrine_line_1$
-          - $daily-mining-quartzOre.shrine_line_2$
+          - $daily-mining-quartz.title$
+          - $daily-mining-quartz.shrine_line_1$
+          - $daily-mining-quartz.shrine_line_2$
           - 
           - $status.inProgress$
         close: true
-      QuartzoreShrineFinished:
+      QuartzShrineFinished:
         item: questComplete
-        conditions: daily-mining-quartzOre.questComplete
+        conditions: daily-mining-quartz.questComplete
         text:
-          - $daily-mining-quartzOre.title$
-          - $daily-mining-quartzOre.done_line_1$
-          - $daily-mining-quartzOre.done_line_2$
+          - $daily-mining-quartz.title$
+          - $daily-mining-quartz.done_line_1$
+          - $daily-mining-quartz.done_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      RedstoneActiveFalse:
+        item: RedstoneActiveFalse
+        conditions: "!daily-mining-redstone.collectTaken"
+        text:
+          - $daily-mining-redstone.title$
+          - $daily-mining-redstone.description_line_1$
+          - $daily-mining-redstone.description_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily.miningCheckActive,daily-mining-redstone.collectStartFolder
+        close: true
+      RedstoneActiveTrue:
+        item: RedstoneActiveTrue
+        conditions: daily-mining-redstone.collectTaken,!daily-mining-redstone.shrineTaken
+        text:
+          - $daily-mining-redstone.title$
+          - $daily-mining-redstone.description_line_1$
+          - $daily-mining-redstone.description_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mining-redstone.objective.collect.absoluteAmount%/%daily-mining-redstone.objective.collect.absoluteTotal%"
+          - $action.reset$
+        click:
+          right: resetNotify,daily-mining-redstone.reset
+        close: true
+      RedstoneShrine:
+        item: RedstoneActiveTrue
+        conditions: daily-mining-redstone.shrineTaskActive
+        text:
+          - $daily-mining-redstone.title$
+          - $daily-mining-redstone.shrine_line_1$
+          - $daily-mining-redstone.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: true
+      RedstoneShrineFinished:
+        item: questComplete
+        conditions: daily-mining-redstone.questComplete
+        text:
+          - $daily-mining-redstone.title$
+          - $daily-mining-redstone.done_line_1$
+          - $daily-mining-redstone.done_line_2$
           - 
           - $status.inProgress$
         close: false
@@ -261,13 +501,23 @@ menus:
           left: "daily.openDailyMenu"
         close: true
 items:
-  DiamondoreActiveFalse: $daily-mining-diamondOre.target_drops_slug$
-  DiamondoreActiveTrue: $daily-mining-diamondOre.target_drops_slug$ $enchants$ $flags$
-  GoldoreActiveFalse: $daily-mining-goldOre.target_drops_slug$
-  GoldoreActiveTrue: $daily-mining-goldOre.target_drops_slug$ $enchants$ $flags$
-  IronoreActiveFalse: $daily-mining-ironOre.target_drops_slug$
-  IronoreActiveTrue: $daily-mining-ironOre.target_drops_slug$ $enchants$ $flags$
+  CoalActiveFalse: $daily-mining-coal.target_drops_slug$
+  CoalActiveTrue: $daily-mining-coal.target_drops_slug$ $enchants$ $flags$
+  CopperActiveFalse: $daily-mining-copper.target_drops_slug$
+  CopperActiveTrue: $daily-mining-copper.target_drops_slug$ $enchants$ $flags$
+  DiamondActiveFalse: $daily-mining-diamond.target_drops_slug$
+  DiamondActiveTrue: $daily-mining-diamond.target_drops_slug$ $enchants$ $flags$
+  EmeraldActiveFalse: $daily-mining-emerald.target_drops_slug$
+  EmeraldActiveTrue: $daily-mining-emerald.target_drops_slug$ $enchants$ $flags$
+  GoldActiveFalse: $daily-mining-gold.target_drops_slug$
+  GoldActiveTrue: $daily-mining-gold.target_drops_slug$ $enchants$ $flags$
+  IronActiveFalse: $daily-mining-iron.target_drops_slug$
+  IronActiveTrue: $daily-mining-iron.target_drops_slug$ $enchants$ $flags$
+  LapisActiveFalse: $daily-mining-lapis.target_drops_slug$
+  LapisActiveTrue: $daily-mining-lapis.target_drops_slug$ $enchants$ $flags$
   ObsidianActiveFalse: $daily-mining-obsidian.target_drops_slug$
   ObsidianActiveTrue: $daily-mining-obsidian.target_drops_slug$ $enchants$ $flags$
-  QuartzoreActiveFalse: $daily-mining-quartzOre.target_drops_slug$
-  QuartzoreActiveTrue: $daily-mining-quartzOre.target_drops_slug$ $enchants$ $flags$
+  QuartzActiveFalse: $daily-mining-quartz.target_drops_slug$
+  QuartzActiveTrue: $daily-mining-quartz.target_drops_slug$ $enchants$ $flags$
+  RedstoneActiveFalse: $daily-mining-redstone.target_drops_slug$
+  RedstoneActiveTrue: $daily-mining-redstone.target_drops_slug$ $enchants$ $flags$

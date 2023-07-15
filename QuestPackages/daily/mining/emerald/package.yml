@@ -14,16 +14,16 @@ variables:
   action_lower: mine
   action_lower_past: mined
   
-  target: diamond ore
-  target_upper: DiamondOre
+  target: emerald ore
+  target_upper: Emerald ore
   
-  target_drops: diamond
-  target_drops_plural: diamonds
+  target_drops: emerald
+  target_drops_plural: emeralds
   
-  target_slug: diamond_ore
+  target_slug: emerald_ore
   
   ## Due to limitations, slug value must match item key
-  target_drops_slug: diamond
+  target_drops_slug: emerald
   
 items:
-  diamond: minecraft:$target_drops_slug$
+  emerald: minecraft:$target_drops_slug$

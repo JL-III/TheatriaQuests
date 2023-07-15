@@ -1,0 +1,29 @@
+package:
+  templates:
+    - daily-template-mining
+
+variables:
+
+  objective_amount: 16
+  reward_amount: 2500
+
+  world: Mining
+  world_display: Mining
+
+  action_upper: Mine
+  action_lower: mine
+  action_lower_past: mined
+  
+  target: redstone ore
+  target_upper: Redstone ore
+  
+  target_drops: redstone
+  target_drops_plural: redstone
+  
+  target_slug: redstone
+
+## Due to limitations, slug value must match item key
+  target_drops_slug: redstone
+
+items:
+  redstone: minecraft:$target_drops_slug$

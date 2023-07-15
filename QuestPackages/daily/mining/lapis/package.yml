@@ -14,16 +14,16 @@ variables:
   action_lower: mine
   action_lower_past: mined
   
-  target: gold ore
-  target_upper: GoldOre
+  target: lapis ore
+  target_upper: Lapis ore
   
-  target_drops: raw gold
-  target_drops_plural: raw gold
+  target_drops: lapis
+  target_drops_plural: lapis
   
-  target_slug: gold_ore
+  target_slug: lapis_ore
 
 ## Due to limitations, slug value must match item key
-  target_drops_slug: raw_gold
+  target_drops_slug: lapis_lazuli
 
 items:
-  raw_gold: minecraft:$target_drops_slug$
+  lapis_lazuli: minecraft:$target_drops_slug$

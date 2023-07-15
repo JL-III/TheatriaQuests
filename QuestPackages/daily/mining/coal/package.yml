@@ -1,0 +1,29 @@
+package:
+  templates:
+    - daily-template-mining
+
+variables:
+
+  objective_amount: 16
+  reward_amount: 2500
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Mine
+  action_lower: mine
+  action_lower_past: mined
+  
+  target: coal ore
+  target_upper: Coal Ore
+  
+  target_drops: coal
+  target_drops_plural: coal
+  
+  target_slug: coal_ore
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: coal
+  
+items:
+  coal: minecraft:$target_drops_slug$
