@@ -4,7 +4,7 @@ package:
 menus:
   questsMenu:
     height: 4
-    title: Fishing  Quests
+    title: Fishing Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       9: BoneActiveFalse,BoneActiveTrue,BoneShrine,BoneShrineFinished
@@ -62,7 +62,7 @@ menus:
           - $daily-fishing-bone.done_line_1$
           - $daily-fishing-bone.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       BookActiveFalse:
         item: BookActiveFalse
@@ -106,7 +106,7 @@ menus:
           - $daily-fishing-book.done_line_1$
           - $daily-fishing-book.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       BootsActiveFalse:
         item: BootsActiveFalse
@@ -150,7 +150,7 @@ menus:
           - $daily-fishing-boots.done_line_1$
           - $daily-fishing-boots.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       BottleActiveFalse:
         item: BottleActiveFalse
@@ -194,7 +194,7 @@ menus:
           - $daily-fishing-bottle.done_line_1$
           - $daily-fishing-bottle.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       CodActiveFalse:
         item: CodActiveFalse
@@ -238,7 +238,7 @@ menus:
           - $daily-fishing-cod.done_line_1$
           - $daily-fishing-cod.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       PufferActiveFalse:
         item: PufferActiveFalse
@@ -282,7 +282,7 @@ menus:
           - $daily-fishing-puffer.done_line_1$
           - $daily-fishing-puffer.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       SaddleActiveFalse:
         item: SaddleActiveFalse
@@ -326,7 +326,7 @@ menus:
           - $daily-fishing-saddle.done_line_1$
           - $daily-fishing-saddle.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       SalmonActiveFalse:
         item: SalmonActiveFalse
@@ -370,7 +370,7 @@ menus:
           - $daily-fishing-salmon.done_line_1$
           - $daily-fishing-salmon.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       ShellActiveFalse:
         item: ShellActiveFalse
@@ -414,7 +414,7 @@ menus:
           - $daily-fishing-shell.done_line_1$
           - $daily-fishing-shell.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       TropicalActiveFalse:
         item: TropicalActiveFalse
@@ -458,7 +458,7 @@ menus:
           - $daily-fishing-tropical.done_line_1$
           - $daily-fishing-tropical.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       filler:
         text: "&a "

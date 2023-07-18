@@ -4,7 +4,7 @@ package:
 menus:
   questsMenu:
     height: 4
-    title: Mobkill  Quests
+    title: Mobkill Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       9: ChickenActiveFalse,ChickenActiveTrue,ChickenShrine,ChickenShrineFinished
@@ -62,7 +62,7 @@ menus:
           - $daily-mobkill-chicken.done_line_1$
           - $daily-mobkill-chicken.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       CowActiveFalse:
         item: CowActiveFalse
@@ -106,7 +106,7 @@ menus:
           - $daily-mobkill-cow.done_line_1$
           - $daily-mobkill-cow.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       CreeperActiveFalse:
         item: CreeperActiveFalse
@@ -150,7 +150,7 @@ menus:
           - $daily-mobkill-creeper.done_line_1$
           - $daily-mobkill-creeper.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       HuskActiveFalse:
         item: HuskActiveFalse
@@ -194,7 +194,7 @@ menus:
           - $daily-mobkill-husk.done_line_1$
           - $daily-mobkill-husk.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       PigActiveFalse:
         item: PigActiveFalse
@@ -238,7 +238,7 @@ menus:
           - $daily-mobkill-pig.done_line_1$
           - $daily-mobkill-pig.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       SheepActiveFalse:
         item: SheepActiveFalse
@@ -282,7 +282,7 @@ menus:
           - $daily-mobkill-sheep.done_line_1$
           - $daily-mobkill-sheep.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       SkeletonActiveFalse:
         item: SkeletonActiveFalse
@@ -326,7 +326,7 @@ menus:
           - $daily-mobkill-skeleton.done_line_1$
           - $daily-mobkill-skeleton.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       SpiderActiveFalse:
         item: SpiderActiveFalse
@@ -370,7 +370,7 @@ menus:
           - $daily-mobkill-spider.done_line_1$
           - $daily-mobkill-spider.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       SquidActiveFalse:
         item: SquidActiveFalse
@@ -414,7 +414,7 @@ menus:
           - $daily-mobkill-squid.done_line_1$
           - $daily-mobkill-squid.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       ZombieActiveFalse:
         item: ZombieActiveFalse
@@ -458,7 +458,7 @@ menus:
           - $daily-mobkill-zombie.done_line_1$
           - $daily-mobkill-zombie.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       filler:
         text: "&a "

@@ -6,7 +6,7 @@ menus:
   dailyMenu:
     height: 3
     title: '&d&oShrine Quests'
-    command: /daily
+    command: /shrine
     slots:
       '0-8': filler,filler,filler,filler,filler,filler,filler,filler,filler
       '9': miningQuestsMenu

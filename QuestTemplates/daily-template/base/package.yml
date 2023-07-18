@@ -2,12 +2,15 @@ package:
   templates:
     - daily-template
 
+objectives:
+  assign: 'login events:collectStartFolder global persistent'
+
 conditions:
   
   ################
   ## Tag checks ##
   ################
-  # startQuestCheck: '$startQuestCheck$'
+
   collectTaken: '$collectTaken$'
   collectComplete: '$collectComplete$'
   shrineTaken: '$shrineTaken$'
@@ -46,8 +49,8 @@ events:
 
   activeQuestNotice: '$activeQuestNotice$'
     
-  collectWhisper: '$collectWhisper$'
-  collectStartNotice: $collectStartNotice$
+  # collectWhisper: '$collectWhisper$'
+  # collectStartNotice: $collectStartNotice$
   
   shrineWhisper: '$shrineWhisper$'
   shrineStartNotice: '$shrineStartNotice$'

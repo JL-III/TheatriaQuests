@@ -20,7 +20,7 @@ func CreateScheduleEntries(base_path string) {
 	schedulesBase.WriteString("schedules:\n")
 	schedulesBase.WriteString("  resetDailyQuests:\n")
 	schedulesBase.WriteString("    type: realtime-daily\n")
-	schedulesBase.WriteString("    time: '03:05'\n")
+	schedulesBase.WriteString("    time: '03:59'\n")
 	schedulesBase.WriteString("    events: announceResetDaily,resetDaily\n\n")
 	schedulesBase.WriteString("events:\n")
 	schedulesBase.WriteString("  announceResetDaily: notifyall &eDaily Quests reset!\n")
@@ -36,7 +36,7 @@ func CreateScheduleEntries(base_path string) {
 			resetDaily.WriteString(filename + "Reset" + ",")
 		}
 	}
-	utils.Write(base_path+"schedules/package.yml", "  resetDaily: "+"folder "+resetDaily.String()+" period:5\n")
+	utils.Write(base_path+"schedules/package.yml", "  resetDaily: "+"folder "+resetDaily.String()+" period:1\n")
 
 	for _, filename := range filenames {
 
@@ -53,9 +53,9 @@ func CreateScheduleEntries(base_path string) {
 				continue
 			}
 			if j == len(lastDirs)-1 {
-				utils.Write(base_path+"schedules/package.yml", "daily-"+filename+"-"+lastDir+".reset")
+				utils.Write(base_path+"schedules/package.yml", "daily-"+filename+"-"+lastDir+".reset,daily-"+filename+"-"+lastDir+".collectStartFolder")
 			} else {
-				utils.Write(base_path+"schedules/package.yml", "daily-"+filename+"-"+lastDir+".reset,")
+				utils.Write(base_path+"schedules/package.yml", "daily-"+filename+"-"+lastDir+".reset,daily-"+filename+"-"+lastDir+".collectStartFolder,")
 			}
 		}
 

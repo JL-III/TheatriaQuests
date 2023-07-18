@@ -4,7 +4,7 @@ package:
 menus:
   questsMenu:
     height: 4
-    title: Mining  Quests
+    title: Mining Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       9: CoalActiveFalse,CoalActiveTrue,CoalShrine,CoalShrineFinished
@@ -62,7 +62,7 @@ menus:
           - $daily-mining-coal.done_line_1$
           - $daily-mining-coal.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       CopperActiveFalse:
         item: CopperActiveFalse
@@ -106,7 +106,7 @@ menus:
           - $daily-mining-copper.done_line_1$
           - $daily-mining-copper.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       DiamondActiveFalse:
         item: DiamondActiveFalse
@@ -150,7 +150,7 @@ menus:
           - $daily-mining-diamond.done_line_1$
           - $daily-mining-diamond.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       EmeraldActiveFalse:
         item: EmeraldActiveFalse
@@ -194,7 +194,7 @@ menus:
           - $daily-mining-emerald.done_line_1$
           - $daily-mining-emerald.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       GoldActiveFalse:
         item: GoldActiveFalse
@@ -238,7 +238,7 @@ menus:
           - $daily-mining-gold.done_line_1$
           - $daily-mining-gold.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       IronActiveFalse:
         item: IronActiveFalse
@@ -282,7 +282,7 @@ menus:
           - $daily-mining-iron.done_line_1$
           - $daily-mining-iron.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       LapisActiveFalse:
         item: LapisActiveFalse
@@ -326,7 +326,7 @@ menus:
           - $daily-mining-lapis.done_line_1$
           - $daily-mining-lapis.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       ObsidianActiveFalse:
         item: ObsidianActiveFalse
@@ -370,7 +370,7 @@ menus:
           - $daily-mining-obsidian.done_line_1$
           - $daily-mining-obsidian.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       QuartzActiveFalse:
         item: QuartzActiveFalse
@@ -414,7 +414,7 @@ menus:
           - $daily-mining-quartz.done_line_1$
           - $daily-mining-quartz.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       RedstoneActiveFalse:
         item: RedstoneActiveFalse
@@ -458,7 +458,7 @@ menus:
           - $daily-mining-redstone.done_line_1$
           - $daily-mining-redstone.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       filler:
         text: "&a "

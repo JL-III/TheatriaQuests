@@ -122,7 +122,7 @@ func Write(file_path, data string) {
 
 func DeleteFileIfExists(filename string) error {
 	if _, err := os.Stat(filename); err == nil {
-		fmt.Println("Found existing file... " + filename + " removing.")
+		fmt.Println("Found existing file... \n" + "Removing: " + filename)
 		return os.Remove(filename)
 	} else if os.IsNotExist(err) {
 		return nil

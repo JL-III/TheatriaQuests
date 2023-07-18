@@ -87,7 +87,7 @@ func CreateMenu(template_path, template_type string) {
 	utils.Write(generated_file_path, "menus:\n")
 	utils.Write(generated_file_path, "  questsMenu:\n")
 	utils.Write(generated_file_path, "    height: 4\n")
-	utils.Write(generated_file_path, "    title: "+cases.Title(language.English).String(template_type)+" "+" Quests\n")
+	utils.Write(generated_file_path, "    title: "+cases.Title(language.English).String(template_type)+" Quests\n")
 	utils.Write(generated_file_path, "    slots:\n")
 	utils.Write(generated_file_path, "      0-8: \"filler,filler,filler,filler,filler,filler,filler,filler,filler\"\n")
 	utils.Write(generated_file_path, strings.Join(finalConfig.ItemGUIlist, ""))
@@ -227,7 +227,7 @@ func CreateEntries(template_type, file_name string, Keys Keys) []Entry {
 			"$" + filePath + file_name + ".done_line_1$",
 			"$" + filePath + file_name + ".done_line_2$",
 			"",
-			"$status.inProgress$",
+			"$status.complete$",
 		},
 		Click: ClickConfig{
 			Left:  "",

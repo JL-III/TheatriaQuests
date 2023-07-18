@@ -4,7 +4,7 @@ package:
 menus:
   questsMenu:
     height: 4
-    title: Farming  Quests
+    title: Farming Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       9: BambooActiveFalse,BambooActiveTrue,BambooShrine,BambooShrineFinished
@@ -62,7 +62,7 @@ menus:
           - $daily-farming-bamboo.done_line_1$
           - $daily-farming-bamboo.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       BeetrootActiveFalse:
         item: BeetrootActiveFalse
@@ -106,7 +106,7 @@ menus:
           - $daily-farming-beetroot.done_line_1$
           - $daily-farming-beetroot.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       CactusActiveFalse:
         item: CactusActiveFalse
@@ -150,7 +150,7 @@ menus:
           - $daily-farming-cactus.done_line_1$
           - $daily-farming-cactus.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       CarrotActiveFalse:
         item: CarrotActiveFalse
@@ -194,7 +194,7 @@ menus:
           - $daily-farming-carrot.done_line_1$
           - $daily-farming-carrot.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       MelonActiveFalse:
         item: MelonActiveFalse
@@ -238,7 +238,7 @@ menus:
           - $daily-farming-melon.done_line_1$
           - $daily-farming-melon.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       PotatoActiveFalse:
         item: PotatoActiveFalse
@@ -282,7 +282,7 @@ menus:
           - $daily-farming-potato.done_line_1$
           - $daily-farming-potato.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       PumpkinActiveFalse:
         item: PumpkinActiveFalse
@@ -326,7 +326,7 @@ menus:
           - $daily-farming-pumpkin.done_line_1$
           - $daily-farming-pumpkin.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       SugarcaneActiveFalse:
         item: SugarcaneActiveFalse
@@ -370,7 +370,7 @@ menus:
           - $daily-farming-sugarcane.done_line_1$
           - $daily-farming-sugarcane.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       SweetberryActiveFalse:
         item: SweetberryActiveFalse
@@ -414,7 +414,7 @@ menus:
           - $daily-farming-sweetberry.done_line_1$
           - $daily-farming-sweetberry.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       WheatActiveFalse:
         item: WheatActiveFalse
@@ -458,7 +458,7 @@ menus:
           - $daily-farming-wheat.done_line_1$
           - $daily-farming-wheat.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       filler:
         text: "&a "

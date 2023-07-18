@@ -4,7 +4,7 @@ package:
 menus:
   questsMenu:
     height: 4
-    title: Lumber  Quests
+    title: Lumber Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       9: AcaciaActiveFalse,AcaciaActiveTrue,AcaciaShrine,AcaciaShrineFinished
@@ -62,7 +62,7 @@ menus:
           - $daily-lumber-acacia.done_line_1$
           - $daily-lumber-acacia.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       BirchActiveFalse:
         item: BirchActiveFalse
@@ -106,7 +106,7 @@ menus:
           - $daily-lumber-birch.done_line_1$
           - $daily-lumber-birch.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       CherryActiveFalse:
         item: CherryActiveFalse
@@ -150,7 +150,7 @@ menus:
           - $daily-lumber-cherry.done_line_1$
           - $daily-lumber-cherry.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       CrimsonActiveFalse:
         item: CrimsonActiveFalse
@@ -194,7 +194,7 @@ menus:
           - $daily-lumber-crimson.done_line_1$
           - $daily-lumber-crimson.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       DarkoakActiveFalse:
         item: DarkoakActiveFalse
@@ -238,7 +238,7 @@ menus:
           - $daily-lumber-darkoak.done_line_1$
           - $daily-lumber-darkoak.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       JungleActiveFalse:
         item: JungleActiveFalse
@@ -282,7 +282,7 @@ menus:
           - $daily-lumber-jungle.done_line_1$
           - $daily-lumber-jungle.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       MangroveActiveFalse:
         item: MangroveActiveFalse
@@ -326,7 +326,7 @@ menus:
           - $daily-lumber-mangrove.done_line_1$
           - $daily-lumber-mangrove.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       OakActiveFalse:
         item: OakActiveFalse
@@ -370,7 +370,7 @@ menus:
           - $daily-lumber-oak.done_line_1$
           - $daily-lumber-oak.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       SpruceActiveFalse:
         item: SpruceActiveFalse
@@ -414,7 +414,7 @@ menus:
           - $daily-lumber-spruce.done_line_1$
           - $daily-lumber-spruce.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       WarpedActiveFalse:
         item: WarpedActiveFalse
@@ -458,7 +458,7 @@ menus:
           - $daily-lumber-warped.done_line_1$
           - $daily-lumber-warped.done_line_2$
           - 
-          - $status.inProgress$
+          - $status.complete$
         close: false
       filler:
         text: "&a "
