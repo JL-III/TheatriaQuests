@@ -32,7 +32,7 @@ menus:
           - $action.start$
         click:
           left: daily-lumber-acacia.collectStartFolder
-        close: true
+        close: false
       AcaciaActiveTrue:
         item: AcaciaActiveTrue
         conditions: daily-lumber-acacia.collectTaken,!daily-lumber-acacia.shrineTaken
@@ -43,10 +43,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-lumber-acacia.objective.collect.absoluteAmount%/%daily-lumber-acacia.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-lumber-acacia.reset
-        close: true
+        close: false
       AcaciaShrine:
         item: AcaciaActiveTrue
         conditions: daily-lumber-acacia.shrineTaskActive
@@ -56,7 +53,7 @@ menus:
           - $daily-lumber-acacia.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       AcaciaShrineFinished:
         item: questComplete
         conditions: daily-lumber-acacia.questComplete
@@ -79,7 +76,7 @@ menus:
           - $action.start$
         click:
           left: daily-lumber-birch.collectStartFolder
-        close: true
+        close: false
       BirchActiveTrue:
         item: BirchActiveTrue
         conditions: daily-lumber-birch.collectTaken,!daily-lumber-birch.shrineTaken
@@ -90,10 +87,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-lumber-birch.objective.collect.absoluteAmount%/%daily-lumber-birch.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-lumber-birch.reset
-        close: true
+        close: false
       BirchShrine:
         item: BirchActiveTrue
         conditions: daily-lumber-birch.shrineTaskActive
@@ -103,7 +97,7 @@ menus:
           - $daily-lumber-birch.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       BirchShrineFinished:
         item: questComplete
         conditions: daily-lumber-birch.questComplete
@@ -126,7 +120,7 @@ menus:
           - $action.start$
         click:
           left: daily-lumber-cherry.collectStartFolder
-        close: true
+        close: false
       CherryActiveTrue:
         item: CherryActiveTrue
         conditions: daily-lumber-cherry.collectTaken,!daily-lumber-cherry.shrineTaken
@@ -137,10 +131,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-lumber-cherry.objective.collect.absoluteAmount%/%daily-lumber-cherry.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-lumber-cherry.reset
-        close: true
+        close: false
       CherryShrine:
         item: CherryActiveTrue
         conditions: daily-lumber-cherry.shrineTaskActive
@@ -150,7 +141,7 @@ menus:
           - $daily-lumber-cherry.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       CherryShrineFinished:
         item: questComplete
         conditions: daily-lumber-cherry.questComplete
@@ -173,7 +164,7 @@ menus:
           - $action.start$
         click:
           left: daily-lumber-crimson.collectStartFolder
-        close: true
+        close: false
       CrimsonActiveTrue:
         item: CrimsonActiveTrue
         conditions: daily-lumber-crimson.collectTaken,!daily-lumber-crimson.shrineTaken
@@ -184,10 +175,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-lumber-crimson.objective.collect.absoluteAmount%/%daily-lumber-crimson.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-lumber-crimson.reset
-        close: true
+        close: false
       CrimsonShrine:
         item: CrimsonActiveTrue
         conditions: daily-lumber-crimson.shrineTaskActive
@@ -197,7 +185,7 @@ menus:
           - $daily-lumber-crimson.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       CrimsonShrineFinished:
         item: questComplete
         conditions: daily-lumber-crimson.questComplete
@@ -220,7 +208,7 @@ menus:
           - $action.start$
         click:
           left: daily-lumber-darkoak.collectStartFolder
-        close: true
+        close: false
       DarkoakActiveTrue:
         item: DarkoakActiveTrue
         conditions: daily-lumber-darkoak.collectTaken,!daily-lumber-darkoak.shrineTaken
@@ -231,10 +219,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-lumber-darkoak.objective.collect.absoluteAmount%/%daily-lumber-darkoak.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-lumber-darkoak.reset
-        close: true
+        close: false
       DarkoakShrine:
         item: DarkoakActiveTrue
         conditions: daily-lumber-darkoak.shrineTaskActive
@@ -244,7 +229,7 @@ menus:
           - $daily-lumber-darkoak.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       DarkoakShrineFinished:
         item: questComplete
         conditions: daily-lumber-darkoak.questComplete
@@ -267,7 +252,7 @@ menus:
           - $action.start$
         click:
           left: daily-lumber-jungle.collectStartFolder
-        close: true
+        close: false
       JungleActiveTrue:
         item: JungleActiveTrue
         conditions: daily-lumber-jungle.collectTaken,!daily-lumber-jungle.shrineTaken
@@ -278,10 +263,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-lumber-jungle.objective.collect.absoluteAmount%/%daily-lumber-jungle.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-lumber-jungle.reset
-        close: true
+        close: false
       JungleShrine:
         item: JungleActiveTrue
         conditions: daily-lumber-jungle.shrineTaskActive
@@ -291,7 +273,7 @@ menus:
           - $daily-lumber-jungle.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       JungleShrineFinished:
         item: questComplete
         conditions: daily-lumber-jungle.questComplete
@@ -314,7 +296,7 @@ menus:
           - $action.start$
         click:
           left: daily-lumber-mangrove.collectStartFolder
-        close: true
+        close: false
       MangroveActiveTrue:
         item: MangroveActiveTrue
         conditions: daily-lumber-mangrove.collectTaken,!daily-lumber-mangrove.shrineTaken
@@ -325,10 +307,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-lumber-mangrove.objective.collect.absoluteAmount%/%daily-lumber-mangrove.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-lumber-mangrove.reset
-        close: true
+        close: false
       MangroveShrine:
         item: MangroveActiveTrue
         conditions: daily-lumber-mangrove.shrineTaskActive
@@ -338,7 +317,7 @@ menus:
           - $daily-lumber-mangrove.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       MangroveShrineFinished:
         item: questComplete
         conditions: daily-lumber-mangrove.questComplete
@@ -361,7 +340,7 @@ menus:
           - $action.start$
         click:
           left: daily-lumber-oak.collectStartFolder
-        close: true
+        close: false
       OakActiveTrue:
         item: OakActiveTrue
         conditions: daily-lumber-oak.collectTaken,!daily-lumber-oak.shrineTaken
@@ -372,10 +351,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-lumber-oak.objective.collect.absoluteAmount%/%daily-lumber-oak.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-lumber-oak.reset
-        close: true
+        close: false
       OakShrine:
         item: OakActiveTrue
         conditions: daily-lumber-oak.shrineTaskActive
@@ -385,7 +361,7 @@ menus:
           - $daily-lumber-oak.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       OakShrineFinished:
         item: questComplete
         conditions: daily-lumber-oak.questComplete
@@ -408,7 +384,7 @@ menus:
           - $action.start$
         click:
           left: daily-lumber-spruce.collectStartFolder
-        close: true
+        close: false
       SpruceActiveTrue:
         item: SpruceActiveTrue
         conditions: daily-lumber-spruce.collectTaken,!daily-lumber-spruce.shrineTaken
@@ -419,10 +395,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-lumber-spruce.objective.collect.absoluteAmount%/%daily-lumber-spruce.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-lumber-spruce.reset
-        close: true
+        close: false
       SpruceShrine:
         item: SpruceActiveTrue
         conditions: daily-lumber-spruce.shrineTaskActive
@@ -432,7 +405,7 @@ menus:
           - $daily-lumber-spruce.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       SpruceShrineFinished:
         item: questComplete
         conditions: daily-lumber-spruce.questComplete
@@ -455,7 +428,7 @@ menus:
           - $action.start$
         click:
           left: daily-lumber-warped.collectStartFolder
-        close: true
+        close: false
       WarpedActiveTrue:
         item: WarpedActiveTrue
         conditions: daily-lumber-warped.collectTaken,!daily-lumber-warped.shrineTaken
@@ -466,10 +439,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-lumber-warped.objective.collect.absoluteAmount%/%daily-lumber-warped.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-lumber-warped.reset
-        close: true
+        close: false
       WarpedShrine:
         item: WarpedActiveTrue
         conditions: daily-lumber-warped.shrineTaskActive
@@ -479,7 +449,7 @@ menus:
           - $daily-lumber-warped.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       WarpedShrineFinished:
         item: questComplete
         conditions: daily-lumber-warped.questComplete

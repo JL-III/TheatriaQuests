@@ -32,7 +32,7 @@ menus:
           - $action.start$
         click:
           left: daily-mining-coal.collectStartFolder
-        close: true
+        close: false
       CoalActiveTrue:
         item: CoalActiveTrue
         conditions: daily-mining-coal.collectTaken,!daily-mining-coal.shrineTaken
@@ -43,10 +43,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mining-coal.objective.collect.absoluteAmount%/%daily-mining-coal.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mining-coal.reset
-        close: true
+        close: false
       CoalShrine:
         item: CoalActiveTrue
         conditions: daily-mining-coal.shrineTaskActive
@@ -56,7 +53,7 @@ menus:
           - $daily-mining-coal.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       CoalShrineFinished:
         item: questComplete
         conditions: daily-mining-coal.questComplete
@@ -79,7 +76,7 @@ menus:
           - $action.start$
         click:
           left: daily-mining-copper.collectStartFolder
-        close: true
+        close: false
       CopperActiveTrue:
         item: CopperActiveTrue
         conditions: daily-mining-copper.collectTaken,!daily-mining-copper.shrineTaken
@@ -90,10 +87,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mining-copper.objective.collect.absoluteAmount%/%daily-mining-copper.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mining-copper.reset
-        close: true
+        close: false
       CopperShrine:
         item: CopperActiveTrue
         conditions: daily-mining-copper.shrineTaskActive
@@ -103,7 +97,7 @@ menus:
           - $daily-mining-copper.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       CopperShrineFinished:
         item: questComplete
         conditions: daily-mining-copper.questComplete
@@ -126,7 +120,7 @@ menus:
           - $action.start$
         click:
           left: daily-mining-diamond.collectStartFolder
-        close: true
+        close: false
       DiamondActiveTrue:
         item: DiamondActiveTrue
         conditions: daily-mining-diamond.collectTaken,!daily-mining-diamond.shrineTaken
@@ -137,10 +131,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mining-diamond.objective.collect.absoluteAmount%/%daily-mining-diamond.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mining-diamond.reset
-        close: true
+        close: false
       DiamondShrine:
         item: DiamondActiveTrue
         conditions: daily-mining-diamond.shrineTaskActive
@@ -150,7 +141,7 @@ menus:
           - $daily-mining-diamond.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       DiamondShrineFinished:
         item: questComplete
         conditions: daily-mining-diamond.questComplete
@@ -173,7 +164,7 @@ menus:
           - $action.start$
         click:
           left: daily-mining-emerald.collectStartFolder
-        close: true
+        close: false
       EmeraldActiveTrue:
         item: EmeraldActiveTrue
         conditions: daily-mining-emerald.collectTaken,!daily-mining-emerald.shrineTaken
@@ -184,10 +175,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mining-emerald.objective.collect.absoluteAmount%/%daily-mining-emerald.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mining-emerald.reset
-        close: true
+        close: false
       EmeraldShrine:
         item: EmeraldActiveTrue
         conditions: daily-mining-emerald.shrineTaskActive
@@ -197,7 +185,7 @@ menus:
           - $daily-mining-emerald.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       EmeraldShrineFinished:
         item: questComplete
         conditions: daily-mining-emerald.questComplete
@@ -220,7 +208,7 @@ menus:
           - $action.start$
         click:
           left: daily-mining-gold.collectStartFolder
-        close: true
+        close: false
       GoldActiveTrue:
         item: GoldActiveTrue
         conditions: daily-mining-gold.collectTaken,!daily-mining-gold.shrineTaken
@@ -231,10 +219,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mining-gold.objective.collect.absoluteAmount%/%daily-mining-gold.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mining-gold.reset
-        close: true
+        close: false
       GoldShrine:
         item: GoldActiveTrue
         conditions: daily-mining-gold.shrineTaskActive
@@ -244,7 +229,7 @@ menus:
           - $daily-mining-gold.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       GoldShrineFinished:
         item: questComplete
         conditions: daily-mining-gold.questComplete
@@ -267,7 +252,7 @@ menus:
           - $action.start$
         click:
           left: daily-mining-iron.collectStartFolder
-        close: true
+        close: false
       IronActiveTrue:
         item: IronActiveTrue
         conditions: daily-mining-iron.collectTaken,!daily-mining-iron.shrineTaken
@@ -278,10 +263,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mining-iron.objective.collect.absoluteAmount%/%daily-mining-iron.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mining-iron.reset
-        close: true
+        close: false
       IronShrine:
         item: IronActiveTrue
         conditions: daily-mining-iron.shrineTaskActive
@@ -291,7 +273,7 @@ menus:
           - $daily-mining-iron.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       IronShrineFinished:
         item: questComplete
         conditions: daily-mining-iron.questComplete
@@ -314,7 +296,7 @@ menus:
           - $action.start$
         click:
           left: daily-mining-lapis.collectStartFolder
-        close: true
+        close: false
       LapisActiveTrue:
         item: LapisActiveTrue
         conditions: daily-mining-lapis.collectTaken,!daily-mining-lapis.shrineTaken
@@ -325,10 +307,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mining-lapis.objective.collect.absoluteAmount%/%daily-mining-lapis.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mining-lapis.reset
-        close: true
+        close: false
       LapisShrine:
         item: LapisActiveTrue
         conditions: daily-mining-lapis.shrineTaskActive
@@ -338,7 +317,7 @@ menus:
           - $daily-mining-lapis.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       LapisShrineFinished:
         item: questComplete
         conditions: daily-mining-lapis.questComplete
@@ -361,7 +340,7 @@ menus:
           - $action.start$
         click:
           left: daily-mining-obsidian.collectStartFolder
-        close: true
+        close: false
       ObsidianActiveTrue:
         item: ObsidianActiveTrue
         conditions: daily-mining-obsidian.collectTaken,!daily-mining-obsidian.shrineTaken
@@ -372,10 +351,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mining-obsidian.objective.collect.absoluteAmount%/%daily-mining-obsidian.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mining-obsidian.reset
-        close: true
+        close: false
       ObsidianShrine:
         item: ObsidianActiveTrue
         conditions: daily-mining-obsidian.shrineTaskActive
@@ -385,7 +361,7 @@ menus:
           - $daily-mining-obsidian.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       ObsidianShrineFinished:
         item: questComplete
         conditions: daily-mining-obsidian.questComplete
@@ -408,7 +384,7 @@ menus:
           - $action.start$
         click:
           left: daily-mining-quartz.collectStartFolder
-        close: true
+        close: false
       QuartzActiveTrue:
         item: QuartzActiveTrue
         conditions: daily-mining-quartz.collectTaken,!daily-mining-quartz.shrineTaken
@@ -419,10 +395,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mining-quartz.objective.collect.absoluteAmount%/%daily-mining-quartz.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mining-quartz.reset
-        close: true
+        close: false
       QuartzShrine:
         item: QuartzActiveTrue
         conditions: daily-mining-quartz.shrineTaskActive
@@ -432,7 +405,7 @@ menus:
           - $daily-mining-quartz.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       QuartzShrineFinished:
         item: questComplete
         conditions: daily-mining-quartz.questComplete
@@ -455,7 +428,7 @@ menus:
           - $action.start$
         click:
           left: daily-mining-redstone.collectStartFolder
-        close: true
+        close: false
       RedstoneActiveTrue:
         item: RedstoneActiveTrue
         conditions: daily-mining-redstone.collectTaken,!daily-mining-redstone.shrineTaken
@@ -466,10 +439,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mining-redstone.objective.collect.absoluteAmount%/%daily-mining-redstone.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mining-redstone.reset
-        close: true
+        close: false
       RedstoneShrine:
         item: RedstoneActiveTrue
         conditions: daily-mining-redstone.shrineTaskActive
@@ -479,7 +449,7 @@ menus:
           - $daily-mining-redstone.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       RedstoneShrineFinished:
         item: questComplete
         conditions: daily-mining-redstone.questComplete

@@ -32,7 +32,7 @@ menus:
           - $action.start$
         click:
           left: daily-farming-bamboo.collectStartFolder
-        close: true
+        close: false
       BambooActiveTrue:
         item: BambooActiveTrue
         conditions: daily-farming-bamboo.collectTaken,!daily-farming-bamboo.shrineTaken
@@ -43,10 +43,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-farming-bamboo.objective.collect.absoluteAmount%/%daily-farming-bamboo.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-bamboo.reset
-        close: true
+        close: false
       BambooShrine:
         item: BambooActiveTrue
         conditions: daily-farming-bamboo.shrineTaskActive
@@ -56,7 +53,7 @@ menus:
           - $daily-farming-bamboo.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       BambooShrineFinished:
         item: questComplete
         conditions: daily-farming-bamboo.questComplete
@@ -79,7 +76,7 @@ menus:
           - $action.start$
         click:
           left: daily-farming-beetroot.collectStartFolder
-        close: true
+        close: false
       BeetrootActiveTrue:
         item: BeetrootActiveTrue
         conditions: daily-farming-beetroot.collectTaken,!daily-farming-beetroot.shrineTaken
@@ -90,10 +87,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-farming-beetroot.objective.collect.absoluteAmount%/%daily-farming-beetroot.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-beetroot.reset
-        close: true
+        close: false
       BeetrootShrine:
         item: BeetrootActiveTrue
         conditions: daily-farming-beetroot.shrineTaskActive
@@ -103,7 +97,7 @@ menus:
           - $daily-farming-beetroot.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       BeetrootShrineFinished:
         item: questComplete
         conditions: daily-farming-beetroot.questComplete
@@ -126,7 +120,7 @@ menus:
           - $action.start$
         click:
           left: daily-farming-cactus.collectStartFolder
-        close: true
+        close: false
       CactusActiveTrue:
         item: CactusActiveTrue
         conditions: daily-farming-cactus.collectTaken,!daily-farming-cactus.shrineTaken
@@ -137,10 +131,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-farming-cactus.objective.collect.absoluteAmount%/%daily-farming-cactus.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-cactus.reset
-        close: true
+        close: false
       CactusShrine:
         item: CactusActiveTrue
         conditions: daily-farming-cactus.shrineTaskActive
@@ -150,7 +141,7 @@ menus:
           - $daily-farming-cactus.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       CactusShrineFinished:
         item: questComplete
         conditions: daily-farming-cactus.questComplete
@@ -173,7 +164,7 @@ menus:
           - $action.start$
         click:
           left: daily-farming-carrot.collectStartFolder
-        close: true
+        close: false
       CarrotActiveTrue:
         item: CarrotActiveTrue
         conditions: daily-farming-carrot.collectTaken,!daily-farming-carrot.shrineTaken
@@ -184,10 +175,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-farming-carrot.objective.collect.absoluteAmount%/%daily-farming-carrot.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-carrot.reset
-        close: true
+        close: false
       CarrotShrine:
         item: CarrotActiveTrue
         conditions: daily-farming-carrot.shrineTaskActive
@@ -197,7 +185,7 @@ menus:
           - $daily-farming-carrot.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       CarrotShrineFinished:
         item: questComplete
         conditions: daily-farming-carrot.questComplete
@@ -220,7 +208,7 @@ menus:
           - $action.start$
         click:
           left: daily-farming-melon.collectStartFolder
-        close: true
+        close: false
       MelonActiveTrue:
         item: MelonActiveTrue
         conditions: daily-farming-melon.collectTaken,!daily-farming-melon.shrineTaken
@@ -231,10 +219,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-farming-melon.objective.collect.absoluteAmount%/%daily-farming-melon.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-melon.reset
-        close: true
+        close: false
       MelonShrine:
         item: MelonActiveTrue
         conditions: daily-farming-melon.shrineTaskActive
@@ -244,7 +229,7 @@ menus:
           - $daily-farming-melon.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       MelonShrineFinished:
         item: questComplete
         conditions: daily-farming-melon.questComplete
@@ -267,7 +252,7 @@ menus:
           - $action.start$
         click:
           left: daily-farming-potato.collectStartFolder
-        close: true
+        close: false
       PotatoActiveTrue:
         item: PotatoActiveTrue
         conditions: daily-farming-potato.collectTaken,!daily-farming-potato.shrineTaken
@@ -278,10 +263,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-farming-potato.objective.collect.absoluteAmount%/%daily-farming-potato.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-potato.reset
-        close: true
+        close: false
       PotatoShrine:
         item: PotatoActiveTrue
         conditions: daily-farming-potato.shrineTaskActive
@@ -291,7 +273,7 @@ menus:
           - $daily-farming-potato.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       PotatoShrineFinished:
         item: questComplete
         conditions: daily-farming-potato.questComplete
@@ -314,7 +296,7 @@ menus:
           - $action.start$
         click:
           left: daily-farming-pumpkin.collectStartFolder
-        close: true
+        close: false
       PumpkinActiveTrue:
         item: PumpkinActiveTrue
         conditions: daily-farming-pumpkin.collectTaken,!daily-farming-pumpkin.shrineTaken
@@ -325,10 +307,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-farming-pumpkin.objective.collect.absoluteAmount%/%daily-farming-pumpkin.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-pumpkin.reset
-        close: true
+        close: false
       PumpkinShrine:
         item: PumpkinActiveTrue
         conditions: daily-farming-pumpkin.shrineTaskActive
@@ -338,7 +317,7 @@ menus:
           - $daily-farming-pumpkin.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       PumpkinShrineFinished:
         item: questComplete
         conditions: daily-farming-pumpkin.questComplete
@@ -361,7 +340,7 @@ menus:
           - $action.start$
         click:
           left: daily-farming-sugarcane.collectStartFolder
-        close: true
+        close: false
       SugarcaneActiveTrue:
         item: SugarcaneActiveTrue
         conditions: daily-farming-sugarcane.collectTaken,!daily-farming-sugarcane.shrineTaken
@@ -372,10 +351,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-farming-sugarcane.objective.collect.absoluteAmount%/%daily-farming-sugarcane.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-sugarcane.reset
-        close: true
+        close: false
       SugarcaneShrine:
         item: SugarcaneActiveTrue
         conditions: daily-farming-sugarcane.shrineTaskActive
@@ -385,7 +361,7 @@ menus:
           - $daily-farming-sugarcane.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       SugarcaneShrineFinished:
         item: questComplete
         conditions: daily-farming-sugarcane.questComplete
@@ -408,7 +384,7 @@ menus:
           - $action.start$
         click:
           left: daily-farming-sweetberry.collectStartFolder
-        close: true
+        close: false
       SweetberryActiveTrue:
         item: SweetberryActiveTrue
         conditions: daily-farming-sweetberry.collectTaken,!daily-farming-sweetberry.shrineTaken
@@ -419,10 +395,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-farming-sweetberry.objective.collect.absoluteAmount%/%daily-farming-sweetberry.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-sweetberry.reset
-        close: true
+        close: false
       SweetberryShrine:
         item: SweetberryActiveTrue
         conditions: daily-farming-sweetberry.shrineTaskActive
@@ -432,7 +405,7 @@ menus:
           - $daily-farming-sweetberry.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       SweetberryShrineFinished:
         item: questComplete
         conditions: daily-farming-sweetberry.questComplete
@@ -455,7 +428,7 @@ menus:
           - $action.start$
         click:
           left: daily-farming-wheat.collectStartFolder
-        close: true
+        close: false
       WheatActiveTrue:
         item: WheatActiveTrue
         conditions: daily-farming-wheat.collectTaken,!daily-farming-wheat.shrineTaken
@@ -466,10 +439,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-farming-wheat.objective.collect.absoluteAmount%/%daily-farming-wheat.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-farming-wheat.reset
-        close: true
+        close: false
       WheatShrine:
         item: WheatActiveTrue
         conditions: daily-farming-wheat.shrineTaskActive
@@ -479,7 +449,7 @@ menus:
           - $daily-farming-wheat.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       WheatShrineFinished:
         item: questComplete
         conditions: daily-farming-wheat.questComplete

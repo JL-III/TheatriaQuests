@@ -32,7 +32,7 @@ menus:
           - $action.start$
         click:
           left: daily-mobkill-chicken.collectStartFolder
-        close: true
+        close: false
       ChickenActiveTrue:
         item: ChickenActiveTrue
         conditions: daily-mobkill-chicken.collectTaken,!daily-mobkill-chicken.shrineTaken
@@ -43,10 +43,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mobkill-chicken.objective.collect.absoluteAmount%/%daily-mobkill-chicken.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mobkill-chicken.reset
-        close: true
+        close: false
       ChickenShrine:
         item: ChickenActiveTrue
         conditions: daily-mobkill-chicken.shrineTaskActive
@@ -56,7 +53,7 @@ menus:
           - $daily-mobkill-chicken.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       ChickenShrineFinished:
         item: questComplete
         conditions: daily-mobkill-chicken.questComplete
@@ -79,7 +76,7 @@ menus:
           - $action.start$
         click:
           left: daily-mobkill-cow.collectStartFolder
-        close: true
+        close: false
       CowActiveTrue:
         item: CowActiveTrue
         conditions: daily-mobkill-cow.collectTaken,!daily-mobkill-cow.shrineTaken
@@ -90,10 +87,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mobkill-cow.objective.collect.absoluteAmount%/%daily-mobkill-cow.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mobkill-cow.reset
-        close: true
+        close: false
       CowShrine:
         item: CowActiveTrue
         conditions: daily-mobkill-cow.shrineTaskActive
@@ -103,7 +97,7 @@ menus:
           - $daily-mobkill-cow.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       CowShrineFinished:
         item: questComplete
         conditions: daily-mobkill-cow.questComplete
@@ -126,7 +120,7 @@ menus:
           - $action.start$
         click:
           left: daily-mobkill-creeper.collectStartFolder
-        close: true
+        close: false
       CreeperActiveTrue:
         item: CreeperActiveTrue
         conditions: daily-mobkill-creeper.collectTaken,!daily-mobkill-creeper.shrineTaken
@@ -137,10 +131,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mobkill-creeper.objective.collect.absoluteAmount%/%daily-mobkill-creeper.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mobkill-creeper.reset
-        close: true
+        close: false
       CreeperShrine:
         item: CreeperActiveTrue
         conditions: daily-mobkill-creeper.shrineTaskActive
@@ -150,7 +141,7 @@ menus:
           - $daily-mobkill-creeper.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       CreeperShrineFinished:
         item: questComplete
         conditions: daily-mobkill-creeper.questComplete
@@ -173,7 +164,7 @@ menus:
           - $action.start$
         click:
           left: daily-mobkill-husk.collectStartFolder
-        close: true
+        close: false
       HuskActiveTrue:
         item: HuskActiveTrue
         conditions: daily-mobkill-husk.collectTaken,!daily-mobkill-husk.shrineTaken
@@ -184,10 +175,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mobkill-husk.objective.collect.absoluteAmount%/%daily-mobkill-husk.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mobkill-husk.reset
-        close: true
+        close: false
       HuskShrine:
         item: HuskActiveTrue
         conditions: daily-mobkill-husk.shrineTaskActive
@@ -197,7 +185,7 @@ menus:
           - $daily-mobkill-husk.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       HuskShrineFinished:
         item: questComplete
         conditions: daily-mobkill-husk.questComplete
@@ -220,7 +208,7 @@ menus:
           - $action.start$
         click:
           left: daily-mobkill-pig.collectStartFolder
-        close: true
+        close: false
       PigActiveTrue:
         item: PigActiveTrue
         conditions: daily-mobkill-pig.collectTaken,!daily-mobkill-pig.shrineTaken
@@ -231,10 +219,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mobkill-pig.objective.collect.absoluteAmount%/%daily-mobkill-pig.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mobkill-pig.reset
-        close: true
+        close: false
       PigShrine:
         item: PigActiveTrue
         conditions: daily-mobkill-pig.shrineTaskActive
@@ -244,7 +229,7 @@ menus:
           - $daily-mobkill-pig.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       PigShrineFinished:
         item: questComplete
         conditions: daily-mobkill-pig.questComplete
@@ -267,7 +252,7 @@ menus:
           - $action.start$
         click:
           left: daily-mobkill-sheep.collectStartFolder
-        close: true
+        close: false
       SheepActiveTrue:
         item: SheepActiveTrue
         conditions: daily-mobkill-sheep.collectTaken,!daily-mobkill-sheep.shrineTaken
@@ -278,10 +263,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mobkill-sheep.objective.collect.absoluteAmount%/%daily-mobkill-sheep.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mobkill-sheep.reset
-        close: true
+        close: false
       SheepShrine:
         item: SheepActiveTrue
         conditions: daily-mobkill-sheep.shrineTaskActive
@@ -291,7 +273,7 @@ menus:
           - $daily-mobkill-sheep.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       SheepShrineFinished:
         item: questComplete
         conditions: daily-mobkill-sheep.questComplete
@@ -314,7 +296,7 @@ menus:
           - $action.start$
         click:
           left: daily-mobkill-skeleton.collectStartFolder
-        close: true
+        close: false
       SkeletonActiveTrue:
         item: SkeletonActiveTrue
         conditions: daily-mobkill-skeleton.collectTaken,!daily-mobkill-skeleton.shrineTaken
@@ -325,10 +307,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mobkill-skeleton.objective.collect.absoluteAmount%/%daily-mobkill-skeleton.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mobkill-skeleton.reset
-        close: true
+        close: false
       SkeletonShrine:
         item: SkeletonActiveTrue
         conditions: daily-mobkill-skeleton.shrineTaskActive
@@ -338,7 +317,7 @@ menus:
           - $daily-mobkill-skeleton.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       SkeletonShrineFinished:
         item: questComplete
         conditions: daily-mobkill-skeleton.questComplete
@@ -361,7 +340,7 @@ menus:
           - $action.start$
         click:
           left: daily-mobkill-spider.collectStartFolder
-        close: true
+        close: false
       SpiderActiveTrue:
         item: SpiderActiveTrue
         conditions: daily-mobkill-spider.collectTaken,!daily-mobkill-spider.shrineTaken
@@ -372,10 +351,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mobkill-spider.objective.collect.absoluteAmount%/%daily-mobkill-spider.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mobkill-spider.reset
-        close: true
+        close: false
       SpiderShrine:
         item: SpiderActiveTrue
         conditions: daily-mobkill-spider.shrineTaskActive
@@ -385,7 +361,7 @@ menus:
           - $daily-mobkill-spider.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       SpiderShrineFinished:
         item: questComplete
         conditions: daily-mobkill-spider.questComplete
@@ -408,7 +384,7 @@ menus:
           - $action.start$
         click:
           left: daily-mobkill-squid.collectStartFolder
-        close: true
+        close: false
       SquidActiveTrue:
         item: SquidActiveTrue
         conditions: daily-mobkill-squid.collectTaken,!daily-mobkill-squid.shrineTaken
@@ -419,10 +395,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mobkill-squid.objective.collect.absoluteAmount%/%daily-mobkill-squid.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mobkill-squid.reset
-        close: true
+        close: false
       SquidShrine:
         item: SquidActiveTrue
         conditions: daily-mobkill-squid.shrineTaskActive
@@ -432,7 +405,7 @@ menus:
           - $daily-mobkill-squid.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       SquidShrineFinished:
         item: questComplete
         conditions: daily-mobkill-squid.questComplete
@@ -455,7 +428,7 @@ menus:
           - $action.start$
         click:
           left: daily-mobkill-zombie.collectStartFolder
-        close: true
+        close: false
       ZombieActiveTrue:
         item: ZombieActiveTrue
         conditions: daily-mobkill-zombie.collectTaken,!daily-mobkill-zombie.shrineTaken
@@ -466,10 +439,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-mobkill-zombie.objective.collect.absoluteAmount%/%daily-mobkill-zombie.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-mobkill-zombie.reset
-        close: true
+        close: false
       ZombieShrine:
         item: ZombieActiveTrue
         conditions: daily-mobkill-zombie.shrineTaskActive
@@ -479,7 +449,7 @@ menus:
           - $daily-mobkill-zombie.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       ZombieShrineFinished:
         item: questComplete
         conditions: daily-mobkill-zombie.questComplete

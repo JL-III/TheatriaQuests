@@ -178,7 +178,7 @@ func CreateEntries(template_type, file_name string, Keys Keys) []Entry {
 			Left:  filePath + file_name + ".collectStartFolder",
 			Right: "",
 		},
-		Close: true,
+		Close: false,
 	}
 
 	started := Entry{
@@ -192,13 +192,12 @@ func CreateEntries(template_type, file_name string, Keys Keys) []Entry {
 			"",
 			"$status.inProgress$",
 			"\"%" + filePath + file_name + ".objective.collect.absoluteAmount%/%" + filePath + file_name + ".objective.collect.absoluteTotal%\"",
-			"$action.reset$",
 		},
 		Click: ClickConfig{
 			Left:  "",
-			Right: "resetNotify," + filePath + file_name + ".reset",
+			Right: "",
 		},
-		Close: true,
+		Close: false,
 	}
 
 	shrine := Entry{
@@ -216,7 +215,7 @@ func CreateEntries(template_type, file_name string, Keys Keys) []Entry {
 			Left:  "",
 			Right: "",
 		},
-		Close: true,
+		Close: false,
 	}
 
 	done := Entry{

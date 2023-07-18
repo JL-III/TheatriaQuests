@@ -32,7 +32,7 @@ menus:
           - $action.start$
         click:
           left: daily-fishing-bone.collectStartFolder
-        close: true
+        close: false
       BoneActiveTrue:
         item: BoneActiveTrue
         conditions: daily-fishing-bone.collectTaken,!daily-fishing-bone.shrineTaken
@@ -43,10 +43,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-fishing-bone.objective.collect.absoluteAmount%/%daily-fishing-bone.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-fishing-bone.reset
-        close: true
+        close: false
       BoneShrine:
         item: BoneActiveTrue
         conditions: daily-fishing-bone.shrineTaskActive
@@ -56,7 +53,7 @@ menus:
           - $daily-fishing-bone.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       BoneShrineFinished:
         item: questComplete
         conditions: daily-fishing-bone.questComplete
@@ -79,7 +76,7 @@ menus:
           - $action.start$
         click:
           left: daily-fishing-book.collectStartFolder
-        close: true
+        close: false
       BookActiveTrue:
         item: BookActiveTrue
         conditions: daily-fishing-book.collectTaken,!daily-fishing-book.shrineTaken
@@ -90,10 +87,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-fishing-book.objective.collect.absoluteAmount%/%daily-fishing-book.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-fishing-book.reset
-        close: true
+        close: false
       BookShrine:
         item: BookActiveTrue
         conditions: daily-fishing-book.shrineTaskActive
@@ -103,7 +97,7 @@ menus:
           - $daily-fishing-book.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       BookShrineFinished:
         item: questComplete
         conditions: daily-fishing-book.questComplete
@@ -126,7 +120,7 @@ menus:
           - $action.start$
         click:
           left: daily-fishing-boots.collectStartFolder
-        close: true
+        close: false
       BootsActiveTrue:
         item: BootsActiveTrue
         conditions: daily-fishing-boots.collectTaken,!daily-fishing-boots.shrineTaken
@@ -137,10 +131,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-fishing-boots.objective.collect.absoluteAmount%/%daily-fishing-boots.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-fishing-boots.reset
-        close: true
+        close: false
       BootsShrine:
         item: BootsActiveTrue
         conditions: daily-fishing-boots.shrineTaskActive
@@ -150,7 +141,7 @@ menus:
           - $daily-fishing-boots.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       BootsShrineFinished:
         item: questComplete
         conditions: daily-fishing-boots.questComplete
@@ -173,7 +164,7 @@ menus:
           - $action.start$
         click:
           left: daily-fishing-bottle.collectStartFolder
-        close: true
+        close: false
       BottleActiveTrue:
         item: BottleActiveTrue
         conditions: daily-fishing-bottle.collectTaken,!daily-fishing-bottle.shrineTaken
@@ -184,10 +175,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-fishing-bottle.objective.collect.absoluteAmount%/%daily-fishing-bottle.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-fishing-bottle.reset
-        close: true
+        close: false
       BottleShrine:
         item: BottleActiveTrue
         conditions: daily-fishing-bottle.shrineTaskActive
@@ -197,7 +185,7 @@ menus:
           - $daily-fishing-bottle.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       BottleShrineFinished:
         item: questComplete
         conditions: daily-fishing-bottle.questComplete
@@ -220,7 +208,7 @@ menus:
           - $action.start$
         click:
           left: daily-fishing-cod.collectStartFolder
-        close: true
+        close: false
       CodActiveTrue:
         item: CodActiveTrue
         conditions: daily-fishing-cod.collectTaken,!daily-fishing-cod.shrineTaken
@@ -231,10 +219,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-fishing-cod.objective.collect.absoluteAmount%/%daily-fishing-cod.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-fishing-cod.reset
-        close: true
+        close: false
       CodShrine:
         item: CodActiveTrue
         conditions: daily-fishing-cod.shrineTaskActive
@@ -244,7 +229,7 @@ menus:
           - $daily-fishing-cod.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       CodShrineFinished:
         item: questComplete
         conditions: daily-fishing-cod.questComplete
@@ -267,7 +252,7 @@ menus:
           - $action.start$
         click:
           left: daily-fishing-puffer.collectStartFolder
-        close: true
+        close: false
       PufferActiveTrue:
         item: PufferActiveTrue
         conditions: daily-fishing-puffer.collectTaken,!daily-fishing-puffer.shrineTaken
@@ -278,10 +263,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-fishing-puffer.objective.collect.absoluteAmount%/%daily-fishing-puffer.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-fishing-puffer.reset
-        close: true
+        close: false
       PufferShrine:
         item: PufferActiveTrue
         conditions: daily-fishing-puffer.shrineTaskActive
@@ -291,7 +273,7 @@ menus:
           - $daily-fishing-puffer.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       PufferShrineFinished:
         item: questComplete
         conditions: daily-fishing-puffer.questComplete
@@ -314,7 +296,7 @@ menus:
           - $action.start$
         click:
           left: daily-fishing-saddle.collectStartFolder
-        close: true
+        close: false
       SaddleActiveTrue:
         item: SaddleActiveTrue
         conditions: daily-fishing-saddle.collectTaken,!daily-fishing-saddle.shrineTaken
@@ -325,10 +307,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-fishing-saddle.objective.collect.absoluteAmount%/%daily-fishing-saddle.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-fishing-saddle.reset
-        close: true
+        close: false
       SaddleShrine:
         item: SaddleActiveTrue
         conditions: daily-fishing-saddle.shrineTaskActive
@@ -338,7 +317,7 @@ menus:
           - $daily-fishing-saddle.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       SaddleShrineFinished:
         item: questComplete
         conditions: daily-fishing-saddle.questComplete
@@ -361,7 +340,7 @@ menus:
           - $action.start$
         click:
           left: daily-fishing-salmon.collectStartFolder
-        close: true
+        close: false
       SalmonActiveTrue:
         item: SalmonActiveTrue
         conditions: daily-fishing-salmon.collectTaken,!daily-fishing-salmon.shrineTaken
@@ -372,10 +351,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-fishing-salmon.objective.collect.absoluteAmount%/%daily-fishing-salmon.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-fishing-salmon.reset
-        close: true
+        close: false
       SalmonShrine:
         item: SalmonActiveTrue
         conditions: daily-fishing-salmon.shrineTaskActive
@@ -385,7 +361,7 @@ menus:
           - $daily-fishing-salmon.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       SalmonShrineFinished:
         item: questComplete
         conditions: daily-fishing-salmon.questComplete
@@ -408,7 +384,7 @@ menus:
           - $action.start$
         click:
           left: daily-fishing-shell.collectStartFolder
-        close: true
+        close: false
       ShellActiveTrue:
         item: ShellActiveTrue
         conditions: daily-fishing-shell.collectTaken,!daily-fishing-shell.shrineTaken
@@ -419,10 +395,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-fishing-shell.objective.collect.absoluteAmount%/%daily-fishing-shell.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-fishing-shell.reset
-        close: true
+        close: false
       ShellShrine:
         item: ShellActiveTrue
         conditions: daily-fishing-shell.shrineTaskActive
@@ -432,7 +405,7 @@ menus:
           - $daily-fishing-shell.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       ShellShrineFinished:
         item: questComplete
         conditions: daily-fishing-shell.questComplete
@@ -455,7 +428,7 @@ menus:
           - $action.start$
         click:
           left: daily-fishing-tropical.collectStartFolder
-        close: true
+        close: false
       TropicalActiveTrue:
         item: TropicalActiveTrue
         conditions: daily-fishing-tropical.collectTaken,!daily-fishing-tropical.shrineTaken
@@ -466,10 +439,7 @@ menus:
           - 
           - $status.inProgress$
           - "%daily-fishing-tropical.objective.collect.absoluteAmount%/%daily-fishing-tropical.objective.collect.absoluteTotal%"
-          - $action.reset$
-        click:
-          right: resetNotify,daily-fishing-tropical.reset
-        close: true
+        close: false
       TropicalShrine:
         item: TropicalActiveTrue
         conditions: daily-fishing-tropical.shrineTaskActive
@@ -479,7 +449,7 @@ menus:
           - $daily-fishing-tropical.shrine_line_2$
           - 
           - $status.inProgress$
-        close: true
+        close: false
       TropicalShrineFinished:
         item: questComplete
         conditions: daily-fishing-tropical.questComplete

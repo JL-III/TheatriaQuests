@@ -18,7 +18,7 @@ variables:
   target_upper: Quartz ore
   
   target_drops: quartz
-  target_drops_plural: raw iron
+  target_drops_plural: quartz
   
   target_slug: nether_quartz_ore
 

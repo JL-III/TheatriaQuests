@@ -20,7 +20,7 @@ variables:
   target_drops: redstone
   target_drops_plural: redstone
   
-  target_slug: redstone
+  target_slug: redstone_ore
 
 ## Due to limitations, slug value must match item key
   target_drops_slug: redstone

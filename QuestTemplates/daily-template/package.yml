@@ -23,7 +23,7 @@ variables:
   ################
   ## Conditions ##
   ################
-  startQuestCheck: 'and !daily.$type_lower$Active'
+  # startQuestCheck: 'and !daily.$type_lower$Active'
   collectTaken: tag collect_taken
   collectComplete: tag collect_complete
   shrineTaken: tag shrine_taken
@@ -59,10 +59,10 @@ variables:
   ## IO ##
   ########
 
-  activeQuestNotice: notify &4You already have an active quest in this category! category:daily_task
+  # activeQuestNotice: notify &4You already have an active quest in this category! category:daily_task
 
-  collectWhisper: 'notify &e&o$action_upper$ &a&o$objective_amount$ &e&o$target$ from the &a&o$world_display$ &e&oworld... io:subtitle'
-  collectStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&o$action_lower$ &a&o$objective_amount$ &e&o$target$ from the &a&o$world_display$ &e&oworld. category:daily_task'
+  # collectWhisper: 'notify &e&o$action_upper$ &a&o$objective_amount$ &e&o$target$ from the &a&o$world_display$ &e&oworld... io:subtitle'
+  # collectStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&o$action_lower$ &a&o$objective_amount$ &e&o$target$ from the &a&o$world_display$ &e&oworld. category:daily_task'
   
   shrineWhisper: 'notify &e&oPlace &a&o$objective_amount$ &e&o$target_drops_plural$ in the &d&oshrine &e&oat spawn... io:subtitle'
   shrineStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&oplace &a&o$objective_amount$ &e&o$target_drops_plural$ in the &d&oshrine &e&oat spawn. category:daily_task'
@@ -74,9 +74,9 @@ variables:
   ## FOLDERS ##
   #############
 
-  collectStartFolder: 'if startQuestCheck passStartFolderCheck else activeQuestNotice'
+  # collectStartFolder: 'if startQuestCheck passStartFolderCheck else activeQuestNotice'
 
-  passStartFolderCheck: folder collectInitFolder,collectWhisper,collectStartNotice period:3
+  collectStartFolder: folder collectInitFolder,collectWhisper,collectStartNotice period:3
   failStartFolderCheck: notify &4You do not have enough quest points to start another quest!
 
   collectInitFolder: 'folder addCollectTakenTag,daily.add$type_upper$ActiveTag,giveCollectObjective,startQuestWhisper'

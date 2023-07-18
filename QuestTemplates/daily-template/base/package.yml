@@ -7,7 +7,7 @@ conditions:
   ################
   ## Tag checks ##
   ################
-  startQuestCheck: '$startQuestCheck$'
+  # startQuestCheck: '$startQuestCheck$'
   collectTaken: '$collectTaken$'
   collectComplete: '$collectComplete$'
   shrineTaken: '$shrineTaken$'
@@ -61,7 +61,7 @@ events:
 
   collectStartFolder: '$collectStartFolder$'
 
-  passStartFolderCheck: '$passStartFolderCheck$'
+  # passStartFolderCheck: '$passStartFolderCheck$'
   failStartFolderCheck: '$failStartFolderCheck$'
 
   collectInitFolder: '$collectInitFolder$'
