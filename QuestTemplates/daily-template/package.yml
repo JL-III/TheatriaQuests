@@ -1,5 +1,5 @@
 events:
-  startQuestWhisper: 'notify &e&oThe Oracle whispers to you... io:subtitle'
+  startQuestWhisper: 'notify &e&oThe Oracle whispers to you... category:daily_task'
   resetNotify: "notify &4You've reset the quest! category:daily_task"
   
 variables:
@@ -60,11 +60,11 @@ variables:
 
   activeQuestNotice: notify &4You already have an active quest in this category! category:daily_task
 
-  shrineWhisper: 'notify &e&oPlace &a&o$objective_amount$ &e&o$target_drops_plural$ in the &d&ochest &e&oat &a&o/warp shrine&e&o... io:subtitle'
+  shrineWhisper: 'notify &e&oPlace &a&o$objective_amount$ &e&o$target_drops_plural$ in the &d&ochest &e&oat &a&o/warp shrine&e&o... category:daily_task'
   shrineStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&oplace &a&o$objective_amount$ &e&o$target_drops_plural$ in the &d&ochest &e&oat &a&o/warp shrine&e&o. category:daily_task'
   
-  finishWhisper: 'notify &e&oThe Oracle acknowledges your dedication... io:subtitle'
-  finishNotice: 'notify &2Your daily quests reward\:\n$$reward_amount$ category:daily_task'
+  finishWhisper: 'notify &e&oThe Oracle acknowledges your dedication category:daily_task'
+  finishNotice: 'notify &eand rewards you... category:daily_task'
 
   #############
   ## FOLDERS ##
@@ -76,10 +76,10 @@ variables:
   collectInitFolder: 'folder addCollectTakenTag,daily.add$type_upper$ActiveTag,giveCollectObjective'
   
   shrineInitFolder: 'folder addCollectCompleteTag,addShrineTakenTag,giveShrineObjective,startQuestWhisper'
-  shrineStartFolder: 'folder shrineInitFolder,shrineWhisper,shrineStartNotice period:3'
+  shrineStartFolder: 'folder shrineInitFolder,shrineWhisper period:3'
   
-  finishInitFolder: 'folder daily.delete$type_upper$ActiveTag,addShrineCompleteTag,finishWhisper'
-  finishFolder: 'folder finishInitFolder,finishNotice,reward period:3'
+  finishInitFolder: 'folder daily.delete$type_upper$ActiveTag,addShrineCompleteTag,finishWhisper,finishNotice'
+  finishFolder: 'folder finishInitFolder,reward period:3'
   reset: 'folder resetCollectTags,resetObjectives,resetActive'
     
   reward: "command eco give %player% $reward_amount$"
