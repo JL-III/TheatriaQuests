@@ -27,6 +27,8 @@ menus:
           - $daily-mobkill-chicken.title$
           - $daily-mobkill-chicken.description_line_1$
           - $daily-mobkill-chicken.description_line_2$
+          - $daily-mobkill-chicken.shrine_line_1$
+          - $daily-mobkill-chicken.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -40,6 +42,8 @@ menus:
           - $daily-mobkill-chicken.title$
           - $daily-mobkill-chicken.description_line_1$
           - $daily-mobkill-chicken.description_line_2$
+          - $daily-mobkill-chicken.shrine_line_1$
+          - $daily-mobkill-chicken.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mobkill-chicken.objective.collect.absoluteAmount%/%daily-mobkill-chicken.objective.collect.absoluteTotal%"
@@ -71,6 +75,8 @@ menus:
           - $daily-mobkill-cow.title$
           - $daily-mobkill-cow.description_line_1$
           - $daily-mobkill-cow.description_line_2$
+          - $daily-mobkill-cow.shrine_line_1$
+          - $daily-mobkill-cow.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -84,6 +90,8 @@ menus:
           - $daily-mobkill-cow.title$
           - $daily-mobkill-cow.description_line_1$
           - $daily-mobkill-cow.description_line_2$
+          - $daily-mobkill-cow.shrine_line_1$
+          - $daily-mobkill-cow.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mobkill-cow.objective.collect.absoluteAmount%/%daily-mobkill-cow.objective.collect.absoluteTotal%"
@@ -115,6 +123,8 @@ menus:
           - $daily-mobkill-creeper.title$
           - $daily-mobkill-creeper.description_line_1$
           - $daily-mobkill-creeper.description_line_2$
+          - $daily-mobkill-creeper.shrine_line_1$
+          - $daily-mobkill-creeper.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -128,6 +138,8 @@ menus:
           - $daily-mobkill-creeper.title$
           - $daily-mobkill-creeper.description_line_1$
           - $daily-mobkill-creeper.description_line_2$
+          - $daily-mobkill-creeper.shrine_line_1$
+          - $daily-mobkill-creeper.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mobkill-creeper.objective.collect.absoluteAmount%/%daily-mobkill-creeper.objective.collect.absoluteTotal%"
@@ -159,6 +171,8 @@ menus:
           - $daily-mobkill-husk.title$
           - $daily-mobkill-husk.description_line_1$
           - $daily-mobkill-husk.description_line_2$
+          - $daily-mobkill-husk.shrine_line_1$
+          - $daily-mobkill-husk.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -172,6 +186,8 @@ menus:
           - $daily-mobkill-husk.title$
           - $daily-mobkill-husk.description_line_1$
           - $daily-mobkill-husk.description_line_2$
+          - $daily-mobkill-husk.shrine_line_1$
+          - $daily-mobkill-husk.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mobkill-husk.objective.collect.absoluteAmount%/%daily-mobkill-husk.objective.collect.absoluteTotal%"
@@ -203,6 +219,8 @@ menus:
           - $daily-mobkill-pig.title$
           - $daily-mobkill-pig.description_line_1$
           - $daily-mobkill-pig.description_line_2$
+          - $daily-mobkill-pig.shrine_line_1$
+          - $daily-mobkill-pig.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -216,6 +234,8 @@ menus:
           - $daily-mobkill-pig.title$
           - $daily-mobkill-pig.description_line_1$
           - $daily-mobkill-pig.description_line_2$
+          - $daily-mobkill-pig.shrine_line_1$
+          - $daily-mobkill-pig.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mobkill-pig.objective.collect.absoluteAmount%/%daily-mobkill-pig.objective.collect.absoluteTotal%"
@@ -247,6 +267,8 @@ menus:
           - $daily-mobkill-sheep.title$
           - $daily-mobkill-sheep.description_line_1$
           - $daily-mobkill-sheep.description_line_2$
+          - $daily-mobkill-sheep.shrine_line_1$
+          - $daily-mobkill-sheep.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -260,6 +282,8 @@ menus:
           - $daily-mobkill-sheep.title$
           - $daily-mobkill-sheep.description_line_1$
           - $daily-mobkill-sheep.description_line_2$
+          - $daily-mobkill-sheep.shrine_line_1$
+          - $daily-mobkill-sheep.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mobkill-sheep.objective.collect.absoluteAmount%/%daily-mobkill-sheep.objective.collect.absoluteTotal%"
@@ -291,6 +315,8 @@ menus:
           - $daily-mobkill-skeleton.title$
           - $daily-mobkill-skeleton.description_line_1$
           - $daily-mobkill-skeleton.description_line_2$
+          - $daily-mobkill-skeleton.shrine_line_1$
+          - $daily-mobkill-skeleton.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -304,6 +330,8 @@ menus:
           - $daily-mobkill-skeleton.title$
           - $daily-mobkill-skeleton.description_line_1$
           - $daily-mobkill-skeleton.description_line_2$
+          - $daily-mobkill-skeleton.shrine_line_1$
+          - $daily-mobkill-skeleton.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mobkill-skeleton.objective.collect.absoluteAmount%/%daily-mobkill-skeleton.objective.collect.absoluteTotal%"
@@ -335,6 +363,8 @@ menus:
           - $daily-mobkill-spider.title$
           - $daily-mobkill-spider.description_line_1$
           - $daily-mobkill-spider.description_line_2$
+          - $daily-mobkill-spider.shrine_line_1$
+          - $daily-mobkill-spider.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -348,6 +378,8 @@ menus:
           - $daily-mobkill-spider.title$
           - $daily-mobkill-spider.description_line_1$
           - $daily-mobkill-spider.description_line_2$
+          - $daily-mobkill-spider.shrine_line_1$
+          - $daily-mobkill-spider.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mobkill-spider.objective.collect.absoluteAmount%/%daily-mobkill-spider.objective.collect.absoluteTotal%"
@@ -379,6 +411,8 @@ menus:
           - $daily-mobkill-squid.title$
           - $daily-mobkill-squid.description_line_1$
           - $daily-mobkill-squid.description_line_2$
+          - $daily-mobkill-squid.shrine_line_1$
+          - $daily-mobkill-squid.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -392,6 +426,8 @@ menus:
           - $daily-mobkill-squid.title$
           - $daily-mobkill-squid.description_line_1$
           - $daily-mobkill-squid.description_line_2$
+          - $daily-mobkill-squid.shrine_line_1$
+          - $daily-mobkill-squid.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mobkill-squid.objective.collect.absoluteAmount%/%daily-mobkill-squid.objective.collect.absoluteTotal%"
@@ -423,6 +459,8 @@ menus:
           - $daily-mobkill-zombie.title$
           - $daily-mobkill-zombie.description_line_1$
           - $daily-mobkill-zombie.description_line_2$
+          - $daily-mobkill-zombie.shrine_line_1$
+          - $daily-mobkill-zombie.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -436,6 +474,8 @@ menus:
           - $daily-mobkill-zombie.title$
           - $daily-mobkill-zombie.description_line_1$
           - $daily-mobkill-zombie.description_line_2$
+          - $daily-mobkill-zombie.shrine_line_1$
+          - $daily-mobkill-zombie.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mobkill-zombie.objective.collect.absoluteAmount%/%daily-mobkill-zombie.objective.collect.absoluteTotal%"

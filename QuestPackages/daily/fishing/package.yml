@@ -27,6 +27,8 @@ menus:
           - $daily-fishing-bone.title$
           - $daily-fishing-bone.description_line_1$
           - $daily-fishing-bone.description_line_2$
+          - $daily-fishing-bone.shrine_line_1$
+          - $daily-fishing-bone.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -40,6 +42,8 @@ menus:
           - $daily-fishing-bone.title$
           - $daily-fishing-bone.description_line_1$
           - $daily-fishing-bone.description_line_2$
+          - $daily-fishing-bone.shrine_line_1$
+          - $daily-fishing-bone.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-fishing-bone.objective.collect.absoluteAmount%/%daily-fishing-bone.objective.collect.absoluteTotal%"
@@ -71,6 +75,8 @@ menus:
           - $daily-fishing-book.title$
           - $daily-fishing-book.description_line_1$
           - $daily-fishing-book.description_line_2$
+          - $daily-fishing-book.shrine_line_1$
+          - $daily-fishing-book.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -84,6 +90,8 @@ menus:
           - $daily-fishing-book.title$
           - $daily-fishing-book.description_line_1$
           - $daily-fishing-book.description_line_2$
+          - $daily-fishing-book.shrine_line_1$
+          - $daily-fishing-book.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-fishing-book.objective.collect.absoluteAmount%/%daily-fishing-book.objective.collect.absoluteTotal%"
@@ -115,6 +123,8 @@ menus:
           - $daily-fishing-boots.title$
           - $daily-fishing-boots.description_line_1$
           - $daily-fishing-boots.description_line_2$
+          - $daily-fishing-boots.shrine_line_1$
+          - $daily-fishing-boots.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -128,6 +138,8 @@ menus:
           - $daily-fishing-boots.title$
           - $daily-fishing-boots.description_line_1$
           - $daily-fishing-boots.description_line_2$
+          - $daily-fishing-boots.shrine_line_1$
+          - $daily-fishing-boots.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-fishing-boots.objective.collect.absoluteAmount%/%daily-fishing-boots.objective.collect.absoluteTotal%"
@@ -159,6 +171,8 @@ menus:
           - $daily-fishing-bottle.title$
           - $daily-fishing-bottle.description_line_1$
           - $daily-fishing-bottle.description_line_2$
+          - $daily-fishing-bottle.shrine_line_1$
+          - $daily-fishing-bottle.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -172,6 +186,8 @@ menus:
           - $daily-fishing-bottle.title$
           - $daily-fishing-bottle.description_line_1$
           - $daily-fishing-bottle.description_line_2$
+          - $daily-fishing-bottle.shrine_line_1$
+          - $daily-fishing-bottle.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-fishing-bottle.objective.collect.absoluteAmount%/%daily-fishing-bottle.objective.collect.absoluteTotal%"
@@ -203,6 +219,8 @@ menus:
           - $daily-fishing-cod.title$
           - $daily-fishing-cod.description_line_1$
           - $daily-fishing-cod.description_line_2$
+          - $daily-fishing-cod.shrine_line_1$
+          - $daily-fishing-cod.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -216,6 +234,8 @@ menus:
           - $daily-fishing-cod.title$
           - $daily-fishing-cod.description_line_1$
           - $daily-fishing-cod.description_line_2$
+          - $daily-fishing-cod.shrine_line_1$
+          - $daily-fishing-cod.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-fishing-cod.objective.collect.absoluteAmount%/%daily-fishing-cod.objective.collect.absoluteTotal%"
@@ -247,6 +267,8 @@ menus:
           - $daily-fishing-puffer.title$
           - $daily-fishing-puffer.description_line_1$
           - $daily-fishing-puffer.description_line_2$
+          - $daily-fishing-puffer.shrine_line_1$
+          - $daily-fishing-puffer.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -260,6 +282,8 @@ menus:
           - $daily-fishing-puffer.title$
           - $daily-fishing-puffer.description_line_1$
           - $daily-fishing-puffer.description_line_2$
+          - $daily-fishing-puffer.shrine_line_1$
+          - $daily-fishing-puffer.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-fishing-puffer.objective.collect.absoluteAmount%/%daily-fishing-puffer.objective.collect.absoluteTotal%"
@@ -291,6 +315,8 @@ menus:
           - $daily-fishing-saddle.title$
           - $daily-fishing-saddle.description_line_1$
           - $daily-fishing-saddle.description_line_2$
+          - $daily-fishing-saddle.shrine_line_1$
+          - $daily-fishing-saddle.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -304,6 +330,8 @@ menus:
           - $daily-fishing-saddle.title$
           - $daily-fishing-saddle.description_line_1$
           - $daily-fishing-saddle.description_line_2$
+          - $daily-fishing-saddle.shrine_line_1$
+          - $daily-fishing-saddle.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-fishing-saddle.objective.collect.absoluteAmount%/%daily-fishing-saddle.objective.collect.absoluteTotal%"
@@ -335,6 +363,8 @@ menus:
           - $daily-fishing-salmon.title$
           - $daily-fishing-salmon.description_line_1$
           - $daily-fishing-salmon.description_line_2$
+          - $daily-fishing-salmon.shrine_line_1$
+          - $daily-fishing-salmon.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -348,6 +378,8 @@ menus:
           - $daily-fishing-salmon.title$
           - $daily-fishing-salmon.description_line_1$
           - $daily-fishing-salmon.description_line_2$
+          - $daily-fishing-salmon.shrine_line_1$
+          - $daily-fishing-salmon.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-fishing-salmon.objective.collect.absoluteAmount%/%daily-fishing-salmon.objective.collect.absoluteTotal%"
@@ -379,6 +411,8 @@ menus:
           - $daily-fishing-shell.title$
           - $daily-fishing-shell.description_line_1$
           - $daily-fishing-shell.description_line_2$
+          - $daily-fishing-shell.shrine_line_1$
+          - $daily-fishing-shell.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -392,6 +426,8 @@ menus:
           - $daily-fishing-shell.title$
           - $daily-fishing-shell.description_line_1$
           - $daily-fishing-shell.description_line_2$
+          - $daily-fishing-shell.shrine_line_1$
+          - $daily-fishing-shell.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-fishing-shell.objective.collect.absoluteAmount%/%daily-fishing-shell.objective.collect.absoluteTotal%"
@@ -423,6 +459,8 @@ menus:
           - $daily-fishing-tropical.title$
           - $daily-fishing-tropical.description_line_1$
           - $daily-fishing-tropical.description_line_2$
+          - $daily-fishing-tropical.shrine_line_1$
+          - $daily-fishing-tropical.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -436,6 +474,8 @@ menus:
           - $daily-fishing-tropical.title$
           - $daily-fishing-tropical.description_line_1$
           - $daily-fishing-tropical.description_line_2$
+          - $daily-fishing-tropical.shrine_line_1$
+          - $daily-fishing-tropical.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-fishing-tropical.objective.collect.absoluteAmount%/%daily-fishing-tropical.objective.collect.absoluteTotal%"

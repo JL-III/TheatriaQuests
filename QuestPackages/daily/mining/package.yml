@@ -27,6 +27,8 @@ menus:
           - $daily-mining-coal.title$
           - $daily-mining-coal.description_line_1$
           - $daily-mining-coal.description_line_2$
+          - $daily-mining-coal.shrine_line_1$
+          - $daily-mining-coal.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -40,6 +42,8 @@ menus:
           - $daily-mining-coal.title$
           - $daily-mining-coal.description_line_1$
           - $daily-mining-coal.description_line_2$
+          - $daily-mining-coal.shrine_line_1$
+          - $daily-mining-coal.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mining-coal.objective.collect.absoluteAmount%/%daily-mining-coal.objective.collect.absoluteTotal%"
@@ -71,6 +75,8 @@ menus:
           - $daily-mining-copper.title$
           - $daily-mining-copper.description_line_1$
           - $daily-mining-copper.description_line_2$
+          - $daily-mining-copper.shrine_line_1$
+          - $daily-mining-copper.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -84,6 +90,8 @@ menus:
           - $daily-mining-copper.title$
           - $daily-mining-copper.description_line_1$
           - $daily-mining-copper.description_line_2$
+          - $daily-mining-copper.shrine_line_1$
+          - $daily-mining-copper.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mining-copper.objective.collect.absoluteAmount%/%daily-mining-copper.objective.collect.absoluteTotal%"
@@ -115,6 +123,8 @@ menus:
           - $daily-mining-diamond.title$
           - $daily-mining-diamond.description_line_1$
           - $daily-mining-diamond.description_line_2$
+          - $daily-mining-diamond.shrine_line_1$
+          - $daily-mining-diamond.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -128,6 +138,8 @@ menus:
           - $daily-mining-diamond.title$
           - $daily-mining-diamond.description_line_1$
           - $daily-mining-diamond.description_line_2$
+          - $daily-mining-diamond.shrine_line_1$
+          - $daily-mining-diamond.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mining-diamond.objective.collect.absoluteAmount%/%daily-mining-diamond.objective.collect.absoluteTotal%"
@@ -159,6 +171,8 @@ menus:
           - $daily-mining-emerald.title$
           - $daily-mining-emerald.description_line_1$
           - $daily-mining-emerald.description_line_2$
+          - $daily-mining-emerald.shrine_line_1$
+          - $daily-mining-emerald.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -172,6 +186,8 @@ menus:
           - $daily-mining-emerald.title$
           - $daily-mining-emerald.description_line_1$
           - $daily-mining-emerald.description_line_2$
+          - $daily-mining-emerald.shrine_line_1$
+          - $daily-mining-emerald.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mining-emerald.objective.collect.absoluteAmount%/%daily-mining-emerald.objective.collect.absoluteTotal%"
@@ -203,6 +219,8 @@ menus:
           - $daily-mining-gold.title$
           - $daily-mining-gold.description_line_1$
           - $daily-mining-gold.description_line_2$
+          - $daily-mining-gold.shrine_line_1$
+          - $daily-mining-gold.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -216,6 +234,8 @@ menus:
           - $daily-mining-gold.title$
           - $daily-mining-gold.description_line_1$
           - $daily-mining-gold.description_line_2$
+          - $daily-mining-gold.shrine_line_1$
+          - $daily-mining-gold.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mining-gold.objective.collect.absoluteAmount%/%daily-mining-gold.objective.collect.absoluteTotal%"
@@ -247,6 +267,8 @@ menus:
           - $daily-mining-iron.title$
           - $daily-mining-iron.description_line_1$
           - $daily-mining-iron.description_line_2$
+          - $daily-mining-iron.shrine_line_1$
+          - $daily-mining-iron.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -260,6 +282,8 @@ menus:
           - $daily-mining-iron.title$
           - $daily-mining-iron.description_line_1$
           - $daily-mining-iron.description_line_2$
+          - $daily-mining-iron.shrine_line_1$
+          - $daily-mining-iron.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mining-iron.objective.collect.absoluteAmount%/%daily-mining-iron.objective.collect.absoluteTotal%"
@@ -291,6 +315,8 @@ menus:
           - $daily-mining-lapis.title$
           - $daily-mining-lapis.description_line_1$
           - $daily-mining-lapis.description_line_2$
+          - $daily-mining-lapis.shrine_line_1$
+          - $daily-mining-lapis.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -304,6 +330,8 @@ menus:
           - $daily-mining-lapis.title$
           - $daily-mining-lapis.description_line_1$
           - $daily-mining-lapis.description_line_2$
+          - $daily-mining-lapis.shrine_line_1$
+          - $daily-mining-lapis.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mining-lapis.objective.collect.absoluteAmount%/%daily-mining-lapis.objective.collect.absoluteTotal%"
@@ -335,6 +363,8 @@ menus:
           - $daily-mining-obsidian.title$
           - $daily-mining-obsidian.description_line_1$
           - $daily-mining-obsidian.description_line_2$
+          - $daily-mining-obsidian.shrine_line_1$
+          - $daily-mining-obsidian.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -348,6 +378,8 @@ menus:
           - $daily-mining-obsidian.title$
           - $daily-mining-obsidian.description_line_1$
           - $daily-mining-obsidian.description_line_2$
+          - $daily-mining-obsidian.shrine_line_1$
+          - $daily-mining-obsidian.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mining-obsidian.objective.collect.absoluteAmount%/%daily-mining-obsidian.objective.collect.absoluteTotal%"
@@ -379,6 +411,8 @@ menus:
           - $daily-mining-quartz.title$
           - $daily-mining-quartz.description_line_1$
           - $daily-mining-quartz.description_line_2$
+          - $daily-mining-quartz.shrine_line_1$
+          - $daily-mining-quartz.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -392,6 +426,8 @@ menus:
           - $daily-mining-quartz.title$
           - $daily-mining-quartz.description_line_1$
           - $daily-mining-quartz.description_line_2$
+          - $daily-mining-quartz.shrine_line_1$
+          - $daily-mining-quartz.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mining-quartz.objective.collect.absoluteAmount%/%daily-mining-quartz.objective.collect.absoluteTotal%"
@@ -423,6 +459,8 @@ menus:
           - $daily-mining-redstone.title$
           - $daily-mining-redstone.description_line_1$
           - $daily-mining-redstone.description_line_2$
+          - $daily-mining-redstone.shrine_line_1$
+          - $daily-mining-redstone.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -436,6 +474,8 @@ menus:
           - $daily-mining-redstone.title$
           - $daily-mining-redstone.description_line_1$
           - $daily-mining-redstone.description_line_2$
+          - $daily-mining-redstone.shrine_line_1$
+          - $daily-mining-redstone.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-mining-redstone.objective.collect.absoluteAmount%/%daily-mining-redstone.objective.collect.absoluteTotal%"

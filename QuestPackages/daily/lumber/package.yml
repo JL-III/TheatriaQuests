@@ -27,6 +27,8 @@ menus:
           - $daily-lumber-acacia.title$
           - $daily-lumber-acacia.description_line_1$
           - $daily-lumber-acacia.description_line_2$
+          - $daily-lumber-acacia.shrine_line_1$
+          - $daily-lumber-acacia.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -40,6 +42,8 @@ menus:
           - $daily-lumber-acacia.title$
           - $daily-lumber-acacia.description_line_1$
           - $daily-lumber-acacia.description_line_2$
+          - $daily-lumber-acacia.shrine_line_1$
+          - $daily-lumber-acacia.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-lumber-acacia.objective.collect.absoluteAmount%/%daily-lumber-acacia.objective.collect.absoluteTotal%"
@@ -71,6 +75,8 @@ menus:
           - $daily-lumber-birch.title$
           - $daily-lumber-birch.description_line_1$
           - $daily-lumber-birch.description_line_2$
+          - $daily-lumber-birch.shrine_line_1$
+          - $daily-lumber-birch.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -84,6 +90,8 @@ menus:
           - $daily-lumber-birch.title$
           - $daily-lumber-birch.description_line_1$
           - $daily-lumber-birch.description_line_2$
+          - $daily-lumber-birch.shrine_line_1$
+          - $daily-lumber-birch.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-lumber-birch.objective.collect.absoluteAmount%/%daily-lumber-birch.objective.collect.absoluteTotal%"
@@ -115,6 +123,8 @@ menus:
           - $daily-lumber-cherry.title$
           - $daily-lumber-cherry.description_line_1$
           - $daily-lumber-cherry.description_line_2$
+          - $daily-lumber-cherry.shrine_line_1$
+          - $daily-lumber-cherry.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -128,6 +138,8 @@ menus:
           - $daily-lumber-cherry.title$
           - $daily-lumber-cherry.description_line_1$
           - $daily-lumber-cherry.description_line_2$
+          - $daily-lumber-cherry.shrine_line_1$
+          - $daily-lumber-cherry.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-lumber-cherry.objective.collect.absoluteAmount%/%daily-lumber-cherry.objective.collect.absoluteTotal%"
@@ -159,6 +171,8 @@ menus:
           - $daily-lumber-crimson.title$
           - $daily-lumber-crimson.description_line_1$
           - $daily-lumber-crimson.description_line_2$
+          - $daily-lumber-crimson.shrine_line_1$
+          - $daily-lumber-crimson.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -172,6 +186,8 @@ menus:
           - $daily-lumber-crimson.title$
           - $daily-lumber-crimson.description_line_1$
           - $daily-lumber-crimson.description_line_2$
+          - $daily-lumber-crimson.shrine_line_1$
+          - $daily-lumber-crimson.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-lumber-crimson.objective.collect.absoluteAmount%/%daily-lumber-crimson.objective.collect.absoluteTotal%"
@@ -203,6 +219,8 @@ menus:
           - $daily-lumber-darkoak.title$
           - $daily-lumber-darkoak.description_line_1$
           - $daily-lumber-darkoak.description_line_2$
+          - $daily-lumber-darkoak.shrine_line_1$
+          - $daily-lumber-darkoak.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -216,6 +234,8 @@ menus:
           - $daily-lumber-darkoak.title$
           - $daily-lumber-darkoak.description_line_1$
           - $daily-lumber-darkoak.description_line_2$
+          - $daily-lumber-darkoak.shrine_line_1$
+          - $daily-lumber-darkoak.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-lumber-darkoak.objective.collect.absoluteAmount%/%daily-lumber-darkoak.objective.collect.absoluteTotal%"
@@ -247,6 +267,8 @@ menus:
           - $daily-lumber-jungle.title$
           - $daily-lumber-jungle.description_line_1$
           - $daily-lumber-jungle.description_line_2$
+          - $daily-lumber-jungle.shrine_line_1$
+          - $daily-lumber-jungle.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -260,6 +282,8 @@ menus:
           - $daily-lumber-jungle.title$
           - $daily-lumber-jungle.description_line_1$
           - $daily-lumber-jungle.description_line_2$
+          - $daily-lumber-jungle.shrine_line_1$
+          - $daily-lumber-jungle.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-lumber-jungle.objective.collect.absoluteAmount%/%daily-lumber-jungle.objective.collect.absoluteTotal%"
@@ -291,6 +315,8 @@ menus:
           - $daily-lumber-mangrove.title$
           - $daily-lumber-mangrove.description_line_1$
           - $daily-lumber-mangrove.description_line_2$
+          - $daily-lumber-mangrove.shrine_line_1$
+          - $daily-lumber-mangrove.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -304,6 +330,8 @@ menus:
           - $daily-lumber-mangrove.title$
           - $daily-lumber-mangrove.description_line_1$
           - $daily-lumber-mangrove.description_line_2$
+          - $daily-lumber-mangrove.shrine_line_1$
+          - $daily-lumber-mangrove.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-lumber-mangrove.objective.collect.absoluteAmount%/%daily-lumber-mangrove.objective.collect.absoluteTotal%"
@@ -335,6 +363,8 @@ menus:
           - $daily-lumber-oak.title$
           - $daily-lumber-oak.description_line_1$
           - $daily-lumber-oak.description_line_2$
+          - $daily-lumber-oak.shrine_line_1$
+          - $daily-lumber-oak.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -348,6 +378,8 @@ menus:
           - $daily-lumber-oak.title$
           - $daily-lumber-oak.description_line_1$
           - $daily-lumber-oak.description_line_2$
+          - $daily-lumber-oak.shrine_line_1$
+          - $daily-lumber-oak.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-lumber-oak.objective.collect.absoluteAmount%/%daily-lumber-oak.objective.collect.absoluteTotal%"
@@ -379,6 +411,8 @@ menus:
           - $daily-lumber-spruce.title$
           - $daily-lumber-spruce.description_line_1$
           - $daily-lumber-spruce.description_line_2$
+          - $daily-lumber-spruce.shrine_line_1$
+          - $daily-lumber-spruce.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -392,6 +426,8 @@ menus:
           - $daily-lumber-spruce.title$
           - $daily-lumber-spruce.description_line_1$
           - $daily-lumber-spruce.description_line_2$
+          - $daily-lumber-spruce.shrine_line_1$
+          - $daily-lumber-spruce.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-lumber-spruce.objective.collect.absoluteAmount%/%daily-lumber-spruce.objective.collect.absoluteTotal%"
@@ -423,6 +459,8 @@ menus:
           - $daily-lumber-warped.title$
           - $daily-lumber-warped.description_line_1$
           - $daily-lumber-warped.description_line_2$
+          - $daily-lumber-warped.shrine_line_1$
+          - $daily-lumber-warped.shrine_line_2$
           - 
           - $status.notStarted$
           - $action.start$
@@ -436,6 +474,8 @@ menus:
           - $daily-lumber-warped.title$
           - $daily-lumber-warped.description_line_1$
           - $daily-lumber-warped.description_line_2$
+          - $daily-lumber-warped.shrine_line_1$
+          - $daily-lumber-warped.shrine_line_2$
           - 
           - $status.inProgress$
           - "%daily-lumber-warped.objective.collect.absoluteAmount%/%daily-lumber-warped.objective.collect.absoluteTotal%"

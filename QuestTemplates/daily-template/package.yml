@@ -11,11 +11,11 @@ variables:
   ## It is housed here in order to create a global format for all daily quests   ##
   #################################################################################
   title: '&b[$action_upper$ $target_upper$]'
-  description_line_1: $action_upper$ &a&o$objective_amount$ &r&o$target$!
-  description_line_2: In the &a&o$world_display$ &r&oworld.
+  description_line_1: '&61. &5&o$action_upper$ &a&o$objective_amount$ &r&o$target$'
+  description_line_2: 'in the &a&o$world_display$ &r&oworld.'
   
-  shrine_line_1: Bring &a&o$objective_amount$ &5&o$target_drops_plural$ to
-  shrine_line_2: the &d&oshrine &5&oat spawn
+  shrine_line_1: '&62. &5&oBring &a&o$objective_amount$ &5&o$target_drops_plural$ to'
+  shrine_line_2: 'the &d&oshrine &5&oat /warp shrine'
   
   done_line_1: You $action_lower_past$ $objective_amount$ $target$!
   done_line_2: Do this quest again tomorrow!
@@ -60,8 +60,8 @@ variables:
 
   activeQuestNotice: notify &4You already have an active quest in this category! category:daily_task
 
-  shrineWhisper: 'notify &e&oPlace &a&o$objective_amount$ &e&o$target_drops_plural$ in the &d&oshrine &e&oat spawn... io:subtitle'
-  shrineStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&oplace &a&o$objective_amount$ &e&o$target_drops_plural$ in the &d&oshrine &e&oat spawn. category:daily_task'
+  shrineWhisper: 'notify &e&oPlace &a&o$objective_amount$ &e&o$target_drops_plural$ in the &d&ochest &e&oat &a&o/warp shrine&e&o... io:subtitle'
+  shrineStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&oplace &a&o$objective_amount$ &e&o$target_drops_plural$ in the &d&ochest &e&oat &a&o/warp shrine&e&o. category:daily_task'
   
   finishWhisper: 'notify &e&oThe Oracle acknowledges your dedication... io:subtitle'
   finishNotice: 'notify &2Your daily quests reward\:\n+ $$reward_amount$ category:daily_task'
