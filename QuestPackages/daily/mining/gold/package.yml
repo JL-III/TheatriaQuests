@@ -17,13 +17,13 @@ variables:
   target: gold ore
   target_upper: Gold ore
   
-  target_drops: raw gold
-  target_drops_plural: raw gold
+  target_drops: gold ingot
+  target_drops_plural: gold ingots
   
   target_slug: gold_ore
 
 ## Due to limitations, slug value must match item key
-  target_drops_slug: raw_gold
+  target_drops_slug: gold_ingot
 
 items:
-  raw_gold: minecraft:$target_drops_slug$
+  gold_ingot: minecraft:$target_drops_slug$

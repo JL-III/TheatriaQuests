@@ -17,13 +17,13 @@ variables:
   target: iron ore
   target_upper: Iron ore
   
-  target_drops: raw iron
-  target_drops_plural: raw iron
+  target_drops: iron ingot
+  target_drops_plural: iron ingots
   
   target_slug: iron_ore
 
 ## Due to limitations, slug value must match item key
-  target_drops_slug: raw_iron
+  target_drops_slug: iron_ingot
 
 items:
-  raw_iron: minecraft:$target_drops_slug$
+  iron_ingot: minecraft:$target_drops_slug$

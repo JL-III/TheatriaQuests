@@ -48,9 +48,6 @@ events:
   ########
 
   activeQuestNotice: '$activeQuestNotice$'
-    
-  # collectWhisper: '$collectWhisper$'
-  # collectStartNotice: $collectStartNotice$
   
   shrineWhisper: '$shrineWhisper$'
   shrineStartNotice: '$shrineStartNotice$'
@@ -63,8 +60,6 @@ events:
   #############
 
   collectStartFolder: '$collectStartFolder$'
-
-  # passStartFolderCheck: '$passStartFolderCheck$'
   failStartFolderCheck: '$failStartFolderCheck$'
 
   collectInitFolder: '$collectInitFolder$'

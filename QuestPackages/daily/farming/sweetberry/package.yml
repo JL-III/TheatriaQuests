@@ -18,7 +18,7 @@ variables:
   target_upper: Sweet berries
   
   target_drops: sweet_berries
-  target_drops_plural: sweet_berries
+  target_drops_plural: sweet berries
   
   target_slug: sweet_berry_bush
   

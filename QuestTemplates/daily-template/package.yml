@@ -15,7 +15,7 @@ variables:
   description_line_2: 'in the &a&o$world_display$ &r&oworld.'
   
   shrine_line_1: '&62. &5&oBring &a&o$objective_amount$ &5&o$target_drops_plural$ to'
-  shrine_line_2: 'the &d&oshrine &5&oat /warp shrine'
+  shrine_line_2: 'the &d&ochest &5&oat &a/warp shrine'
   
   done_line_1: You $action_lower_past$ $objective_amount$ $target$!
   done_line_2: Do this quest again tomorrow!
@@ -64,7 +64,7 @@ variables:
   shrineStartNotice: 'notify &b&oObjective: &e&oThe Oracle asked you to \n&e&oplace &a&o$objective_amount$ &e&o$target_drops_plural$ in the &d&ochest &e&oat &a&o/warp shrine&e&o. category:daily_task'
   
   finishWhisper: 'notify &e&oThe Oracle acknowledges your dedication... io:subtitle'
-  finishNotice: 'notify &2Your daily quests reward\:\n+ $$reward_amount$ category:daily_task'
+  finishNotice: 'notify &2Your daily quests reward\:\n$$reward_amount$ category:daily_task'
 
   #############
   ## FOLDERS ##
@@ -99,7 +99,7 @@ variables:
     reset: '&7Right-click to reset'
     start: '&7Left-click to start'
 
-  shrineLocation: 0;65;-2;Mining
+  shrineLocation: 5934;81;-2934;The_Ark
   
   level1GUIItem: 'COPPER_INGOT'
   level2GUIItem: 'IRON_INGOT'

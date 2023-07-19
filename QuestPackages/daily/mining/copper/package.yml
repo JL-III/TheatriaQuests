@@ -17,13 +17,13 @@ variables:
   target: copper ore
   target_upper: Copper ore
   
-  target_drops: raw copper
-  target_drops_plural: raw copper
+  target_drops: copper ingot
+  target_drops_plural: copper ingots
   
   target_slug: copper_ore
   
   ## Due to limitations, slug value must match item key
-  target_drops_slug: raw_copper
+  target_drops_slug: copper_ingot
   
 items:
-  raw_copper: minecraft:$target_drops_slug$
+  copper_ingot: minecraft:$target_drops_slug$
