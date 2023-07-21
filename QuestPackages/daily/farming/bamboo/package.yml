@@ -22,7 +22,7 @@ variables:
   
   target_slug: bamboo
   
-  age: '[age=3]'
+  age: '[age=1]'
   
   target_drops_slug: bamboo
     
