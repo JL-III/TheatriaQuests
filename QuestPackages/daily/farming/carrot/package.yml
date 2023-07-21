@@ -20,7 +20,7 @@ variables:
   target_drops: carrot
   target_drops_plural: carrots
   
-  target_slug: carrot
+  target_slug: carrots
   
   age: '[age=7]'
   
