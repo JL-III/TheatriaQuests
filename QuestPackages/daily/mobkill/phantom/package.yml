@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-template-mobkill
+
+variables:
+
+  objective_amount: 16
+  reward_amount: 5000
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Kill
+  action_lower: kill
+  action_lower_past: killed
+  
+  target: phantoms
+  target_upper: Phantoms
+  target_all_caps: PHANTOM
+  
+  target_drops: phantom membrane
+  target_drops_plural: phantom membranes
+  
+  target_slug: phantom
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: phantom_membrane
+  
+items:
+  phantom_membrane: minecraft:$target_drops_slug$

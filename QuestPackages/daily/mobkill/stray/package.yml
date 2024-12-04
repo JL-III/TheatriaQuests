@@ -1,0 +1,30 @@
+package:
+  templates:
+    - daily-template-mobkill
+
+variables:
+
+  objective_amount: 16
+  reward_amount: 5000
+  
+  world: Mining
+  world_display: Mining
+
+  action_upper: Kill
+  action_lower: kill
+  action_lower_past: killed
+  
+  target: strays
+  target_upper: Strays
+  target_all_caps: STRAY
+  
+  target_drops: arrow
+  target_drops_plural: arrows
+  
+  target_slug: stray
+  
+  ## Due to limitations, slug value must match item key
+  target_drops_slug: arrow
+  
+items:
+  arrow: minecraft:$target_drops_slug$
