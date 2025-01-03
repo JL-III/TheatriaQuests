@@ -1,7 +1,7 @@
 schedules:
   resetDailyQuests:
     type: realtime-daily
-    time: '07:59'
+    time: '00:00'
     events: announceResetDaily,resetDaily
 
 events:
