@@ -7,19 +7,71 @@ menus:
     title: Mobkill Quests
     slots:
       0-8: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
-      9: ChickenActiveFalse,ChickenActiveTrue,ChickenShrine,ChickenShrineFinished
-      10: CowActiveFalse,CowActiveTrue,CowShrine,CowShrineFinished
-      11: CreeperActiveFalse,CreeperActiveTrue,CreeperShrine,CreeperShrineFinished
-      12: HuskActiveFalse,HuskActiveTrue,HuskShrine,HuskShrineFinished
-      13: PigActiveFalse,PigActiveTrue,PigShrine,PigShrineFinished
-      14: SheepActiveFalse,SheepActiveTrue,SheepShrine,SheepShrineFinished
-      15: SkeletonActiveFalse,SkeletonActiveTrue,SkeletonShrine,SkeletonShrineFinished
-      16: SpiderActiveFalse,SpiderActiveTrue,SpiderShrine,SpiderShrineFinished
-      17: SquidActiveFalse,SquidActiveTrue,SquidShrine,SquidShrineFinished
-      18: ZombieActiveFalse,ZombieActiveTrue,ZombieShrine,ZombieShrineFinished
+      9: BoggedActiveFalse,BoggedActiveTrue,BoggedShrine,BoggedShrineFinished
+      10: ChickenActiveFalse,ChickenActiveTrue,ChickenShrine,ChickenShrineFinished
+      11: CowActiveFalse,CowActiveTrue,CowShrine,CowShrineFinished
+      12: CreeperActiveFalse,CreeperActiveTrue,CreeperShrine,CreeperShrineFinished
+      13: GhastActiveFalse,GhastActiveTrue,GhastShrine,GhastShrineFinished
+      14: HuskActiveFalse,HuskActiveTrue,HuskShrine,HuskShrineFinished
+      15: PhantomActiveFalse,PhantomActiveTrue,PhantomShrine,PhantomShrineFinished
+      16: PigActiveFalse,PigActiveTrue,PigShrine,PigShrineFinished
+      17: SheepActiveFalse,SheepActiveTrue,SheepShrine,SheepShrineFinished
+      18: SkeletonActiveFalse,SkeletonActiveTrue,SkeletonShrine,SkeletonShrineFinished
+      19: SpiderActiveFalse,SpiderActiveTrue,SpiderShrine,SpiderShrineFinished
+      20: SquidActiveFalse,SquidActiveTrue,SquidShrine,SquidShrineFinished
+      21: StrayActiveFalse,StrayActiveTrue,StrayShrine,StrayShrineFinished
+      22: ZombieActiveFalse,ZombieActiveTrue,ZombieShrine,ZombieShrineFinished
       28-35: "filler,filler,filler,filler,filler,filler,filler,filler,filler"
       27: "back"
     items:
+      BoggedActiveFalse:
+        item: BoggedActiveFalse
+        conditions: "!daily-mobkill-bogged.collectTaken"
+        text:
+          - $daily-mobkill-bogged.title$
+          - $daily-mobkill-bogged.description_line_1$
+          - $daily-mobkill-bogged.description_line_2$
+          - $daily-mobkill-bogged.shrine_line_1$
+          - $daily-mobkill-bogged.shrine_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily-mobkill-bogged.collectStartFolder
+        close: false
+      BoggedActiveTrue:
+        item: BoggedActiveTrue
+        conditions: daily-mobkill-bogged.collectTaken,!daily-mobkill-bogged.shrineTaken
+        text:
+          - $daily-mobkill-bogged.title$
+          - $daily-mobkill-bogged.description_line_1$
+          - $daily-mobkill-bogged.description_line_2$
+          - $daily-mobkill-bogged.shrine_line_1$
+          - $daily-mobkill-bogged.shrine_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mobkill-bogged.objective.collect.absoluteAmount%/%daily-mobkill-bogged.objective.collect.absoluteTotal%"
+        close: false
+      BoggedShrine:
+        item: BoggedActiveTrue
+        conditions: daily-mobkill-bogged.shrineTaskActive
+        text:
+          - $daily-mobkill-bogged.title$
+          - $daily-mobkill-bogged.shrine_line_1$
+          - $daily-mobkill-bogged.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      BoggedShrineFinished:
+        item: questComplete
+        conditions: daily-mobkill-bogged.questComplete
+        text:
+          - $daily-mobkill-bogged.title$
+          - $daily-mobkill-bogged.done_line_1$
+          - $daily-mobkill-bogged.done_line_2$
+          - 
+          - $status.complete$
+        close: false
       ChickenActiveFalse:
         item: ChickenActiveFalse
         conditions: "!daily-mobkill-chicken.collectTaken"
@@ -164,6 +216,54 @@ menus:
           - 
           - $status.complete$
         close: false
+      GhastActiveFalse:
+        item: GhastActiveFalse
+        conditions: "!daily-mobkill-ghast.collectTaken"
+        text:
+          - $daily-mobkill-ghast.title$
+          - $daily-mobkill-ghast.description_line_1$
+          - $daily-mobkill-ghast.description_line_2$
+          - $daily-mobkill-ghast.shrine_line_1$
+          - $daily-mobkill-ghast.shrine_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily-mobkill-ghast.collectStartFolder
+        close: false
+      GhastActiveTrue:
+        item: GhastActiveTrue
+        conditions: daily-mobkill-ghast.collectTaken,!daily-mobkill-ghast.shrineTaken
+        text:
+          - $daily-mobkill-ghast.title$
+          - $daily-mobkill-ghast.description_line_1$
+          - $daily-mobkill-ghast.description_line_2$
+          - $daily-mobkill-ghast.shrine_line_1$
+          - $daily-mobkill-ghast.shrine_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mobkill-ghast.objective.collect.absoluteAmount%/%daily-mobkill-ghast.objective.collect.absoluteTotal%"
+        close: false
+      GhastShrine:
+        item: GhastActiveTrue
+        conditions: daily-mobkill-ghast.shrineTaskActive
+        text:
+          - $daily-mobkill-ghast.title$
+          - $daily-mobkill-ghast.shrine_line_1$
+          - $daily-mobkill-ghast.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      GhastShrineFinished:
+        item: questComplete
+        conditions: daily-mobkill-ghast.questComplete
+        text:
+          - $daily-mobkill-ghast.title$
+          - $daily-mobkill-ghast.done_line_1$
+          - $daily-mobkill-ghast.done_line_2$
+          - 
+          - $status.complete$
+        close: false
       HuskActiveFalse:
         item: HuskActiveFalse
         conditions: "!daily-mobkill-husk.collectTaken"
@@ -209,6 +309,54 @@ menus:
           - $daily-mobkill-husk.title$
           - $daily-mobkill-husk.done_line_1$
           - $daily-mobkill-husk.done_line_2$
+          - 
+          - $status.complete$
+        close: false
+      PhantomActiveFalse:
+        item: PhantomActiveFalse
+        conditions: "!daily-mobkill-phantom.collectTaken"
+        text:
+          - $daily-mobkill-phantom.title$
+          - $daily-mobkill-phantom.description_line_1$
+          - $daily-mobkill-phantom.description_line_2$
+          - $daily-mobkill-phantom.shrine_line_1$
+          - $daily-mobkill-phantom.shrine_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily-mobkill-phantom.collectStartFolder
+        close: false
+      PhantomActiveTrue:
+        item: PhantomActiveTrue
+        conditions: daily-mobkill-phantom.collectTaken,!daily-mobkill-phantom.shrineTaken
+        text:
+          - $daily-mobkill-phantom.title$
+          - $daily-mobkill-phantom.description_line_1$
+          - $daily-mobkill-phantom.description_line_2$
+          - $daily-mobkill-phantom.shrine_line_1$
+          - $daily-mobkill-phantom.shrine_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mobkill-phantom.objective.collect.absoluteAmount%/%daily-mobkill-phantom.objective.collect.absoluteTotal%"
+        close: false
+      PhantomShrine:
+        item: PhantomActiveTrue
+        conditions: daily-mobkill-phantom.shrineTaskActive
+        text:
+          - $daily-mobkill-phantom.title$
+          - $daily-mobkill-phantom.shrine_line_1$
+          - $daily-mobkill-phantom.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      PhantomShrineFinished:
+        item: questComplete
+        conditions: daily-mobkill-phantom.questComplete
+        text:
+          - $daily-mobkill-phantom.title$
+          - $daily-mobkill-phantom.done_line_1$
+          - $daily-mobkill-phantom.done_line_2$
           - 
           - $status.complete$
         close: false
@@ -452,6 +600,54 @@ menus:
           - 
           - $status.complete$
         close: false
+      StrayActiveFalse:
+        item: StrayActiveFalse
+        conditions: "!daily-mobkill-stray.collectTaken"
+        text:
+          - $daily-mobkill-stray.title$
+          - $daily-mobkill-stray.description_line_1$
+          - $daily-mobkill-stray.description_line_2$
+          - $daily-mobkill-stray.shrine_line_1$
+          - $daily-mobkill-stray.shrine_line_2$
+          - 
+          - $status.notStarted$
+          - $action.start$
+        click:
+          left: daily-mobkill-stray.collectStartFolder
+        close: false
+      StrayActiveTrue:
+        item: StrayActiveTrue
+        conditions: daily-mobkill-stray.collectTaken,!daily-mobkill-stray.shrineTaken
+        text:
+          - $daily-mobkill-stray.title$
+          - $daily-mobkill-stray.description_line_1$
+          - $daily-mobkill-stray.description_line_2$
+          - $daily-mobkill-stray.shrine_line_1$
+          - $daily-mobkill-stray.shrine_line_2$
+          - 
+          - $status.inProgress$
+          - "%daily-mobkill-stray.objective.collect.absoluteAmount%/%daily-mobkill-stray.objective.collect.absoluteTotal%"
+        close: false
+      StrayShrine:
+        item: StrayActiveTrue
+        conditions: daily-mobkill-stray.shrineTaskActive
+        text:
+          - $daily-mobkill-stray.title$
+          - $daily-mobkill-stray.shrine_line_1$
+          - $daily-mobkill-stray.shrine_line_2$
+          - 
+          - $status.inProgress$
+        close: false
+      StrayShrineFinished:
+        item: questComplete
+        conditions: daily-mobkill-stray.questComplete
+        text:
+          - $daily-mobkill-stray.title$
+          - $daily-mobkill-stray.done_line_1$
+          - $daily-mobkill-stray.done_line_2$
+          - 
+          - $status.complete$
+        close: false
       ZombieActiveFalse:
         item: ZombieActiveFalse
         conditions: "!daily-mobkill-zombie.collectTaken"
@@ -511,14 +707,20 @@ menus:
           left: "daily.openDailyMenu"
         close: true
 items:
+  BoggedActiveFalse: $daily-mobkill-bogged.target_drops_slug$
+  BoggedActiveTrue: $daily-mobkill-bogged.target_drops_slug$ $enchants$ $flags$
   ChickenActiveFalse: $daily-mobkill-chicken.target_drops_slug$
   ChickenActiveTrue: $daily-mobkill-chicken.target_drops_slug$ $enchants$ $flags$
   CowActiveFalse: $daily-mobkill-cow.target_drops_slug$
   CowActiveTrue: $daily-mobkill-cow.target_drops_slug$ $enchants$ $flags$
   CreeperActiveFalse: $daily-mobkill-creeper.target_drops_slug$
   CreeperActiveTrue: $daily-mobkill-creeper.target_drops_slug$ $enchants$ $flags$
+  GhastActiveFalse: $daily-mobkill-ghast.target_drops_slug$
+  GhastActiveTrue: $daily-mobkill-ghast.target_drops_slug$ $enchants$ $flags$
   HuskActiveFalse: $daily-mobkill-husk.target_drops_slug$
   HuskActiveTrue: $daily-mobkill-husk.target_drops_slug$ $enchants$ $flags$
+  PhantomActiveFalse: $daily-mobkill-phantom.target_drops_slug$
+  PhantomActiveTrue: $daily-mobkill-phantom.target_drops_slug$ $enchants$ $flags$
   PigActiveFalse: $daily-mobkill-pig.target_drops_slug$
   PigActiveTrue: $daily-mobkill-pig.target_drops_slug$ $enchants$ $flags$
   SheepActiveFalse: $daily-mobkill-sheep.target_drops_slug$
@@ -529,5 +731,7 @@ items:
   SpiderActiveTrue: $daily-mobkill-spider.target_drops_slug$ $enchants$ $flags$
   SquidActiveFalse: $daily-mobkill-squid.target_drops_slug$
   SquidActiveTrue: $daily-mobkill-squid.target_drops_slug$ $enchants$ $flags$
+  StrayActiveFalse: $daily-mobkill-stray.target_drops_slug$
+  StrayActiveTrue: $daily-mobkill-stray.target_drops_slug$ $enchants$ $flags$
   ZombieActiveFalse: $daily-mobkill-zombie.target_drops_slug$
   ZombieActiveTrue: $daily-mobkill-zombie.target_drops_slug$ $enchants$ $flags$

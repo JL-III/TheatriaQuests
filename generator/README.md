@@ -3,13 +3,14 @@
 ## MenuItem
 
 This directory is used to populate items for the daily quests menu GUI.  
-Due to what appears to be BetonQuest limitations, the menu GUI is a tedious repetitive process once a standardization has be implemented across packages. This standardization allows for programatically creating GUI menu entries.
+Due to what appears to be BetonQuest limitations, the menu GUI is a tedious repetitive process. 
+A standardization has been implemented across packages allowing for programatic creation of GUI menu entries.
 
 ### How to use
 
-This automatically creates daily menu guis based on existing directories in the daily quest packages section.
+This automatically creates daily menu GUIs based on existing directories in the daily quest packages section.
 
-To generate the GUI items use the following in the base directory of the project.
+Use the following in the base directory of the project to generate the GUI items.
 
 ```
 go run menuitem.go
